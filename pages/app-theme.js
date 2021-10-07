@@ -6,10 +6,6 @@ import { Button, Grid } from 'theme-ui';
 const ThemePage = () => {
     const { theme, setColorMode } = useThemeUI();
 
-    useEffect(() => {
-        setColorMode('light');
-    }, [setColorMode]);
-
     return (
         <>
             <section sx={{ margin: '0 auto', maxWidth: '1000px' }}>
