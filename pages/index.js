@@ -7,32 +7,6 @@ import { Button } from 'theme-ui';
 import AppHeader from '../components/sections/appHeader';
 
 const Home = () => {
-    const headerLeftColumnContent = () => (
-        <div sx={{ paddingTop: ['200px'], paddingBottom: '225px' }}>
-            <h1 sx={{ variant: 'text.h1', color: '#fff' }}>
-                Rank Higher, Convert More, & Engage with Users
-            </h1>
-            <h4
-                sx={{
-                    variant: 'text.h4',
-                    color: '#fff',
-                    marginTop: 8,
-                    marginBottom: 11,
-                    fontSize: '24px',
-                }}
-            >
-                We help businesses grow through high quality SEO, targeted
-                content, and engaging websites.
-            </h4>
-            <Button variant="light">I Want To...</Button>
-        </div>
-    );
-    const headerRightColumnContent = () => (
-        <div>
-            <h2>Hello Dere</h2>
-        </div>
-    );
-
     return (
         <>
             <Head>
@@ -52,28 +26,6 @@ const Home = () => {
             <main>
                 <div>
                     <ul>
-                        <li>
-                            <Link href="/">
-                                <a>Home</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/seo-services">
-                                <a>Seo Services</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/web-design-and-development">
-                                <a>Web Design and Development</a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/seo-content">
-                                <a>Seo Content</a>
-                            </Link>
-                        </li>
-                    </ul>
-                    <ul>
                         <li>Framer Motion</li>
                         <li>React Lottie + Animated Icons?</li>
                         <li>Theme UI?</li>
@@ -83,5 +35,40 @@ const Home = () => {
         </>
     );
 };
+
+const headerLeftColumnContent = () => (
+    <div
+        sx={{
+            paddingRight: [null, null, null, '125px'],
+        }}
+    >
+        <h1
+            sx={{
+                variant: 'text.h1',
+                color: '#fff',
+            }}
+        >
+            Rank Higher, Convert More, & Engage with Users
+        </h1>
+        <h4
+            sx={{
+                variant: 'text.h4',
+                color: '#fff',
+                marginTop: 8,
+                marginBottom: 11,
+                fontSize: '24px',
+            }}
+        >
+            We help businesses grow through high quality SEO, targeted content,
+            and engaging websites.
+        </h4>
+        <Button variant="light">I Want To...</Button>
+    </div>
+);
+const headerRightColumnContent = () => (
+    <div>
+        <h2>Hello Dere</h2>
+    </div>
+);
 
 export default Home;
