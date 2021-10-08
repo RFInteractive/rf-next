@@ -1,8 +1,8 @@
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
-import Link from 'next/link';
+import { useEffect } from 'react';
 
-import { Button } from 'theme-ui';
+import { Button, useColorMode } from 'theme-ui';
 
 import AppHeader from '../components/sections/appHeader';
 
@@ -19,8 +19,8 @@ const Home = () => {
             </Head>
 
             <AppHeader
-                leftColumnContent={headerLeftColumnContent()}
-                rightColumnContent={headerRightColumnContent()}
+                leftColumnContent={HeaderLeftColumnContent()}
+                rightColumnContent={HeaderRightColumnContent()}
             />
 
             <main>
@@ -36,39 +36,50 @@ const Home = () => {
     );
 };
 
-const headerLeftColumnContent = () => (
-    <div
-        sx={{
-            paddingRight: [null, null, null, '125px'],
-        }}
-    >
-        <h1
-            sx={{
-                variant: 'text.h1',
-                color: '#fff',
-            }}
-        >
-            Rank Higher, Convert More, & Engage with Users
-        </h1>
-        <h4
-            sx={{
-                variant: 'text.h4',
-                color: '#fff',
-                marginTop: 8,
-                marginBottom: 11,
-                fontSize: '24px',
-            }}
-        >
-            We help businesses grow through high quality SEO, targeted content,
-            and engaging websites.
-        </h4>
-        <Button variant="light">I Want To...</Button>
-    </div>
-);
-const headerRightColumnContent = () => (
-    <div>
-        <h2>Hello Dere</h2>
-    </div>
-);
+const HeaderLeftColumnContent = () => {
+    const [mode, setMode] = useColorMode();
+
+    useEffect(() => {
+        console.log(mode);
+    }, [mode]);
+
+    return (
+        <>
+            <h1
+                sx={{
+                    variant: 'text.h1',
+                    color: '#fff',
+                }}
+            >
+                Rank Higher,
+                <br /> Convert More,
+                <br /> & Engage with Users
+            </h1>
+            <h4
+                sx={{
+                    variant: 'text.h4',
+                    color: '#fff',
+                    marginTop: 8,
+                    marginBottom: 11,
+                    fontSize: '24px',
+                }}
+            >
+                We help businesses grow through high quality SEO, targeted
+                content, and engaging websites.
+            </h4>
+            <Button variant="light" onClick={() => setMode('black')}>
+                I Want To...
+            </Button>
+        </>
+    );
+};
+
+const HeaderRightColumnContent = () => {
+    return (
+        <>
+            <h2>Hello Dere</h2>
+        </>
+    );
+};
 
 export default Home;

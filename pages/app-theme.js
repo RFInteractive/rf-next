@@ -1,11 +1,21 @@
 /** @jsxImportSource theme-ui */
 import { useThemeUI, Button, Grid } from 'theme-ui';
 
+import AppHeader from '../components/sections/appHeader';
+
 const ThemePage = () => {
     const { theme, setColorMode } = useThemeUI();
 
     return (
         <>
+            <AppHeader
+                type={'small'}
+                leftColumnContent={
+                    <h1 sx={{ variant: 'text.h1', color: '#fff' }}>
+                        Application Theme
+                    </h1>
+                }
+            />
             <section sx={{ margin: '0 auto', maxWidth: '1000px' }}>
                 <Grid
                     columns={[2, 3, 5]}
