@@ -6,7 +6,13 @@ import Link from 'next/link';
 const DesktopNav = () => {
     return (
         <nav
-            sx={{ display: ['none', 'none', 'block'], py: '12px', mb: '-77px' }}
+            sx={{
+                display: ['none', 'none', 'block', 'block', 'block'],
+                py: '12px',
+                mb: '-77px',
+                zIndex: '100',
+                position: 'relative',
+            }}
         >
             <Container sx={{ maxWidth: '1440px' }}>
                 <Grid
