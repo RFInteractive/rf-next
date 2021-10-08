@@ -1,7 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { useEffect } from 'react';
-import { useThemeUI } from 'theme-ui';
-import { Button, Grid } from 'theme-ui';
+import { useThemeUI, Button, Grid } from 'theme-ui';
 
 const ThemePage = () => {
     const { theme, setColorMode } = useThemeUI();
