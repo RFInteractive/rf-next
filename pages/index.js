@@ -1,12 +1,37 @@
+/** @jsxImportSource theme-ui */
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
+
+import { Button } from 'theme-ui';
 
 import AppHeader from '../components/sections/appHeader';
 
 const Home = () => {
-    const headerLeftColumnContent = () => <h1>Hello Dere</h1>;
-    const headerRightColumnContent = () => <h2>Right Column</h2>;
+    const headerLeftColumnContent = () => (
+        <div sx={{ paddingTop: ['200px'], paddingBottom: '225px' }}>
+            <h1 sx={{ variant: 'text.h1', color: '#fff' }}>
+                Rank Higher, Convert More, & Engage with Users
+            </h1>
+            <h4
+                sx={{
+                    variant: 'text.h4',
+                    color: '#fff',
+                    marginTop: 8,
+                    marginBottom: 11,
+                    fontSize: '24px',
+                }}
+            >
+                We help businesses grow through high quality SEO, targeted
+                content, and engaging websites.
+            </h4>
+            <Button variant="light">I Want To...</Button>
+        </div>
+    );
+    const headerRightColumnContent = () => (
+        <div>
+            <h2>Hello Dere</h2>
+        </div>
+    );
 
     return (
         <>
@@ -25,7 +50,7 @@ const Home = () => {
             />
 
             <main>
-                <p>
+                <div>
                     <ul>
                         <li>
                             <Link href="/">
@@ -53,7 +78,7 @@ const Home = () => {
                         <li>React Lottie + Animated Icons?</li>
                         <li>Theme UI?</li>
                     </ul>
-                </p>
+                </div>
             </main>
         </>
     );
