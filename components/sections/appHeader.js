@@ -1,8 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { useThemeUI } from 'theme-ui';
 
-// TODO: add svg component with props for return conditional & replace fill values with theme-ui colors
-// TODO: add surrounding divs back into this file around column contents so svg & divs can be properly set in grid
 const AppHeader = ({ leftColumnContent, rightColumnContent, type }) => {
     return (
         <header
