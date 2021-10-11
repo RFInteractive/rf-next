@@ -11,7 +11,13 @@ const ThemePage = () => {
             <AppHeader
                 type={'small'}
                 leftColumnContent={
-                    <h1 sx={{ variant: 'text.h1', color: '#fff' }}>
+                    <h1
+                        sx={{
+                            variant: 'text.h1',
+                            color: '#fff',
+                            paddingTop: ['80px', '50px', '0px', '0px'],
+                        }}
+                    >
                         Application Theme
                     </h1>
                 }
