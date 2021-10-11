@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { useColorMode, Container, Grid, Button } from 'theme-ui';
+import { Container, Grid, Button } from 'theme-ui';
 import IconServiceCard from '../cards/iconServiceCard';
 
 const WhatWeDoRow = () => {
