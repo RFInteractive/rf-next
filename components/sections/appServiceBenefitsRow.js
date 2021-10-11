@@ -11,7 +11,7 @@ const ServicesBenefitsRow = () => {
             sx={{ marginTop: ['0px', '0px', '75px', '0px'] }}
         >
             <Container
-                sx={{ maxWidth: ['400px', '600px', '1290px'], px: '25px' }}
+                sx={{ maxWidth: ['400px', '600px', '1290px'], px: '30px' }}
             >
                 <Grid
                     columns={[1, 1, 3, 3]}
