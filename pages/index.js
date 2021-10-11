@@ -1,10 +1,13 @@
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
-import { useEffect } from 'react';
-
+import Image from 'next/image';
 import { Button, useColorMode } from 'theme-ui';
 
 import AppHeader from '../components/sections/appHeader';
+import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
+import TwoColumnVector from '../components/layout/twoColumnVector';
+
+import headerDevices from '../public/images/homepage-header-devices.png';
 
 const Home = () => {
     return (
@@ -24,6 +27,13 @@ const Home = () => {
             />
 
             <main>
+                <ServicesBenefitsRow />
+                <TwoColumnVector
+                    vectorSide={'right'}
+                    leftColumnContent={HeaderLeftColumnContent()}
+                    rightColumnContent={HeaderRightColumnContent()}
+                    sectionName={'testing'}
+                />
                 <div>
                     <ul>
                         <li>Framer Motion</li>
@@ -39,12 +49,15 @@ const Home = () => {
 const HeaderLeftColumnContent = () => {
     const [mode, setMode] = useColorMode();
 
-    useEffect(() => {
-        console.log(mode);
-    }, [mode]);
-
     return (
-        <>
+        <div
+            sx={{
+                paddingTop: ['125px', '100px', '50px', '30px', '30px'],
+                paddingBottom: ['150px', '225px', '30px', '30px', '30px'],
+                paddingLeft: ['0px', '6%', '0px', '0px', '0px'],
+                paddingRight: ['0px', '12%', '0px', '25px', '50px'],
+            }}
+        >
             <h1
                 sx={{
                     variant: 'text.h1',
@@ -70,14 +83,30 @@ const HeaderLeftColumnContent = () => {
             <Button variant="light" onClick={() => setMode('black')}>
                 I Want To...
             </Button>
-        </>
+        </div>
     );
 };
 
 const HeaderRightColumnContent = () => {
     return (
         <>
-            <h2>Hello Dere</h2>
+            <div
+                sx={{
+                    display: 'grid',
+                    justifyItems: 'center',
+                    position: 'relative',
+                    pb: '30px',
+                }}
+                className="boxShadowRight"
+            >
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={headerDevices}
+                    width={541}
+                    height={399}
+                    quality={100}
+                />
+            </div>
         </>
     );
 };
