@@ -2,7 +2,6 @@
 
 import { useThemeUI } from 'theme-ui';
 
-// type = 'left' or 'right'
 const TwoColumnVector = ({
     leftColumnContent,
     rightColumnContent,
