@@ -9,6 +9,7 @@ import WhatWeDoRow from '../components/sections/appWhatWeDo';
 import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
 import WhyUsRow from '../components/sections/appWhyUsRow';
 import AboutUsRow from '../components/sections/home/aboutUsRow';
+import TestimonialCarousel from '../components/sections/appTestimonialCarousel';
 
 const Home = () => {
     return (
@@ -32,6 +33,7 @@ const Home = () => {
                 <WhatWeDoRow />
                 <WhyUsRow />
                 <AboutUsRow />
+                <TestimonialCarousel />
             </main>
         </>
     );
