@@ -7,7 +7,8 @@ const AppHeader = ({ leftColumnContent, rightColumnContent, type }) => {
             sx={{
                 overflow: 'hidden',
                 variant: 'layouts.twoColumnContainedGrid',
-                paddingBottom: '30px',
+                alignItems: 'center',
+                paddingBottom: '100px',
             }}
         >
             <BackgroundSVG type={type} />
@@ -15,10 +16,6 @@ const AppHeader = ({ leftColumnContent, rightColumnContent, type }) => {
                 sx={{
                     gridColumn: ['2/span 2', '2/span 2', '2/3', '2/3'],
                     gridRow: '1/2',
-                    paddingTop: ['125px', '150px', '125px', '75px'],
-                    paddingBottom: ['150px', '175px', '125px', '75px'],
-                    paddingLeft: ['0px', '6%', '0px', '0px'],
-                    paddingRight: ['0px', '15%', '0px', '0px'],
                     zIndex: '2',
                 }}
             >
@@ -54,8 +51,9 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     gridColumn: '1/-1',
                     gridRow: '1/2',
                     zIndex: '1',
-                    height: '100%',
-                    maxHeight: '900px',
+                    height: ['100%', '100%', '150%', '100%', '100%'],
+                    maxHeight: '860px',
+                    justifySelf: 'start',
                 }}
             >
                 <path
