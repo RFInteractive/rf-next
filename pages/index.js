@@ -5,9 +5,10 @@ import { Button } from 'theme-ui';
 
 import AppHeader from '../components/sections/appHeader';
 import headerDevices from '../public/images/homepage-header-devices.png';
-import WhatWeDoRow from '../components/sections/whatWeDoServices';
+import WhatWeDoRow from '../components/sections/appWhatWeDo';
 import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
 import WhyUsRow from '../components/sections/appWhyUsRow';
+import AboutUsRow from '../components/sections/home/aboutUsRow';
 
 const Home = () => {
     return (
@@ -30,6 +31,7 @@ const Home = () => {
                 <ServicesBenefitsRow />
                 <WhatWeDoRow />
                 <WhyUsRow />
+                <AboutUsRow />
             </main>
         </>
     );

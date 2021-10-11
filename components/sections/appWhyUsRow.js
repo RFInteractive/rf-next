@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import Image from 'next/image';
-import { Grid, Container } from 'theme-ui';
+import { Grid } from 'theme-ui';
 
 import TwoColumnVector from '../layout/twoColumnVector';
 import leaningLaptop from '../../public/images/leaning-laptop.png';
