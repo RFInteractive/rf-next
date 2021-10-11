@@ -7,7 +7,7 @@ const DesktopNav = () => {
     return (
         <nav
             sx={{
-                display: ['none', 'none', 'block', 'block', 'block'],
+                display: ['none', 'none', 'block', 'block'],
                 py: '12px',
                 mb: '-77px',
                 zIndex: '100',

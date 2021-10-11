@@ -1,16 +1,22 @@
 /** @jsxImportSource theme-ui */
-import { useColorMode, Container, Grid, Box } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import IconListCard from '../cards/iconListCard';
 import CheckListItem from '../checkListItem';
 
 const ServicesBenefitsRow = () => {
     return (
-        <section id="homepageBenefits">
+        <section
+            id="homepageBenefits"
+            sx={{ marginTop: ['0px', '0px', '75px', '0px'] }}
+        >
             <Container
                 sx={{ maxWidth: ['400px', '600px', '1290px'], px: '25px' }}
             >
-                <Grid columns={[1, 1, 3, 3, 3]} gap={[10, 6, 8, 10, 13]}>
+                <Grid
+                    columns={[1, 1, 3, 3]}
+                    gap={['35px', '35px', '3%', '60px']}
+                >
                     <IconListCard
                         heading="Get More Traffic"
                         icon="seo"

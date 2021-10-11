@@ -8,6 +8,7 @@ import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
 import TwoColumnVector from '../components/layout/twoColumnVector';
 
 import headerDevices from '../public/images/homepage-header-devices.png';
+import WhatWeDoRow from '../components/sections/whatWeDoServices';
 
 const Home = () => {
     return (
@@ -28,6 +29,7 @@ const Home = () => {
 
             <main>
                 <ServicesBenefitsRow />
+                <WhatWeDoRow />
                 <TwoColumnVector
                     vectorSide={'right'}
                     leftColumnContent={HeaderLeftColumnContent()}
@@ -52,10 +54,10 @@ const HeaderLeftColumnContent = () => {
     return (
         <div
             sx={{
-                paddingTop: ['125px', '100px', '50px', '30px', '30px'],
-                paddingBottom: ['150px', '225px', '30px', '30px', '30px'],
-                paddingLeft: ['0px', '6%', '0px', '0px', '0px'],
-                paddingRight: ['0px', '12%', '0px', '25px', '50px'],
+                paddingTop: ['125px', '150px', '50px', '30px'],
+                paddingBottom: ['150px', '225px', '30px', '30px'],
+                paddingLeft: ['0px', '6%', '0px', '0px'],
+                paddingRight: ['0px', '12%', '0px', '25px'],
             }}
         >
             <h1
@@ -72,8 +74,8 @@ const HeaderLeftColumnContent = () => {
                 sx={{
                     variant: 'text.h4',
                     color: '#fff',
-                    marginTop: 8,
-                    marginBottom: 11,
+                    marginTop: '30px',
+                    marginBottom: '40px',
                     fontSize: '24px',
                 }}
             >

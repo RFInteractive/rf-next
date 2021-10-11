@@ -23,7 +23,7 @@ const TwoColumnVector = ({
             />
             <div
                 sx={{
-                    gridColumn: ['2/span 2', '2/span 2', '2/3', '2/3', '2/3'],
+                    gridColumn: ['2/span 2', '2/span 2', '2/3', '2/3'],
                     gridRow: getResponsiveRowAssignments('left', vectorSide),
                     zIndex: '2',
                 }}
@@ -32,7 +32,7 @@ const TwoColumnVector = ({
             </div>
             <div
                 sx={{
-                    gridColumn: ['2/span 2', '2/span 2', '3/4', '3/4', '3/4'],
+                    gridColumn: ['2/span 2', '2/span 2', '3/4', '3/4'],
                     gridRow: getResponsiveRowAssignments('right', vectorSide),
                     zIndex: '2',
                 }}
@@ -48,7 +48,7 @@ const getResponsiveRowAssignments = (columnSide, vectorSide) => {
         (columnSide === 'left' && vectorSide === 'right') ||
         (columnSide === 'right' && vectorSide === 'left')
     ) {
-        return ['2/3', '2/3', '1/2', '1/2', '1/2'];
+        return ['2/3', '2/3', '1/2', '1/2'];
     }
 
     return ['1/2'];
@@ -75,7 +75,7 @@ const VectorBackground = ({ vectorSide, sectionName }) => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 sx={{
-                    gridColumn: ['1/-1', '3/-1', '3/-1', '3/-1', '3/-1'],
+                    gridColumn: ['1/-1', '3/-1', '3/-1', '3/-1'],
                     gridRow: '1/2',
                     justifySelf: 'end',
                     zIndex: '1',
@@ -228,7 +228,7 @@ const VectorBackground = ({ vectorSide, sectionName }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             sx={{
-                gridColumn: ['1/-1', '1/3', '1/3', '1/3', '1/3'],
+                gridColumn: ['1/-1', '1/3', '1/3', '1/3'],
                 gridRow: '1/2',
                 justifySelf: 'start',
                 zIndex: '1',
