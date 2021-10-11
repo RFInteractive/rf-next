@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { useColorMode, Container, Grid, Button } from 'theme-ui';
+import IconServiceCard from '../cards/iconServiceCard';
 
 const WhatWeDoRow = () => {
     return (
@@ -7,8 +8,8 @@ const WhatWeDoRow = () => {
             id="whatWeDo"
             sx={{ marginY: ['100px', '125px', '150px', '150px'] }}
         >
-            <Container sx={{ maxWidth: '1290px', px: '25px' }}>
-                <Grid columns={[1, 1, 2, 2]} gap={'40px'}>
+            <Container sx={{ maxWidth: '1290px', px: '30px' }}>
+                <Grid columns={[1, 1, 2, 2]} gap={'70px'}>
                     <div>
                         <h2 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
                             What We Do
@@ -36,7 +37,30 @@ const WhatWeDoRow = () => {
                         </p>
                         <Button variant="primary">Let&apos;s Chat</Button>
                     </div>
-                    <div></div>
+                    <div sx={{ px: ['0px', '10%', '3%', '80px'] }}>
+                        <Grid columns={2} gap={'40px'}>
+                            <IconServiceCard
+                                heading="SEO"
+                                link="/seo-services"
+                                icon="seo"
+                            ></IconServiceCard>
+                            <IconServiceCard
+                                heading="Content"
+                                link="/seo-content"
+                                icon="content"
+                            ></IconServiceCard>
+                            <IconServiceCard
+                                heading="Web Dev"
+                                link="/web-design-and-development"
+                                icon="computer"
+                            ></IconServiceCard>
+                            <IconServiceCard
+                                heading="Advertising"
+                                link="/seo-services"
+                                icon="advertising"
+                            ></IconServiceCard>
+                        </Grid>
+                    </div>
                 </Grid>
             </Container>
         </section>
