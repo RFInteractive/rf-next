@@ -1,14 +1,14 @@
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
 import Image from 'next/image';
-import { Button, useColorMode } from 'theme-ui';
+import { Button } from 'theme-ui';
 
-import AppHeader from '../components/sections/appHeader';
-import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
 import TwoColumnVector from '../components/layout/twoColumnVector';
 
+import AppHeader from '../components/sections/appHeader';
 import headerDevices from '../public/images/homepage-header-devices.png';
 import WhatWeDoRow from '../components/sections/whatWeDoServices';
+import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
 
 const Home = () => {
     return (
@@ -31,7 +31,7 @@ const Home = () => {
                 <ServicesBenefitsRow />
                 <WhatWeDoRow />
                 <TwoColumnVector
-                    vectorSide={'right'}
+                    vectorSide={'left'}
                     leftColumnContent={HeaderLeftColumnContent()}
                     rightColumnContent={HeaderRightColumnContent()}
                     sectionName={'testing'}
@@ -49,8 +49,6 @@ const Home = () => {
 };
 
 const HeaderLeftColumnContent = () => {
-    const [mode, setMode] = useColorMode();
-
     return (
         <div
             sx={{
@@ -82,9 +80,7 @@ const HeaderLeftColumnContent = () => {
                 We help businesses grow through high quality SEO, targeted
                 content, and engaging websites.
             </h4>
-            <Button variant="light" onClick={() => setMode('black')}>
-                I Want To...
-            </Button>
+            <Button variant="light">Let&apos;s Work Together</Button>
         </div>
     );
 };
