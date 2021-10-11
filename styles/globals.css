@@ -13,3 +13,14 @@ a {
 * {
     box-sizing: border-box;
 }
+
+.boxShadowRight::before {
+    content: '';
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    left: 160px;
+    top: 75px;
+    background-color: rgba(0, 0, 0, 0.15);
+    filter: blur(50px);
+}
