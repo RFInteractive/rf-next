@@ -20,16 +20,16 @@ const DesktopNav = () => {
                     columns={'.5fr 3fr 1fr'}
                     sx={{ alignItems: 'center', justifyItems: 'center' }}
                 >
-                    <h1>Logo</h1>
+                    <h1 sx={{ color: '#fff' }}>Logo</h1>
                     <Grid columns={'repeat(3, 1fr)'}>
                         <Link href="/seo-services">
-                            <a>SEO</a>
+                            <a sx={{ color: '#fff' }}>SEO</a>
                         </Link>
                         <Link href="/seo-content">
-                            <a>Content</a>
+                            <a sx={{ color: '#fff' }}>Content</a>
                         </Link>
                         <Link href="/web-design-and-development">
-                            <a>Design & Dev</a>
+                            <a sx={{ color: '#fff' }}>Design & Dev</a>
                         </Link>
                     </Grid>
                     <Link href="/">
