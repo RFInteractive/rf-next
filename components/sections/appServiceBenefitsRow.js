@@ -27,13 +27,13 @@ const ServicesBenefitsRow = () => {
                             Our SEO services can help you get you where you need
                             to be
                         </p>
-                        <CheckListItem color={'iconPrimary'}>
+                        <CheckListItem bgColor={'iconPrimary'}>
                             Increase your traffic
                         </CheckListItem>
-                        <CheckListItem color={'iconPrimary'}>
+                        <CheckListItem bgColor={'iconPrimary'}>
                             Monthly insights & reports
                         </CheckListItem>
-                        <CheckListItem color={'iconPrimary'}>
+                        <CheckListItem bgColor={'iconPrimary'}>
                             89% avg. increase in 6 mo.
                         </CheckListItem>
                     </IconListCard>
@@ -46,13 +46,13 @@ const ServicesBenefitsRow = () => {
                             Our top notch content team knows what users are
                             looking for
                         </p>
-                        <CheckListItem color={'iconSecondary'}>
+                        <CheckListItem bgColor={'iconSecondary'}>
                             Reach more users
                         </CheckListItem>
-                        <CheckListItem color={'iconSecondary'}>
+                        <CheckListItem bgColor={'iconSecondary'}>
                             Research backed keywords
                         </CheckListItem>
-                        <CheckListItem color={'iconSecondary'}>
+                        <CheckListItem bgColor={'iconSecondary'}>
                             Find your niche
                         </CheckListItem>
                     </IconListCard>
@@ -65,13 +65,13 @@ const ServicesBenefitsRow = () => {
                             We know the best tools and practices to get you
                             going
                         </p>
-                        <CheckListItem color={'iconTertiary'}>
+                        <CheckListItem bgColor={'iconTertiary'}>
                             Double your site speed
                         </CheckListItem>
-                        <CheckListItem color={'iconTertiary'}>
+                        <CheckListItem bgColor={'iconTertiary'}>
                             Increase your conversions
                         </CheckListItem>
-                        <CheckListItem color={'iconTertiary'}>
+                        <CheckListItem bgColor={'iconTertiary'}>
                             99.9% uptime and backups
                         </CheckListItem>
                     </IconListCard>
