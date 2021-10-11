@@ -37,8 +37,8 @@ const WhatWeDoRow = () => {
                         </p>
                         <Button variant="primary">Let&apos;s Chat</Button>
                     </div>
-                    <div sx={{ px: ['0px', '10%', '3%', '80px'] }}>
-                        <Grid columns={2} gap={'40px'}>
+                    <div sx={{ px: ['80px', '10%', '3%', '80px'] }}>
+                        <Grid columns={[1, 2, 2, 2]} gap={'40px'}>
                             <IconServiceCard
                                 heading="SEO"
                                 link="/seo-services"

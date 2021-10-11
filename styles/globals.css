@@ -23,4 +23,17 @@ a {
     top: 75px;
     background-color: rgba(0, 0, 0, 0.15);
     filter: blur(50px);
+    z-index: 0;
+}
+
+.boxShadowLeft::before {
+    content: '';
+    width: 75%;
+    height: 75%;
+    position: absolute;
+    left: -60px;
+    bottom: -20px;
+    background-color: rgba(0, 0, 0, 0.16);
+    filter: blur(50px);
+    z-index: 0;
 }

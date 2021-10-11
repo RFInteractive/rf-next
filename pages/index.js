@@ -3,12 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Button } from 'theme-ui';
 
-import TwoColumnVector from '../components/layout/twoColumnVector';
-
 import AppHeader from '../components/sections/appHeader';
 import headerDevices from '../public/images/homepage-header-devices.png';
 import WhatWeDoRow from '../components/sections/whatWeDoServices';
 import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
+import WhyUsRow from '../components/sections/appWhyUsRow';
 
 const Home = () => {
     return (
@@ -30,19 +29,7 @@ const Home = () => {
             <main>
                 <ServicesBenefitsRow />
                 <WhatWeDoRow />
-                <TwoColumnVector
-                    vectorSide={'left'}
-                    leftColumnContent={HeaderLeftColumnContent()}
-                    rightColumnContent={HeaderRightColumnContent()}
-                    sectionName={'testing'}
-                />
-                <div>
-                    <ul>
-                        <li>Framer Motion</li>
-                        <li>React Lottie + Animated Icons?</li>
-                        <li>Theme UI?</li>
-                    </ul>
-                </div>
+                <WhyUsRow />
             </main>
         </>
     );
@@ -87,25 +74,23 @@ const HeaderLeftColumnContent = () => {
 
 const HeaderRightColumnContent = () => {
     return (
-        <>
-            <div
-                sx={{
-                    display: 'grid',
-                    justifyItems: 'center',
-                    position: 'relative',
-                    pb: '30px',
-                }}
-                className="boxShadowRight"
-            >
-                <Image
-                    alt="Laptop with overlaying SEO metrics"
-                    src={headerDevices}
-                    width={541}
-                    height={399}
-                    quality={100}
-                />
-            </div>
-        </>
+        <div
+            sx={{
+                display: 'grid',
+                justifyItems: 'center',
+                position: 'relative',
+                pb: '30px',
+            }}
+            className="boxShadowRight"
+        >
+            <Image
+                alt="Laptop with overlaying SEO metrics"
+                src={headerDevices}
+                width={541}
+                height={399}
+                quality={100}
+            />
+        </div>
     );
 };
 
