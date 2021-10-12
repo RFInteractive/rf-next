@@ -48,8 +48,8 @@ const HeaderLeftColumnContent = () => {
     return (
         <div
             sx={{
-                paddingTop: ['125px', '150px', '50px', '30px'],
-                paddingBottom: ['150px', '225px', '30px', '30px'],
+                paddingTop: ['125px', '125px', '150px', '30px'],
+                paddingBottom: ['150px', '150px', '150px', '30px'],
                 paddingLeft: ['0px', '6%', '0px', '0px'],
                 paddingRight: ['0px', '12%', '0px', '25px'],
             }}
@@ -88,7 +88,7 @@ const HeaderRightColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                pb: '30px',
+                paddingBottom: '30px',
             }}
             className="boxShadowRight"
         >
