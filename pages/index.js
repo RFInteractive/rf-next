@@ -10,6 +10,7 @@ import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
 import WhyUsRow from '../components/sections/appWhyUsRow';
 import AboutUsRow from '../components/sections/home/aboutUsRow';
 import TestimonialCarousel from '../components/sections/appTestimonialCarousel';
+import CTARow from '../components/sections/appCTARow';
 
 const Home = () => {
     return (
@@ -34,6 +35,10 @@ const Home = () => {
                 <WhyUsRow />
                 <AboutUsRow />
                 <TestimonialCarousel />
+                <CTARow
+                    heading="Stand Out in the Crowd"
+                    subheading="Take advantage of our free tools"
+                ></CTARow>
             </main>
         </>
     );

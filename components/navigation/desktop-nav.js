@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Container, Button, Grid } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import Link from 'next/link';
 

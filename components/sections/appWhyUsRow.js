@@ -15,7 +15,7 @@ const WhyUsRow = () => {
                 vectorSide={'left'}
                 leftColumnContent={WhyUsLeftColumnContent()}
                 rightColumnContent={WhyUsRightColumnContent()}
-                sectionName={'testing'}
+                sectionName={'homepageBenefits'}
             />
         </section>
     );
