@@ -10,7 +10,7 @@ import StatCard from '../cards/statCard';
 
 const WhyUsRow = () => {
     return (
-        <section id="homepageBenefits">
+        <section id="homepageBenefits" sx={{ pb: '50px' }}>
             <TwoColumnVector
                 vectorSide={'left'}
                 leftColumnContent={WhyUsLeftColumnContent()}

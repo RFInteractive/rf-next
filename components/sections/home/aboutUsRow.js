@@ -5,7 +5,7 @@ import { Button } from 'theme-ui';
 
 const AboutUsRow = () => {
     return (
-        <section id="homepageBenefits">
+        <section id="aboutUs">
             <TwoColumnVector
                 vectorSide={'right'}
                 leftColumnContent={AboutUsLeftColumnContent()}
