@@ -37,7 +37,7 @@ const CheckListItem = ({
                     />
                 </svg>
             </div>
-            <p sx={{ marginLeft: '8px' }}> {children} </p>
+            <p sx={{ marginLeft: '10px' }}> {children} </p>
         </Flex>
     );
 };
