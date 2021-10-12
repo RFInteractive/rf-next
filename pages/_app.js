@@ -2,7 +2,7 @@
 import { ThemeProvider } from 'theme-ui';
 import { theme } from '../lib/theme';
 
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import Layout from '../components/layout/layout';
 
 const MyApp = ({ Component, pageProps }) => {

@@ -10,7 +10,11 @@ const WhatWeDoRow = () => {
         >
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid columns={[1, 1, 2, 2]} gap={'70px'}>
-                    <div>
+                    <div
+                        sx={{
+                            paddingRight: ['0px', '0px', '60px', '30px'],
+                        }}
+                    >
                         <h2 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
                             What We Do
                         </h2>

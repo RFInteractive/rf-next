@@ -31,7 +31,7 @@ const WhyUsLeftColumnContent = () => {
                 pb: '30px',
                 my: ['100px', '50px', '100px', '100px'],
             }}
-            className="boxShadowLeft"
+            className="boxShadowLeft--rotated"
         >
             <Image
                 alt="Laptop with overlaying SEO metrics"
