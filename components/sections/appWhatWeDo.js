@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid, Button } from 'theme-ui';
 import IconServiceCard from '../cards/iconServiceCard';
+import DottedSquareSVG from '../svgs/dottedSquareSVG';
 
 const WhatWeDoRow = () => {
     return (
@@ -41,8 +42,19 @@ const WhatWeDoRow = () => {
                         </p>
                         <Button variant="primary">Let&apos;s Chat</Button>
                     </div>
-                    <div sx={{ px: ['80px', '10%', '3%', '80px'] }}>
+                    <div
+                        sx={{
+                            px: ['80px', '10%', '3%', '80px'],
+                            position: 'relative',
+                        }}
+                    >
                         <Grid columns={[1, 2, 2, 2]} gap={'40px'}>
+                            <DottedSquareSVG
+                                positionStyles={{
+                                    top: '-30px',
+                                    right: '-25px',
+                                }}
+                            />
                             <IconServiceCard
                                 heading="SEO"
                                 link="/seo-services"
