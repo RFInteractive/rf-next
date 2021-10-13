@@ -8,7 +8,7 @@ const ServicesBenefitsRow = () => {
     return (
         <section
             id="homepageBenefits"
-            sx={{ marginTop: ['0px', '0px', '75px', '0px'] }}
+            sx={{ marginTop: ['0px', '0px', '25px', '0px'] }}
         >
             <Container
                 sx={{ maxWidth: ['450px', '600px', '1290px'], px: '30px' }}
