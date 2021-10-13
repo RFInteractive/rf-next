@@ -50,7 +50,7 @@ const CTARow = ({
                         {subheading}
                     </p>
                     <Link href={link}>
-                        <a sx={{ variant: 'buttons.primary' }}>{buttonText}</a>
+                        <a sx={{ variant: 'buttons.light' }}>{buttonText}</a>
                     </Link>
                 </div>
                 <div
