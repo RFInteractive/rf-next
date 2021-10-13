@@ -8,6 +8,7 @@ import aboutHeaderDevices from '../../public/images/about-header-devices.png';
 import { Button } from 'theme-ui';
 import CheckListItem from '../../components/checkListItem';
 import SEOIntroStats from '../../components/sections/seo/seoIntroStats';
+import SEOProcess from '../../components/sections/seo/seoProcess';
 
 const SEOServices = () => {
     return (
@@ -29,6 +30,7 @@ const SEOServices = () => {
 
             <main>
                 <SEOIntroStats />
+                <SEOProcess />
             </main>
         </div>
     );
@@ -57,17 +59,17 @@ const SEOContentLeftColumn = () => {
                 Traffic You Deserve?
             </h1>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
-                <p sx={{ color: '#fff', fontSize: '24px' }}>
+                <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
                     Increase your traffic
                 </p>
             </CheckListItem>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
-                <p sx={{ color: '#fff', fontSize: '24px' }}>
+                <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
                     Monthly insights & reports
                 </p>
             </CheckListItem>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
-                <p sx={{ color: '#fff', fontSize: '24px' }}>
+                <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
                     Get more qualified leads
                 </p>
             </CheckListItem>

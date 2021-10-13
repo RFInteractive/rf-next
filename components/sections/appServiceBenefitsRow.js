@@ -28,13 +28,19 @@ const ServicesBenefitsRow = () => {
                             to be
                         </p>
                         <CheckListItem bgColor={'iconPrimary'}>
-                            Increase your traffic
+                            <p sx={{ marginLeft: '10px' }}>
+                                Increase your traffic
+                            </p>
                         </CheckListItem>
                         <CheckListItem bgColor={'iconPrimary'}>
-                            Monthly insights & reports
+                            <p sx={{ marginLeft: '10px' }}>
+                                Monthly insights & reports
+                            </p>
                         </CheckListItem>
                         <CheckListItem bgColor={'iconPrimary'}>
-                            89% avg. increase in 6 mo.
+                            <p sx={{ marginLeft: '10px' }}>
+                                89% avg. increase in 6 mo.
+                            </p>
                         </CheckListItem>
                     </IconListCard>
                     <IconListCard
@@ -47,13 +53,15 @@ const ServicesBenefitsRow = () => {
                             looking for
                         </p>
                         <CheckListItem bgColor={'iconSecondary'}>
-                            Reach more users
+                            <p sx={{ marginLeft: '10px' }}>Reach more users</p>
                         </CheckListItem>
                         <CheckListItem bgColor={'iconSecondary'}>
-                            Research backed keywords
+                            <p sx={{ marginLeft: '10px' }}>
+                                Research backed keywords
+                            </p>
                         </CheckListItem>
                         <CheckListItem bgColor={'iconSecondary'}>
-                            Find your niche
+                            <p sx={{ marginLeft: '10px' }}>Find your niche</p>
                         </CheckListItem>
                     </IconListCard>
                     <IconListCard
@@ -66,13 +74,19 @@ const ServicesBenefitsRow = () => {
                             going
                         </p>
                         <CheckListItem bgColor={'iconTertiary'}>
-                            Double your site speed
+                            <p sx={{ marginLeft: '10px' }}>
+                                Double your site speed
+                            </p>
                         </CheckListItem>
                         <CheckListItem bgColor={'iconTertiary'}>
-                            Increase your conversions
+                            <p sx={{ marginLeft: '10px' }}>
+                                Increase your conversions
+                            </p>
                         </CheckListItem>
                         <CheckListItem bgColor={'iconTertiary'}>
-                            99.9% uptime and backups
+                            <p sx={{ marginLeft: '10px' }}>
+                                99.9% uptime and backups
+                            </p>
                         </CheckListItem>
                     </IconListCard>
                 </Grid>
