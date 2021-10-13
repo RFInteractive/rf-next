@@ -27,7 +27,7 @@ const DesktopNav = () => {
                     sx={{ alignItems: 'center', justifyItems: 'center' }}
                 >
                     <h1 sx={{ color: '#fff', justifySelf: 'start' }}>Logo</h1>
-                    <Grid columns={'repeat(5, max-content)'} gap={'50px'}>
+                    <Grid columns={'repeat(5, max-content)'} gap={'35px'}>
                         <Link href="/seo-services">
                             <a sx={{ variant: 'links.navLink' }}>SEO</a>
                         </Link>

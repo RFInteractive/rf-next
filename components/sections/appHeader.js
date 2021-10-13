@@ -51,8 +51,8 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     gridColumn: '1/-1',
                     gridRow: '1/2',
                     zIndex: '1',
-                    height: ['100%', '130%', '150%', '100%'],
-                    maxHeight: '860px',
+                    height: ['100%', '130%', '150%', '150%'],
+                    maxHeight: [null, null, '860px', '925px'],
                     justifySelf: 'start',
                 }}
             >
