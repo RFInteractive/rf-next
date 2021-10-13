@@ -7,7 +7,7 @@ const SEOProcess = () => {
         <section
             id="seoProcess"
             sx={{
-                marginY: '100px',
+                marginBottom: ['25px', '25px', '100px', '100px'],
                 display: 'grid',
                 justifyItems: 'center',
             }}

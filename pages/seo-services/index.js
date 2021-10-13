@@ -9,6 +9,8 @@ import { Button } from 'theme-ui';
 import CheckListItem from '../../components/checkListItem';
 import SEOIntroStats from '../../components/sections/seo/seoIntroStats';
 import SEOProcess from '../../components/sections/seo/seoProcess';
+import TestimonialCarousel from '../../components/sections/appTestimonialCarousel';
+import OnPageSEO from '../../components/sections/seo/onPageSEO';
 
 const SEOServices = () => {
     return (
@@ -31,6 +33,8 @@ const SEOServices = () => {
             <main>
                 <SEOIntroStats />
                 <SEOProcess />
+                <TestimonialCarousel />
+                <OnPageSEO />
             </main>
         </div>
     );

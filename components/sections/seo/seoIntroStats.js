@@ -7,7 +7,10 @@ const SEOIntroStats = () => {
     return (
         <section
             id="seoIntroStats"
-            sx={{ marginY: ['25px', '125px', '150px', '150px'] }}
+            sx={{
+                marginTop: ['25px', '125px', '75px', '150px'],
+                marginBottom: ['125px', '100px', '150px', '150px'],
+            }}
         >
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid
