@@ -7,6 +7,7 @@ import AppHeader from '../../components/sections/appHeader';
 import aboutHeaderDevices from '../../public/images/about-header-devices.png';
 import { Button } from 'theme-ui';
 import CheckListItem from '../../components/checkListItem';
+import SEOIntroStats from '../../components/sections/seo/seoIntroStats';
 
 const SEOServices = () => {
     return (
@@ -26,7 +27,9 @@ const SEOServices = () => {
                 rightColumnContent={SEOContentRightColumn()}
             />
 
-            <main></main>
+            <main>
+                <SEOIntroStats />
+            </main>
         </div>
     );
 };
@@ -38,7 +41,7 @@ const SEOContentLeftColumn = () => {
         <div
             sx={{
                 paddingTop: ['125px', '125px', '150px', '30px'],
-                paddingBottom: ['150px', '150px', '150px', '30px'],
+                paddingBottom: ['150px', '150px', '175px', '30px'],
                 paddingLeft: ['0px', '6%', '0px', '0px'],
                 paddingRight: ['0px', '12%', '0px', '25px'],
             }}
@@ -82,7 +85,7 @@ const SEOContentRightColumn = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                pt: '75px',
+                pt: '50px',
                 paddingX: '25px',
             }}
         >
