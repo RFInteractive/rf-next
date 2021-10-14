@@ -11,6 +11,10 @@ import SEOIntroStats from '../../components/sections/seo/seoIntroStats';
 import SEOProcess from '../../components/sections/seo/seoProcess';
 import TestimonialCarousel from '../../components/sections/appTestimonialCarousel';
 import OnPageSEO from '../../components/sections/seo/onPageSEO';
+import OffPageSEO from '../../components/sections/seo/offPageSEO';
+import LocalSEO from '../../components/sections/seo/localSEO';
+import AnalyticsReportingRow from '../../components/sections/seo/analyticsReporting';
+import CTARow from '../../components/sections/appCTARow';
 
 const SEOServices = () => {
     return (
@@ -35,6 +39,13 @@ const SEOServices = () => {
                 <SEOProcess />
                 <TestimonialCarousel />
                 <OnPageSEO />
+                <OffPageSEO />
+                <LocalSEO />
+                <AnalyticsReportingRow />
+                <CTARow
+                    heading="Stand Out in the Crowd"
+                    subheading="Take advantage of our free tools"
+                ></CTARow>
             </main>
         </div>
     );
