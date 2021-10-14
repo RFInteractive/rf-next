@@ -26,7 +26,7 @@ const ContentStrategyLeftColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                my: ['100px', '50px', '100px', '100px'],
+                my: ['150px', '50px', '100px', '100px'],
             }}
         >
             <Image
