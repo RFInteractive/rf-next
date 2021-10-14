@@ -11,6 +11,7 @@ import ContentIntroStats from '../../components/sections/content/contentIntroSta
 import ContentProcess from '../../components/sections/content/contentProcess';
 import TestimonialCarousel from '../../components/sections/appTestimonialCarousel';
 import ContentStrategy from '../../components/sections/content/contentStrategy';
+import KeywordResearch from '../../components/sections/content/keywordResearch';
 import CTARow from '../../components/sections/appCTARow';
 
 const Content = () => {
@@ -37,6 +38,7 @@ const Content = () => {
                 <ContentProcess />
                 <TestimonialCarousel />
                 <ContentStrategy />
+                <KeywordResearch />
                 <CTARow
                     heading="Stand Out in the Crowd"
                     subheading="Take advantage of our free tools"
