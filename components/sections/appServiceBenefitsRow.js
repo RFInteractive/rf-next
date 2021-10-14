@@ -47,6 +47,7 @@ const ServicesBenefitsRow = () => {
                         heading="Connect With Users"
                         icon="chat"
                         iconColor={'iconSecondary'}
+                        link="/seo-content"
                     >
                         <p sx={{ paddingBottom: '10px' }}>
                             Our top notch content team knows what users are
@@ -68,6 +69,7 @@ const ServicesBenefitsRow = () => {
                         heading="Improve Your Site"
                         icon="computer"
                         iconColor={'iconTertiary'}
+                        link="/web-design-and-development"
                     >
                         <p sx={{ paddingBottom: '10px' }}>
                             We know the best tools and practices to get you

@@ -16,6 +16,7 @@ const DesktopNav = () => {
                 mb: '-95px',
                 zIndex: '100',
                 position: 'relative',
+                variant: 'wrappers.navWrapper',
             }}
         >
             <Container sx={{ maxWidth: '1400px' }}>
@@ -41,36 +42,23 @@ const DesktopNav = () => {
                     </Link>
                     <Grid columns={'repeat(5, max-content)'} gap={'25px'}>
                         <Link href="/seo-services">
-                            <a sx={{ variant: 'links.navLink' }}>SEO</a>
+                            <a className="navLink">SEO</a>
                         </Link>
                         <Link href="/seo-content">
-                            <a sx={{ variant: 'links.navLink' }}>Content</a>
+                            <a className="navLink">Content</a>
                         </Link>
                         <Link href="/web-design-and-development">
-                            <a sx={{ variant: 'links.navLink' }}>
-                                Design & Dev
-                            </a>
+                            <a className="navLink">Design & Dev</a>
                         </Link>
                         <Link href="/web-design-and-development">
-                            <a sx={{ variant: 'links.navLink' }}>Advertising</a>
+                            <a className="navLink">Advertising</a>
                         </Link>
                         <Link href="/web-design-and-development">
-                            <a sx={{ variant: 'links.navLink' }}>Resources</a>
+                            <a className="navLink">Resources</a>
                         </Link>
                     </Grid>
                     <Link href="/">
-                        <a
-                            sx={{
-                                variant: 'buttons.primary',
-                                justifySelf: 'end',
-                                px: '26px',
-                                py: '8px',
-                                fontSize: '18px',
-                                fontWeight: '500',
-                            }}
-                        >
-                            Get Started
-                        </a>
+                        <a id="navCTABtn">Get Started</a>
                     </Link>
                 </Grid>
             </Container>
