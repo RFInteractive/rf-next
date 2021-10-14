@@ -17,11 +17,11 @@ a {
 .boxShadowRight {
     &::before {
         content: '';
-        width: 75%;
-        height: 100%;
+        width: 65%;
+        height: 90%;
         position: absolute;
-        left: 160px;
-        bottom: -40px;
+        right: 20px;
+        bottom: -30px;
         background-color: rgba(0, 0, 0, 0.15);
         filter: blur(50px);
         z-index: 0;
