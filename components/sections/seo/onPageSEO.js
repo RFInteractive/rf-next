@@ -6,12 +6,12 @@ import CheckListItem from '../../checkListItem';
 
 const OnPageSEO = () => {
     return (
-        <section id="onPageSEO" sx={{ pb: '50px' }}>
+        <section id="onPageSEO" sx={{ pb: ['50px', null, null, null] }}>
             <TwoColumnVector
                 vectorSide={'left'}
                 leftColumnContent={OnPageSEOLeftColumnContent()}
                 rightColumnContent={OnPageSEORightColumnContent()}
-                sectionName={'homepageBenefits'}
+                sectionName={'onPageSEO'}
             />
         </section>
     );
@@ -108,7 +108,7 @@ const OnPageSEORightColumnContent = () => {
     return (
         <div
             sx={{
-                paddingLeft: ['0px', '0px', '60px', '30px'],
+                paddingLeft: ['0px', '0px', '75px', '60px'],
             }}
         >
             <h3 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
