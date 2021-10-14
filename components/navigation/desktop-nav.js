@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { Container, Grid, Flex } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 const DesktopNav = () => {
     return (
@@ -11,24 +12,34 @@ const DesktopNav = () => {
                 paddingTop: '8px',
                 paddingBottom: '12px',
                 px: '30px',
-                mb: '-77px',
+                mt: '10px',
+                mb: '-95px',
                 zIndex: '100',
                 position: 'relative',
             }}
         >
-            <Container sx={{ maxWidth: '1440px' }}>
+            <Container sx={{ maxWidth: '1400px' }}>
                 <Grid
                     gap={0}
                     columns={[
                         null,
                         null,
-                        '.75fr 2.5fr 1fr',
+                        '.75fr 2.5fr .75fr',
                         '.75fr 2.5fr 1.75fr',
                     ]}
                     sx={{ alignItems: 'center', justifyItems: 'center' }}
                 >
-                    <h1 sx={{ color: '#fff', justifySelf: 'start' }}>Logo</h1>
-                    <Grid columns={'repeat(5, max-content)'} gap={'35px'}>
+                    <Link href="/">
+                        <a sx={{ justifySelf: 'start', cursor: 'pointer' }}>
+                            <Image
+                                src="/images/placeholder-logo.svg"
+                                alt="Rank Fuse Digital Marketing Logo"
+                                width={208}
+                                height={54}
+                            />
+                        </a>
+                    </Link>
+                    <Grid columns={'repeat(5, max-content)'} gap={'25px'}>
                         <Link href="/seo-services">
                             <a sx={{ variant: 'links.navLink' }}>SEO</a>
                         </Link>
@@ -52,6 +63,10 @@ const DesktopNav = () => {
                             sx={{
                                 variant: 'buttons.primary',
                                 justifySelf: 'end',
+                                px: '26px',
+                                py: '8px',
+                                fontSize: '18px',
+                                fontWeight: '500',
                             }}
                         >
                             Get Started
