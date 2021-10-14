@@ -78,7 +78,7 @@ const VectorBackground = ({ vectorSide, sectionName }) => {
                     gridRow: '1/2',
                     justifySelf: 'end',
                     zIndex: '1',
-                    maxHeight: '850px',
+                    maxHeight: '750px',
                     maxWidth: '85%',
                 }}
             >
@@ -231,7 +231,7 @@ const VectorBackground = ({ vectorSide, sectionName }) => {
                 gridRow: '1/2',
                 justifySelf: 'start',
                 zIndex: '1',
-                maxHeight: '850px',
+                maxHeight: '750px',
             }}
         >
             <path
