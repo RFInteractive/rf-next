@@ -1,3 +1,4 @@
+import ColorModeToggle from '../appColorModeToggle';
 import Navbar from '../navigation/navbar';
 import Footer from './footer';
 
@@ -7,6 +8,7 @@ const Layout = ({ children }) => {
             <Navbar />
             {children}
             <Footer />
+            <ColorModeToggle />
         </>
     );
 };
