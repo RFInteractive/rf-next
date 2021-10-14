@@ -30,8 +30,8 @@ const SEOServices = () => {
             </Head>
 
             <AppHeader
-                leftColumnContent={SEOContentLeftColumn()}
-                rightColumnContent={SEOContentRightColumn()}
+                leftColumnContent={SEOServicesLeftColumn()}
+                rightColumnContent={SEOServicesRightColumn()}
             />
 
             <main>
@@ -53,7 +53,7 @@ const SEOServices = () => {
 
 export default SEOServices;
 
-const SEOContentLeftColumn = () => {
+const SEOServicesLeftColumn = () => {
     return (
         <div
             sx={{
@@ -95,7 +95,7 @@ const SEOContentLeftColumn = () => {
     );
 };
 
-const SEOContentRightColumn = () => {
+const SEOServicesRightColumn = () => {
     return (
         <div
             sx={{
