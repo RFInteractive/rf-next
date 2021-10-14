@@ -1,14 +1,16 @@
 /** @jsxImportSource theme-ui */
+
 import Image from 'next/image';
+import { Button } from 'theme-ui';
 
 import TwoColumnVector from '../../layout/twoColumnVector';
-import keywordResearchLeaningLaptop from '../../../public/images/keyword-research-leaning-laptop.png';
+import blogLaptop from '../../../public/images/blog-laptop.png';
 
 const KeywordResearch = () => {
     return (
         <section id="keywordResearch" sx={{ pb: ['50px', null, null, null] }}>
             <TwoColumnVector
-                vectorSide={'right'}
+                vectorSide={'left'}
                 leftColumnContent={KeywordResearchLeftColumnContent()}
                 rightColumnContent={KeywordResearchRightColumnContent()}
                 sectionName={'keywordResearch'}
@@ -21,11 +23,32 @@ const KeywordResearchLeftColumnContent = () => {
     return (
         <div
             sx={{
-                paddingRight: ['0px', '0px', '60px', '30px'],
+                display: 'grid',
+                justifyItems: 'center',
+                position: 'relative',
+                my: ['150px', '50px', '100px', '100px'],
+            }}
+        >
+            <Image
+                alt="Content strategy calendar"
+                src={blogLaptop}
+                width={695}
+                height={536}
+                quality={100}
+            />
+        </div>
+    );
+};
+
+const KeywordResearchRightColumnContent = () => {
+    return (
+        <div
+            sx={{
+                paddingLeft: ['0px', '0px', '75px', '60px'],
             }}
         >
             <h3 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
-                Content Development
+                Keyword Research
             </h3>
             <div
                 sx={{
@@ -36,40 +59,18 @@ const KeywordResearchLeftColumnContent = () => {
                     marginBottom: '30px',
                 }}
             ></div>
-            <p>
-                Our team of dedicated writers has valuable experience developing
-                a variety of different types of content. Whether you need a
-                blog, a page, an infographic, or an e-book, we have the
-                experience needed to create relevant content that will engage
-                your audience and keep search engines happy.
+            <p sx={{ paddingBottom: '20px' }}>
+                At Rank Fuse, we utilize a variety of SEO tools that allow us to
+                see how you are currently ranking for the keywords you want to
+                target as well as new opportunities. We combine keyword research
+                with competitor analysis to help you outrank your competitors.
             </p>
-            <p sx={{ margin: '20px 0px 35px' }}>
-                After hundreds of website audits an thousands of reports we
-                understand that quality is a moving target and the bar seems to
-                be raised higher and higher every day.
+            <p sx={{ paddingBottom: '30px' }}>
+                Once we have identified the keywords we need to target, we can
+                inject them into the copy on your website, your paid ads, and
+                your off-page SEO efforts.
             </p>
-        </div>
-    );
-};
-
-const KeywordResearchRightColumnContent = () => {
-    return (
-        <div
-            sx={{
-                display: 'grid',
-                justifyItems: 'center',
-                position: 'relative',
-                my: ['100px', '50px', '100px', '100px'],
-            }}
-            className="boxShadowRight--rotated"
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={keywordResearchLeaningLaptop}
-                width={554}
-                height={527}
-                quality={100}
-            />
+            <Button variant="primary">Let&apos;s Chat</Button>
         </div>
     );
 };
