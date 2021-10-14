@@ -38,6 +38,31 @@ a {
         filter: blur(50px);
         z-index: 0;
     }
+
+    &--rotated::before {
+        content: '';
+        width: 55%;
+        height: 55%;
+        position: absolute;
+        right: 0px;
+        bottom: -25px;
+        background-color: rgba(0, 0, 0, 0.25);
+        transform: rotateZ(-20deg);
+        filter: blur(50px);
+        z-index: 0;
+
+        @media only screen and (max-width: 1044px) {
+            width: 55%;
+            height: 55%;
+            left: 75px;
+            bottom: 65px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            left: 22px;
+            bottom: -20px;
+        }
+    }
 }
 
 .boxShadowLeft {
