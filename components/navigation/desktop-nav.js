@@ -8,7 +8,8 @@ const DesktopNav = () => {
         <nav
             sx={{
                 display: ['none', 'none', 'block', 'block'],
-                py: '12px',
+                paddingTop: '8px',
+                paddingBottom: '12px',
                 px: '30px',
                 mb: '-77px',
                 zIndex: '100',

@@ -6,7 +6,7 @@ const ProcessCard = ({ heading, icon, number, children }) => {
             sx={{
                 position: 'relative',
                 padding: '35px 25px 50px',
-                background: 'muted',
+                backgroundColor: 'muted',
                 boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
                 display: 'grid',
                 justifyItems: 'center',
