@@ -23,6 +23,7 @@ const IconListCard = ({
             <Link href={link}>
                 <a
                     sx={{
+                        color: iconColor,
                         '&:hover': {
                             transform: 'scale(1.02)',
                             cursor: 'pointer',
@@ -62,6 +63,7 @@ const IconListCard = ({
                             cursor: 'pointer',
                             display: 'inline-block',
                             transition: 'all 0.2s ease-out',
+                            color: iconColor,
                         },
                     }}
                 >

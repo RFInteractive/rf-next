@@ -106,33 +106,43 @@ const ThemePage = () => {
                     occaecat cupidatat non proident, sunt in culpa qui officia
                     deserunt mollit anim id est laborum.
                 </p>
-                <h1 sx={{ variant: 'text.h1', my: 5 }}>Color Modes</h1>
-                {Object.entries(theme.rawColors.modes).map(([mode, values]) => {
-                    return (
-                        <Button
-                            sx={{
-                                bg: values.primary,
-                                color: values.text,
-                                border: '1px solid',
-                                borderColor: values.primary,
-                                mr: 4,
-                                px: 9,
-                                py: 3,
-                                '&:hover': {
-                                    cursor: 'pointer',
-                                    bg: '#fff',
-                                    color: '#2F495E',
-                                    transform: 'scale(1.1)',
-                                    transition: 'all .2s ease-in-out',
-                                },
-                            }}
-                            key={mode}
-                            onClick={() => setColorMode(mode)}
-                        >
-                            {mode}
-                        </Button>
-                    );
-                })}
+                <h1 sx={{ variant: 'text.h1', my: '30px' }}>Color Modes</h1>
+                <div sx={{ my: '30px' }}>
+                    {Object.entries(theme.rawColors.modes).map(
+                        ([mode, values]) => {
+                            return (
+                                <Button
+                                    sx={{
+                                        bg: values.primary,
+                                        color: values.text,
+                                        border: '1px solid',
+                                        borderColor: values.primary,
+                                        mr: 4,
+                                        px: 9,
+                                        py: 3,
+                                        '&:hover': {
+                                            cursor: 'pointer',
+                                            bg: '#fff',
+                                            color: '#2F495E',
+                                            transform: 'scale(1.1)',
+                                            transition: 'all .2s ease-in-out',
+                                        },
+                                    }}
+                                    key={mode}
+                                    onClick={() => setColorMode(mode)}
+                                >
+                                    {mode}
+                                </Button>
+                            );
+                        }
+                    )}
+                </div>
+                <div
+                    sx={{ variant: 'wrappers.blogWrapper' }}
+                    dangerouslySetInnerHTML={{
+                        __html: '<h1>Hello</h1><p>Lorem ipsum dolor sit amet, <a href="/">consectetur adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p>Testing stuff</p>',
+                    }}
+                />
             </section>
         </>
     );
