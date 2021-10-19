@@ -70,7 +70,7 @@ const WebDesignAndDevLeftColumn = () => {
                 }}
             >
                 Is Your Website<br></br>
-                Underperforming?
+                Not Performing?
             </h1>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
                 <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>

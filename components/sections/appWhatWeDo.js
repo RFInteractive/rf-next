@@ -7,7 +7,10 @@ const WhatWeDoRow = () => {
     return (
         <section
             id="whatWeDo"
-            sx={{ marginY: ['100px', '125px', '150px', '150px'] }}
+            sx={{
+                paddingY: ['100px', '125px', '150px', '150px'],
+                overflow: 'hidden',
+            }}
         >
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid columns={[1, 1, 2, 2]} gap={'70px'}>
