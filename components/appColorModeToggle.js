@@ -7,6 +7,12 @@ const modes = ['light', 'black', 'deep'];
 const ColorModeToggle = () => {
     const [mode, setMode] = useColorMode();
 
+    useEffect(() => {
+        if (mode === 'dark') {
+            setMode('light');
+        }
+    }, [mode, setMode]);
+
     return (
         <Button
             onClick={(e) => {
