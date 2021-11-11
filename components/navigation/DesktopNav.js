@@ -1,8 +1,9 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid } from 'theme-ui';
-
 import Link from 'next/link';
 import Image from 'next/image';
+
+import NavItem from './NavItem';
 
 const DesktopNav = () => {
     return (
@@ -10,7 +11,7 @@ const DesktopNav = () => {
             sx={{
                 variant: 'navigation.desktopNavWrapper',
                 display: ['none', 'none', 'block', 'block'],
-                paddingY: '8px 30px',
+                padding: '8px 30px',
                 margin: '10px 0px -95px',
                 zIndex: '100',
                 position: 'relative',
@@ -61,20 +62,39 @@ const DesktopNavLogo = () => {
 
 const SEONavLinks = () => {
     return (
-        <div className="desktopNavLinkContainer" sx={{ position: 'relative' }}>
+        <div className="desktopNavLinkContainer">
             <Link href="/seo-services">
                 <a className="desktopNavLink">SEO</a>
             </Link>
             <div
                 className="desktopNavDropdownContainer"
                 sx={{
-                    variant: 'navigation.desktopNavDropdownWrapper',
+                    variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                <p>SEO Services</p>
-                <p>Off-Page SEO</p>
-                <p>On-Page SEO</p>
-                <p>Analytics & Reporting</p>
+                <NavItem link="/seo-services" icon="seo" heading="SEO Services">
+                    Our SEO services can help get you where you need to be
+                </NavItem>
+                <NavItem link="/seo-services" icon="seo" heading="On-Page SEO">
+                    Optimize HTML elements like title tags, meta descriptions,
+                    and more
+                </NavItem>
+                <NavItem link="/seo-services" icon="seo" heading="Off-Page SEO">
+                    Going beyond your website to enhance the perception of your
+                    brand
+                </NavItem>
+                <NavItem link="/seo-services" icon="seo" heading="Local SEO">
+                    Increase your business&apos;s visibility when it comes to
+                    local search results
+                </NavItem>
+                <NavItem
+                    link="/seo-services"
+                    icon="seo"
+                    heading="Analytics & Reporting"
+                >
+                    Get valuable insights into how your website & SEO efforts
+                    are performing
+                </NavItem>
             </div>
         </div>
     );
@@ -86,6 +106,36 @@ const ContentNavLinks = () => {
             <Link href="/seo-content">
                 <a className="desktopNavLink">Content</a>
             </Link>
+            <div
+                className="desktopNavDropdownContainer"
+                sx={{
+                    variant: 'navigation.desktopNavDropdownContainer',
+                }}
+            >
+                <NavItem link="/seo-services" icon="seo" heading="SEO Services">
+                    Our SEO services can help get you where you need to be
+                </NavItem>
+                <NavItem link="/seo-services" icon="seo" heading="On-Page SEO">
+                    Optimize HTML elements like title tags, meta descriptions,
+                    and more
+                </NavItem>
+                <NavItem link="/seo-services" icon="seo" heading="Off-Page SEO">
+                    Going beyond your website to enhance the perception of your
+                    brand
+                </NavItem>
+                <NavItem link="/seo-services" icon="seo" heading="Local SEO">
+                    Increase your business&apos;s visibility when it comes to
+                    local search results
+                </NavItem>
+                <NavItem
+                    link="/seo-services"
+                    icon="seo"
+                    heading="Analytics & Reporting"
+                >
+                    Get valuable insights into how your website & SEO efforts
+                    are performing
+                </NavItem>
+            </div>
         </div>
     );
 };
