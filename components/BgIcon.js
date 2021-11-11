@@ -17,12 +17,12 @@ const AppBgIcon = ({
                 bg: lighten(color, 0.35),
             }}
         >
-            {getAppIconSVG(iconName, color)}
+            {getBgIconSVG(iconName, color)}
         </div>
     );
 };
 
-const getAppIconSVG = (iconName = 'chat', color) => {
+const getBgIconSVG = (iconName = 'chat', color) => {
     if (iconName === 'chat') {
         return (
             <svg

@@ -1,4 +1,4 @@
-import ColorModeToggle from '../AppColorModeToggle';
+import ColorModeToggle from '../ColorModeToggle';
 import Navbar from '../navigation/Navbar';
 import Footer from './Footer';
 
