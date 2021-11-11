@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
-import TwoColumnVector from '../../layout/twoColumnVector';
 import { Button } from 'theme-ui';
-
 import Image from 'next/image';
+
+import TwoColumnVector from '../../layout/TwoColumnVector';
 import analyticsLaptop from '../../../public/images/analytics-laptop.png';
 
 const AnalyticsReportingRow = () => {

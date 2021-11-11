@@ -1,8 +1,8 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid } from 'theme-ui';
 
-import IconListCard from '../cards/iconListCard';
-import CheckListItem from '../checkListItem';
+import IconListCard from '../cards/IconListCard';
+import CheckListItem from '../CheckListItem';
 
 const ServicesBenefitsRow = () => {
     return (

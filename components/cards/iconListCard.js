@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import AppIcon from '../appIcon';
+import AppBgIcon from '../BgIcon';
 
 import Link from 'next/link';
 
@@ -19,7 +19,7 @@ const IconListCard = ({
                 padding: '30px',
             }}
         >
-            <AppIcon iconName={icon} color={iconColor} />
+            <AppBgIcon iconName={icon} color={iconColor} />
             <Link href={link}>
                 <a
                     sx={{

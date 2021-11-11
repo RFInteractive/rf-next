@@ -1,8 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { Container, Grid } from 'theme-ui';
-import ProcessCard from '../../cards/processCard';
+import { Container, Grid, useThemeUI } from 'theme-ui';
 import { darken } from '@theme-ui/color';
-import { useThemeUI } from 'theme-ui';
+
+import ProcessCard from '../../cards/ProcessCard';
 
 const WebDevProcess = () => {
     return (

@@ -1,9 +1,8 @@
 /** @jsxImportSource theme-ui */
-
-import Image from 'next/image';
 import { Button } from 'theme-ui';
+import Image from 'next/image';
 
-import TwoColumnVector from '../../layout/twoColumnVector';
+import TwoColumnVector from '../../layout/TwoColumnVector';
 import modernDesignLaptop from '../../../public/images/modern-design-laptop.png';
 
 const WebDesign = () => {

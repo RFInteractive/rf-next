@@ -1,6 +1,6 @@
-import ColorModeToggle from '../appColorModeToggle';
-import Navbar from '../navigation/navbar';
-import Footer from './footer';
+import ColorModeToggle from '../AppColorModeToggle';
+import Navbar from '../navigation/Navbar';
+import Footer from './Footer';
 
 const Layout = ({ children }) => {
     return (

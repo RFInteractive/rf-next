@@ -1,27 +1,28 @@
 /** @jsxImportSource theme-ui */
 import { lighten } from '@theme-ui/color';
 
-const AppIcon = ({
+const AppBgIcon = ({
     iconName = 'chat',
     maxWidth = '60px',
     color = 'primary',
+    padding = '15px',
 }) => {
     return (
         <div
             sx={{
                 maxWidth,
                 maxHeight: maxWidth,
-                padding: '15px',
+                padding,
                 borderRadius: '50%',
                 bg: lighten(color, 0.35),
             }}
         >
-            {getSVG(iconName, color)}
+            {getAppIconSVG(iconName, color)}
         </div>
     );
 };
 
-const getSVG = (iconName = 'chat', color) => {
+const getAppIconSVG = (iconName = 'chat', color) => {
     if (iconName === 'chat') {
         return (
             <svg
@@ -88,4 +89,4 @@ const getSVG = (iconName = 'chat', color) => {
     }
 };
 
-export default AppIcon;
+export default AppBgIcon;

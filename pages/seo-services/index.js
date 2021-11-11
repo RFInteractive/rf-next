@@ -1,20 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
+import { Button } from 'theme-ui';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import AppHeader from '../../components/sections/appHeader';
+import AppHeader from '../../components/sections/AppHeader';
 import aboutHeaderDevices from '../../public/images/about-header-devices.png';
-import { Button } from 'theme-ui';
-import CheckListItem from '../../components/checkListItem';
-import SEOIntroStats from '../../components/sections/seo/seoIntroStats';
-import SEOProcess from '../../components/sections/seo/seoProcess';
-import TestimonialCarousel from '../../components/sections/appTestimonialCarousel';
-import OnPageSEO from '../../components/sections/seo/onPageSEO';
-import OffPageSEO from '../../components/sections/seo/offPageSEO';
-import LocalSEO from '../../components/sections/seo/localSEO';
-import AnalyticsReportingRow from '../../components/sections/seo/analyticsReporting';
-import CTARow from '../../components/sections/appCTARow';
+import CheckListItem from '../../components/CheckListItem';
+import SEOIntroStats from '../../components/sections/seo/SeoIntroStats';
+import SEOProcess from '../../components/sections/seo/SeoProcess';
+import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
+import OnPageSEO from '../../components/sections/seo/OnPageSEO';
+import OffPageSEO from '../../components/sections/seo/OffPageSEO';
+import LocalSEO from '../../components/sections/seo/LocalSEO';
+import AnalyticsReportingRow from '../../components/sections/seo/AnalyticsReporting';
+import CTARow from '../../components/sections/AppCTARow';
 
 const SEOServices = () => {
     return (

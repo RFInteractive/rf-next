@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid, Button } from 'theme-ui';
-import IconServiceCard from '../cards/iconServiceCard';
-import DottedSquareSVG from '../svgs/dottedSquareSVG';
+import IconServiceCard from '../cards/IconServiceCard';
+import DottedSquareSVG from '../svgs/DottedSquareSVG';
 
 const WhatWeDoRow = () => {
     return (

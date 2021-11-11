@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
-import TwoColumnVector from '../../layout/twoColumnVector';
 import { Button } from 'theme-ui';
+
+import TwoColumnVector from '../../layout/TwoColumnVector';
 
 const AboutUsRow = () => {
     return (

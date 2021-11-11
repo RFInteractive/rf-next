@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import Image from 'next/image';
 
-import TwoColumnVector from '../../layout/twoColumnVector';
+import TwoColumnVector from '../../layout/TwoColumnVector';
 import WebDevLaptop2 from '../../../public/images/webdev-laptop-2.png';
 
 const FastSites = () => {

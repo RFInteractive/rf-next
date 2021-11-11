@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
-import DesktopNav from './desktop-nav';
-import MobileNav from './mobile-nav';
+import DesktopNav from './DesktopNav';
+import MobileNav from './MobileNav';
 
 const Navbar = () => {
     return (

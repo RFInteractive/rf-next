@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import Image from 'next/image';
 
-import TwoColumnVector from '../../layout/twoColumnVector';
+import TwoColumnVector from '../../layout/TwoColumnVector';
 import keywordResearchLeaningLaptop from '../../../public/images/keyword-research-leaning-laptop.png';
 
 const ContentDevelopment = () => {

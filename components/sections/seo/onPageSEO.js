@@ -1,8 +1,8 @@
 /** @jsxImportSource theme-ui */
 import { Button } from 'theme-ui';
 
-import TwoColumnVector from '../../layout/twoColumnVector';
-import CheckListItem from '../../checkListItem';
+import TwoColumnVector from '../../layout/TwoColumnVector';
+import CheckListItem from '../../CheckListItem';
 
 const OnPageSEO = () => {
     return (

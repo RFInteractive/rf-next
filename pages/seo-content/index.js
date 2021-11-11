@@ -1,19 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
+import { Button } from 'theme-ui';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import AppHeader from '../../components/sections/appHeader';
+import AppHeader from '../../components/sections/AppHeader';
 import contentHeaderDevices from '../../public/images/content-header-devices.png';
-import { Button } from 'theme-ui';
-import CheckListItem from '../../components/checkListItem';
-import ContentIntroStats from '../../components/sections/content/contentIntroStats';
-import ContentProcess from '../../components/sections/content/contentProcess';
-import TestimonialCarousel from '../../components/sections/appTestimonialCarousel';
-import ContentStrategy from '../../components/sections/content/contentStrategy';
-import ContentDevelopment from '../../components/sections/content/contentDevelopment';
-import KeywordResearch from '../../components/sections/content/keywordResearch';
-import CTARow from '../../components/sections/appCTARow';
+import CheckListItem from '../../components/CheckListItem';
+import ContentIntroStats from '../../components/sections/content/ContentIntroStats';
+import ContentProcess from '../../components/sections/content/ContentProcess';
+import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
+import ContentStrategy from '../../components/sections/content/ContentStrategy';
+import ContentDevelopment from '../../components/sections/content/ContentDevelopment';
+import KeywordResearch from '../../components/sections/content/KeywordResearch';
+import CTARow from '../../components/sections/AppCTARow';
 
 const Content = () => {
     return (

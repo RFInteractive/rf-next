@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { useThemeUI, Button, Grid } from 'theme-ui';
 
-import AppHeader from '../components/sections/appHeader';
+import AppHeader from '../components/sections/AppHeader';
 
 const ThemePage = () => {
     const { theme, setColorMode } = useThemeUI();

@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
-import TwoColumnVector from '../../layout/twoColumnVector';
-import CheckListItem from '../../checkListItem';
+import TwoColumnVector from '../../layout/TwoColumnVector';
+import CheckListItem from '../../CheckListItem';
 
 const OffPageSEO = () => {
     return (

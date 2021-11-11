@@ -3,14 +3,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Button } from 'theme-ui';
 
-import AppHeader from '../components/sections/appHeader';
+import AppHeader from '../components/sections/AppHeader';
 import headerDevices from '../public/images/homepage-header-devices.png';
-import WhatWeDoRow from '../components/sections/appWhatWeDo';
-import ServicesBenefitsRow from '../components/sections/appServiceBenefitsRow';
-import WhyUsRow from '../components/sections/appWhyUsRow';
-import AboutUsRow from '../components/sections/home/aboutUsRow';
-import TestimonialCarousel from '../components/sections/appTestimonialCarousel';
-import CTARow from '../components/sections/appCTARow';
+import WhatWeDoRow from '../components/sections/AppWhatWeDo';
+import ServicesBenefitsRow from '../components/sections/AppServiceBenefitsRow';
+import WhyUsRow from '../components/sections/AppWhyUsRow';
+import AboutUsRow from '../components/sections/home/AboutUsRow';
+import TestimonialCarousel from '../components/sections/AppTestimonialCarousel';
+import CTARow from '../components/sections/AppCTARow';
 
 const Home = () => {
     return (

@@ -3,7 +3,7 @@ import { ThemeProvider } from 'theme-ui';
 import { theme } from '../lib/theme';
 
 import '../styles/globals.scss';
-import Layout from '../components/layout/layout';
+import Layout from '../components/layout/Layout';
 
 const MyApp = ({ Component, pageProps }) => {
     return (

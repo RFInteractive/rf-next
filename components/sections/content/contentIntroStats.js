@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid, Button } from 'theme-ui';
-import StatCard from '../../cards/statCard';
-import DottedSquareSVG from '../../svgs/dottedSquareSVG';
+import StatCard from '../../cards/StatCard';
+import DottedSquareSVG from '../../svgs/DottedSquareSVG';
 
 const ContentIntroStats = () => {
     return (

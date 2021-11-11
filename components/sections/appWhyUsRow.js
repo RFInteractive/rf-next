@@ -1,12 +1,10 @@
 /** @jsxImportSource theme-ui */
-
-import Image from 'next/image';
 import { Grid } from 'theme-ui';
+import Image from 'next/image';
 
-import TwoColumnVector from '../layout/twoColumnVector';
+import TwoColumnVector from '../layout/TwoColumnVector';
 import leaningLaptop from '../../public/images/leaning-laptop.png';
-
-import StatCard from '../cards/statCard';
+import StatCard from '../cards/StatCard';
 
 const WhyUsRow = () => {
     return (

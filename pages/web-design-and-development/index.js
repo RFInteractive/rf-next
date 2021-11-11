@@ -1,20 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
+import { Button } from 'theme-ui';
 import Head from 'next/head';
 import Image from 'next/image';
 
-import AppHeader from '../../components/sections/appHeader';
+import AppHeader from '../../components/sections/AppHeader';
 import headerDevices from '../../public/images/homepage-header-devices.png';
-import { Button } from 'theme-ui';
-import CheckListItem from '../../components/checkListItem';
-import WebDevIntroStats from '../../components/sections/web-design-and-dev/webDevIntroStats';
-import WebDevProcess from '../../components/sections/web-design-and-dev/webDevProcess';
-import WebDesign from '../../components/sections/web-design-and-dev/webDesign';
-import FastSites from '../../components/sections/web-design-and-dev/fastSites';
-import HeadlessWordPress from '../../components/sections/web-design-and-dev/headlessWordPress';
-import TestimonialCarousel from '../../components/sections/appTestimonialCarousel';
-
-import CTARow from '../../components/sections/appCTARow';
+import CheckListItem from '../../components/CheckListItem';
+import WebDevIntroStats from '../../components/sections/web-design-and-dev/WebDevIntroStats';
+import WebDevProcess from '../../components/sections/web-design-and-dev/WebDevProcess';
+import WebDesign from '../../components/sections/web-design-and-dev/WebDesign';
+import FastSites from '../../components/sections/web-design-and-dev/FastSites';
+import HeadlessWordPress from '../../components/sections/web-design-and-dev/HeadlessWordPress';
+import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
+import CTARow from '../../components/sections/AppCTARow';
 
 const WebDesignAndDev = () => {
     return (
