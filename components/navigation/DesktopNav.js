@@ -75,21 +75,33 @@ const SEONavLinks = () => {
                 <NavItem link="/seo-services" icon="seo" heading="SEO Services">
                     Our SEO services can help get you where you need to be
                 </NavItem>
-                <NavItem link="/seo-services" icon="seo" heading="On-Page SEO">
+                <NavItem
+                    link="/seo-services/#onPageSEO"
+                    icon="onPageSEO"
+                    heading="On-Page SEO"
+                >
                     Optimize HTML elements like title tags, meta descriptions,
                     and more
                 </NavItem>
-                <NavItem link="/seo-services" icon="seo" heading="Off-Page SEO">
+                <NavItem
+                    link="/seo-services/#offPageSEO"
+                    icon="offPageSEO"
+                    heading="Off-Page SEO"
+                >
                     Going beyond your website to enhance the perception of your
                     brand
                 </NavItem>
-                <NavItem link="/seo-services" icon="seo" heading="Local SEO">
+                <NavItem
+                    link="/seo-services/#localSEO"
+                    icon="localSEO"
+                    heading="Local SEO"
+                >
                     Increase your business&apos;s visibility when it comes to
                     local search results
                 </NavItem>
                 <NavItem
-                    link="/seo-services"
-                    icon="seo"
+                    link="/seo-services/#analyticsReporting"
+                    icon="analytics"
                     heading="Analytics & Reporting"
                 >
                     Get valuable insights into how your website & SEO efforts
