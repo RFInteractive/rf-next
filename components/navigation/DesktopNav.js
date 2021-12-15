@@ -166,6 +166,35 @@ const WebDevNavLinks = () => {
             <Link href="/web-design-and-development">
                 <a className="desktopNavLink">Design & Dev</a>
             </Link>
+            <div
+                className="desktopNavDropdownContainer"
+                sx={{
+                    variant: 'navigation.desktopNavDropdownContainer',
+                }}
+            >
+                <NavItem
+                    link="/web-design-and-development"
+                    icon="computer"
+                    heading="Web Development"
+                >
+                    Focus on growing your business, we’ll do the rest
+                </NavItem>
+                <NavItem
+                    link="/web-design-and-development/#webDesign"
+                    icon="design"
+                    heading="Web Design"
+                >
+                    You deserve a site designed to maximize your users’
+                    experience
+                </NavItem>
+                <NavItem
+                    link="/web-design-and-development/#headlessWordPress"
+                    icon="headless"
+                    heading="Go Headless"
+                >
+                    Take advantage of the fastest bleeding edge technologies
+                </NavItem>
+            </div>
         </div>
     );
 };
