@@ -124,28 +124,36 @@ const ContentNavLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                <NavItem link="/seo-services" icon="seo" heading="SEO Services">
-                    Our SEO services can help get you where you need to be
+                <NavItem
+                    link="/seo-content"
+                    icon="notepad"
+                    heading="Content Services"
+                >
+                    Organically improve your rankings in search engines using
+                    proven research
                 </NavItem>
-                <NavItem link="/seo-services" icon="seo" heading="On-Page SEO">
-                    Optimize HTML elements like title tags, meta descriptions,
-                    and more
+                <NavItem
+                    link="/seo-content/#contentStrategy"
+                    icon="checklist"
+                    heading="Content Stategy"
+                >
+                    Our strategists provide you with a detailed analysis of your
+                    site content
                 </NavItem>
-                <NavItem link="/seo-services" icon="seo" heading="Off-Page SEO">
+                <NavItem
+                    link="/seo-content/#contentDevelopment"
+                    icon="desktopWriting"
+                    heading="Content Development"
+                >
                     Going beyond your website to enhance the perception of your
                     brand
                 </NavItem>
-                <NavItem link="/seo-services" icon="seo" heading="Local SEO">
-                    Increase your business&apos;s visibility when it comes to
-                    local search results
-                </NavItem>
                 <NavItem
-                    link="/seo-services"
-                    icon="seo"
-                    heading="Analytics & Reporting"
+                    link="/seo-content/#keywordResearch"
+                    icon="scatterChart"
+                    heading="Keyword Research"
                 >
-                    Get valuable insights into how your website & SEO efforts
-                    are performing
+                    Lean on our keyword research to outrank your competitors
                 </NavItem>
             </div>
         </div>
