@@ -3,7 +3,7 @@ import { Button } from 'theme-ui';
 import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
-import iMacCutout from '../../../public/images/iMacCutout.png';
+import HeadlessWordPressImac from '../../../public/images/headless-wordpress-iMac.png';
 
 const HeadlessWordPress = () => {
     return (
@@ -31,7 +31,7 @@ const HeadlessWordPressLeftColumnContent = () => {
         >
             <Image
                 alt="Content strategy calendar"
-                src={iMacCutout}
+                src={HeadlessWordPressImac}
                 width={572}
                 height={511}
                 quality={100}

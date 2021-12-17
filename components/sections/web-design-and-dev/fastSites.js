@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
-import WebDevLaptop2 from '../../../public/images/webdev-laptop-2.png';
+import PhonesPerformance from '../../../public/images/3-phones-performance.png';
 
 const FastSites = () => {
     return (
@@ -21,11 +21,11 @@ const FastSitesLeftColumnContent = () => {
     return (
         <div
             sx={{
-                paddingRight: ['0px', '0px', '60px', '30px'],
+                paddingRight: ['0px', '0px', '80px', '40px'],
             }}
         >
             <h3 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
-                The Fastest Sites
+                The Fastest Sites on Any Platform
             </h3>
             <div
                 sx={{
@@ -64,7 +64,7 @@ const FastSitesRightColumnContent = () => {
         >
             <Image
                 alt="Content strategy calendar"
-                src={WebDevLaptop2}
+                src={PhonesPerformance}
                 width={652}
                 height={497}
                 quality={100}
