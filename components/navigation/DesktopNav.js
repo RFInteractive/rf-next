@@ -202,7 +202,7 @@ const WebDevNavLinks = () => {
 const AdvertisingLinks = () => {
     return (
         <div className="desktopNavLinkContainer">
-            <Link href="/web-design-and-development">
+            <Link href="/programmatic-advertising">
                 <a className="desktopNavLink">Advertising</a>
             </Link>
         </div>
