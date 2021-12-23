@@ -12,6 +12,8 @@ import AboutUsRow from '../components/sections/home/AboutUsRow';
 import TestimonialCarousel from '../components/sections/AppTestimonialCarousel';
 import CTARow from '../components/sections/AppCTARow';
 
+import MotionFadeGrow from '../components/animations/MotionFadeGrow';
+
 const Home = () => {
     return (
         <>
@@ -82,23 +84,25 @@ const HeaderLeftColumnContent = () => {
 
 const HeaderRightColumnContent = () => {
     return (
-        <div
-            sx={{
-                display: 'grid',
-                justifyItems: 'center',
-                position: 'relative',
-                paddingBottom: '30px',
-            }}
-            className="boxShadowRight"
-        >
-            <Image
-                alt="Laptop with overlaying SEO metrics"
-                src={headerDevices}
-                width={541}
-                height={399}
-                quality={100}
-            />
-        </div>
+        <MotionFadeGrow>
+            <div
+                sx={{
+                    display: 'grid',
+                    justifyItems: 'center',
+                    position: 'relative',
+                    paddingBottom: '30px',
+                }}
+                className="boxShadowRight"
+            >
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={headerDevices}
+                    width={541}
+                    height={399}
+                    quality={100}
+                />
+            </div>
+        </MotionFadeGrow>
     );
 };
 
