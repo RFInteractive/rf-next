@@ -44,7 +44,7 @@ const MotionFadeGrow = ({ delay = 0.3, lazy = false, children }) => {
                     opacity: 0,
                 },
                 visible: {
-                    scale: 1,
+                    scale: [1, 1.03, 1],
                     opacity: 1,
                     transition: {
                         delay,
