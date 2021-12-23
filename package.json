@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@theme-ui/color": "^0.11.3",
+    "framer-motion": "^5.5.5",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-intersection-observer": "^8.33.1",
     "sass": "^1.42.1",
     "theme-ui": "^0.11.3"
   },
