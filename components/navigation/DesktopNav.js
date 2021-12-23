@@ -205,6 +205,52 @@ const AdvertisingLinks = () => {
             <Link href="/programmatic-advertising">
                 <a className="desktopNavLink">Advertising</a>
             </Link>
+            <div
+                className="desktopNavDropdownContainer"
+                sx={{
+                    variant: 'navigation.desktopNavDropdownContainer',
+                }}
+            >
+                <NavItem
+                    link="/programmatic-advertising"
+                    icon="advertisingService"
+                    heading="Display Advertising"
+                >
+                    Target users based on online behaviors, region, shopping
+                    behaviors, and more
+                </NavItem>
+                <NavItem
+                    link="/programmatic-advertising/#behavioralTargeting"
+                    icon="behavioralTargeting"
+                    heading="Behavioral Targeting"
+                >
+                    Expose your brand to users who have shown interest in
+                    similar businesses
+                </NavItem>
+                <NavItem
+                    link="/programmatic-advertising/#contextualDisplay"
+                    icon="contextualDisplay"
+                    heading="Contextual Display"
+                >
+                    Serve ads based on the context of the web page & increase
+                    conversions
+                </NavItem>
+                <NavItem
+                    link="/programmatic-advertising/#nativeAdManagement"
+                    icon="nativeAds"
+                    heading="Native Ads"
+                >
+                    Promoting your content through brand thought leadership
+                </NavItem>
+                <NavItem
+                    link="/programmatic-advertising/#retargeting"
+                    icon="retargeting"
+                    heading="Retargeting Campaigns"
+                >
+                    Target users who have previously visited your website &
+                    increase awareness
+                </NavItem>
+            </div>
         </div>
     );
 };
