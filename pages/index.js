@@ -84,7 +84,7 @@ const HeaderLeftColumnContent = () => {
 
 const HeaderRightColumnContent = () => {
     return (
-        <MotionFadeGrow>
+        <MotionFadeGrow delay={0.7}>
             <div
                 sx={{
                     display: 'grid',

@@ -23,14 +23,14 @@ const MyApp = ({ Component, pageProps, router }) => {
                             opacity: 1,
                             transition: {
                                 delay: 0.3,
-                                duration: 1,
+                                duration: 0.8,
                             },
                         },
                         pageExit: {
                             opacity: 0,
-                            x: -100,
+                            x: -50,
                             transition: {
-                                duration: 0.7,
+                                duration: 0.4,
                             },
                         },
                     }}
