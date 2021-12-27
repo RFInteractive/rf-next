@@ -28,7 +28,7 @@ const MyApp = ({ Component, pageProps, router }) => {
                         },
                         pageExit: {
                             opacity: 0,
-                            x: -50,
+                            x: -30,
                             transition: {
                                 duration: 0.4,
                             },
