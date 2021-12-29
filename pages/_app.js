@@ -4,43 +4,49 @@ import { theme } from '../lib/theme';
 
 import '../styles/globals.scss';
 import Layout from '../components/layout/Layout';
+
 import { motion, AnimatePresence } from 'framer-motion';
+
+import { ApolloProvider } from '@apollo/client';
+import { client } from '../lib/apollo';
 
 const MyApp = ({ Component, pageProps, router }) => {
     return (
-        <ThemeProvider theme={theme}>
-            <AnimatePresence>
-                <motion.div
-                    key={router.route}
-                    initial="pageInitial"
-                    animate="pageAnimate"
-                    exit="pageExit"
-                    variants={{
-                        pageInitial: {
-                            opacity: 0,
-                        },
-                        pageAnimate: {
-                            opacity: 1,
-                            transition: {
-                                delay: 0.3,
-                                duration: 0.8,
+        <ApolloProvider client={client}>
+            <ThemeProvider theme={theme}>
+                <AnimatePresence>
+                    <motion.div
+                        key={router.route}
+                        initial="pageInitial"
+                        animate="pageAnimate"
+                        exit="pageExit"
+                        variants={{
+                            pageInitial: {
+                                opacity: 0,
                             },
-                        },
-                        pageExit: {
-                            opacity: 0,
-                            x: -30,
-                            transition: {
-                                duration: 0.4,
+                            pageAnimate: {
+                                opacity: 1,
+                                transition: {
+                                    delay: 0.3,
+                                    duration: 0.8,
+                                },
                             },
-                        },
-                    }}
-                >
-                    <Layout>
-                        <Component {...pageProps} />
-                    </Layout>
-                </motion.div>
-            </AnimatePresence>
-        </ThemeProvider>
+                            pageExit: {
+                                opacity: 0,
+                                x: -30,
+                                transition: {
+                                    duration: 0.4,
+                                },
+                            },
+                        }}
+                    >
+                        <Layout>
+                            <Component {...pageProps} />
+                        </Layout>
+                    </motion.div>
+                </AnimatePresence>
+            </ThemeProvider>
+        </ApolloProvider>
     );
 };
 
