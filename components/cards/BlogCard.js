@@ -6,7 +6,7 @@ const BlogCard = ({ post }) => {
     return (
         <div>
             <h3>{post.title}</h3>
-            <h5>{post.link}</h5>
+            <h5>{post.uri}</h5>
             <img src={post.featuredImg} alt="" />
             <p>{post.date}</p>
             <p>{post.author}</p>
