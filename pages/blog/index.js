@@ -2,7 +2,7 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid, Button, Flex } from 'theme-ui';
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import BlogCard from '../../components/cards/BlogCard';
 import AppHeader from '../../components/sections/AppHeader';
@@ -55,13 +55,13 @@ const BlogFeed = ({ posts }) => {
             <main>
                 <Container
                     sx={{
-                        maxWidth: ['450px', '600px', '1290px'],
-                        padding: '50px 30px 100px',
+                        maxWidth: ['450px', '900px', '1290px'],
+                        padding: '50px 20px 100px',
                     }}
                 >
                     <Grid
-                        columns={[1, 1, 3, 3]}
-                        gap={['50px', '50px', '50px', '60px']}
+                        columns={[1, 2, 3, 3]}
+                        gap={['40px', '40px', '40px', '60px']}
                     >
                         {blogPosts.map((post) => (
                             <BlogCard key={post.uri} post={post}></BlogCard>
@@ -138,10 +138,7 @@ const formatPosts = (posts) => {
             excerpt: `${post.excerpt.replace(/^(.{80}[^\s]*).*/, '$1')}...</p>`,
             featuredImg: post.featuredImage
                 ? post.featuredImage.node.sourceUrl
-                : '',
-            categories: post.categories.nodes
-                .map((category) => category.name)
-                .join(', '),
+                : 'https://rankfuse.com/wp-content/uploads/2020/05/rf-team-photo-300x164.jpg',
         };
     });
 };
