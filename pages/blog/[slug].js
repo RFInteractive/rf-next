@@ -3,6 +3,8 @@
 import Head from 'next/head';
 
 import AppHeader from '../../components/sections/AppHeader';
+import { client } from '../../lib/apollo';
+import { QUERY_ALL_POST_SLUGS } from '../../lib/queries';
 
 const BlogPost = ({ slug }) => {
     return (
@@ -52,7 +54,17 @@ const BlogPostHeaderLeftColumn = ({ postId }) => {
     );
 };
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+    const posts = await client.query({ query: QUERY_ALL_POST_SLUGS });
+
+    const paths = posts.data.posts.nodes.map((post) => ({
+        params: { slug: post.slug },
+    }));
+
+    return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
     return {
         props: {
             slug: params.slug,
