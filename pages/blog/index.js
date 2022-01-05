@@ -7,7 +7,8 @@ import { useState } from 'react';
 import BlogCard from '../../components/cards/BlogCard';
 import AppHeader from '../../components/sections/AppHeader';
 import { client } from '../../lib/apollo';
-import { QUERY_ALL_POSTS } from '../../lib/queries';
+import { QUERY_RECENT_POSTS } from '../../lib/queries';
+import { formatPostsForBlogCard } from '../../lib/formatting';
 
 const BlogFeed = ({ posts }) => {
     const [blogPosts, setBlogPosts] = useState(posts);
@@ -23,7 +24,9 @@ const BlogFeed = ({ posts }) => {
         setLoadingState('Loading');
 
         const newPosts = await getPosts(page + 1);
-        const formattedNewPosts = formatPosts(newPosts.data.posts.nodes);
+        const formattedNewPosts = formatPostsForBlogCard(
+            newPosts.data.posts.nodes
+        );
 
         setBlogPosts((previousPosts) => {
             if (formattedNewPosts.length === previousPosts.length) {
@@ -82,6 +85,18 @@ const BlogFeed = ({ posts }) => {
     );
 };
 
+export const getServerSideProps = async () => {
+    const result = await getPosts();
+
+    const posts = formatPostsForBlogCard(result.data.posts.nodes);
+
+    return {
+        props: {
+            posts,
+        },
+    };
+};
+
 export default BlogFeed;
 
 const BlogFeedHeaderLeftColumn = () => {
@@ -107,38 +122,11 @@ const BlogFeedHeaderLeftColumn = () => {
     );
 };
 
-export const getServerSideProps = async () => {
-    const result = await getPosts();
-
-    const posts = formatPosts(result.data.posts.nodes);
-
-    return {
-        props: {
-            posts,
-        },
-    };
-};
-
 const getPosts = (pageNum = 1) => {
     return client.query({
-        query: QUERY_ALL_POSTS,
+        query: QUERY_RECENT_POSTS,
         variables: {
             numPosts: pageNum * 9,
         },
-    });
-};
-
-const formatPosts = (posts) => {
-    return posts.map((post) => {
-        return {
-            uri: post.uri,
-            title: post.title,
-            author: post.author.node.name,
-            date: new Date(post.date).toDateString(),
-            excerpt: `${post.excerpt.replace(/^(.{80}[^\s]*).*/, '$1')}...</p>`,
-            featuredImg: post.featuredImage
-                ? post.featuredImage.node.sourceUrl
-                : 'https://rankfuse.com/wp-content/uploads/2020/05/rf-team-photo-300x164.jpg',
-        };
     });
 };
