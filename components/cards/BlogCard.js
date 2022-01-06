@@ -61,7 +61,7 @@ const BlogCard = ({ post }) => {
                     </div>
                     <div>
                         <p sx={{ fontSize: '14px', color: '#a9a9a9' }}>
-                            {post.date.split(' ').slice(1, 4).join(' ')}
+                            {post.date}
                         </p>
                     </div>
                 </Flex>
