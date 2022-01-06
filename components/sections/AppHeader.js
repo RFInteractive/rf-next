@@ -1,7 +1,12 @@
 /** @jsxImportSource theme-ui */
 import { useThemeUI } from 'theme-ui';
 
-const AppHeader = ({ leftColumnContent, rightColumnContent, type }) => {
+const AppHeader = ({
+    leftColumnContent,
+    rightColumnContent,
+    centerColumnContent,
+    type,
+}) => {
     return (
         <header
             sx={{
@@ -30,6 +35,18 @@ const AppHeader = ({ leftColumnContent, rightColumnContent, type }) => {
                 }}
             >
                 {rightColumnContent}
+            </div>
+            <div
+                sx={{
+                    gridColumn: ['2/span 2', '2/span 2', '2/4', '2/4'],
+                    gridRow: '1/2',
+                    display: 'block',
+                    zIndex: '2',
+                    paddingTop: ['200px', '125px', '250px', '100px'],
+                    paddingBottom: ['200px', '150px', '425px', '250px'],
+                }}
+            >
+                {centerColumnContent}
             </div>
         </header>
     );
