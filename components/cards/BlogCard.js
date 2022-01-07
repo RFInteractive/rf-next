@@ -11,6 +11,7 @@ const BlogCard = ({ post }) => {
                     padding: '25px',
                     borderRadius: '20px',
                     boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.12)',
+                    backgroundColor: 'muted',
                     marginTop: '50px',
                     display: 'flex',
                     flexDirection: 'column',
