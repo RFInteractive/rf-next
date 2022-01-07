@@ -16,70 +16,74 @@ const CTARow = ({
     const gradientDark = theme.rawColors.gradientDark;
 
     return (
-        <Container
-            sx={{
-                maxWidth: '1250px',
-                padding: '50px',
-                background: `linear-gradient(270deg, ${gradientLight}, ${gradientDark});`,
-                borderRadius: '30px',
-                marginTop: '125px',
-                marginBottom: '75px',
-            }}
-        >
-            <Grid columns={[1, 1, 2, 2]} sx={{ position: 'relative' }}>
-                <div
-                    sx={{
-                        gridColumn: ['1/-1', '1/-1', '1/2', '1/2'],
-                        gridRow: ['2/3', '2/3', '1/-1', '1/-1'],
-                        marginTop: ['-50px', '-50px', '0px', '0px'],
-                    }}
-                >
-                    <h2
+        <div sx={{ px: ['20px', '20px', null, null] }}>
+            <Container
+                sx={{
+                    maxWidth: '1250px',
+                    padding: '50px',
+                    background: `linear-gradient(270deg, ${gradientLight}, ${gradientDark});`,
+                    borderRadius: '30px',
+                    marginTop: '125px',
+                    marginBottom: '75px',
+                }}
+            >
+                <Grid columns={[1, 1, 2, 2]} sx={{ position: 'relative' }}>
+                    <div
                         sx={{
-                            variant: 'text.h2',
-                            color: '#fff',
-                            mb: '20px',
-                            fontSize: '50px',
-                            zIndex: '5',
-                            position: 'relative',
+                            gridColumn: ['1/-1', '1/-1', '1/2', '1/2'],
+                            gridRow: ['2/3', '2/3', '1/-1', '1/-1'],
+                            marginTop: ['-50px', '-50px', '0px', '0px'],
                         }}
                     >
-                        {heading}
-                    </h2>
-                    <p sx={{ fontSize: '26px', color: '#fff', mb: '30px' }}>
-                        {subheading}
-                    </p>
-                    <Link href={link}>
-                        <a sx={{ variant: 'buttons.light' }}>{buttonText}</a>
-                    </Link>
-                </div>
-                <div
-                    sx={{
-                        position: 'relative',
-                        gridColumn: ['1/-1', '1/-1', '2/-1', '2/-1'],
-                        gridRow: ['1/2', '1/2', '1/-1', '1/-1'],
-                    }}
-                >
-                    <img
-                        src="/images/phone-array.png"
-                        alt="a cell phone mockup"
+                        <h2
+                            sx={{
+                                variant: 'text.h2',
+                                color: '#fff',
+                                mb: '20px',
+                                fontSize: '50px',
+                                zIndex: '5',
+                                position: 'relative',
+                            }}
+                        >
+                            {heading}
+                        </h2>
+                        <p sx={{ fontSize: '26px', color: '#fff', mb: '30px' }}>
+                            {subheading}
+                        </p>
+                        <Link href={link}>
+                            <a sx={{ variant: 'buttons.light' }}>
+                                {buttonText}
+                            </a>
+                        </Link>
+                    </div>
+                    <div
                         sx={{
-                            position: [
-                                'relative',
-                                'relative',
-                                'absolute',
-                                'absolute',
-                            ],
-                            top: '0',
-                            transform: 'translateY(-32%)',
-                            zIndex: '2',
-                            width: ['75%', '75%', 'auto', 'auto'],
+                            position: 'relative',
+                            gridColumn: ['1/-1', '1/-1', '2/-1', '2/-1'],
+                            gridRow: ['1/2', '1/2', '1/-1', '1/-1'],
                         }}
-                    />
-                </div>
-                <CTABgSVG />
-            </Grid>
-        </Container>
+                    >
+                        <img
+                            src="/images/phone-array.png"
+                            alt="a cell phone mockup"
+                            sx={{
+                                position: [
+                                    'relative',
+                                    'relative',
+                                    'absolute',
+                                    'absolute',
+                                ],
+                                top: '0',
+                                transform: 'translateY(-32%)',
+                                zIndex: '2',
+                                width: ['75%', '75%', 'auto', 'auto'],
+                            }}
+                        />
+                    </div>
+                    <CTABgSVG />
+                </Grid>
+            </Container>
+        </div>
     );
 };
 
