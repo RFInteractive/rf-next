@@ -1,13 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
-import { Container } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import AppHeader from '../../components/sections/AppHeader';
 import { client } from '../../lib/apollo';
-import { QUERY_ALL_POST_SLUGS, QUERY_POST_BY_SLUG } from '../../lib/queries';
+import {
+    QUERY_ALL_POST_SLUGS,
+    QUERY_POST_BY_SLUG,
+    QUERY_RELATED_POSTS,
+} from '../../lib/queries';
+import { formatPostsForBlogCard } from '../../lib/formatting';
+import BlogCard from '../../components/cards/BlogCard';
 
-const BlogPost = ({ post }) => {
+const BlogPost = ({ post, relatedPosts }) => {
     return (
         <div>
             <Head>
@@ -42,14 +48,33 @@ const BlogPost = ({ post }) => {
                             objectFit: 'cover',
                             height: '100%',
                             maxHeight: ['350px', '450px', '550px', '550px'],
-                            mb: '50px',
                         }}
                     />
-                    <div
+                    <section
                         dangerouslySetInnerHTML={{ __html: post.content }}
-                    ></div>
+                    ></section>
                 </Container>
             </main>
+            <section>
+                <Container
+                    sx={{
+                        maxWidth: '1160px',
+                        padding: '50px 30px 75px',
+                    }}
+                >
+                    <h2 sx={{ variant: 'text.h2', mb: '30px' }}>
+                        Related Posts
+                    </h2>
+                    <Grid
+                        columns={[1, 2, 3, 3]}
+                        gap={['40px', '40px', '10px', '10px']}
+                    >
+                        {relatedPosts.map((post) => (
+                            <BlogCard key={post.uri} post={post}></BlogCard>
+                        ))}
+                    </Grid>
+                </Container>
+            </section>
         </div>
     );
 };
@@ -103,9 +128,25 @@ export async function getStaticProps({ params }) {
 
     const formattedPost = formatPostForPage(post.data.postBy);
 
+    const relatedPostsData = await client.query({
+        query: QUERY_RELATED_POSTS,
+        variables: {
+            categoryName: formattedPost.relatedCategory,
+        },
+    });
+
+    let relatedPosts = formatPostsForBlogCard(
+        relatedPostsData.data.posts.nodes
+    );
+
+    relatedPosts = relatedPosts
+        .filter((post) => post.title !== formattedPost.title)
+        .slice(0, 3);
+
     return {
         props: {
             post: formattedPost,
+            relatedPosts: relatedPosts,
         },
     };
 }
