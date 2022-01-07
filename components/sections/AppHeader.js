@@ -36,14 +36,13 @@ const AppHeader = ({
             >
                 {rightColumnContent}
             </div>
+
             <div
                 sx={{
                     gridColumn: ['2/span 2', '2/span 2', '2/4', '2/4'],
                     gridRow: '1/2',
                     display: 'block',
                     zIndex: '2',
-                    paddingTop: ['200px', '125px', '250px', '100px'],
-                    paddingBottom: ['200px', '150px', '425px', '250px'],
                 }}
             >
                 {centerColumnContent}
@@ -71,6 +70,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     height: ['100%', '130%', '150%', '150%'],
                     maxHeight: [null, null, '860px', '925px'],
                     justifySelf: 'start',
+                    zIndex: '-1',
                 }}
             >
                 <path
