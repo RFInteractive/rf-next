@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
-import { Container, Grid } from 'theme-ui';
+import { Container, Grid, Flex } from 'theme-ui';
 
 import AppHeader from '../../components/sections/AppHeader';
 import { client } from '../../lib/apollo';
@@ -29,7 +29,7 @@ const BlogPost = ({ post, relatedPosts }) => {
             <main
                 sx={{
                     variant: 'wrappers.blogWrapper',
-                    marginTop: ['-100px', '-150px', '-375px', '-375px'],
+                    marginTop: ['-250px', '-250px', '-425px', '-425px'],
                     mb: '75px',
                     zIndex: '500',
                 }}
@@ -86,7 +86,7 @@ const BlogPostHeader = ({ post }) => {
         <div
             sx={{
                 paddingTop: ['200px', '125px', '250px', '100px'],
-                paddingBottom: ['200px', '150px', '425px', '250px'],
+                paddingBottom: ['200px', '150px', '350px', '250px'],
             }}
         >
             <Container
@@ -103,6 +103,48 @@ const BlogPostHeader = ({ post }) => {
                 >
                     {post.title}
                 </h1>
+                <Grid
+                    columns={'auto auto 1fr'}
+                    gap={20}
+                    sx={{
+                        justifyContent: 'space-between',
+                        mt: '15px',
+                        fontSize: '16px',
+                        color: '#fff',
+                        maxWidth: '550px',
+                    }}
+                >
+                    <div sx={{ display: 'flex', alignItems: 'center' }}>
+                        <img
+                            src="/icons/icon-user.svg"
+                            alt="user icon"
+                            sx={{ marginRight: '5px' }}
+                        />
+                        <span>{post.author}</span>
+                    </div>
+                    <div sx={{ display: 'flex', alignItems: 'center' }}>
+                        <img
+                            src="/icons/icon-calendar.svg"
+                            alt="calendar icon"
+                            sx={{ marginRight: '5px' }}
+                        />
+                        <span>{post.date}</span>
+                    </div>
+                    <div
+                        sx={{
+                            marginTop: '5px',
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <img
+                            src="/icons/icon-tags.svg"
+                            alt="category tags icon"
+                            sx={{ marginRight: '10px' }}
+                        />
+                        <span>{post.categories}</span>
+                    </div>
+                </Grid>
             </Container>
         </div>
     );
