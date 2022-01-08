@@ -17,26 +17,19 @@ const MyApp = ({ Component, pageProps, router }) => {
                 <AnimatePresence>
                     <motion.div
                         key={router.route}
-                        initial="pageInitial"
-                        animate="pageAnimate"
-                        exit="pageExit"
-                        variants={{
-                            pageInitial: {
-                                opacity: 0,
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            opacity: 1,
+                            transition: {
+                                delay: 0.3,
+                                duration: 0.8,
                             },
-                            pageAnimate: {
-                                opacity: 1,
-                                transition: {
-                                    delay: 0.3,
-                                    duration: 0.8,
-                                },
-                            },
-                            pageExit: {
-                                opacity: 0,
-                                x: -30,
-                                transition: {
-                                    duration: 0.4,
-                                },
+                        }}
+                        exit={{
+                            opacity: 0,
+                            x: -30,
+                            transition: {
+                                duration: 0.4,
                             },
                         }}
                     >

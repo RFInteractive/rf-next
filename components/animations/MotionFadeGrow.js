@@ -1,7 +1,7 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const MotionFadeGrow = ({ delay = 0.3, lazy = false, children }) => {
+const MotionFadeGrow = ({ delay = 0.4, lazy = false, children }) => {
     const { inView, entry, ref } = useInView();
     const animationControl = useAnimation();
 
@@ -19,13 +19,7 @@ const MotionFadeGrow = ({ delay = 0.3, lazy = false, children }) => {
         return (
             <div ref={ref}>
                 <motion.div
-                    initial="hidden"
-                    variants={{
-                        hidden: {
-                            scale: 0.8,
-                            opacity: 0,
-                        },
-                    }}
+                    initial={{ scale: 0.8, opacity: 0 }}
                     animate={animationControl}
                 >
                     {children}
@@ -36,19 +30,15 @@ const MotionFadeGrow = ({ delay = 0.3, lazy = false, children }) => {
 
     return (
         <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={{
-                hidden: {
-                    scale: 0.8,
-                    opacity: 0,
-                },
-                visible: {
-                    scale: [1, 1.03, 1],
-                    opacity: 1,
-                    transition: {
-                        delay,
-                    },
+            initial={{
+                scale: 0.8,
+                opacity: 0,
+            }}
+            animate={{
+                scale: [1, 1.03, 1],
+                opacity: 1,
+                transition: {
+                    delay,
                 },
             }}
         >
