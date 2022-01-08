@@ -19,7 +19,6 @@ class MyDocument extends Document {
                 </Head>
                 <body id="body">
                     <Main />
-                    <div id="mobileMenu" />
                     <NextScript />
                 </body>
             </Html>
