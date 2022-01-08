@@ -17,8 +17,9 @@ class MyDocument extends Document {
                     />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
-                <body>
+                <body id="body">
                     <Main />
+                    <div id="mobileMenu" />
                     <NextScript />
                 </body>
             </Html>
