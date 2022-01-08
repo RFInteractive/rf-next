@@ -22,7 +22,7 @@ const MobileMenuPortal = ({ children, open, onClose }) => {
         createPortal(
             <motion.div
                 key="mobileMenu"
-                initial={{ opacity: 0, y: '-200px' }}
+                initial={{ opacity: 1, y: '-1200px' }}
                 animate={{
                     opacity: 1,
                     y: '0px',
@@ -34,9 +34,7 @@ const MobileMenuPortal = ({ children, open, onClose }) => {
                 }}
                 exit={{ opacity: 0 }}
                 transition={{
-                    duration: 0.7,
-                    type: 'spring',
-                    stiffness: 100,
+                    duration: 0.45,
                 }}
             >
                 <div
