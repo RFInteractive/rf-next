@@ -3,6 +3,7 @@ import { Container, Grid } from 'theme-ui';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { navLinks } from '../../lib/navData';
 import NavItem from './NavItem';
 
 const DesktopNav = () => {
@@ -30,11 +31,11 @@ const DesktopNav = () => {
                 >
                     <DesktopNavLogo />
                     <Grid columns={'repeat(5, max-content)'} gap={'25px'}>
-                        <SEONavLinks />
-                        <ContentNavLinks />
-                        <WebDevNavLinks />
-                        <AdvertisingLinks />
-                        <ResourcesLinks />
+                        <SEODesktopLinks />
+                        <ContentDesktopLinks />
+                        <WebDevDesktopLinks />
+                        <AdvertisingDesktopLinks />
+                        <ResourceDesktopLinks />
                     </Grid>
                     <Link href="/">
                         <a id="navCTABtn">Get Started</a>
@@ -60,7 +61,7 @@ const DesktopNavLogo = () => {
     );
 };
 
-const SEONavLinks = () => {
+const SEODesktopLinks = () => {
     return (
         <div className="desktopNavLinkContainer">
             <Link href="/seo-services">
@@ -72,47 +73,24 @@ const SEONavLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                <NavItem link="/seo-services" icon="seo" heading="SEO Services">
-                    Our SEO services can help get you where you need to be
-                </NavItem>
-                <NavItem
-                    link="/seo-services/#onPageSEO"
-                    icon="onPageSEO"
-                    heading="On-Page SEO"
-                >
-                    Optimize HTML elements like title tags, meta descriptions,
-                    and more
-                </NavItem>
-                <NavItem
-                    link="/seo-services/#offPageSEO"
-                    icon="offPageSEO"
-                    heading="Off-Page SEO"
-                >
-                    Going beyond your website to enhance the perception of your
-                    brand
-                </NavItem>
-                <NavItem
-                    link="/seo-services/#localSEO"
-                    icon="localSEO"
-                    heading="Local SEO"
-                >
-                    Increase your business&apos;s visibility when it comes to
-                    local search results
-                </NavItem>
-                <NavItem
-                    link="/seo-services/#analyticsReporting"
-                    icon="analytics"
-                    heading="Analytics & Reporting"
-                >
-                    Get valuable insights into how your website & SEO efforts
-                    are performing
-                </NavItem>
+                {navLinks.seoNavLinks.map((navLink) => {
+                    return (
+                        <NavItem
+                            link={navLink.link}
+                            icon={navLink.icon}
+                            heading={navLink.heading}
+                            key={navLink.link}
+                        >
+                            {navLink.description}
+                        </NavItem>
+                    );
+                })}
             </div>
         </div>
     );
 };
 
-const ContentNavLinks = () => {
+const ContentDesktopLinks = () => {
     return (
         <div className="desktopNavLinkContainer">
             <Link href="/seo-content">
@@ -124,43 +102,24 @@ const ContentNavLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                <NavItem
-                    link="/seo-content"
-                    icon="notepad"
-                    heading="Content Services"
-                >
-                    Organically improve your rankings in search engines using
-                    proven research
-                </NavItem>
-                <NavItem
-                    link="/seo-content/#contentStrategy"
-                    icon="checklist"
-                    heading="Content Stategy"
-                >
-                    Our strategists provide you with a detailed analysis of your
-                    site content
-                </NavItem>
-                <NavItem
-                    link="/seo-content/#contentDevelopment"
-                    icon="desktopWriting"
-                    heading="Content Development"
-                >
-                    Going beyond your website to enhance the perception of your
-                    brand
-                </NavItem>
-                <NavItem
-                    link="/seo-content/#keywordResearch"
-                    icon="scatterChart"
-                    heading="Keyword Research"
-                >
-                    Lean on our keyword research to outrank your competitors
-                </NavItem>
+                {navLinks.contentNavLinks.map((navLink) => {
+                    return (
+                        <NavItem
+                            link={navLink.link}
+                            icon={navLink.icon}
+                            heading={navLink.heading}
+                            key={navLink.link}
+                        >
+                            {navLink.description}
+                        </NavItem>
+                    );
+                })}
             </div>
         </div>
     );
 };
 
-const WebDevNavLinks = () => {
+const WebDevDesktopLinks = () => {
     return (
         <div className="desktopNavLinkContainer">
             <Link href="/web-design-and-development">
@@ -172,34 +131,24 @@ const WebDevNavLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                <NavItem
-                    link="/web-design-and-development"
-                    icon="computer"
-                    heading="Web Development"
-                >
-                    Focus on growing your business, we’ll do the rest
-                </NavItem>
-                <NavItem
-                    link="/web-design-and-development/#webDesign"
-                    icon="design"
-                    heading="Web Design"
-                >
-                    You deserve a site designed to maximize your users’
-                    experience
-                </NavItem>
-                <NavItem
-                    link="/web-design-and-development/#headlessWordPress"
-                    icon="headless"
-                    heading="Go Headless"
-                >
-                    Take advantage of the fastest bleeding edge technologies
-                </NavItem>
+                {navLinks.webDevNavLinks.map((navLink) => {
+                    return (
+                        <NavItem
+                            link={navLink.link}
+                            icon={navLink.icon}
+                            heading={navLink.heading}
+                            key={navLink.link}
+                        >
+                            {navLink.description}
+                        </NavItem>
+                    );
+                })}
             </div>
         </div>
     );
 };
 
-const AdvertisingLinks = () => {
+const AdvertisingDesktopLinks = () => {
     return (
         <div className="desktopNavLinkContainer">
             <Link href="/programmatic-advertising">
@@ -211,51 +160,24 @@ const AdvertisingLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                <NavItem
-                    link="/programmatic-advertising"
-                    icon="advertisingService"
-                    heading="Display Advertising"
-                >
-                    Target users based on online behaviors, region, shopping
-                    behaviors, and more
-                </NavItem>
-                <NavItem
-                    link="/programmatic-advertising/#behavioralTargeting"
-                    icon="behavioralTargeting"
-                    heading="Behavioral Targeting"
-                >
-                    Expose your brand to users who have shown interest in
-                    similar businesses
-                </NavItem>
-                <NavItem
-                    link="/programmatic-advertising/#contextualDisplay"
-                    icon="contextualDisplay"
-                    heading="Contextual Display"
-                >
-                    Serve ads based on the context of the web page & increase
-                    conversions
-                </NavItem>
-                <NavItem
-                    link="/programmatic-advertising/#nativeAdManagement"
-                    icon="nativeAds"
-                    heading="Native Ads"
-                >
-                    Promoting your content through brand thought leadership
-                </NavItem>
-                <NavItem
-                    link="/programmatic-advertising/#retargeting"
-                    icon="retargeting"
-                    heading="Retargeting Campaigns"
-                >
-                    Target users who have previously visited your website &
-                    increase awareness
-                </NavItem>
+                {navLinks.advertisingNavLinks.map((navLink) => {
+                    return (
+                        <NavItem
+                            link={navLink.link}
+                            icon={navLink.icon}
+                            heading={navLink.heading}
+                            key={navLink.link}
+                        >
+                            {navLink.description}
+                        </NavItem>
+                    );
+                })}
             </div>
         </div>
     );
 };
 
-const ResourcesLinks = () => {
+const ResourceDesktopLinks = () => {
     return (
         <div className="desktopNavLinkContainer">
             <Link href="/web-design-and-development">
