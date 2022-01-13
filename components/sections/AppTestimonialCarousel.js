@@ -35,9 +35,7 @@ const TestimonialCarousel = () => {
             }}
         >
             <Container sx={{ maxWidth: '900px', px: '30px' }}>
-                <h2 sx={{ variant: 'text.h2', textAlign: 'center' }}>
-                    What Are They Saying?
-                </h2>
+                <h2 sx={{ textAlign: 'center' }}>What Are They Saying?</h2>
                 <p sx={{ textAlign: 'center', marginTop: '50px' }}>
                     &quot;{testimonials[index].testimonial}&quot;
                 </p>

@@ -19,9 +19,7 @@ const WhatWeDoRow = () => {
                             paddingRight: ['0px', '0px', '60px', '30px'],
                         }}
                     >
-                        <h2 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
-                            What We Do
-                        </h2>
+                        <h2 sx={{ marginBottom: '10px' }}>What We Do</h2>
                         <div
                             sx={{
                                 width: '100%',

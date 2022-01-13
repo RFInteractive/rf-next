@@ -34,7 +34,7 @@ const ProcessCard = ({ heading, icon, number, children }) => {
                 icon={icon}
                 styles={{ marginBottom: '30px', width: '50px', height: '50px' }}
             />
-            <h3 sx={{ variant: 'text.h3', marginBottom: '15px' }}>{heading}</h3>
+            <h3 sx={{ marginBottom: '15px' }}>{heading}</h3>
             <p sx={{ textAlign: 'center' }}>{children}</p>
         </div>
     );

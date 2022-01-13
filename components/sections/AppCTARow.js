@@ -37,7 +37,6 @@ const CTARow = ({
                     >
                         <h2
                             sx={{
-                                variant: 'text.h2',
                                 color: '#fff',
                                 mb: '20px',
                                 fontSize: '50px',

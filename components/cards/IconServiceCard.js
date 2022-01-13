@@ -22,7 +22,6 @@ const IconServiceCard = ({ icon, heading, link }) => {
                     {getSVG(icon)}
                     <h3
                         sx={{
-                            variant: 'text.h3',
                             marginTop: '15px',
                             fontSize: '24px',
                         }}

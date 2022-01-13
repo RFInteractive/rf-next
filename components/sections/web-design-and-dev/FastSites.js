@@ -24,7 +24,7 @@ const FastSitesLeftColumnContent = () => {
                 paddingRight: ['0px', '0px', '80px', '40px'],
             }}
         >
-            <h3 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
+            <h3 sx={{ marginBottom: '10px' }}>
                 The Fastest Sites on Any Platform
             </h3>
             <div

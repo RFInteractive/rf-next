@@ -35,7 +35,6 @@ const IconListCard = ({
                 >
                     <h3
                         sx={{
-                            variant: 'text.h3',
                             marginTop: '15px',
                             marginBottom: '5px',
                         }}

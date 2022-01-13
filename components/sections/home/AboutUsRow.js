@@ -24,7 +24,7 @@ const AboutUsLeftColumnContent = () => {
                 paddingRight: ['0px', '0px', '60px', '30px'],
             }}
         >
-            <h3 sx={{ variant: 'text.h2', marginBottom: '10px' }}>About Us</h3>
+            <h3 sx={{ marginBottom: '10px' }}>About Us</h3>
             <div
                 sx={{
                     width: '100%',

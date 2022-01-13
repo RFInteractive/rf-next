@@ -23,7 +23,7 @@ const ContentIntroStats = () => {
                             paddingRight: ['0px', '0px', '60px', '30px'],
                         }}
                     >
-                        <h2 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
+                        <h2 sx={{ marginBottom: '10px' }}>
                             Our Content Shines
                         </h2>
                         <div

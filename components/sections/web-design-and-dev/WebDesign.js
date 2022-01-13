@@ -46,9 +46,7 @@ const WebDesignRightColumnContent = () => {
                 paddingLeft: ['0px', '0px', '75px', '60px'],
             }}
         >
-            <h3 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
-                Modern Designs
-            </h3>
+            <h3 sx={{ marginBottom: '10px' }}>Modern Designs</h3>
             <div
                 sx={{
                     width: '100%',

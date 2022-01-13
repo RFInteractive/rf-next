@@ -24,7 +24,7 @@ const RetargetingLeftColumnContent = () => {
                 paddingRight: ['0px', '0px', '80px', '40px'],
             }}
         >
-            <h3 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
+            <h3 sx={{ marginBottom: '10px' }}>
                 Retargeting<br></br>Ad Campaigns
             </h3>
             <div

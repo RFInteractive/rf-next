@@ -24,7 +24,7 @@ const AdvertisingIntroStats = () => {
                             paddingRight: ['0px', '0px', '60px', '30px'],
                         }}
                     >
-                        <h2 sx={{ variant: 'text.h2', marginBottom: '10px' }}>
+                        <h2 sx={{ marginBottom: '10px' }}>
                             Tailored Campaigns <br></br> & Target with Intent
                         </h2>
                         <div

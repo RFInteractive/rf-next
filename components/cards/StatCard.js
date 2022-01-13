@@ -12,7 +12,6 @@ const StatCard = ({ statistic, subheading }) => {
         >
             <h3
                 sx={{
-                    variant: 'text.h3',
                     textAlign: 'center',
                     marginBottom: '10px',
                     color: 'primaryDark',
@@ -24,7 +23,6 @@ const StatCard = ({ statistic, subheading }) => {
             </h3>
             <h4
                 sx={{
-                    variant: 'text.h4',
                     textAlign: 'center',
                     fontSize: '20px',
                     textTransform: 'uppercase',

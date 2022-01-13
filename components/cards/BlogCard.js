@@ -39,7 +39,6 @@ const BlogCard = ({ post }) => {
 
                 <h3
                     sx={{
-                        variant: 'text.h3',
                         fontSize: '24px',
                         marginBottom: '20px',
                     }}

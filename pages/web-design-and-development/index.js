@@ -63,7 +63,6 @@ const WebDesignAndDevLeftColumn = () => {
         >
             <h1
                 sx={{
-                    variant: 'text.h1',
                     color: '#fff',
                     marginBottom: '20px',
                 }}

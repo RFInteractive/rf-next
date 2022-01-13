@@ -62,9 +62,7 @@ const BlogPost = ({ post, relatedPosts }) => {
                         padding: '50px 30px 75px',
                     }}
                 >
-                    <h2 sx={{ variant: 'text.h2', mb: '30px' }}>
-                        Related Posts
-                    </h2>
+                    <h2 sx={{ mb: '30px' }}>Related Posts</h2>
                     <Grid
                         columns={[1, 2, 3, 3]}
                         gap={['40px', '40px', '10px', '10px']}
@@ -97,7 +95,6 @@ const BlogPostHeader = ({ post }) => {
             >
                 <h1
                     sx={{
-                        variant: 'text.h1',
                         color: '#fff',
                     }}
                 >

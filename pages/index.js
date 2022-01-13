@@ -57,7 +57,6 @@ const HeaderLeftColumnContent = () => {
         >
             <h1
                 sx={{
-                    variant: 'text.h1',
                     color: '#fff',
                 }}
             >
@@ -67,7 +66,6 @@ const HeaderLeftColumnContent = () => {
             </h1>
             <h4
                 sx={{
-                    variant: 'text.h4',
                     color: '#fff',
                     marginTop: '30px',
                     marginBottom: '40px',
