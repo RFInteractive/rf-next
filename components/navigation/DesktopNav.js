@@ -73,7 +73,7 @@ const SEODesktopLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                {navLinks.seoNavLinks.map((navLink) => {
+                {navLinks['SEO'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
@@ -102,7 +102,7 @@ const ContentDesktopLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                {navLinks.contentNavLinks.map((navLink) => {
+                {navLinks['Content'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
@@ -131,7 +131,7 @@ const WebDevDesktopLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                {navLinks.webDevNavLinks.map((navLink) => {
+                {navLinks['Web_Design_and_Dev'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
@@ -160,7 +160,7 @@ const AdvertisingDesktopLinks = () => {
                     variant: 'navigation.desktopNavDropdownContainer',
                 }}
             >
-                {navLinks.advertisingNavLinks.map((navLink) => {
+                {navLinks['Advertising'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
