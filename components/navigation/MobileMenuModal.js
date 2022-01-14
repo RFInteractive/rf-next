@@ -70,7 +70,8 @@ export default MobileMenuModal;
 
 const MobileLinkGroup = ({ linkGroup, setOpen }) => {
     const closeModal = () => {
-        setTimeout(() => setOpen(false), 100);
+        document.querySelector('#body').style.overflow = 'initial';
+        setTimeout(() => setOpen(false), 200);
     };
 
     return navLinks[linkGroup].map((navLink, index, array) => {
