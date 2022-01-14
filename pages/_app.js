@@ -21,15 +21,15 @@ const MyApp = ({ Component, pageProps, router }) => {
                         animate={{
                             opacity: 1,
                             transition: {
-                                delay: 0.3,
-                                duration: 0.8,
+                                delay: 0.1,
+                                duration: 0.6,
                             },
                         }}
                         exit={{
                             opacity: 0,
                             x: -30,
                             transition: {
-                                duration: 0.4,
+                                duration: 0.2,
                             },
                         }}
                     >
