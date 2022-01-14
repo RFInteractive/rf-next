@@ -8,7 +8,6 @@ import NavItem from './NavItem';
 const MobileMenuModal = ({ setOpen }) => {
     return (
         <motion.div
-            key="mobileMenuModal"
             initial={{ opacity: 0, y: '-1200px' }}
             animate={{
                 opacity: 1,
@@ -17,6 +16,7 @@ const MobileMenuModal = ({ setOpen }) => {
                 top: '0',
                 bottom: '0',
                 width: '100vw',
+                height: '100vh',
                 zIndex: '100000',
                 transition: {
                     duration: 0.3,
@@ -30,26 +30,34 @@ const MobileMenuModal = ({ setOpen }) => {
                     top: '0px',
                     bottom: '0px',
                     width: '100vw',
+                    paddingBottom: '50px',
                     backgroundColor: 'muted',
                     zIndex: 100000,
-                    overflow: 'scroll',
+                    overflowY: 'scroll',
                 }}
             >
                 <p>Hello dere</p>
                 <button onClick={() => setOpen(false)}>close de modal</button>
 
-                <Container sx={{ width: '90%', maxWidth: '400px' }}>
-                    {navLinks.seoNavLinks.map((navLink) => {
+                <Container sx={{ width: '80%', maxWidth: '400px' }}>
+                    {Object.keys(navLinks).map((group) => {
+                        console.log(typeof group);
                         return (
-                            <div sx={{ my: '10px' }} key={navLink.link}>
-                                <NavItem
-                                    link={navLink.link}
-                                    icon={navLink.icon}
-                                    heading={navLink.heading}
-                                >
-                                    {navLink.description}
-                                </NavItem>
-                                <hr></hr>
+                            <div sx={{ mb: '25px' }} key={group}>
+                                <h4 sx={{ mb: '15px' }}>
+                                    {group.split('_').join(' ')}
+                                </h4>
+                                <hr
+                                    sx={{
+                                        borderTop: '1px solid',
+                                        borderTopColor: 'secondary',
+                                        opacity: '0.3',
+                                    }}
+                                ></hr>
+                                <MobileLinkGroup
+                                    linkGroup={group}
+                                    setOpen={setOpen}
+                                />
                             </div>
                         );
                     })}
@@ -60,3 +68,33 @@ const MobileMenuModal = ({ setOpen }) => {
 };
 
 export default MobileMenuModal;
+
+const MobileLinkGroup = ({ linkGroup, setOpen }) => {
+    return navLinks[linkGroup].map((navLink, index, array) => {
+        return (
+            <div
+                sx={{ my: '10px' }}
+                key={navLink.link}
+                onClick={() => setOpen(false)}
+            >
+                <NavItem
+                    link={navLink.link}
+                    icon={navLink.icon}
+                    heading={navLink.heading}
+                    size={'52px'}
+                >
+                    {navLink.description}
+                </NavItem>
+                {index < array.length - 1 && (
+                    <hr
+                        sx={{
+                            borderTop: '1px solid',
+                            borderTopColor: 'secondary',
+                            opacity: '0.3',
+                        }}
+                    ></hr>
+                )}
+            </div>
+        );
+    });
+};
