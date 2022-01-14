@@ -41,7 +41,6 @@ const MobileMenuModal = ({ setOpen }) => {
 
                 <Container sx={{ width: '80%', maxWidth: '400px' }}>
                     {Object.keys(navLinks).map((group) => {
-                        console.log(typeof group);
                         return (
                             <div sx={{ mb: '25px' }} key={group}>
                                 <h4 sx={{ mb: '15px' }}>
@@ -70,13 +69,13 @@ const MobileMenuModal = ({ setOpen }) => {
 export default MobileMenuModal;
 
 const MobileLinkGroup = ({ linkGroup, setOpen }) => {
+    const closeModal = () => {
+        setTimeout(() => setOpen(false), 100);
+    };
+
     return navLinks[linkGroup].map((navLink, index, array) => {
         return (
-            <div
-                sx={{ my: '10px' }}
-                key={navLink.link}
-                onClick={() => setOpen(false)}
-            >
+            <div sx={{ my: '10px' }} key={navLink.link} onClick={closeModal}>
                 <NavItem
                     link={navLink.link}
                     icon={navLink.icon}
