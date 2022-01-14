@@ -4,7 +4,13 @@ import { useThemeUI } from 'theme-ui';
 
 import Link from 'next/link';
 
-const NavItem = ({ link = '/', heading, icon = 'seo', children }) => {
+const NavItem = ({
+    link = '/',
+    heading,
+    icon = 'seo',
+    size = '60px',
+    children,
+}) => {
     const { theme } = useThemeUI();
 
     const primaryColor = theme.rawColors.primary;
@@ -40,8 +46,8 @@ const NavItem = ({ link = '/', heading, icon = 'seo', children }) => {
                         className="navItemIconBg"
                         sx={{
                             bg: lighten(primaryColor, 0.3),
-                            maxWidth: '60px',
-                            maxHeight: '60px',
+                            maxWidth: size,
+                            maxHeight: size,
                             borderRadius: '50%',
                         }}
                     >
@@ -52,6 +58,7 @@ const NavItem = ({ link = '/', heading, icon = 'seo', children }) => {
                             sx={{
                                 fontSize: '18px',
                                 fontWeight: '600',
+                                mb: ['5px', '5px', null, null],
                             }}
                         >
                             {heading}
