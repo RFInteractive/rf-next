@@ -14,22 +14,21 @@ const MyApp = ({ Component, pageProps, router }) => {
     return (
         <ApolloProvider client={client}>
             <ThemeProvider theme={theme}>
-                <AnimatePresence>
+                <AnimatePresence initial={false}>
                     <motion.div
                         key={router.route}
                         initial={{ opacity: 0 }}
                         animate={{
                             opacity: 1,
                             transition: {
-                                delay: 0.1,
                                 duration: 0.6,
+                                delay: 0.6,
                             },
                         }}
                         exit={{
                             opacity: 0,
-                            x: -30,
                             transition: {
-                                duration: 0.2,
+                                duration: 0.6,
                             },
                         }}
                     >
