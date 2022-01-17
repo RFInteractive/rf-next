@@ -1,7 +1,10 @@
 /** @jsxImportSource theme-ui */
 import { MenuButton } from 'theme-ui';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+
 import MobileMenuModal from './MobileMenuModal';
 
 const MobileNav = () => {
@@ -31,7 +34,7 @@ const MobileMenu = ({ setOpen }) => {
                 opacity: 1,
                 y: '0px',
                 position: 'fixed',
-                top: '20px',
+                top: '15px',
                 width: '100vw',
                 zIndex: '100000',
                 display: 'flex',
@@ -50,12 +53,27 @@ const MobileMenu = ({ setOpen }) => {
                     position: 'fixed',
                     width: '90%',
                     backgroundColor: '#fff',
-                    padding: '10px 15px',
+                    padding: '4px 12px',
                     borderRadius: '10px',
                     boxShadow: '0px 0px 15px rgba(0, 0, 0, 0.1)',
                 }}
             >
-                <h1>Mobile Nav</h1>
+                <Link href="/">
+                    <a
+                        sx={{
+                            justifySelf: 'start',
+                            cursor: 'pointer',
+                            lineHeight: '1',
+                        }}
+                    >
+                        <Image
+                            src="/images/RankFuse-logo-colored.svg"
+                            alt="Rank Fuse Digital Marketing Logo"
+                            width={150}
+                            height={60}
+                        />
+                    </a>
+                </Link>
                 <MenuButton
                     aria-label="Toggle Mobile Menu"
                     color={'primaryDark'}
