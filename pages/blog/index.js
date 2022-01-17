@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
-import { Container, Grid, Button, Flex } from 'theme-ui';
+import { Container, Grid, Button, Flex, Spinner } from 'theme-ui';
 import Head from 'next/head';
 import { useState } from 'react';
 
@@ -73,8 +73,13 @@ const BlogFeed = ({ posts }) => {
                 </Container>
                 <Flex sx={{ justifyContent: 'center', mb: '50px' }}>
                     {hasMore ? (
-                        <Button variant="primary" onClick={loadMorePosts}>
+                        <Button
+                            variant="primary"
+                            onClick={loadMorePosts}
+                            sx={{ display: 'flex', alignItems: 'center' }}
+                        >
                             {loadingState}
+                            {showLoader(loadingState)}
                         </Button>
                     ) : (
                         <Button>All Posts Loaded!</Button>
@@ -128,4 +133,11 @@ const getPosts = (pageNum = 1) => {
             numPosts: pageNum * 9,
         },
     });
+};
+
+const showLoader = (loadingState) => {
+    if (loadingState === 'Loading') {
+        return <Spinner color={'#fff'} size={20} sx={{ marginLeft: '12px' }} />;
+    }
+    return null;
 };
