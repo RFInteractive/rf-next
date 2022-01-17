@@ -108,8 +108,8 @@ const BlogFeedHeaderLeftColumn = () => {
     return (
         <div
             sx={{
-                paddingTop: ['125px', '125px', '200px', '200px'],
-                paddingBottom: ['150px', '150px', '50px', '50px'],
+                paddingTop: ['200px', '125px', '200px', '200px'],
+                paddingBottom: ['75px', '150px', '50px', '50px'],
                 paddingLeft: ['0px', '6%', '0px', '0px'],
                 paddingRight: ['0px', '12%', '0px', '25px'],
             }}

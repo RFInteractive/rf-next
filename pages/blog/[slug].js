@@ -29,7 +29,7 @@ const BlogPost = ({ post, relatedPosts }) => {
             <main
                 sx={{
                     variant: 'wrappers.blogWrapper',
-                    marginTop: ['-250px', '-250px', '-425px', '-425px'],
+                    marginTop: ['-270px', '-200px', '-425px', '-425px'],
                     mb: '75px',
                     zIndex: '500',
                 }}
@@ -48,6 +48,7 @@ const BlogPost = ({ post, relatedPosts }) => {
                             objectFit: 'cover',
                             height: '100%',
                             maxHeight: ['350px', '450px', '550px', '550px'],
+                            margin: '0 !important',
                         }}
                     />
                     <section
@@ -83,8 +84,8 @@ const BlogPostHeader = ({ post }) => {
     return (
         <div
             sx={{
-                paddingTop: ['200px', '125px', '250px', '100px'],
-                paddingBottom: ['200px', '150px', '350px', '250px'],
+                paddingTop: ['175px', '200px', '250px', '100px'],
+                paddingBottom: ['200px', '175px', '350px', '250px'],
             }}
         >
             <Container
@@ -96,12 +97,18 @@ const BlogPostHeader = ({ post }) => {
                 <h1
                     sx={{
                         color: '#fff',
+                        fontSize: ['36px', '40px', '55px', '55px'],
                     }}
                 >
                     {post.title}
                 </h1>
                 <Grid
-                    columns={'auto auto 1fr'}
+                    columns={[
+                        1,
+                        'auto auto 1fr',
+                        'auto auto 1fr',
+                        'auto auto 1fr',
+                    ]}
                     gap={20}
                     sx={{
                         justifyContent: 'space-between',
