@@ -1,5 +1,7 @@
 /** @jsxImportSource theme-ui */
-import { Container, Close } from 'theme-ui';
+import { Container, Close, Grid } from 'theme-ui';
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { navLinks } from '../../lib/navData';
@@ -49,6 +51,29 @@ const MobileMenuModal = ({ setOpen }) => {
                     }}
                 />
                 <Container sx={{ width: '80%', maxWidth: '400px' }}>
+                    <Grid
+                        sx={{
+                            justifyItems: 'center',
+                            mb: '60px',
+                        }}
+                        gap={30}
+                    >
+                        <Link href="/">
+                            <a>
+                                <span sx={{ fontSize: '30px' }}>Home</span>
+                            </a>
+                        </Link>
+                        <Link href="/blog">
+                            <a>
+                                <span sx={{ fontSize: '30px' }}>Blog</span>
+                            </a>
+                        </Link>
+                        <Link href="/">
+                            <a>
+                                <span sx={{ fontSize: '30px' }}>Contact</span>
+                            </a>
+                        </Link>
+                    </Grid>
                     {Object.keys(navLinks).map((group) => {
                         return (
                             <div sx={{ mb: '25px' }} key={group}>
