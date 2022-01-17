@@ -13,7 +13,7 @@ const DesktopNav = () => {
                 variant: 'navigation.desktopNavWrapper',
                 display: ['none', 'none', 'block', 'block'],
                 padding: '8px 30px',
-                margin: '10px 0px -95px',
+                margin: '10px 0px -115px',
                 zIndex: '100',
                 position: 'relative',
             }}
@@ -51,10 +51,10 @@ const DesktopNavLogo = () => {
         <Link href="/">
             <a sx={{ justifySelf: 'start', cursor: 'pointer' }}>
                 <Image
-                    src="/images/placeholder-logo.svg"
+                    src="/images/RankFuse-logo-white.svg"
                     alt="Rank Fuse Digital Marketing Logo"
-                    width={208}
-                    height={54}
+                    width={300}
+                    height={90}
                 />
             </a>
         </Link>
@@ -183,6 +183,25 @@ const ResourceDesktopLinks = () => {
             <Link href="/web-design-and-development">
                 <a className="desktopNavLink">Resources</a>
             </Link>
+            <div
+                className="desktopNavDropdownContainer"
+                sx={{
+                    variant: 'navigation.desktopNavDropdownContainer',
+                }}
+            >
+                {navLinks['Resources'].map((navLink) => {
+                    return (
+                        <NavItem
+                            link={navLink.link}
+                            icon={navLink.icon}
+                            heading={navLink.heading}
+                            key={navLink.link}
+                        >
+                            {navLink.description}
+                        </NavItem>
+                    );
+                })}
+            </div>
         </div>
     );
 };
