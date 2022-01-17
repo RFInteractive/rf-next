@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Container } from 'theme-ui';
+import { Container, Close } from 'theme-ui';
 import { motion } from 'framer-motion';
 
 import { navLinks } from '../../lib/navData';
@@ -30,15 +30,24 @@ const MobileMenuModal = ({ setOpen }) => {
                     top: '0px',
                     bottom: '0px',
                     width: '100vw',
-                    paddingBottom: '50px',
+                    padding: '100px 0px 50px',
                     backgroundColor: 'muted',
                     zIndex: 100000,
                     overflowY: 'scroll',
                 }}
             >
-                <p>Hello dere</p>
-                <button onClick={() => setOpen(false)}>close de modal</button>
-
+                <Close
+                    onClick={() => setOpen(false)}
+                    size={50}
+                    sx={{
+                        position: 'absolute',
+                        right: '15px',
+                        top: '15px',
+                        '&:hover': {
+                            cursor: 'pointer',
+                        },
+                    }}
+                />
                 <Container sx={{ width: '80%', maxWidth: '400px' }}>
                     {Object.keys(navLinks).map((group) => {
                         return (

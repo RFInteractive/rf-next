@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui */
+import { MenuButton } from 'theme-ui';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MobileMenuModal from './MobileMenuModal';
@@ -45,6 +46,7 @@ const MobileMenu = ({ setOpen }) => {
                 sx={{
                     display: ['flex', 'flex', 'none', 'none'],
                     justifyContent: 'space-between',
+                    alignItems: 'center',
                     position: 'fixed',
                     width: '90%',
                     backgroundColor: '#fff',
@@ -54,7 +56,20 @@ const MobileMenu = ({ setOpen }) => {
                 }}
             >
                 <h1>Mobile Nav</h1>
-                <button onClick={() => setOpen(true)}>open</button>
+                <MenuButton
+                    aria-label="Toggle Mobile Menu"
+                    color={'primaryDark'}
+                    onClick={() => setOpen(true)}
+                    sx={{
+                        '&:hover': {
+                            cursor: 'pointer',
+                        },
+                        '& svg': {
+                            height: '32px',
+                            width: '32px',
+                        },
+                    }}
+                />
             </nav>
         </motion.div>
     );
