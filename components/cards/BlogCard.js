@@ -5,7 +5,7 @@ import { Flex } from 'theme-ui';
 
 const BlogCard = ({ post }) => {
     return (
-        <Link href={post.uri} passHref>
+        <Link href={post.uri} passHref scroll={false}>
             <a>
                 <div
                     sx={{
