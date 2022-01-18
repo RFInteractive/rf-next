@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
-import { Container, Grid, Flex } from 'theme-ui';
+import { useRouter } from 'next/router';
+import { Container, Grid } from 'theme-ui';
+import { useEffect } from 'react';
 
 import AppHeader from '../../components/sections/AppHeader';
 import { client } from '../../lib/apollo';
@@ -14,6 +16,24 @@ import { formatPostsForBlogCard } from '../../lib/formatting';
 import BlogCard from '../../components/cards/BlogCard';
 
 const BlogPost = ({ post, relatedPosts }) => {
+    const nextRouter = useRouter();
+
+    useEffect(() => {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }, []);
+
+    useEffect(() => {
+        const scrollToTop = (url) => {
+            window.scroll({ top: 0, behavior: 'smooth' });
+        };
+
+        nextRouter.events.on('routeChangeComplete', scrollToTop);
+
+        return () => {
+            nextRouter.events.off('routeChangeComplete', scrollToTop);
+        };
+    }, [nextRouter]);
+
     return (
         <div>
             <Head>
