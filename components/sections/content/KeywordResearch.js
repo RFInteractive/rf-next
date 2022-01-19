@@ -25,7 +25,7 @@ const KeywordResearchLeftColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                my: ['150px', '50px', '100px', '100px'],
+                my: ['120px', '50px', '100px', '100px'],
             }}
         >
             <Image

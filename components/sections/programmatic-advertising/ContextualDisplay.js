@@ -57,7 +57,7 @@ const ContextualDisplayRightColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                my: ['100px', '50px', '100px', '100px'],
+                my: ['70px', '50px', '100px', '100px'],
             }}
         >
             <Image

@@ -6,10 +6,7 @@ import keywordResearchLeaningLaptop from '../../../public/images/keyword-researc
 
 const ContentDevelopment = () => {
     return (
-        <section
-            id="contentDevelopment"
-            sx={{ pb: ['50px', null, null, null] }}
-        >
+        <section id="contentDevelopment">
             <TwoColumnVector
                 vectorSide={'right'}
                 leftColumnContent={ContentDevelopmentLeftColumnContent()}

@@ -6,7 +6,7 @@ import PhonesPerformance from '../../../public/images/3-phones-performance.png';
 
 const FastSites = () => {
     return (
-        <section id="fastSites" sx={{ pb: ['50px', null, null, null] }}>
+        <section id="fastSites">
             <TwoColumnVector
                 vectorSide={'right'}
                 leftColumnContent={FastSitesLeftColumnContent()}

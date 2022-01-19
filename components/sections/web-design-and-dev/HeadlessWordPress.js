@@ -7,7 +7,7 @@ import HeadlessWordPressImac from '../../../public/images/headless-wordpress-iMa
 
 const HeadlessWordPress = () => {
     return (
-        <section id="headlessWordPress" sx={{ pb: ['50px', null, null, null] }}>
+        <section id="headlessWordPress">
             <TwoColumnVector
                 vectorSide={'left'}
                 leftColumnContent={HeadlessWordPressLeftColumnContent()}
@@ -25,7 +25,7 @@ const HeadlessWordPressLeftColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                my: ['150px', '50px', '100px', '100px'],
+                my: ['100px', '50px', '100px', '100px'],
                 padding: ['0px', '0px', '75px', '75px'],
             }}
         >

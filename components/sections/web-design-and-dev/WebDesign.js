@@ -7,7 +7,7 @@ import modernDesignLaptop from '../../../public/images/modern-design-laptop.png'
 
 const WebDesign = () => {
     return (
-        <section id="webDesign" sx={{ pb: ['50px', null, null, null] }}>
+        <section id="webDesign">
             <TwoColumnVector
                 vectorSide={'left'}
                 leftColumnContent={WebDesignLeftColumnContent()}
@@ -25,7 +25,7 @@ const WebDesignLeftColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                my: ['150px', '50px', '100px', '100px'],
+                my: ['100px', '50px', '100px', '100px'],
             }}
         >
             <Image

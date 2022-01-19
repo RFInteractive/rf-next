@@ -23,7 +23,7 @@ const CTARow = ({
                     padding: '50px',
                     background: `linear-gradient(270deg, ${gradientLight}, ${gradientDark});`,
                     borderRadius: '30px',
-                    marginTop: '125px',
+                    marginTop: ['25px', null, '125px', '125px'],
                     marginBottom: '75px',
                 }}
             >

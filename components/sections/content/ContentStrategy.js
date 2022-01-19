@@ -7,7 +7,7 @@ import contentTimeline from '../../../public/images/content-timeline.png';
 
 const ContentStrategy = () => {
     return (
-        <section id="contentStrategy" sx={{ pb: ['50px', null, null, null] }}>
+        <section id="contentStrategy">
             <TwoColumnVector
                 vectorSide={'left'}
                 leftColumnContent={ContentStrategyLeftColumnContent()}
@@ -25,7 +25,7 @@ const ContentStrategyLeftColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                my: ['150px', '50px', '100px', '100px'],
+                my: ['100px', '50px', '100px', '100px'],
             }}
         >
             <Image

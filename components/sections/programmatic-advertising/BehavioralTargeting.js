@@ -7,10 +7,7 @@ import iMacAd from '../../../public/images/iMac-search-ad.png';
 
 const BehavioralTargeting = () => {
     return (
-        <section
-            id="behavioralTargeting"
-            sx={{ pb: ['50px', null, null, null] }}
-        >
+        <section id="behavioralTargeting">
             <TwoColumnVector
                 vectorSide={'left'}
                 leftColumnContent={BehavioralTargetingLeftColumnContent()}
@@ -28,7 +25,7 @@ const BehavioralTargetingLeftColumnContent = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 position: 'relative',
-                my: ['100px', '50px', '100px', '100px'],
+                my: ['70px', '50px', '100px', '100px'],
                 padding: ['25px', '35px', '50px', '50px'],
             }}
         >
