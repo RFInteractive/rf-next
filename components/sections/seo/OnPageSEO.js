@@ -71,32 +71,12 @@ const OnPageSEOLeftColumnContent = () => {
                 </CheckListItem>
                 <CheckListItem bgColor="primary" checkmarkColor="#fff">
                     <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Robots meta instructions
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
                         Load Time/Page Speed
                     </p>
                 </CheckListItem>
                 <CheckListItem bgColor="primary" checkmarkColor="#fff">
                     <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
                         Image Optimization
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Mobile First SEO
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Keyword Optimization
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Schema Markup
                     </p>
                 </CheckListItem>
             </div>

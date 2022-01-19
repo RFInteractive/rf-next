@@ -4,7 +4,7 @@ import CheckListItem from '../../CheckListItem';
 
 const OffPageSEO = () => {
     return (
-        <section id="offPageSEO" sx={{ pb: ['50px', null, null, null] }}>
+        <section id="offPageSEO">
             <TwoColumnVector
                 vectorSide={'right'}
                 leftColumnContent={OffPageSEOLeftColumnContent()}
@@ -53,7 +53,7 @@ const OffPageSEORightColumnContent = () => {
             sx={{
                 position: 'relative',
                 marginTop: ['0px', '50px', '100px', '100px'],
-                marginBottom: ['0px', '50px', '100px', '100px'],
+                marginBottom: ['100px', '50px', '100px', '100px'],
                 display: 'grid',
                 justifyContent: ['center', 'center', 'start', 'start'],
                 paddingLeft: [null, null, '75px', '75px'],
