@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
-import { Button } from 'theme-ui';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import AppHeader from '../../components/sections/AppHeader';
 import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
 import CTARow from '../../components/sections/AppCTARow';
+import AboutIntroStats from '../../components/sections/about/AboutIntro';
 
 const Content = () => {
     return (
@@ -28,6 +27,8 @@ const Content = () => {
             />
 
             <main>
+                <AboutIntroStats />
+                <TestimonialCarousel></TestimonialCarousel>
                 <CTARow
                     heading="Stand Out in the Crowd"
                     subheading="Take advantage of our free tools"
