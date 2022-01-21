@@ -7,6 +7,7 @@ import TestimonialCarousel from '../../components/sections/AppTestimonialCarouse
 import CTARow from '../../components/sections/AppCTARow';
 import AboutIntroStats from '../../components/sections/about/AboutIntro';
 import MeetTheTeam from '../../components/sections/about/MeetTheTeam';
+import Certifications from '../../components/sections/about/Certs';
 
 const Content = () => {
     return (
@@ -31,6 +32,7 @@ const Content = () => {
                 <AboutIntroStats />
                 <MeetTheTeam />
                 <TestimonialCarousel />
+                <Certifications />
                 <CTARow
                     heading="Stand Out in the Crowd"
                     subheading="Take advantage of our free tools"

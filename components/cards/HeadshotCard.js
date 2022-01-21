@@ -3,7 +3,7 @@ import { Grid } from 'theme-ui';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const HeadshotCard = ({ imgSrc, heading, subheading, link }) => {
+const HeadshotCard = ({ imgSrc, heading, subheading = '', link }) => {
     return (
         <div
             sx={{
@@ -16,7 +16,17 @@ const HeadshotCard = ({ imgSrc, heading, subheading, link }) => {
             <Link href={link}>
                 <a>
                     <Grid sx={{ justifyItems: 'center' }}>
-                        <div>
+                        <div
+                            sx={{
+                                '& div': { overflow: 'visible !important' },
+                                '& img': {
+                                    borderRadius: '50%',
+                                    boxShadow:
+                                        '0px 5px 20px rgba(0, 0, 0, 0.04)',
+                                },
+                                mb: '15px',
+                            }}
+                        >
                             <Image
                                 src={imgSrc}
                                 width={250}
