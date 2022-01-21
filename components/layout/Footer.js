@@ -15,14 +15,14 @@ const Footer = () => {
                 paddingTop: '75px',
                 paddingBottom: '25px',
                 display: 'grid',
-                justifyContent: 'center',
+                justifyItems: 'center',
                 background: `linear-gradient(-30deg, ${gradientLight}, ${gradientDark})`,
             }}
         >
             <Link href="/">
-                <a sx={{ justifySelf: 'start', cursor: 'pointer' }}>
+                <a sx={{ cursor: 'pointer' }}>
                     <Image
-                        src="/images/placeholder-logo.svg"
+                        src="/images/RankFuse-logo-white.svg"
                         alt="Rank Fuse Digital Marketing Logo"
                         width={386}
                         height={100}
