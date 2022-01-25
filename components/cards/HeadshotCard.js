@@ -13,7 +13,7 @@ const HeadshotCard = ({ imgSrc, heading, subheading = '', link }) => {
                 },
             }}
         >
-            <Link href={link}>
+            <Link href={link} scroll={false}>
                 <a>
                     <Grid sx={{ justifyItems: 'center' }}>
                         <div
