@@ -17,6 +17,16 @@ const IconListCard = ({
                 borderRadius: '5px',
                 boxShadow: '3px 3px 10px rgba(0, 0, 0, 0.1)',
                 padding: '30px',
+                '& a': {
+                    color: iconColor,
+                    '&:hover': {
+                        transform: 'scale(1.06)',
+                        cursor: 'pointer',
+                        display: 'inline-block',
+                        transition: 'all 0.2s ease-out',
+                        color: iconColor,
+                    },
+                },
             }}
         >
             <AppBgIcon iconName={icon} color={iconColor} />
@@ -26,14 +36,6 @@ const IconListCard = ({
                         sx={{
                             marginTop: '15px',
                             marginBottom: '5px',
-                            color: iconColor,
-                            '&:hover': {
-                                transform: 'scale(1.06)',
-                                cursor: 'pointer',
-                                display: 'inline-block',
-                                transition: 'all 0.2s ease-out',
-                                color: iconColor,
-                            },
                         }}
                     >
                         {heading}
@@ -51,22 +53,7 @@ const IconListCard = ({
             ></div>
             {children}
             <Link href={link}>
-                <a>
-                    <p
-                        sx={{
-                            color: iconColor,
-                            '&:hover': {
-                                transform: 'scale(1.06)',
-                                cursor: 'pointer',
-                                display: 'inline-block',
-                                transition: 'all 0.2s ease-out',
-                                color: iconColor,
-                            },
-                        }}
-                    >
-                        Read More &#8594;
-                    </p>
-                </a>
+                <a>Read More &#8594;</a>
             </Link>
         </div>
     );
