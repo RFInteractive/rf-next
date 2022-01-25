@@ -9,9 +9,9 @@ import AboutIntroStats from '../../components/sections/about/AboutIntro';
 import MeetTheTeam from '../../components/sections/about/MeetTheTeam';
 import Certifications from '../../components/sections/about/Certs';
 
-const Content = () => {
+const About = () => {
     return (
-        <div>
+        <>
             <Head>
                 <title>
                     Content Strategy from Top Experts | Rank Fuse Digital
@@ -38,11 +38,11 @@ const Content = () => {
                     subheading="Take advantage of our free tools"
                 ></CTARow>
             </main>
-        </div>
+        </>
     );
 };
 
-export default Content;
+export default About;
 
 const AboutCenterColumn = () => {
     return (
