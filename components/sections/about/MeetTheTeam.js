@@ -47,7 +47,7 @@ const MeetTheTeam = () => {
                             heading="Jamin Roberts"
                             subheading="Web Developer"
                             imgSrc="/images/jamin-roberts-headshot.png"
-                            link="/"
+                            link="/about/jamin-roberts"
                         />
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.4}>
