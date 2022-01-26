@@ -48,6 +48,7 @@ const JoshEliseuson = () => {
                                         '0px 5px 20px rgba(0, 0, 0, 0.04)',
                                 },
                                 mb: '25px',
+                                px: '25px',
                             }}
                         >
                             <Grid
@@ -85,7 +86,7 @@ const JoshEliseuson = () => {
                                 </h4>
                             </Grid>
                         </div>
-                        <Grid gap={15}>
+                        <Grid gap={15} sx={{ px: '25px' }}>
                             <p>
                                 Josh is a nationally recognized digital
                                 marketing strategist who specializes in the

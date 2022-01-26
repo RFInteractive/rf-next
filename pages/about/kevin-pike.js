@@ -51,6 +51,7 @@ const KevinPike = ({ authorPosts }) => {
                                         '0px 5px 20px rgba(0, 0, 0, 0.04)',
                                 },
                                 mb: '25px',
+                                px: '25px',
                             }}
                         >
                             <Grid
@@ -94,7 +95,7 @@ const KevinPike = ({ authorPosts }) => {
                                 </p>
                             </Grid>
                         </div>
-                        <Grid gap={15}>
+                        <Grid gap={15} sx={{ px: '25px' }}>
                             <p>
                                 Kevin Pike is the Owner and President of Rank
                                 Fuse Digital Marketing located in Overland Park,

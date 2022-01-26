@@ -38,7 +38,7 @@ const ChelseaRoller = ({ authorPosts }) => {
                 <Container
                     sx={{
                         maxWidth: '1290px',
-                        padding: '50px 30px',
+                        padding: '50px 0px',
                         mt: '-100px',
                     }}
                 >
@@ -52,6 +52,7 @@ const ChelseaRoller = ({ authorPosts }) => {
                                         '0px 5px 20px rgba(0, 0, 0, 0.04)',
                                 },
                                 mb: '25px',
+                                px: '25px',
                             }}
                         >
                             <Grid
@@ -89,7 +90,7 @@ const ChelseaRoller = ({ authorPosts }) => {
                                 </h4>
                             </Grid>
                         </div>
-                        <Grid gap={15}>
+                        <Grid gap={15} sx={{ px: '25px' }}>
                             <p>
                                 Chelsea Roller is the SEO and Content Marketing
                                 Account Manager at Rank Fuse Digital Marketing.

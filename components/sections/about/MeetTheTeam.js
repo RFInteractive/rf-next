@@ -39,7 +39,7 @@ const MeetTheTeam = () => {
                             heading="Chelsea Roller"
                             subheading="Account Manager, SEO & Content Marketing"
                             imgSrc="/images/chelsea-roller-headshot.png"
-                            link="/chelsea-roller"
+                            link="/about/chelsea-roller"
                         />
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.2}>
