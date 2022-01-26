@@ -41,10 +41,7 @@ const KevinPike = ({ authorPosts }) => {
                         mt: '-100px',
                     }}
                 >
-                    <Grid
-                        columns={[1, 1, '1fr 1.5fr', '1fr 1.5fr']}
-                        sx={{ justifyItems: 'center' }}
-                    >
+                    <Grid columns={[1, 1, '1fr 1.5fr', '1fr 1.5fr']} gap={20}>
                         <div
                             sx={{
                                 '& div': { overflow: 'visible !important' },
@@ -56,43 +53,48 @@ const KevinPike = ({ authorPosts }) => {
                                 mb: '25px',
                             }}
                         >
-                            <MotionFadeGrow>
-                                <Image
-                                    src="/images/kevin-pike-headshot.png"
-                                    width={325}
-                                    height={325}
-                                    alt={`Image of Rank Fuse Digital Marketing owner Kevin Pike`}
-                                    quality={90}
-                                />
-                            </MotionFadeGrow>
-                            <h3
-                                sx={{
-                                    color: 'text',
-                                    textAlign: 'center',
-                                    fontSize: '32px',
-                                    fontWeight: '900',
-                                    my: '15px',
-                                }}
+                            <Grid
+                                rows={'min-content'}
+                                sx={{ justifyItems: 'center' }}
                             >
-                                Kevin Pike
-                            </h3>
-                            <h4
-                                sx={{
-                                    color: 'text',
-                                    textAlign: 'center',
-                                    fontSize: '22px',
-                                }}
-                            >
-                                President/Owner
-                            </h4>
-                            <p sx={{ textAlign: 'center', mt: '30px' }}>
-                                kevin@rankFuse.com
-                            </p>
-                            <p sx={{ textAlign: 'center' }}>
-                                913.270.6770 x100
-                            </p>
+                                <MotionFadeGrow>
+                                    <Image
+                                        src="/images/kevin-pike-headshot.png"
+                                        width={325}
+                                        height={325}
+                                        alt={`Image of Rank Fuse Digital Marketing owner Kevin Pike`}
+                                        quality={90}
+                                    />
+                                </MotionFadeGrow>
+                                <h3
+                                    sx={{
+                                        color: 'text',
+                                        textAlign: 'center',
+                                        fontSize: '32px',
+                                        fontWeight: '900',
+                                        my: '15px',
+                                    }}
+                                >
+                                    Kevin Pike
+                                </h3>
+                                <h4
+                                    sx={{
+                                        color: 'text',
+                                        textAlign: 'center',
+                                        fontSize: '22px',
+                                    }}
+                                >
+                                    President/Owner
+                                </h4>
+                                <p sx={{ textAlign: 'center', mt: '30px' }}>
+                                    kevin@rankfuse.com
+                                </p>
+                                <p sx={{ textAlign: 'center' }}>
+                                    913.270.6770 x100
+                                </p>
+                            </Grid>
                         </div>
-                        <div sx={{ display: 'grid', gap: '15px' }}>
+                        <Grid gap={15}>
                             <p>
                                 Kevin Pike is the Owner and President of Rank
                                 Fuse Digital Marketing located in Overland Park,
@@ -131,7 +133,7 @@ const KevinPike = ({ authorPosts }) => {
                                 share with any company looking to take their
                                 digital marketing plans to the next level.
                             </p>
-                        </div>
+                        </Grid>
                     </Grid>
                 </Container>
             </main>

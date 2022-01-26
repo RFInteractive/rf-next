@@ -38,10 +38,7 @@ const JoshEliseuson = () => {
                         mt: '-100px',
                     }}
                 >
-                    <Grid
-                        columns={[1, 1, '1fr 1.5fr', '1fr 1.5fr']}
-                        sx={{ justifyItems: 'center' }}
-                    >
+                    <Grid columns={[1, 1, '1fr 1.5fr', '1fr 1.5fr']} gap={20}>
                         <div
                             sx={{
                                 '& div': { overflow: 'visible !important' },
@@ -53,37 +50,42 @@ const JoshEliseuson = () => {
                                 mb: '25px',
                             }}
                         >
-                            <MotionFadeGrow>
-                                <Image
-                                    src="/images/josh-eliseuson-headshot.png"
-                                    width={325}
-                                    height={325}
-                                    alt={`Image of Rank Fuse Digital Marketing paid search manager Josh Eliseuson`}
-                                    quality={90}
-                                />
-                            </MotionFadeGrow>
-                            <h3
-                                sx={{
-                                    color: 'text',
-                                    textAlign: 'center',
-                                    fontSize: '32px',
-                                    fontWeight: '900',
-                                    my: '15px',
-                                }}
+                            <Grid
+                                rows={'min-content'}
+                                sx={{ justifyItems: 'center' }}
                             >
-                                Josh Eliseuson
-                            </h3>
-                            <h4
-                                sx={{
-                                    color: 'text',
-                                    textAlign: 'center',
-                                    fontSize: '22px',
-                                }}
-                            >
-                                Paid Search Manager
-                            </h4>
+                                <MotionFadeGrow>
+                                    <Image
+                                        src="/images/josh-eliseuson-headshot.png"
+                                        width={325}
+                                        height={325}
+                                        alt={`Image of Rank Fuse Digital Marketing paid search manager Josh Eliseuson`}
+                                        quality={90}
+                                    />
+                                </MotionFadeGrow>
+                                <h3
+                                    sx={{
+                                        color: 'text',
+                                        textAlign: 'center',
+                                        fontSize: '32px',
+                                        fontWeight: '900',
+                                        my: '15px',
+                                    }}
+                                >
+                                    Josh Eliseuson
+                                </h3>
+                                <h4
+                                    sx={{
+                                        color: 'text',
+                                        textAlign: 'center',
+                                        fontSize: '22px',
+                                    }}
+                                >
+                                    Paid Search Manager
+                                </h4>
+                            </Grid>
                         </div>
-                        <div sx={{ display: 'grid', gap: '15px' }}>
+                        <Grid gap={15}>
                             <p>
                                 Josh is a nationally recognized digital
                                 marketing strategist who specializes in the
@@ -110,7 +112,7 @@ const JoshEliseuson = () => {
                                 Advertising Bachelors degree from the University
                                 of Kansas.
                             </p>
-                        </div>
+                        </Grid>
                     </Grid>
                 </Container>
             </main>
