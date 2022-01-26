@@ -38,7 +38,7 @@ const JoshEliseuson = () => {
                         mt: '-100px',
                     }}
                 >
-                    <Grid columns={[1, 1, '1fr 1.5fr', '1fr 1.5fr']} gap={20}>
+                    <Grid columns={[1, 1, '1fr 2fr', '1fr 2fr']} gap={20}>
                         <div
                             sx={{
                                 '& div': { overflow: 'visible !important' },
@@ -86,7 +86,10 @@ const JoshEliseuson = () => {
                                 </h4>
                             </Grid>
                         </div>
-                        <Grid gap={15} sx={{ px: '25px' }}>
+                        <Grid
+                            gap={15}
+                            sx={{ px: '25px', gridTemplateRows: 'min-content' }}
+                        >
                             <p>
                                 Josh is a nationally recognized digital
                                 marketing strategist who specializes in the

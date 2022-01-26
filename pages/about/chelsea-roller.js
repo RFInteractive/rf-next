@@ -42,7 +42,7 @@ const ChelseaRoller = ({ authorPosts }) => {
                         mt: '-100px',
                     }}
                 >
-                    <Grid columns={[1, 1, '1fr 1.5fr', '1fr 1.5fr']} gap={20}>
+                    <Grid columns={[1, 1, '1fr 2fr', '1fr 2fr']} gap={20}>
                         <div
                             sx={{
                                 '& div': { overflow: 'visible !important' },
@@ -90,7 +90,10 @@ const ChelseaRoller = ({ authorPosts }) => {
                                 </h4>
                             </Grid>
                         </div>
-                        <Grid gap={15} sx={{ px: '25px' }}>
+                        <Grid
+                            gap={15}
+                            sx={{ px: '25px', gridTemplateRows: 'min-content' }}
+                        >
                             <p>
                                 Chelsea Roller is the SEO and Content Marketing
                                 Account Manager at Rank Fuse Digital Marketing.
