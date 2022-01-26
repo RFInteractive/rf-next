@@ -31,7 +31,7 @@ const MeetTheTeam = () => {
                             heading="Josh Eliseuson"
                             subheading="Paid Media Director"
                             imgSrc="/images/josh-eliseuson-headshot.png"
-                            link="/"
+                            link="/about/josh-eliseuson"
                         />
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.6}>
