@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import { Container, Grid } from 'theme-ui';
-import { useEffect } from 'react';
 
 import AppHeader from '../../components/sections/AppHeader';
 import { client } from '../../lib/apollo';
@@ -16,16 +14,6 @@ import { formatPostsForBlogCard } from '../../lib/formatting';
 import BlogCard from '../../components/cards/BlogCard';
 
 const BlogPost = ({ post, relatedPosts }) => {
-    const nextRouter = useRouter();
-
-    useEffect(() => {
-        scrollToTop();
-    }, []);
-
-    const scrollToTop = () => {
-        window.scroll({ top: 0, behavior: 'smooth' });
-    };
-
     return (
         <div>
             <Head>
@@ -80,11 +68,9 @@ const BlogPost = ({ post, relatedPosts }) => {
                         columns={[1, 2, 3, 3]}
                         gap={['40px', '40px', '10px', '10px']}
                     >
-                        <div onClick={scrollToTop}>
-                            {relatedPosts.map((post) => (
-                                <BlogCard key={post.uri} post={post}></BlogCard>
-                            ))}
-                        </div>
+                        {relatedPosts.map((post) => (
+                            <BlogCard key={post.uri} post={post}></BlogCard>
+                        ))}
                     </Grid>
                 </Container>
             </section>

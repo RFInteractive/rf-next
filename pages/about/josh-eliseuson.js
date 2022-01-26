@@ -2,17 +2,12 @@
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect } from 'react';
 import { Grid, Container } from 'theme-ui';
 import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
 
 import AppHeader from '../../components/sections/AppHeader';
 
 const JoshEliseuson = () => {
-    useEffect(() => {
-        window.scroll({ top: 0, behavior: 'smooth' });
-    }, []);
-
     return (
         <>
             <Head>

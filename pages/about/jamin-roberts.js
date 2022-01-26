@@ -2,7 +2,6 @@
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect } from 'react';
 import { Grid, Container } from 'theme-ui';
 import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
 
@@ -13,10 +12,6 @@ import { formatPostsForBlogCard } from '../../lib/formatting';
 import BlogCard from '../../components/cards/BlogCard';
 
 const JaminRoberts = ({ authorPosts }) => {
-    useEffect(() => {
-        window.scroll({ top: 0, behavior: 'smooth' });
-    }, []);
-
     return (
         <>
             <Head>
