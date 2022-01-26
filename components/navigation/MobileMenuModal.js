@@ -50,7 +50,7 @@ const MobileMenuModal = ({ setOpen }) => {
                         },
                     }}
                 />
-                <Container sx={{ width: '80%', maxWidth: '400px' }}>
+                <Container sx={{ width: '85%', maxWidth: '400px' }}>
                     <Grid
                         sx={{
                             justifyItems: 'center',
