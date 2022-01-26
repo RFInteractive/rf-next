@@ -135,7 +135,7 @@ const BlogPostHeader = ({ post }) => {
                         mt: '15px',
                         fontSize: '16px',
                         color: '#fff',
-                        maxWidth: '550px',
+                        maxWidth: '650px',
                     }}
                 >
                     <div sx={{ display: 'flex', alignItems: 'center' }}>
