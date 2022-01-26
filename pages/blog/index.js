@@ -137,7 +137,7 @@ const getPosts = (pageNum = 1) => {
 
 const showLoader = (loadingState) => {
     if (loadingState === 'Loading') {
-        return <Spinner color={'#fff'} size={20} sx={{ marginLeft: '12px' }} />;
+        return <Spinner color={'text'} size={20} sx={{ marginLeft: '12px' }} />;
     }
     return null;
 };
