@@ -16,7 +16,7 @@ const NavItem = ({
     const primaryColor = theme.rawColors.primary;
 
     return (
-        <Link href={link}>
+        <Link href={link} scroll={false}>
             <a>
                 <div
                     sx={{
