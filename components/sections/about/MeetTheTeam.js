@@ -23,7 +23,7 @@ const MeetTheTeam = () => {
                             heading="Kevin Pike"
                             subheading="President/Owner"
                             imgSrc="/images/kevin-pike-headshot.png"
-                            link="/"
+                            link="/about/kevin-pike"
                         />
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.4}>
