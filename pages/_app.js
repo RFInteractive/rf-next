@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { ThemeProvider } from 'theme-ui';
 import { theme } from '../lib/theme';
+import { useRouter } from 'next/router';
 
 import '../styles/globals.scss';
 import Layout from '../components/layout/Layout';
@@ -9,12 +10,48 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../lib/apollo';
+import { useEffect } from 'react';
 
 const MyApp = ({ Component, pageProps, router }) => {
+    const nextRouter = useRouter();
+
+    useEffect(() => {
+        const scrollToTop = (url) => {
+            const navTo = url.split('?')[0];
+            const navFrom = nextRouter.asPath.split('?')[0];
+            if (navTo !== navFrom) {
+                window.scroll({ top: 0, behavior: 'smooth' });
+            }
+        };
+
+        const checkAndScrollToSection = (url) => {
+            const query = window.location.search.split('=')[1];
+            if (query) {
+                setTimeout(() => {
+                    const scrollTo = document.getElementById(query);
+                    scrollTo.scrollIntoView({ behavior: 'smooth' });
+                }, 700);
+            }
+        };
+
+        nextRouter.events.on('routeChangeStart', scrollToTop);
+        nextRouter.events.on('routeChangeComplete', checkAndScrollToSection);
+
+        // If the component is unmounted, unsubscribe
+        // from the event with the `off` method:
+        return () => {
+            nextRouter.events.off('routeChangeStart', scrollToTop);
+            nextRouter.events.off(
+                'routeChangeComplete',
+                checkAndScrollToSection
+            );
+        };
+    }, [nextRouter]);
+
     return (
         <ApolloProvider client={client}>
             <ThemeProvider theme={theme}>
-                <AnimatePresence initial={false}>
+                <AnimatePresence initial={false} exitBeforeEnter>
                     <motion.div
                         key={router.route}
                         initial={{ opacity: 0 }}
