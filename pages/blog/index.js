@@ -90,7 +90,7 @@ const BlogFeed = ({ posts }) => {
     );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
     const result = await getPosts();
 
     const posts = formatPostsForBlogCard(result.data.posts.nodes);
