@@ -3,7 +3,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { Grid, Container } from 'theme-ui';
 import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
 
@@ -14,23 +13,9 @@ import { formatPostsForBlogCard } from '../../lib/formatting';
 import BlogCard from '../../components/cards/BlogCard';
 
 const KevinPike = ({ authorPosts }) => {
-    const nextRouter = useRouter();
-
     useEffect(() => {
         window.scroll({ top: 0, behavior: 'smooth' });
     }, []);
-
-    useEffect(() => {
-        const scrollToTop = () => {
-            window.scroll({ top: 0, behavior: 'smooth' });
-        };
-
-        nextRouter.events.on('routeChangeComplete', scrollToTop);
-
-        return () => {
-            nextRouter.events.off('routeChangeComplete', scrollToTop);
-        };
-    }, [nextRouter]);
 
     return (
         <>
