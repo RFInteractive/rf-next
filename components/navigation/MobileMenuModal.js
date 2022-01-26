@@ -115,7 +115,7 @@ const MobileLinkGroup = ({ linkGroup, setOpen }) => {
                     link={navLink.link}
                     icon={navLink.icon}
                     heading={navLink.heading}
-                    size={'52px'}
+                    size={'60px'}
                 >
                     {navLink.description}
                 </NavItem>
