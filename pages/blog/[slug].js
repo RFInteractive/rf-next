@@ -19,20 +19,12 @@ const BlogPost = ({ post, relatedPosts }) => {
     const nextRouter = useRouter();
 
     useEffect(() => {
-        window.scroll({ top: 0, behavior: 'smooth' });
+        scrollToTop();
     }, []);
 
-    useEffect(() => {
-        const scrollToTop = (url) => {
-            window.scroll({ top: 0, behavior: 'smooth' });
-        };
-
-        nextRouter.events.on('routeChangeComplete', scrollToTop);
-
-        return () => {
-            nextRouter.events.off('routeChangeComplete', scrollToTop);
-        };
-    }, [nextRouter]);
+    const scrollToTop = () => {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    };
 
     return (
         <div>
@@ -88,9 +80,11 @@ const BlogPost = ({ post, relatedPosts }) => {
                         columns={[1, 2, 3, 3]}
                         gap={['40px', '40px', '10px', '10px']}
                     >
-                        {relatedPosts.map((post) => (
-                            <BlogCard key={post.uri} post={post}></BlogCard>
-                        ))}
+                        <div onClick={scrollToTop}>
+                            {relatedPosts.map((post) => (
+                                <BlogCard key={post.uri} post={post}></BlogCard>
+                            ))}
+                        </div>
                     </Grid>
                 </Container>
             </section>
