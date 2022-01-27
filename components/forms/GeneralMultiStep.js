@@ -10,11 +10,10 @@ import {
 } from 'theme-ui';
 import { Grid, Message } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useForm, Controller } from 'react-hook-form';
 import Step from './Step';
-import { useEffect } from 'react/cjs/react.development';
 
 const GeneralMultiStep = () => {
     const { handleSubmit, watch, control, getFieldState, formState, setFocus } =
