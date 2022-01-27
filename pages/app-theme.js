@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { useThemeUI, Button, Grid } from 'theme-ui';
+import { useThemeUI, Button, Grid, Container } from 'theme-ui';
 
 import AppHeader from '../components/sections/AppHeader';
+import GeneralMultiStep from '../components/forms/GeneralMultiStep';
 
 const ThemePage = () => {
     const { theme, setColorMode } = useThemeUI();
@@ -128,6 +129,11 @@ const ThemePage = () => {
                         __html: '<h1>Hello</h1><p>Lorem ipsum dolor sit amet, <a href="/">consectetur adipiscing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><p>Testing stuff</p>',
                     }}
                 />
+            </section>
+            <section>
+                <Container sx={{ maxWidth: '1000px' }}>
+                    <GeneralMultiStep />
+                </Container>
             </section>
         </>
     );
