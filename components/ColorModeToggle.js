@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import { useColorMode, Button } from 'theme-ui';
 
-const modes = ['light', 'black', 'deep'];
+const modes = ['light', 'deep'];
 
 const ColorModeToggle = () => {
     const [mode, setMode] = useColorMode();
