@@ -15,7 +15,6 @@ const GeneralMultiStep = () => {
         formState: { errors, isValid, touchedFields },
         setFocus,
         register,
-        getValues,
         trigger,
     } = useForm({
         mode: 'onChange',
@@ -62,8 +61,10 @@ const GeneralMultiStep = () => {
                         <Step key={1}>
                             <FirstStep
                                 register={register}
+                                getFieldState={getFieldState}
                                 stepControl={changeStep}
-                                getValues={getValues}
+                                trigger={trigger}
+                                touchedFields={touchedFields}
                             />
                         </Step>
                     )}
@@ -105,7 +106,22 @@ const GeneralMultiStep = () => {
 
 export default GeneralMultiStep;
 
-const FirstStep = ({ register, stepControl, getValues }) => {
+const FirstStep = ({
+    register,
+    getFieldState,
+    stepControl,
+    trigger,
+    touchedFields,
+}) => {
+    const triggerValidation = useCallback(
+        async () => await trigger(),
+        [trigger]
+    );
+
+    useEffect(() => {
+        triggerValidation();
+    }, [triggerValidation]);
+
     return (
         <>
             <Grid gap={10}>
@@ -127,15 +143,26 @@ const FirstStep = ({ register, stepControl, getValues }) => {
                         Web Dev
                     </Grid>
                 </Label>
-                <Grid sx={{ mt: '15px' }}>
-                    <Button
-                        sx={{ justifySelf: 'end' }}
-                        onClick={() => stepControl('next')}
-                        type="button"
-                    >
-                        Next
-                    </Button>
-                </Grid>
+                {!getFieldState('Interest').invalid ? (
+                    <Grid sx={{ mt: '15px' }}>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{
+                                opacity: 1,
+                                transition: { duration: 0.4 },
+                            }}
+                            exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                            sx={{ justifySelf: 'end' }}
+                        >
+                            <Button
+                                onClick={() => stepControl('next')}
+                                type="button"
+                            >
+                                Next
+                            </Button>
+                        </motion.div>
+                    </Grid>
+                ) : null}
             </Grid>
         </>
     );
@@ -149,15 +176,15 @@ const SecondStep = ({
     trigger,
     touchedFields,
 }) => {
-    useEffect(() => {
-        setFocus('firstName');
-        triggerValidation();
-    }, [setFocus, triggerValidation]);
-
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
     );
+
+    useEffect(() => {
+        setFocus('firstName');
+        triggerValidation();
+    }, [setFocus, triggerValidation]);
 
     return (
         <>
@@ -213,15 +240,15 @@ const ThirdStep = ({
     trigger,
     touchedFields,
 }) => {
-    useEffect(() => {
-        setFocus('lastName');
-        triggerValidation();
-    }, [setFocus, triggerValidation]);
-
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
     );
+
+    useEffect(() => {
+        setFocus('lastName');
+        triggerValidation();
+    }, [setFocus, triggerValidation]);
 
     return (
         <>
