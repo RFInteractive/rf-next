@@ -16,10 +16,21 @@ import { useForm, Controller } from 'react-hook-form';
 import Step from './Step';
 
 const GeneralMultiStep = () => {
-    const { handleSubmit, watch, control, getFieldState, formState, setFocus } =
-        useForm({
-            mode: 'onChange',
-        });
+    const {
+        handleSubmit,
+        watch,
+        getFieldState,
+        formState,
+        setFocus,
+        register,
+        getValues,
+    } = useForm({
+        mode: 'onSubmit',
+        defaultValues: {
+            Interest: [],
+            firstName: '',
+        },
+    });
 
     const [stepNumber, setStepNumber] = useState(1);
 
@@ -30,7 +41,6 @@ const GeneralMultiStep = () => {
     const submitForm = async (data, e) => {
         e.preventDefault();
         if (formState.isValid && stepNumber === totalSteps) {
-            console.log('submitting form');
             console.table(data);
             return;
         }
@@ -50,20 +60,21 @@ const GeneralMultiStep = () => {
     };
 
     return (
-        <Grid columns={1} gap={20}>
+        <Grid columns={1} gap={20} sx={{ px: '25px' }}>
             <form onSubmit={handleSubmit(submitForm)}>
                 <AnimatePresence exitBeforeEnter>
                     {renderStep(
                         stepNumber,
-                        control,
+                        register,
                         getFieldState,
                         changeStep,
-                        setFocus
+                        setFocus,
+                        getValues
                     )}
                 </AnimatePresence>
             </form>
             <p>{JSON.stringify(watchAllFields)}</p>
-            <p>{JSON.stringify(formState.errors)}</p>
+            <p>{JSON.stringify(formState.isValid)}</p>
         </Grid>
     );
 };
@@ -72,20 +83,20 @@ export default GeneralMultiStep;
 
 const renderStep = (
     stepNumber,
-    control,
+    register,
     getFieldState,
     changeStep,
-    setFocus
+    setFocus,
+    getValues
 ) => {
     switch (stepNumber) {
         case 1:
             return (
                 <Step key={1}>
                     <FirstStep
-                        control={control}
-                        getFieldState={getFieldState}
+                        register={register}
                         stepControl={changeStep}
-                        setFocus={setFocus}
+                        getValues={getValues}
                     />
                 </Step>
             );
@@ -93,7 +104,7 @@ const renderStep = (
             return (
                 <Step key={2}>
                     <SecondStep
-                        control={control}
+                        register={register}
                         getFieldState={getFieldState}
                         stepControl={changeStep}
                         setFocus={setFocus}
@@ -101,86 +112,59 @@ const renderStep = (
                 </Step>
             );
         default:
-            return (
-                <Step key={1}>
-                    <FirstStep
-                        control={control}
-                        getFieldState={getFieldState}
-                        stepControl={changeStep}
-                    />
-                </Step>
-            );
+            return <h4>Misstep</h4>;
     }
 };
 
-const FirstStep = ({ control, getFieldState, stepControl, setFocus }) => {
+const FirstStep = ({ register, stepControl, getValues }) => {
+    return (
+        <>
+            <Grid gap={10}>
+                <p>
+                    <strong>What can we help you with? *</strong>
+                </p>
+                <Label>
+                    <Grid columns={'auto 1fr'} sx={{ alignItems: 'center' }}>
+                        <Checkbox
+                            {...register('Interest', { required: true })}
+                            value="SEO"
+                        />
+                        SEO
+                    </Grid>
+                </Label>
+                <Label>
+                    <Grid columns={'auto 1fr'} sx={{ alignItems: 'center' }}>
+                        <Checkbox {...register('Interest')} value="Web Dev" />
+                        Web Dev
+                    </Grid>
+                </Label>
+                <Grid sx={{ mt: '15px' }}>
+                    <Button
+                        sx={{ justifySelf: 'end' }}
+                        onClick={() => stepControl('next')}
+                        type="button"
+                    >
+                        Next
+                    </Button>
+                </Grid>
+            </Grid>
+        </>
+    );
+};
+
+const SecondStep = ({ register, getFieldState, stepControl, setFocus }) => {
     useEffect(() => {
         setFocus('firstName');
     }, [setFocus]);
 
     return (
         <>
-            <Label htmlFor="firstName">First Name*</Label>
-            <Controller
-                control={control}
-                name="firstName"
-                defaultValue=""
-                rules={{ required: true }}
-                render={({ field }) => <Input {...field} autocomplete="off" />}
-            />
+            <Label htmlFor="firstName">First Name *</Label>
+            <Input {...register('firstName', { required: true })} />
             <AnimatePresence>
                 {getFieldState('firstName').invalid ? (
                     <motion.div
                         key="firstNameMessage"
-                        initial={inputMessageInitial}
-                        animate={inputMessageAnimate}
-                        exit={inputMessageExit}
-                    >
-                        <Message
-                            sx={{
-                                backgroundColor: 'muted',
-                                color: 'text',
-                                fontSize: '16px',
-                                padding: '5px 15px',
-                            }}
-                        >
-                            This input is required
-                        </Message>
-                    </motion.div>
-                ) : null}
-            </AnimatePresence>
-            <Grid sx={{ mt: '15px' }}>
-                <Button
-                    sx={{ justifySelf: 'end' }}
-                    onClick={() => stepControl('next')}
-                    type="button"
-                >
-                    Next
-                </Button>
-            </Grid>
-        </>
-    );
-};
-
-const SecondStep = ({ control, getFieldState, stepControl, setFocus }) => {
-    useEffect(() => {
-        setFocus('lastName');
-    }, [setFocus]);
-
-    return (
-        <>
-            <Label htmlFor="lastName">Last Name*</Label>
-            <Controller
-                control={control}
-                name="lastName"
-                defaultValue=""
-                rules={{ required: true }}
-                render={({ field }) => <Input {...field} autocomplete="off" />}
-            />
-            <AnimatePresence>
-                {getFieldState('lastName').invalid ? (
-                    <motion.div
-                        key="lastNameMessage"
                         initial={inputMessageInitial}
                         animate={inputMessageAnimate}
                         exit={inputMessageExit}
