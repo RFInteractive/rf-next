@@ -1,18 +1,10 @@
 /** @jsxImportSource theme-ui */
-import {
-    Button,
-    Label,
-    Input,
-    Select,
-    Textarea,
-    Radio,
-    Checkbox,
-} from 'theme-ui';
+import { Button, Label, Input, Textarea, Checkbox } from 'theme-ui';
 import { Grid, Message } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import Step from './Step';
 
 const GeneralMultiStep = () => {
@@ -20,7 +12,7 @@ const GeneralMultiStep = () => {
         handleSubmit,
         watch,
         getFieldState,
-        formState: { errors, isValid },
+        formState: { errors, isValid, touchedFields },
         setFocus,
         register,
         getValues,
@@ -66,70 +58,52 @@ const GeneralMultiStep = () => {
         <Grid columns={1} gap={20} sx={{ px: '25px' }}>
             <form onSubmit={handleSubmit(submitForm)}>
                 <AnimatePresence exitBeforeEnter>
-                    {renderStep(
-                        stepNumber,
-                        register,
-                        getFieldState,
-                        changeStep,
-                        setFocus,
-                        getValues
+                    {stepNumber === 1 && (
+                        <Step key={1}>
+                            <FirstStep
+                                register={register}
+                                stepControl={changeStep}
+                                getValues={getValues}
+                            />
+                        </Step>
+                    )}
+                    {stepNumber === 2 && (
+                        <Step key={2}>
+                            <SecondStep
+                                register={register}
+                                getFieldState={getFieldState}
+                                stepControl={changeStep}
+                                setFocus={setFocus}
+                                trigger={trigger}
+                                touchedFields={touchedFields}
+                            />
+                        </Step>
+                    )}
+                    {stepNumber === 3 && (
+                        <Step key={3}>
+                            <ThirdStep
+                                register={register}
+                                getFieldState={getFieldState}
+                                stepControl={changeStep}
+                                setFocus={setFocus}
+                                trigger={trigger}
+                                touchedFields={touchedFields}
+                            />
+                        </Step>
                     )}
                 </AnimatePresence>
             </form>
             <p>{JSON.stringify(watchAllFields)}</p>
-            <p>{JSON.stringify(isValid)}</p>
-            <p>{JSON.stringify(getFieldState('firstName').invalid)}</p>
+            <p>Is entire form valid: {JSON.stringify(isValid)}</p>
+            <p>
+                Is firstName field INvalid:{' '}
+                {JSON.stringify(getFieldState('firstName').invalid)}
+            </p>
         </Grid>
     );
 };
 
 export default GeneralMultiStep;
-
-const renderStep = (
-    stepNumber,
-    register,
-    getFieldState,
-    changeStep,
-    setFocus,
-    getValues
-) => {
-    switch (stepNumber) {
-        case 1:
-            return (
-                <Step key={1}>
-                    <FirstStep
-                        register={register}
-                        stepControl={changeStep}
-                        getValues={getValues}
-                    />
-                </Step>
-            );
-        case 2:
-            return (
-                <Step key={2}>
-                    <SecondStep
-                        register={register}
-                        getFieldState={getFieldState}
-                        stepControl={changeStep}
-                        setFocus={setFocus}
-                    />
-                </Step>
-            );
-        case 3:
-            return (
-                <Step key={3}>
-                    <ThirdStep
-                        register={register}
-                        getFieldState={getFieldState}
-                        stepControl={changeStep}
-                        setFocus={setFocus}
-                    />
-                </Step>
-            );
-        default:
-            return <h4>Misstep</h4>;
-    }
-};
 
 const FirstStep = ({ register, stepControl, getValues }) => {
     return (
@@ -167,21 +141,31 @@ const FirstStep = ({ register, stepControl, getValues }) => {
     );
 };
 
-const SecondStep = ({ register, getFieldState, stepControl, setFocus }) => {
+const SecondStep = ({
+    register,
+    getFieldState,
+    stepControl,
+    setFocus,
+    trigger,
+    touchedFields,
+}) => {
     useEffect(() => {
         setFocus('firstName');
-    }, [setFocus]);
+        triggerValidation();
+    }, [setFocus, triggerValidation]);
 
-    useEffect(() => {
-        console.log(getFieldState('firstName').invalid);
-    });
+    const triggerValidation = useCallback(
+        async () => await trigger(),
+        [trigger]
+    );
 
     return (
         <>
             <Label htmlFor="firstName">First Name *</Label>
             <Input {...register('firstName', { required: true })} />
             <AnimatePresence>
-                {getFieldState('firstName').invalid ? (
+                {getFieldState('firstName').invalid &&
+                touchedFields.firstName ? (
                     <motion.div
                         key="firstNameMessage"
                         initial={inputMessageInitial}
@@ -221,21 +205,30 @@ const SecondStep = ({ register, getFieldState, stepControl, setFocus }) => {
     );
 };
 
-const ThirdStep = ({ register, getFieldState, stepControl, setFocus }) => {
+const ThirdStep = ({
+    register,
+    getFieldState,
+    stepControl,
+    setFocus,
+    trigger,
+    touchedFields,
+}) => {
     useEffect(() => {
         setFocus('lastName');
-    }, [setFocus]);
+        triggerValidation();
+    }, [setFocus, triggerValidation]);
 
-    useEffect(() => {
-        console.log(getFieldState('lastName').invalid);
-    });
+    const triggerValidation = useCallback(
+        async () => await trigger(),
+        [trigger]
+    );
 
     return (
         <>
             <Label htmlFor="lastName">Last Name *</Label>
             <Input {...register('lastName', { required: true })} />
             <AnimatePresence>
-                {getFieldState('lastName').invalid ? (
+                {getFieldState('lastName').invalid && touchedFields.lastName ? (
                     <motion.div
                         key="lastNameMessage"
                         initial={inputMessageInitial}
