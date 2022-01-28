@@ -20,12 +20,14 @@ const GeneralMultiStep = () => {
         handleSubmit,
         watch,
         getFieldState,
-        formState,
+        formState: { errors, isValid },
         setFocus,
         register,
         getValues,
+        trigger,
     } = useForm({
-        mode: 'onSubmit',
+        mode: 'onChange',
+        reValidateMode: 'onChange',
         defaultValues: {
             Interest: [],
             firstName: '',
@@ -34,18 +36,19 @@ const GeneralMultiStep = () => {
 
     const [stepNumber, setStepNumber] = useState(1);
 
-    const totalSteps = 2;
+    const totalSteps = 3;
 
     const watchAllFields = watch();
 
     const submitForm = async (data, e) => {
         e.preventDefault();
-        if (formState.isValid && stepNumber === totalSteps) {
+        await trigger();
+        if (isValid && stepNumber === totalSteps) {
             console.table(data);
             return;
         }
 
-        setStepNumber((currentStep) => currentStep + 1);
+        changeStep('next');
     };
 
     const changeStep = (direction) => {
@@ -74,7 +77,8 @@ const GeneralMultiStep = () => {
                 </AnimatePresence>
             </form>
             <p>{JSON.stringify(watchAllFields)}</p>
-            <p>{JSON.stringify(formState.isValid)}</p>
+            <p>{JSON.stringify(isValid)}</p>
+            <p>{JSON.stringify(getFieldState('firstName').invalid)}</p>
         </Grid>
     );
 };
@@ -104,6 +108,17 @@ const renderStep = (
             return (
                 <Step key={2}>
                     <SecondStep
+                        register={register}
+                        getFieldState={getFieldState}
+                        stepControl={changeStep}
+                        setFocus={setFocus}
+                    />
+                </Step>
+            );
+        case 3:
+            return (
+                <Step key={3}>
+                    <ThirdStep
                         register={register}
                         getFieldState={getFieldState}
                         stepControl={changeStep}
@@ -157,6 +172,10 @@ const SecondStep = ({ register, getFieldState, stepControl, setFocus }) => {
         setFocus('firstName');
     }, [setFocus]);
 
+    useEffect(() => {
+        console.log(getFieldState('firstName').invalid);
+    });
+
     return (
         <>
             <Label htmlFor="firstName">First Name *</Label>
@@ -165,6 +184,60 @@ const SecondStep = ({ register, getFieldState, stepControl, setFocus }) => {
                 {getFieldState('firstName').invalid ? (
                     <motion.div
                         key="firstNameMessage"
+                        initial={inputMessageInitial}
+                        animate={inputMessageAnimate}
+                        exit={inputMessageExit}
+                    >
+                        <Message
+                            sx={{
+                                backgroundColor: 'muted',
+                                color: 'text',
+                                fontSize: '16px',
+                                padding: '5px 15px',
+                            }}
+                        >
+                            This input is required
+                        </Message>
+                    </motion.div>
+                ) : null}
+            </AnimatePresence>
+            <Grid columns={2} sx={{ mt: '15px' }}>
+                <Button
+                    sx={{ justifySelf: 'start' }}
+                    onClick={() => stepControl('prev')}
+                    type="button"
+                >
+                    Previous
+                </Button>
+                <Button
+                    sx={{ justifySelf: 'end' }}
+                    onClick={() => stepControl('next')}
+                    type="button"
+                >
+                    Next
+                </Button>
+            </Grid>
+        </>
+    );
+};
+
+const ThirdStep = ({ register, getFieldState, stepControl, setFocus }) => {
+    useEffect(() => {
+        setFocus('lastName');
+    }, [setFocus]);
+
+    useEffect(() => {
+        console.log(getFieldState('lastName').invalid);
+    });
+
+    return (
+        <>
+            <Label htmlFor="lastName">Last Name *</Label>
+            <Input {...register('lastName', { required: true })} />
+            <AnimatePresence>
+                {getFieldState('lastName').invalid ? (
+                    <motion.div
+                        key="lastNameMessage"
                         initial={inputMessageInitial}
                         animate={inputMessageAnimate}
                         exit={inputMessageExit}
