@@ -3,6 +3,11 @@ import { Button, Label, Input, Textarea, Checkbox } from 'theme-ui';
 import { Grid, Message } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect, useCallback } from 'react';
+import {
+    fadeGrowInitial,
+    fadeGrowAnimate,
+    fadeShrinkExit,
+} from '../../lib/animations';
 
 import { useForm } from 'react-hook-form';
 import Step from './Step';
@@ -139,30 +144,51 @@ const FirstStep = ({
                 </Label>
                 <Label>
                     <Grid columns={'auto 1fr'} sx={{ alignItems: 'center' }}>
-                        <Checkbox {...register('Interest')} value="Web Dev" />
-                        Web Dev
+                        <Checkbox {...register('Interest')} value="Content" />
+                        Content
                     </Grid>
                 </Label>
-                {!getFieldState('Interest').invalid ? (
-                    <Grid sx={{ mt: '15px' }}>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{
-                                opacity: 1,
-                                transition: { duration: 0.4 },
-                            }}
-                            exit={{ opacity: 0, transition: { duration: 0.3 } }}
-                            sx={{ justifySelf: 'end' }}
-                        >
-                            <Button
-                                onClick={() => stepControl('next')}
-                                type="button"
-                            >
-                                Next
-                            </Button>
-                        </motion.div>
+                <Label>
+                    <Grid columns={'auto 1fr'} sx={{ alignItems: 'center' }}>
+                        <Checkbox
+                            {...register('Interest')}
+                            value="Web Design Dev"
+                        />
+                        Web Design/Development
                     </Grid>
-                ) : null}
+                </Label>
+                <Label>
+                    <Grid columns={'auto 1fr'} sx={{ alignItems: 'center' }}>
+                        <Checkbox
+                            {...register('Interest')}
+                            value="Advertising"
+                        />
+                        Advertising
+                    </Grid>
+                </Label>
+                <Label>
+                    <Grid columns={'auto 1fr'} sx={{ alignItems: 'center' }}>
+                        <Checkbox {...register('Interest')} value="Unsure" />
+                        Not Sure
+                    </Grid>
+                </Label>
+                <AnimatePresence>
+                    {!getFieldState('Interest').invalid ? (
+                        <Grid sx={{ mt: '15px' }}>
+                            <motion.div
+                                initial={fadeGrowInitial}
+                                animate={fadeGrowAnimate}
+                                exit={fadeShrinkExit}
+                                sx={{ justifySelf: 'end' }}>
+                                <Button
+                                    onClick={() => stepControl('next')}
+                                    type="button">
+                                    Next
+                                </Button>
+                            </motion.div>
+                        </Grid>
+                    ) : null}
+                </AnimatePresence>
             </Grid>
         </>
     );
@@ -195,18 +221,16 @@ const SecondStep = ({
                 touchedFields.firstName ? (
                     <motion.div
                         key="firstNameMessage"
-                        initial={inputMessageInitial}
-                        animate={inputMessageAnimate}
-                        exit={inputMessageExit}
-                    >
+                        initial={fadeGrowInitial}
+                        animate={fadeGrowAnimate}
+                        exit={fadeShrinkExit}>
                         <Message
                             sx={{
                                 backgroundColor: 'muted',
                                 color: 'text',
                                 fontSize: '16px',
                                 padding: '5px 15px',
-                            }}
-                        >
+                            }}>
                             This input is required
                         </Message>
                     </motion.div>
@@ -216,15 +240,13 @@ const SecondStep = ({
                 <Button
                     sx={{ justifySelf: 'start' }}
                     onClick={() => stepControl('prev')}
-                    type="button"
-                >
+                    type="button">
                     Previous
                 </Button>
                 <Button
                     sx={{ justifySelf: 'end' }}
                     onClick={() => stepControl('next')}
-                    type="button"
-                >
+                    type="button">
                     Next
                 </Button>
             </Grid>
@@ -258,18 +280,16 @@ const ThirdStep = ({
                 {getFieldState('lastName').invalid && touchedFields.lastName ? (
                     <motion.div
                         key="lastNameMessage"
-                        initial={inputMessageInitial}
-                        animate={inputMessageAnimate}
-                        exit={inputMessageExit}
-                    >
+                        initial={fadeGrowInitial}
+                        animate={fadeGrowAnimate}
+                        exit={fadeShrinkExit}>
                         <Message
                             sx={{
                                 backgroundColor: 'muted',
                                 color: 'text',
                                 fontSize: '16px',
                                 padding: '5px 15px',
-                            }}
-                        >
+                            }}>
                             This input is required
                         </Message>
                     </motion.div>
@@ -279,36 +299,16 @@ const ThirdStep = ({
                 <Button
                     sx={{ justifySelf: 'start' }}
                     onClick={() => stepControl('prev')}
-                    type="button"
-                >
+                    type="button">
                     Previous
                 </Button>
                 <Button
                     sx={{ justifySelf: 'end' }}
                     onClick={() => stepControl('next')}
-                    type="button"
-                >
+                    type="button">
                     Next
                 </Button>
             </Grid>
         </>
     );
-};
-
-const inputMessageInitial = { opacity: 0, height: '0px' };
-
-const inputMessageAnimate = {
-    opacity: 1,
-    height: 'auto',
-    transition: {
-        duration: 0.5,
-    },
-};
-
-const inputMessageExit = {
-    opacity: 0,
-    height: '0px',
-    transition: {
-        duration: 0.5,
-    },
 };

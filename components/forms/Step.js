@@ -1,12 +1,16 @@
 import { motion } from 'framer-motion';
+import {
+    simpleFadeInitial,
+    simpleFadeExit,
+    simpleFadeAnimate,
+} from '../../lib/animations';
 
 const Step = ({ children }) => {
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 0.4 } }}
-            exit={{ opacity: 0, transition: { duration: 0.3 } }}
-        >
+            initial={{ ...simpleFadeInitial }}
+            animate={{ ...simpleFadeAnimate, transition: { duration: 0.4 } }}
+            exit={{ ...simpleFadeExit, transition: { duration: 0.3 } }}>
             {children}
         </motion.div>
     );
