@@ -30,7 +30,7 @@ const MyApp = ({ Component, pageProps, router }) => {
                 setTimeout(() => {
                     const scrollTo = document.getElementById(query);
                     scrollTo.scrollIntoView({ behavior: 'smooth' });
-                }, 700);
+                }, 1300);
             }
         };
 
@@ -66,8 +66,7 @@ const MyApp = ({ Component, pageProps, router }) => {
                             transition: {
                                 duration: 0.6,
                             },
-                        }}
-                    >
+                        }}>
                         <Layout>
                             <Component {...pageProps} />
                         </Layout>
