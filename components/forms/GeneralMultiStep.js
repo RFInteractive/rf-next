@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Button, Label, Input, Textarea, Checkbox } from 'theme-ui';
+import { Button, Label, Input, Textarea, Checkbox, Radio } from 'theme-ui';
 import { Grid, Message } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect, useCallback } from 'react';
@@ -21,12 +21,12 @@ const GeneralMultiStep = () => {
         setFocus,
         register,
         trigger,
+        getValues,
     } = useForm({
         mode: 'onChange',
         reValidateMode: 'onChange',
         defaultValues: {
             Interest: [],
-            firstName: '',
         },
     });
 
@@ -77,11 +77,9 @@ const GeneralMultiStep = () => {
                         <Step key={2}>
                             <SecondStep
                                 register={register}
-                                getFieldState={getFieldState}
                                 stepControl={changeStep}
-                                setFocus={setFocus}
                                 trigger={trigger}
-                                touchedFields={touchedFields}
+                                getValues={getValues}
                             />
                         </Step>
                     )}
@@ -194,61 +192,75 @@ const FirstStep = ({
     );
 };
 
-const SecondStep = ({
-    register,
-    getFieldState,
-    stepControl,
-    setFocus,
-    trigger,
-    touchedFields,
-}) => {
+const SecondStep = ({ register, stepControl, trigger, getValues }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
     );
 
     useEffect(() => {
-        setFocus('firstName');
         triggerValidation();
-    }, [setFocus, triggerValidation]);
+    }, [triggerValidation]);
 
     return (
         <>
-            <Label htmlFor="firstName">First Name *</Label>
-            <Input {...register('firstName', { required: true })} />
-            <AnimatePresence>
-                {getFieldState('firstName').invalid &&
-                touchedFields.firstName ? (
-                    <motion.div
-                        key="firstNameMessage"
-                        initial={fadeGrowInitial}
-                        animate={fadeGrowAnimate}
-                        exit={fadeShrinkExit}>
-                        <Message
-                            sx={{
-                                backgroundColor: 'muted',
-                                color: 'text',
-                                fontSize: '16px',
-                                padding: '5px 15px',
-                            }}>
-                            This input is required
-                        </Message>
-                    </motion.div>
-                ) : null}
-            </AnimatePresence>
-            <Grid columns={2} sx={{ mt: '15px' }}>
-                <Button
-                    sx={{ justifySelf: 'start' }}
-                    onClick={() => stepControl('prev')}
-                    type="button">
-                    Previous
-                </Button>
-                <Button
-                    sx={{ justifySelf: 'end' }}
-                    onClick={() => stepControl('next')}
-                    type="button">
-                    Next
-                </Button>
+            <Grid gap={10}>
+                <p sx={{ mb: '15px' }}>Do you have a website already? *</p>
+
+                <Label>
+                    <Radio
+                        name="WebsiteExistence"
+                        value="true"
+                        {...register('WebsiteExistence', { required: true })}
+                    />
+                    Yes
+                </Label>
+                <Label>
+                    <Radio
+                        name="websiteExistence"
+                        value="false"
+                        {...register('WebsiteExistence', { required: true })}
+                    />
+                    No
+                </Label>
+
+                <AnimatePresence>
+                    {getValues('WebsiteExistence') === 'true' ? (
+                        <motion.div
+                            initial={fadeGrowInitial}
+                            animate={fadeGrowAnimate}
+                            exit={fadeShrinkExit}>
+                            <Label htmlFor="WebsiteUrl">
+                                What&apos;s your website&apos;s URL?
+                            </Label>
+                            <Input {...register('websiteUrl')} />
+                        </motion.div>
+                    ) : null}
+                </AnimatePresence>
+
+                <Grid columns={2} sx={{ mt: '15px' }}>
+                    <Button
+                        sx={{ justifySelf: 'start' }}
+                        onClick={() => stepControl('prev')}
+                        type="button">
+                        Previous
+                    </Button>
+                    <AnimatePresence>
+                        {getValues('WebsiteExistence') !== null ? (
+                            <motion.div
+                                initial={fadeGrowInitial}
+                                animate={fadeGrowAnimate}
+                                exit={fadeShrinkExit}
+                                sx={{ justifySelf: 'end' }}>
+                                <Button
+                                    onClick={() => stepControl('next')}
+                                    type="button">
+                                    Next
+                                </Button>
+                            </motion.div>
+                        ) : null}
+                    </AnimatePresence>
+                </Grid>
             </Grid>
         </>
     );
