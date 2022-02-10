@@ -8,6 +8,11 @@ import { navLinks } from '../../lib/navData';
 import NavItem from './NavItem';
 
 const MobileMenuModal = ({ setOpen }) => {
+    const closeModal = () => {
+        document.querySelector('#body').style.overflow = 'initial';
+        setTimeout(() => setOpen(false), 200);
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, y: '-1200px' }}
@@ -24,8 +29,7 @@ const MobileMenuModal = ({ setOpen }) => {
                     duration: 0.3,
                 },
             }}
-            exit={{ opacity: 0, y: '-1200px', transition: { duration: 0.3 } }}
-        >
+            exit={{ opacity: 0, y: '-1200px', transition: { duration: 0.3 } }}>
             <div
                 sx={{
                     position: 'fixed',
@@ -36,8 +40,7 @@ const MobileMenuModal = ({ setOpen }) => {
                     backgroundColor: 'muted',
                     zIndex: 100000,
                     overflowY: 'scroll',
-                }}
-            >
+                }}>
                 <Close
                     onClick={() => setOpen(false)}
                     size={50}
@@ -56,21 +59,32 @@ const MobileMenuModal = ({ setOpen }) => {
                             justifyItems: 'center',
                             mb: '60px',
                         }}
-                        gap={30}
-                    >
+                        gap={30}>
                         <Link href="/">
                             <a>
-                                <span sx={{ fontSize: '30px' }}>Home</span>
+                                <span
+                                    sx={{ fontSize: '30px' }}
+                                    onClick={closeModal}>
+                                    Home
+                                </span>
                             </a>
                         </Link>
                         <Link href="/blog">
                             <a>
-                                <span sx={{ fontSize: '30px' }}>Blog</span>
+                                <span
+                                    sx={{ fontSize: '30px' }}
+                                    onClick={closeModal}>
+                                    Blog
+                                </span>
                             </a>
                         </Link>
                         <Link href="/">
                             <a>
-                                <span sx={{ fontSize: '30px' }}>Contact</span>
+                                <span
+                                    sx={{ fontSize: '30px' }}
+                                    onClick={closeModal}>
+                                    Contact
+                                </span>
                             </a>
                         </Link>
                     </Grid>
@@ -85,11 +99,10 @@ const MobileMenuModal = ({ setOpen }) => {
                                         borderTop: '1px solid',
                                         borderTopColor: 'secondary',
                                         opacity: '0.3',
-                                    }}
-                                ></hr>
+                                    }}></hr>
                                 <MobileLinkGroup
                                     linkGroup={group}
-                                    setOpen={setOpen}
+                                    closeModal={closeModal}
                                 />
                             </div>
                         );
@@ -102,12 +115,7 @@ const MobileMenuModal = ({ setOpen }) => {
 
 export default MobileMenuModal;
 
-const MobileLinkGroup = ({ linkGroup, setOpen }) => {
-    const closeModal = () => {
-        document.querySelector('#body').style.overflow = 'initial';
-        setTimeout(() => setOpen(false), 200);
-    };
-
+const MobileLinkGroup = ({ linkGroup, closeModal }) => {
     return navLinks[linkGroup].map((navLink, index, array) => {
         return (
             <div sx={{ my: '10px' }} key={navLink.link} onClick={closeModal}>
@@ -115,8 +123,7 @@ const MobileLinkGroup = ({ linkGroup, setOpen }) => {
                     link={navLink.link}
                     icon={navLink.icon}
                     heading={navLink.heading}
-                    size={'60px'}
-                >
+                    size={'60px'}>
                     {navLink.description}
                 </NavItem>
                 {index < array.length - 1 && (
@@ -125,8 +132,7 @@ const MobileLinkGroup = ({ linkGroup, setOpen }) => {
                             borderTop: '1px solid',
                             borderTopColor: 'secondary',
                             opacity: '0.3',
-                        }}
-                    ></hr>
+                        }}></hr>
                 )}
             </div>
         );
