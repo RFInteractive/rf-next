@@ -63,9 +63,7 @@ const GeneralMultiStep = () => {
 
     return (
         <Grid columns={1} gap={20} sx={{ px: '25px' }}>
-            <form
-                onSubmit={handleSubmit(submitForm)}
-                sx={{ maxWidth: '900px' }}>
+            <form onSubmit={handleSubmit(submitForm)}>
                 <AnimatePresence exitBeforeEnter>
                     {stepNumber === 1 && (
                         <Step key={1}>
@@ -102,7 +100,7 @@ const GeneralMultiStep = () => {
                     )}
                 </AnimatePresence>
             </form>
-            <p>{JSON.stringify(watchAllFields)}</p>
+            {/* <p>{JSON.stringify(watchAllFields)}</p> */}
             <p>Is entire form valid: {JSON.stringify(isValid)}</p>
         </Grid>
     );
@@ -231,7 +229,7 @@ const SecondStep = ({ register, stepControl, trigger, getValues }) => {
                             initial={fadeGrowInitial}
                             animate={fadeGrowAnimate}
                             exit={fadeShrinkExit}>
-                            <Label htmlFor="WebsiteUrl">
+                            <Label htmlFor="WebsiteUrl" sx={{ mb: '15px' }}>
                                 What&apos;s your website&apos;s URL?
                             </Label>
                             <Input {...register('websiteUrl')} />
@@ -287,7 +285,7 @@ const ThirdStep = ({
 
     return (
         <>
-            <Label htmlFor="WebsiteDetails">
+            <Label htmlFor="WebsiteDetails" sx={{ mb: '15px' }}>
                 Briefly explain what your site/business does or needs to do:
             </Label>
             <Textarea
@@ -295,7 +293,6 @@ const ThirdStep = ({
                 placeholder="Website needs and wants"
                 rows={8}
                 sx={{
-                    maxWidth: '900px',
                     padding: '5px 10px',
                     '&::placeholder': { color: 'text', opacity: '0.7' },
                 }}
