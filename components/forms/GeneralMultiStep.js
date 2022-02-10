@@ -1,5 +1,13 @@
 /** @jsxImportSource theme-ui */
-import { Button, Label, Input, Textarea, Checkbox, Radio } from 'theme-ui';
+import {
+    Button,
+    Label,
+    Input,
+    Textarea,
+    Checkbox,
+    Radio,
+    Select,
+} from 'theme-ui';
 import { Grid, Message } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect, useCallback } from 'react';
@@ -30,18 +38,23 @@ const GeneralMultiStep = () => {
             WebsiteExistence: null,
             WebsiteUrl: '',
             WebsiteDetails: '',
+            Name: '',
+            ContactMethod: 'Email',
+            ContactValue: '',
+            AdditionalQuestions: '',
         },
     });
 
     const [stepNumber, setStepNumber] = useState(1);
 
-    const totalSteps = 3;
+    const totalSteps = 4;
 
     const watchAllFields = watch();
 
     const submitForm = async (data, e) => {
         e.preventDefault();
         await trigger();
+        console.log(isValid);
         if (isValid && stepNumber === totalSteps) {
             console.table(data);
             return;
@@ -98,9 +111,22 @@ const GeneralMultiStep = () => {
                             />
                         </Step>
                     )}
+                    {stepNumber === 4 && (
+                        <Step key={4}>
+                            <FourthStep
+                                register={register}
+                                getFieldState={getFieldState}
+                                stepControl={changeStep}
+                                setFocus={setFocus}
+                                trigger={trigger}
+                                getValues={getValues}
+                                touchedFields={touchedFields}
+                            />
+                        </Step>
+                    )}
                 </AnimatePresence>
             </form>
-            {/* <p>{JSON.stringify(watchAllFields)}</p> */}
+            <p>{JSON.stringify(watchAllFields)}</p>
             <p>Is entire form valid: {JSON.stringify(isValid)}</p>
         </Grid>
     );
@@ -216,7 +242,7 @@ const SecondStep = ({ register, stepControl, trigger, getValues }) => {
                 </Label>
                 <Label>
                     <Radio
-                        name="websiteExistence"
+                        name="WebsiteExistence"
                         value="false"
                         {...register('WebsiteExistence', { required: true })}
                     />
@@ -232,7 +258,7 @@ const SecondStep = ({ register, stepControl, trigger, getValues }) => {
                             <Label htmlFor="WebsiteUrl" sx={{ mb: '15px' }}>
                                 What&apos;s your website&apos;s URL?
                             </Label>
-                            <Input {...register('websiteUrl')} />
+                            <Input {...register('WebsiteUrl')} />
                         </motion.div>
                     ) : null}
                 </AnimatePresence>
@@ -330,6 +356,121 @@ const ThirdStep = ({
                 </Button>
                 <AnimatePresence>
                     {!getFieldState('WebsiteDetails').invalid ? (
+                        <motion.div
+                            initial={fadeGrowInitial}
+                            animate={fadeGrowAnimate}
+                            exit={fadeShrinkExit}
+                            sx={{ justifySelf: 'end' }}>
+                            <Button
+                                onClick={() => stepControl('next')}
+                                type="button">
+                                Next
+                            </Button>
+                        </motion.div>
+                    ) : null}
+                </AnimatePresence>
+            </Grid>
+        </>
+    );
+};
+
+const FourthStep = ({
+    register,
+    getFieldState,
+    stepControl,
+    setFocus,
+    trigger,
+    getValues,
+    touchedFields,
+}) => {
+    const triggerValidation = useCallback(
+        async () => await trigger(),
+        [trigger]
+    );
+
+    useEffect(() => {
+        setFocus('Name');
+        triggerValidation();
+    }, [setFocus, triggerValidation]);
+
+    return (
+        <>
+            <Label htmlFor="Name" sx={{ mb: '15px' }}>
+                What&apos;s your name? *
+            </Label>
+            <Input
+                {...register('Name', { required: true })}
+                sx={{ mb: '20px' }}
+            />
+
+            <AnimatePresence>
+                {getFieldState('Name').invalid && touchedFields.Name ? (
+                    <motion.div
+                        initial={fadeGrowInitial}
+                        animate={fadeGrowAnimate}
+                        exit={fadeShrinkExit}>
+                        <Message
+                            sx={{
+                                backgroundColor: 'muted',
+                                color: 'text',
+                                fontSize: '16px',
+                                padding: '5px 15px',
+                            }}>
+                            This field is required
+                        </Message>
+                    </motion.div>
+                ) : null}
+            </AnimatePresence>
+
+            <Label htmlFor="ContactMethod" sx={{ mb: '15px' }}>
+                What&apos;s your preferred method of contact,{' '}
+                {getValues('Name')}?
+            </Label>
+            <Select {...register('ContactMethod')} sx={{ mb: '20px' }}>
+                <option>Email</option>
+                <option>Phone</option>
+                <option>LinkedIn</option>
+                <option>Instagram</option>
+            </Select>
+
+            <Label htmlFor="ContactValue" sx={{ mb: '15px' }}>
+                What&apos;s your {getValues('ContactMethod')}? *
+            </Label>
+            <Input
+                {...register('ContactValue', { required: true })}
+                sx={{ mb: '20px' }}
+            />
+
+            <AnimatePresence>
+                {getFieldState('ContactValue').invalid &&
+                touchedFields.ContactValue ? (
+                    <motion.div
+                        initial={fadeGrowInitial}
+                        animate={fadeGrowAnimate}
+                        exit={fadeShrinkExit}>
+                        <Message
+                            sx={{
+                                backgroundColor: 'muted',
+                                color: 'text',
+                                fontSize: '16px',
+                                padding: '5px 15px',
+                            }}>
+                            This field is required
+                        </Message>
+                    </motion.div>
+                ) : null}
+            </AnimatePresence>
+
+            <Grid columns={2} sx={{ mt: '15px' }}>
+                <Button
+                    sx={{ justifySelf: 'start' }}
+                    onClick={() => stepControl('prev')}
+                    type="button">
+                    Previous
+                </Button>
+                <AnimatePresence>
+                    {!getFieldState('Name').invalid &&
+                    !getFieldState('ContactValue').invalid ? (
                         <motion.div
                             initial={fadeGrowInitial}
                             animate={fadeGrowAnimate}
