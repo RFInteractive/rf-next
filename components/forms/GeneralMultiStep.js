@@ -27,6 +27,9 @@ const GeneralMultiStep = () => {
         reValidateMode: 'onChange',
         defaultValues: {
             Interest: [],
+            WebsiteExistence: null,
+            WebsiteUrl: '',
+            WebsiteDetails: '',
         },
     });
 
@@ -60,7 +63,9 @@ const GeneralMultiStep = () => {
 
     return (
         <Grid columns={1} gap={20} sx={{ px: '25px' }}>
-            <form onSubmit={handleSubmit(submitForm)}>
+            <form
+                onSubmit={handleSubmit(submitForm)}
+                sx={{ maxWidth: '900px' }}>
                 <AnimatePresence exitBeforeEnter>
                     {stepNumber === 1 && (
                         <Step key={1}>
@@ -91,7 +96,7 @@ const GeneralMultiStep = () => {
                                 stepControl={changeStep}
                                 setFocus={setFocus}
                                 trigger={trigger}
-                                touchedFields={touchedFields}
+                                getValues={getValues}
                             />
                         </Step>
                     )}
@@ -99,10 +104,6 @@ const GeneralMultiStep = () => {
             </form>
             <p>{JSON.stringify(watchAllFields)}</p>
             <p>Is entire form valid: {JSON.stringify(isValid)}</p>
-            <p>
-                Is firstName field INvalid:{' '}
-                {JSON.stringify(getFieldState('firstName').invalid)}
-            </p>
         </Grid>
     );
 };
@@ -272,7 +273,7 @@ const ThirdStep = ({
     stepControl,
     setFocus,
     trigger,
-    touchedFields,
+    getValues,
 }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),
@@ -280,18 +281,33 @@ const ThirdStep = ({
     );
 
     useEffect(() => {
-        setFocus('lastName');
+        setFocus('WebsiteDetails');
         triggerValidation();
     }, [setFocus, triggerValidation]);
 
     return (
         <>
-            <Label htmlFor="lastName">Last Name *</Label>
-            <Input {...register('lastName', { required: true })} />
+            <Label htmlFor="WebsiteDetails">
+                Briefly explain what your site/business does or needs to do:
+            </Label>
+            <Textarea
+                {...register('WebsiteDetails', { maxLength: 200 })}
+                placeholder="Website needs and wants"
+                rows={8}
+                sx={{
+                    maxWidth: '900px',
+                    padding: '5px 10px',
+                    '&::placeholder': { color: 'text', opacity: '0.7' },
+                }}
+            />
+            <p sx={{ fontSize: '16px', mt: '10px' }}>
+                Please keep it brief - max characters 200. Characters left:
+                {200 - getValues('WebsiteDetails').length}
+            </p>
             <AnimatePresence>
-                {getFieldState('lastName').invalid && touchedFields.lastName ? (
+                {getFieldState('WebsiteDetails').invalid ? (
                     <motion.div
-                        key="lastNameMessage"
+                        key="WebsiteDetailsMessage"
                         initial={fadeGrowInitial}
                         animate={fadeGrowAnimate}
                         exit={fadeShrinkExit}>
@@ -302,7 +318,8 @@ const ThirdStep = ({
                                 fontSize: '16px',
                                 padding: '5px 15px',
                             }}>
-                            This input is required
+                            You&apos;ve surpassed the character limit. Please
+                            keep it under 200 characters.
                         </Message>
                     </motion.div>
                 ) : null}
@@ -314,12 +331,21 @@ const ThirdStep = ({
                     type="button">
                     Previous
                 </Button>
-                <Button
-                    sx={{ justifySelf: 'end' }}
-                    onClick={() => stepControl('next')}
-                    type="button">
-                    Next
-                </Button>
+                <AnimatePresence>
+                    {!getFieldState('WebsiteDetails').invalid ? (
+                        <motion.div
+                            initial={fadeGrowInitial}
+                            animate={fadeGrowAnimate}
+                            exit={fadeShrinkExit}
+                            sx={{ justifySelf: 'end' }}>
+                            <Button
+                                onClick={() => stepControl('next')}
+                                type="button">
+                                Next
+                            </Button>
+                        </motion.div>
+                    ) : null}
+                </AnimatePresence>
             </Grid>
         </>
     );
