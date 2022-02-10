@@ -2,15 +2,20 @@
 import { ThemeProvider } from 'theme-ui';
 import { theme } from '../lib/theme';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import '../styles/globals.scss';
 import Layout from '../components/layout/Layout';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+    simpleFadeAnimate,
+    simpleFadeInitial,
+    simpleFadeExit,
+} from '../lib/animations';
 
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../lib/apollo';
-import { useEffect } from 'react';
 
 const MyApp = ({ Component, pageProps, router }) => {
     const nextRouter = useRouter();
@@ -37,8 +42,6 @@ const MyApp = ({ Component, pageProps, router }) => {
         nextRouter.events.on('routeChangeStart', scrollToTop);
         nextRouter.events.on('routeChangeComplete', checkAndScrollToSection);
 
-        // If the component is unmounted, unsubscribe
-        // from the event with the `off` method:
         return () => {
             nextRouter.events.off('routeChangeStart', scrollToTop);
             nextRouter.events.off(
@@ -54,15 +57,15 @@ const MyApp = ({ Component, pageProps, router }) => {
                 <AnimatePresence initial={false} exitBeforeEnter>
                     <motion.div
                         key={router.route}
-                        initial={{ opacity: 0 }}
+                        initial={simpleFadeInitial}
                         animate={{
-                            opacity: 1,
+                            ...simpleFadeAnimate,
                             transition: {
                                 duration: 0.6,
                             },
                         }}
                         exit={{
-                            opacity: 0,
+                            ...simpleFadeExit,
                             transition: {
                                 duration: 0.6,
                             },
