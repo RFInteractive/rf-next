@@ -25,6 +25,10 @@ import {
 import { useForm } from 'react-hook-form';
 import Step from './Step';
 
+import Lottie from 'react-lottie';
+import * as checkmarkAnimationData from '../../lib/lottie/checkmark.json';
+import * as bikeAnimationData from '../../lib/lottie/bike.json';
+
 const GeneralMultiStep = () => {
     const {
         handleSubmit,
@@ -63,7 +67,7 @@ const GeneralMultiStep = () => {
         if (isValid && stepNumber === totalSteps) {
             console.table(data);
             setFormStatus('submitting');
-            setTimeout(() => setFormStatus('success'), 2000);
+            setTimeout(() => setFormStatus('success'), 5000);
             return;
         }
 
@@ -98,9 +102,9 @@ const GeneralMultiStep = () => {
                     initial={{ ...simpleFadeInitial }}
                     animate={{
                         ...simpleFadeAnimate,
-                        transition: { duration: 0.4 },
+                        transition: { duration: 0.7 },
                     }}
-                    exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
+                    exit={{ ...simpleFadeExit, transition: { duration: 0.7 } }}>
                     <Grid columns={1} gap={20} sx={{ px: '25px' }}>
                         <form onSubmit={handleSubmit(submitForm)}>
                             <AnimatePresence exitBeforeEnter>
@@ -600,36 +604,62 @@ const FifthStep = ({
 };
 
 const FormSubmitting = () => {
+    const loadingLottieOptions = {
+        loop: false,
+        autoplay: true,
+        animationData: bikeAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
     return (
         <motion.div
             key="formSubmitting"
             initial={{ ...simpleFadeInitial }}
             animate={{
                 ...simpleFadeAnimate,
-                transition: { duration: 0.4 },
+                transition: { duration: 0.7 },
             }}
-            exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
+            exit={{ ...simpleFadeExit, transition: { duration: 0.7 } }}>
             <Grid sx={{ justifyItems: 'center', padding: '30px' }}>
-                <Spinner color={'text'} size={35} sx={{ marginLeft: '12px' }} />
-                <p>Submitting</p>
+                <Lottie
+                    options={loadingLottieOptions}
+                    height={200}
+                    width={200}
+                />
+                <p>Submitting...</p>
             </Grid>
         </motion.div>
     );
 };
 
 const FormSuccess = ({ setFormStatus, name }) => {
+    const loadingLottieOptions = {
+        loop: false,
+        autoplay: true,
+        animationData: checkmarkAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     return (
         <motion.div
             key="formSuccess"
             initial={{ ...simpleFadeInitial }}
             animate={{
                 ...simpleFadeAnimate,
-                transition: { duration: 0.4 },
+                transition: { duration: 0.7 },
             }}
-            exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
+            exit={{ ...simpleFadeExit, transition: { duration: 0.7 } }}>
             <Grid sx={{ justifyItems: 'center', padding: '30px' }}>
+                <Lottie
+                    options={loadingLottieOptions}
+                    height={200}
+                    width={200}
+                />
                 <h4>Success!</h4>
-                <p>We&apos;ll be in touch, {name}</p>
+                <p>We&apos;ll be in touch, {name}!</p>
                 <Button type="button" onClick={() => setFormStatus('initial')}>
                     Reset
                 </Button>
