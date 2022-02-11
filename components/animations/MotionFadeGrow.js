@@ -1,8 +1,13 @@
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const MotionFadeGrow = ({ delay = 0.3, duration = 0.6, children }) => {
-    const { inView, entry, ref } = useInView({ triggerOnce: true });
+const MotionFadeGrow = ({
+    delay = 0.3,
+    duration = 0.6,
+    threshold = 0,
+    children,
+}) => {
+    const { inView, entry, ref } = useInView({ triggerOnce: true, threshold });
     const animationControl = useAnimation();
 
     if (inView) {
@@ -18,12 +23,13 @@ const MotionFadeGrow = ({ delay = 0.3, duration = 0.6, children }) => {
 
     return (
         <div ref={ref}>
-            <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={animationControl}
-            >
-                {children}
-            </motion.div>
+            <AnimatePresence>
+                <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={animationControl}>
+                    {children}
+                </motion.div>
+            </AnimatePresence>
         </div>
     );
 };
