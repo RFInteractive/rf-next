@@ -5,6 +5,7 @@ import Image from 'next/image';
 import TwoColumnVector from '../layout/TwoColumnVector';
 import leaningLaptop from '../../public/images/leaning-laptop.png';
 import StatCard from '../cards/StatCard';
+import MotionFadeGrow from '../animations/MotionFadeGrow';
 
 const WhyUsRow = () => {
     return (
@@ -29,15 +30,16 @@ const WhyUsLeftColumnContent = () => {
                 pb: '30px',
                 my: ['100px', '50px', '100px', '100px'],
             }}
-            className="boxShadowLeft--rotated"
-        >
-            <Image
-                alt="Laptop with overlaying SEO metrics"
-                src={leaningLaptop}
-                width={587}
-                height={558}
-                quality={100}
-            />
+            className="boxShadowLeft--rotated">
+            <MotionFadeGrow delay={0} threshold={0.5}>
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={leaningLaptop}
+                    width={587}
+                    height={558}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -47,8 +49,7 @@ const WhyUsRightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '75px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Why Us?</h3>
             <div
                 sx={{
@@ -57,8 +58,7 @@ const WhyUsRightColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p>
                 In the rapidly evolving world of online marketing we pride
                 ourselves on the ability to be agile and continue to test for
@@ -73,24 +73,19 @@ const WhyUsRightColumnContent = () => {
                     justifyItems: 'start',
                     justifyItems: ['center', 'center', 'start', 'start'],
                     maxWidth: ['100%', '100%', '475px', '475px'],
-                }}
-            >
+                }}>
                 <StatCard
                     statistic="90%"
-                    subheading="Avg. Traffic Increase"
-                ></StatCard>
+                    subheading="Avg. Traffic Increase"></StatCard>
                 <StatCard
                     statistic="500+"
-                    subheading="Blog Posts Written"
-                ></StatCard>
+                    subheading="Blog Posts Written"></StatCard>
                 <StatCard
                     statistic="< 2sec"
-                    subheading="Avg. Site Load Time"
-                ></StatCard>
+                    subheading="Avg. Site Load Time"></StatCard>
                 <StatCard
                     statistic="99.9%"
-                    subheading="Website Uptime"
-                ></StatCard>
+                    subheading="Website Uptime"></StatCard>
             </Grid>
         </div>
     );
