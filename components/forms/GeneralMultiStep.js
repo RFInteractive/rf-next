@@ -7,14 +7,19 @@ import {
     Checkbox,
     Radio,
     Select,
+    Spinner,
+    Grid,
+    Message,
 } from 'theme-ui';
-import { Grid, Message } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect, useCallback } from 'react';
 import {
     fadeGrowInitial,
     fadeGrowAnimate,
     fadeShrinkExit,
+    simpleFadeInitial,
+    simpleFadeExit,
+    simpleFadeAnimate,
 } from '../../lib/animations';
 
 import { useForm } from 'react-hook-form';
@@ -46,17 +51,19 @@ const GeneralMultiStep = () => {
     });
 
     const [stepNumber, setStepNumber] = useState(1);
+    const [formStatus, setFormStatus] = useState('initial');
 
-    const totalSteps = 4;
+    const totalSteps = 5;
 
-    const watchAllFields = watch();
+    useEffect(() => watch(), [watch]);
 
     const submitForm = async (data, e) => {
         e.preventDefault();
         await trigger();
-        console.log(isValid);
         if (isValid && stepNumber === totalSteps) {
             console.table(data);
+            setFormStatus('submitting');
+            setTimeout(() => setFormStatus('success'), 2000);
             return;
         }
 
@@ -75,72 +82,98 @@ const GeneralMultiStep = () => {
     };
 
     return (
-        <Grid columns={1} gap={20} sx={{ px: '25px' }}>
-            <form onSubmit={handleSubmit(submitForm)}>
-                <AnimatePresence exitBeforeEnter>
-                    {stepNumber === 1 && (
-                        <Step key={1}>
-                            <FirstStep
-                                register={register}
-                                getFieldState={getFieldState}
-                                stepControl={changeStep}
-                                trigger={trigger}
-                                touchedFields={touchedFields}
-                            />
-                        </Step>
-                    )}
-                    {stepNumber === 2 && (
-                        <Step key={2}>
-                            <SecondStep
-                                register={register}
-                                stepControl={changeStep}
-                                trigger={trigger}
-                                getValues={getValues}
-                            />
-                        </Step>
-                    )}
-                    {stepNumber === 3 && (
-                        <Step key={3}>
-                            <ThirdStep
-                                register={register}
-                                getFieldState={getFieldState}
-                                stepControl={changeStep}
-                                setFocus={setFocus}
-                                trigger={trigger}
-                                getValues={getValues}
-                            />
-                        </Step>
-                    )}
-                    {stepNumber === 4 && (
-                        <Step key={4}>
-                            <FourthStep
-                                register={register}
-                                getFieldState={getFieldState}
-                                stepControl={changeStep}
-                                setFocus={setFocus}
-                                trigger={trigger}
-                                getValues={getValues}
-                                touchedFields={touchedFields}
-                            />
-                        </Step>
-                    )}
-                </AnimatePresence>
-            </form>
-            <p>{JSON.stringify(watchAllFields)}</p>
-            <p>Is entire form valid: {JSON.stringify(isValid)}</p>
-        </Grid>
+        <AnimatePresence exitBeforeEnter>
+            {formStatus === 'submitting' ? <FormSubmitting /> : null}
+
+            {formStatus === 'success' ? (
+                <FormSuccess
+                    setFormStatus={setFormStatus}
+                    name={getValues('Name')}
+                />
+            ) : null}
+
+            {formStatus === 'initial' ? (
+                <motion.div
+                    key="formInitial"
+                    initial={{ ...simpleFadeInitial }}
+                    animate={{
+                        ...simpleFadeAnimate,
+                        transition: { duration: 0.4 },
+                    }}
+                    exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
+                    <Grid columns={1} gap={20} sx={{ px: '25px' }}>
+                        <form onSubmit={handleSubmit(submitForm)}>
+                            <AnimatePresence exitBeforeEnter>
+                                {stepNumber === 1 && (
+                                    <Step key={1}>
+                                        <FirstStep
+                                            register={register}
+                                            getFieldState={getFieldState}
+                                            stepControl={changeStep}
+                                            trigger={trigger}
+                                            touchedFields={touchedFields}
+                                        />
+                                    </Step>
+                                )}
+                                {stepNumber === 2 && (
+                                    <Step key={2}>
+                                        <SecondStep
+                                            register={register}
+                                            stepControl={changeStep}
+                                            trigger={trigger}
+                                            getValues={getValues}
+                                        />
+                                    </Step>
+                                )}
+                                {stepNumber === 3 && (
+                                    <Step key={3}>
+                                        <ThirdStep
+                                            register={register}
+                                            getFieldState={getFieldState}
+                                            stepControl={changeStep}
+                                            setFocus={setFocus}
+                                            trigger={trigger}
+                                            getValues={getValues}
+                                        />
+                                    </Step>
+                                )}
+                                {stepNumber === 4 && (
+                                    <Step key={4}>
+                                        <FourthStep
+                                            register={register}
+                                            getFieldState={getFieldState}
+                                            stepControl={changeStep}
+                                            setFocus={setFocus}
+                                            trigger={trigger}
+                                            getValues={getValues}
+                                            touchedFields={touchedFields}
+                                        />
+                                    </Step>
+                                )}
+                                {stepNumber === 5 && (
+                                    <Step key={5}>
+                                        <FifthStep
+                                            register={register}
+                                            getFieldState={getFieldState}
+                                            stepControl={changeStep}
+                                            setFocus={setFocus}
+                                            trigger={trigger}
+                                            getValues={getValues}
+                                        />
+                                    </Step>
+                                )}
+                            </AnimatePresence>
+                        </form>
+                    </Grid>
+                </motion.div>
+            ) : null}
+        </AnimatePresence>
     );
 };
 
 export default GeneralMultiStep;
 
-const FirstStep = ({
-    register,
-    getFieldState,
-    stepControl,
-    trigger,
-    touchedFields,
-}) => {
+const FirstStep = ({ register, getFieldState, stepControl, trigger }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
@@ -436,10 +469,7 @@ const FourthStep = ({
             <Label htmlFor="ContactValue" sx={{ mb: '15px' }}>
                 What&apos;s your {getValues('ContactMethod')}? *
             </Label>
-            <Input
-                {...register('ContactValue', { required: true })}
-                sx={{ mb: '20px' }}
-            />
+            <Input {...register('ContactValue', { required: true })} />
 
             <AnimatePresence>
                 {getFieldState('ContactValue').invalid &&
@@ -486,5 +516,124 @@ const FourthStep = ({
                 </AnimatePresence>
             </Grid>
         </>
+    );
+};
+
+const FifthStep = ({
+    register,
+    getFieldState,
+    stepControl,
+    setFocus,
+    trigger,
+    getValues,
+}) => {
+    const triggerValidation = useCallback(
+        async () => await trigger(),
+        [trigger]
+    );
+
+    useEffect(() => {
+        setFocus('AdditionalQuestions');
+        triggerValidation();
+    }, [setFocus, triggerValidation]);
+
+    return (
+        <>
+            <Label htmlFor="AdditionalQuestions" sx={{ mb: '15px' }}>
+                Any additional questions we should come prepared to answer for
+                you?
+            </Label>
+            <Textarea
+                {...register('AdditionalQuestions', { maxLength: 200 })}
+                placeholder="Anything else?"
+                rows={8}
+                sx={{
+                    padding: '5px 10px',
+                    '&::placeholder': { color: 'text', opacity: '0.7' },
+                }}
+            />
+            <p sx={{ fontSize: '16px', mt: '10px' }}>
+                Please keep it brief - max characters 200. Characters left:
+                {200 - getValues('AdditionalQuestions').length}
+            </p>
+            <AnimatePresence>
+                {getFieldState('AdditionalQuestions').invalid ? (
+                    <motion.div
+                        key="AdditionalQuestionsMessage"
+                        initial={fadeGrowInitial}
+                        animate={fadeGrowAnimate}
+                        exit={fadeShrinkExit}>
+                        <Message
+                            sx={{
+                                backgroundColor: 'muted',
+                                color: 'text',
+                                fontSize: '16px',
+                                padding: '5px 15px',
+                            }}>
+                            You&apos;ve surpassed the character limit. Please
+                            keep it under 200 characters.
+                        </Message>
+                    </motion.div>
+                ) : null}
+            </AnimatePresence>
+            <Grid columns={2} sx={{ mt: '15px' }}>
+                <Button
+                    sx={{ justifySelf: 'start' }}
+                    onClick={() => stepControl('prev')}
+                    type="button">
+                    Previous
+                </Button>
+                <AnimatePresence>
+                    {!getFieldState('AdditionalQuestions').invalid ? (
+                        <motion.div
+                            initial={fadeGrowInitial}
+                            animate={fadeGrowAnimate}
+                            exit={fadeShrinkExit}
+                            sx={{ justifySelf: 'end' }}>
+                            <Button type="submit">Let&apos;s Do This!</Button>
+                        </motion.div>
+                    ) : null}
+                </AnimatePresence>
+            </Grid>
+        </>
+    );
+};
+
+const FormSubmitting = () => {
+    return (
+        <motion.div
+            key="formSubmitting"
+            initial={{ ...simpleFadeInitial }}
+            animate={{
+                ...simpleFadeAnimate,
+                transition: { duration: 0.4 },
+            }}
+            exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
+            <Grid sx={{ justifyItems: 'center', padding: '30px' }}>
+                <Spinner color={'text'} size={35} sx={{ marginLeft: '12px' }} />
+                <p>Submitting</p>
+            </Grid>
+        </motion.div>
+    );
+};
+
+const FormSuccess = ({ setFormStatus, name }) => {
+    return (
+        <motion.div
+            key="formSuccess"
+            initial={{ ...simpleFadeInitial }}
+            animate={{
+                ...simpleFadeAnimate,
+                transition: { duration: 0.4 },
+            }}
+            exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
+            <Grid sx={{ justifyItems: 'center', padding: '30px' }}>
+                <h4>Success!</h4>
+                <p>We&apos;ll be in touch, {name}</p>
+                <Button type="button" onClick={() => setFormStatus('initial')}>
+                    Reset
+                </Button>
+            </Grid>
+        </motion.div>
     );
 };
