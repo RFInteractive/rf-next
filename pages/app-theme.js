@@ -2,7 +2,7 @@
 import { useThemeUI, Button, Grid, Container } from 'theme-ui';
 
 import AppHeader from '../components/sections/AppHeader';
-import GeneralMultiStep from '../components/forms/GeneralMultiStep';
+import GeneralMultiStep from '../components/forms/GeneralMultiStep/GeneralMultiStep';
 
 const ThemePage = () => {
     const { theme, setColorMode } = useThemeUI();
@@ -16,8 +16,7 @@ const ThemePage = () => {
                         sx={{
                             color: '#fff',
                             paddingTop: ['80px', '50px', '0px', '0px'],
-                        }}
-                    >
+                        }}>
                         Application Theme
                     </h1>
                 }
@@ -30,15 +29,13 @@ const ThemePage = () => {
                         div: {
                             width: '100%',
                         },
-                    }}
-                >
+                    }}>
                     <div>
                         <div
                             sx={{
                                 variant: 'styles.themeColorPalette',
                                 bg: 'text',
-                            }}
-                        ></div>
+                            }}></div>
                         <h3 sx={{ textAlign: 'center' }}>Text</h3>
                     </div>
                     <div>
@@ -46,8 +43,7 @@ const ThemePage = () => {
                             sx={{
                                 variant: 'styles.themeColorPalette',
                                 bg: 'primary',
-                            }}
-                        ></div>
+                            }}></div>
                         <h3 sx={{ textAlign: 'center' }}>Primary</h3>
                     </div>
                     <div>
@@ -55,8 +51,7 @@ const ThemePage = () => {
                             sx={{
                                 variant: 'styles.themeColorPalette',
                                 bg: 'primaryDark',
-                            }}
-                        ></div>
+                            }}></div>
                         <h3 sx={{ textAlign: 'center' }}>Primary Dark</h3>
                     </div>
                     <div>
@@ -64,8 +59,7 @@ const ThemePage = () => {
                             sx={{
                                 variant: 'styles.themeColorPalette',
                                 bg: 'secondary',
-                            }}
-                        ></div>
+                            }}></div>
                         <h3 sx={{ textAlign: 'center' }}>Secondary</h3>
                     </div>
                     <div>
@@ -73,8 +67,7 @@ const ThemePage = () => {
                             sx={{
                                 variant: 'styles.themeColorPalette',
                                 bg: 'accent',
-                            }}
-                        ></div>
+                            }}></div>
                         <h3 sx={{ textAlign: 'center' }}>Accent</h3>
                     </div>
                 </Grid>
@@ -115,8 +108,7 @@ const ThemePage = () => {
                                         },
                                     }}
                                     key={mode}
-                                    onClick={() => setColorMode(mode)}
-                                >
+                                    onClick={() => setColorMode(mode)}>
                                     {mode}
                                 </Button>
                             );
