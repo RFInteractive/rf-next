@@ -99,7 +99,14 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                     }}
                     exit={{ ...simpleFadeExit, transition: { duration: 0.7 } }}>
                     <Grid columns={1} gap={20} sx={{ px: '25px' }}>
-                        <form onSubmit={handleSubmit(submitForm)}>
+                        <form
+                            onSubmit={handleSubmit(submitForm)}
+                            sx={{
+                                variant:
+                                    formBgColor === 'light'
+                                        ? null
+                                        : 'wrappers.darkBgFormWrapper',
+                            }}>
                             <AnimatePresence exitBeforeEnter>
                                 {stepNumber === 1 && (
                                     <Step key={1}>

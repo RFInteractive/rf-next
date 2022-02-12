@@ -68,6 +68,7 @@ const ThirdStep = ({
                 <Button
                     sx={{ justifySelf: 'start' }}
                     onClick={() => stepControl('prev')}
+                    variant="light"
                     type="button">
                     Previous
                 </Button>

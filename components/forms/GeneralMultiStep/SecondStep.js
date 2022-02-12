@@ -58,6 +58,7 @@ const SecondStep = ({ register, stepControl, trigger, getValues }) => {
                     <Button
                         sx={{ justifySelf: 'start' }}
                         onClick={() => stepControl('prev')}
+                        variant="light"
                         type="button">
                         Previous
                     </Button>
