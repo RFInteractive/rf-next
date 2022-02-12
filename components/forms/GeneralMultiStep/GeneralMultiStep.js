@@ -6,19 +6,19 @@ import {
     simpleFadeInitial,
     simpleFadeExit,
     simpleFadeAnimate,
-} from '../../lib/animations';
+} from '../../../lib/animations';
 
 import { useForm } from 'react-hook-form';
-import Step from './Step';
-import FirstStep from './GeneralMultiStep/FirstStep';
-import SecondStep from './GeneralMultiStep/SecondStep';
-import ThirdStep from './GeneralMultiStep/ThirdStep';
-import FourthStep from './GeneralMultiStep/FourthStep';
-import FifthStep from './GeneralMultiStep/FifthStep';
-import FormSubmitting from './FormSubmitting';
-import FormSuccess from './FormSuccess';
+import Step from '../Step';
+import FirstStep from './FirstStep';
+import SecondStep from './SecondStep';
+import ThirdStep from './ThirdStep';
+import FourthStep from './FourthStep';
+import FifthStep from './FifthStep';
+import FormSubmitting from '../FormSubmitting';
+import FormSuccess from '../FormSuccess';
 
-const GeneralMultiStep = () => {
+const GeneralMultiStep = ({ formBgColor = 'light' }) => {
     const {
         handleSubmit,
         watch,
@@ -76,12 +76,15 @@ const GeneralMultiStep = () => {
 
     return (
         <AnimatePresence exitBeforeEnter>
-            {formStatus === 'submitting' ? <FormSubmitting /> : null}
+            {formStatus === 'submitting' ? (
+                <FormSubmitting color={formBgColor} />
+            ) : null}
 
             {formStatus === 'success' ? (
                 <FormSuccess
                     setFormStatus={setFormStatus}
                     name={getValues('Name')}
+                    color={formBgColor}
                 />
             ) : null}
 
@@ -105,6 +108,7 @@ const GeneralMultiStep = () => {
                                             stepControl={changeStep}
                                             trigger={trigger}
                                             touchedFields={touchedFields}
+                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -115,6 +119,7 @@ const GeneralMultiStep = () => {
                                             stepControl={changeStep}
                                             trigger={trigger}
                                             getValues={getValues}
+                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -127,6 +132,7 @@ const GeneralMultiStep = () => {
                                             setFocus={setFocus}
                                             trigger={trigger}
                                             getValues={getValues}
+                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -140,6 +146,7 @@ const GeneralMultiStep = () => {
                                             trigger={trigger}
                                             getValues={getValues}
                                             touchedFields={touchedFields}
+                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -152,6 +159,7 @@ const GeneralMultiStep = () => {
                                             setFocus={setFocus}
                                             trigger={trigger}
                                             getValues={getValues}
+                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}

@@ -15,6 +15,7 @@ const FifthStep = ({
     setFocus,
     trigger,
     getValues,
+    color,
 }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),

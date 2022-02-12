@@ -10,7 +10,7 @@ import {
     simpleFadeAnimate,
 } from '../../lib/animations';
 
-const FormSuccess = ({ setFormStatus, name }) => {
+const FormSuccess = ({ setFormStatus, name, color }) => {
     const loadingLottieOptions = {
         loop: false,
         autoplay: true,

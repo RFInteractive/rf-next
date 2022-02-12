@@ -10,7 +10,7 @@ import {
     simpleFadeAnimate,
 } from '../../lib/animations';
 
-const FormSubmitting = () => {
+const FormSubmitting = ({ color }) => {
     const loadingLottieOptions = {
         loop: false,
         autoplay: true,

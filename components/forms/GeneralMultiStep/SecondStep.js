@@ -8,7 +8,7 @@ import {
     fadeShrinkExit,
 } from '../../../lib/animations';
 
-const SecondStep = ({ register, stepControl, trigger, getValues }) => {
+const SecondStep = ({ register, stepControl, trigger, getValues, color }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]

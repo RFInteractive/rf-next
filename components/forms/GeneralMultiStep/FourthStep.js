@@ -16,6 +16,7 @@ const FourthStep = ({
     trigger,
     getValues,
     touchedFields,
+    color,
 }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),
