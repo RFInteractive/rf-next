@@ -1,12 +1,19 @@
 /** @jsxImportSource theme-ui */
-import { Container, Grid } from 'theme-ui';
+import { Container, Grid, Button } from 'theme-ui';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 
 import { navLinks } from '../../lib/navData';
 import NavItem from './NavItem';
 
+import GeneralMultiStepFormPortal from '../portals/GeneralMultiStepFormPortal';
+import GeneralMultiStep from '../../components/forms/GeneralMultiStep/GeneralMultiStep';
+import { AnimatePresence } from 'framer-motion';
+
 const DesktopNav = () => {
+    const [formModalOpen, setFormModalOpen] = useState(false);
+
     return (
         <nav
             sx={{
@@ -16,8 +23,7 @@ const DesktopNav = () => {
                 margin: '10px 0px -115px',
                 zIndex: '100',
                 position: 'relative',
-            }}
-        >
+            }}>
             <Container sx={{ maxWidth: '1400px' }}>
                 <Grid
                     gap={0}
@@ -27,8 +33,7 @@ const DesktopNav = () => {
                         '.75fr 2.5fr .75fr',
                         '.75fr 2.5fr 1.75fr',
                     ]}
-                    sx={{ alignItems: 'center', justifyItems: 'center' }}
-                >
+                    sx={{ alignItems: 'center', justifyItems: 'center' }}>
                     <DesktopNavLogo />
                     <Grid columns={'repeat(5, max-content)'} gap={'25px'}>
                         <SEODesktopLinks />
@@ -37,14 +42,26 @@ const DesktopNav = () => {
                         <AdvertisingDesktopLinks />
                         <ResourceDesktopLinks />
                     </Grid>
-                    <Link href="/">
-                        <a id="navCTABtn">Get Started</a>
-                    </Link>
+                    <Button
+                        id="navCTABtn"
+                        onClick={() => setFormModalOpen(true)}>
+                        Get Started
+                    </Button>
+                    <AnimatePresence exitBeforeEnter>
+                        <GeneralMultiStepFormPortal
+                            key="multiStepFormModal"
+                            open={formModalOpen}
+                            onClose={() => setFormModalOpen(false)}>
+                            <GeneralMultiStep />
+                        </GeneralMultiStepFormPortal>
+                    </AnimatePresence>
                 </Grid>
             </Container>
         </nav>
     );
 };
+
+export default DesktopNav;
 
 const DesktopNavLogo = () => {
     return (
@@ -71,16 +88,14 @@ const SEODesktopLinks = () => {
                 className="desktopNavDropdownContainer"
                 sx={{
                     variant: 'navigation.desktopNavDropdownContainer',
-                }}
-            >
+                }}>
                 {navLinks['SEO'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
                             icon={navLink.icon}
                             heading={navLink.heading}
-                            key={navLink.link}
-                        >
+                            key={navLink.link}>
                             {navLink.description}
                         </NavItem>
                     );
@@ -100,16 +115,14 @@ const ContentDesktopLinks = () => {
                 className="desktopNavDropdownContainer"
                 sx={{
                     variant: 'navigation.desktopNavDropdownContainer',
-                }}
-            >
+                }}>
                 {navLinks['Content'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
                             icon={navLink.icon}
                             heading={navLink.heading}
-                            key={navLink.link}
-                        >
+                            key={navLink.link}>
                             {navLink.description}
                         </NavItem>
                     );
@@ -129,16 +142,14 @@ const WebDevDesktopLinks = () => {
                 className="desktopNavDropdownContainer"
                 sx={{
                     variant: 'navigation.desktopNavDropdownContainer',
-                }}
-            >
+                }}>
                 {navLinks['Web_Design_and_Dev'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
                             icon={navLink.icon}
                             heading={navLink.heading}
-                            key={navLink.link}
-                        >
+                            key={navLink.link}>
                             {navLink.description}
                         </NavItem>
                     );
@@ -158,16 +169,14 @@ const AdvertisingDesktopLinks = () => {
                 className="desktopNavDropdownContainer"
                 sx={{
                     variant: 'navigation.desktopNavDropdownContainer',
-                }}
-            >
+                }}>
                 {navLinks['Advertising'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
                             icon={navLink.icon}
                             heading={navLink.heading}
-                            key={navLink.link}
-                        >
+                            key={navLink.link}>
                             {navLink.description}
                         </NavItem>
                     );
@@ -187,16 +196,14 @@ const ResourceDesktopLinks = () => {
                 className="desktopNavDropdownContainer"
                 sx={{
                     variant: 'navigation.desktopNavDropdownContainer',
-                }}
-            >
+                }}>
                 {navLinks['Resources'].map((navLink) => {
                     return (
                         <NavItem
                             link={navLink.link}
                             icon={navLink.icon}
                             heading={navLink.heading}
-                            key={navLink.link}
-                        >
+                            key={navLink.link}>
                             {navLink.description}
                         </NavItem>
                     );
@@ -205,5 +212,3 @@ const ResourceDesktopLinks = () => {
         </div>
     );
 };
-
-export default DesktopNav;
