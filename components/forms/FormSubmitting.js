@@ -21,13 +21,12 @@ const FormSubmitting = ({ color }) => {
     };
     return (
         <motion.div
-            key="formSubmitting"
             initial={{ ...simpleFadeInitial }}
             animate={{
                 ...simpleFadeAnimate,
-                transition: { duration: 0.7 },
+                transition: { duration: 0.4 },
             }}
-            exit={{ ...simpleFadeExit, transition: { duration: 0.7 } }}>
+            exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
             <Grid sx={{ justifyItems: 'center', padding: '30px' }}>
                 <Lottie
                     options={loadingLottieOptions}

@@ -9,31 +9,38 @@ import {
     simpleFadeExit,
     simpleFadeAnimate,
 } from '../../lib/animations';
+import { useEffect, useState } from 'react';
 
 const FormSuccess = ({ setFormStatus, name, color }) => {
+    const [pausedState, setPausedState] = useState(true);
+
     const loadingLottieOptions = {
         loop: false,
-        autoplay: true,
+        autoplay: false,
         animationData: checkmarkAnimationData,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice',
         },
     };
 
+    useEffect(() => {
+        setTimeout(() => setPausedState(false), 100);
+    }, [setPausedState]);
+
     return (
         <motion.div
-            key="formSuccess"
             initial={{ ...simpleFadeInitial }}
             animate={{
                 ...simpleFadeAnimate,
-                transition: { duration: 0.7 },
+                transition: { duration: 0.4 },
             }}
-            exit={{ ...simpleFadeExit, transition: { duration: 0.7 } }}>
+            exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
             <Grid sx={{ justifyItems: 'center', padding: '30px' }}>
                 <Lottie
                     options={loadingLottieOptions}
                     height={200}
                     width={200}
+                    isPaused={pausedState}
                 />
                 <h4 sx={{ color: color === 'light' ? 'text' : '#fff' }}>
                     Success!

@@ -77,11 +77,12 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
     return (
         <AnimatePresence exitBeforeEnter>
             {formStatus === 'submitting' ? (
-                <FormSubmitting color={formBgColor} />
+                <FormSubmitting color={formBgColor} key="formSubmitting" />
             ) : null}
 
             {formStatus === 'success' ? (
                 <FormSuccess
+                    key="formSuccess"
                     setFormStatus={setFormStatus}
                     name={getValues('Name')}
                     color={formBgColor}
