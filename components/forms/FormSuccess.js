@@ -35,8 +35,12 @@ const FormSuccess = ({ setFormStatus, name, color }) => {
                     height={200}
                     width={200}
                 />
-                <h4>Success!</h4>
-                <p>We&apos;ll be in touch, {name}!</p>
+                <h4 sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                    Success!
+                </h4>
+                <p sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                    We&apos;ll be in touch, {name}!
+                </p>
                 <Button type="button" onClick={() => setFormStatus('initial')}>
                     Reset
                 </Button>

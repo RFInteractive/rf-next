@@ -15,7 +15,6 @@ const ThirdStep = ({
     setFocus,
     trigger,
     getValues,
-    color,
 }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),

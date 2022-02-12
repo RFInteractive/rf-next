@@ -35,7 +35,9 @@ const FormSubmitting = ({ color }) => {
                     width={200}
                     speed={1.4}
                 />
-                <p>Submitting...</p>
+                <p sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                    Submitting...
+                </p>
             </Grid>
         </motion.div>
     );

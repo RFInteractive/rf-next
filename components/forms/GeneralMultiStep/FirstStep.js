@@ -8,13 +8,7 @@ import {
     fadeShrinkExit,
 } from '../../../lib/animations';
 
-const FirstStep = ({
-    register,
-    getFieldState,
-    stepControl,
-    trigger,
-    color,
-}) => {
+const FirstStep = ({ register, getFieldState, stepControl, trigger }) => {
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
@@ -22,13 +16,12 @@ const FirstStep = ({
 
     useEffect(() => {
         triggerValidation();
-        console.log(color);
-    }, [triggerValidation, color]);
+    }, [triggerValidation]);
 
     return (
         <>
             <Grid gap={10}>
-                <p sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                <p>
                     <strong>What can we help you with? *</strong>
                 </p>
                 <Label>

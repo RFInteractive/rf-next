@@ -108,7 +108,6 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                                             stepControl={changeStep}
                                             trigger={trigger}
                                             touchedFields={touchedFields}
-                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -119,7 +118,6 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                                             stepControl={changeStep}
                                             trigger={trigger}
                                             getValues={getValues}
-                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -132,7 +130,6 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                                             setFocus={setFocus}
                                             trigger={trigger}
                                             getValues={getValues}
-                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -146,7 +143,6 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                                             trigger={trigger}
                                             getValues={getValues}
                                             touchedFields={touchedFields}
-                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}
@@ -159,7 +155,6 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                                             setFocus={setFocus}
                                             trigger={trigger}
                                             getValues={getValues}
-                                            color={formBgColor}
                                         />
                                     </Step>
                                 )}

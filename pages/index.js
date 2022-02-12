@@ -50,7 +50,15 @@ const HeaderLeftColumnContent = () => {
     const [showForm, setShowForm] = useState(false);
 
     if (showForm) {
-        return <GeneralMultiStep formBgColor="deep" />;
+        return (
+            <div
+                sx={{
+                    paddingTop: ['150px', '125px', '0px', '0px'],
+                    paddingBottom: ['150px', '150px', '0px', '0px'],
+                }}>
+                <GeneralMultiStep formBgColor="deep" />
+            </div>
+        );
     }
 
     return (
