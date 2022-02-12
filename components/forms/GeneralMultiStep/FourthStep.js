@@ -7,6 +7,7 @@ import {
     fadeGrowAnimate,
     fadeShrinkExit,
 } from '../../../lib/animations';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 const FourthStep = ({
     register,
@@ -17,15 +18,19 @@ const FourthStep = ({
     getValues,
     touchedFields,
 }) => {
+    const { windowWidth } = useWindowDimensions();
+
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
     );
 
     useEffect(() => {
-        setFocus('Name');
+        if (windowWidth > 800) {
+            setFocus('Name');
+        }
         triggerValidation();
-    }, [setFocus, triggerValidation]);
+    }, [setFocus, triggerValidation, windowWidth]);
 
     return (
         <>

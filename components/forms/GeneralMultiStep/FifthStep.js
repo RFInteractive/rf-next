@@ -7,6 +7,7 @@ import {
     fadeGrowAnimate,
     fadeShrinkExit,
 } from '../../../lib/animations';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 const FifthStep = ({
     register,
@@ -16,15 +17,19 @@ const FifthStep = ({
     trigger,
     getValues,
 }) => {
+    const { windowWidth } = useWindowDimensions();
+
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
     );
 
     useEffect(() => {
-        setFocus('AdditionalQuestions');
+        if (windowWidth > 800) {
+            setFocus('AdditionalQuestions');
+        }
         triggerValidation();
-    }, [setFocus, triggerValidation]);
+    }, [setFocus, triggerValidation, windowWidth]);
 
     return (
         <>

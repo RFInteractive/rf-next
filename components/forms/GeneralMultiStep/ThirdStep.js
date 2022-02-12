@@ -8,6 +8,8 @@ import {
     fadeShrinkExit,
 } from '../../../lib/animations';
 
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
+
 const ThirdStep = ({
     register,
     getFieldState,
@@ -16,15 +18,19 @@ const ThirdStep = ({
     trigger,
     getValues,
 }) => {
+    const { windowWidth } = useWindowDimensions();
+
     const triggerValidation = useCallback(
         async () => await trigger(),
         [trigger]
     );
 
     useEffect(() => {
-        setFocus('WebsiteDetails');
+        if (windowWidth > 800) {
+            setFocus('WebsiteDetails');
+        }
         triggerValidation();
-    }, [setFocus, triggerValidation]);
+    }, [setFocus, triggerValidation, windowWidth]);
 
     return (
         <>
