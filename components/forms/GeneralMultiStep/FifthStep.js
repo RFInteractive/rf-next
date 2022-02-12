@@ -35,10 +35,11 @@ const FifthStep = ({
             <Textarea
                 {...register('AdditionalQuestions', { maxLength: 200 })}
                 placeholder="Anything else?"
-                rows={8}
+                rows={6}
                 sx={{
                     padding: '5px 10px',
                     '&::placeholder': { color: 'text', opacity: '0.7' },
+                    resize: 'none',
                 }}
             />
             <p sx={{ fontSize: '16px', mt: '10px' }}>

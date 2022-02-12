@@ -34,10 +34,11 @@ const ThirdStep = ({
             <Textarea
                 {...register('WebsiteDetails', { maxLength: 200 })}
                 placeholder="Website needs and wants"
-                rows={8}
+                rows={6}
                 sx={{
                     padding: '5px 10px',
                     '&::placeholder': { color: 'text', opacity: '0.7' },
+                    resize: 'none',
                 }}
             />
             <p sx={{ fontSize: '16px', mt: '10px' }}>

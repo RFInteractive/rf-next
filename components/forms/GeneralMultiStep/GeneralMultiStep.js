@@ -98,7 +98,7 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                         transition: { duration: 0.7 },
                     }}
                     exit={{ ...simpleFadeExit, transition: { duration: 0.7 } }}>
-                    <Grid columns={1} gap={20} sx={{ px: '25px' }}>
+                    <Grid columns={1} gap={20}>
                         <form
                             onSubmit={handleSubmit(submitForm)}
                             sx={{
