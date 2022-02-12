@@ -20,6 +20,7 @@ class MyDocument extends Document {
                 <body id="body">
                     <Main />
                     <NextScript />
+                    <div id="general-form-modal"></div>
                 </body>
             </Html>
         );
