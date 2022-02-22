@@ -34,7 +34,9 @@ const MyApp = ({ Component, pageProps, router }) => {
             if (query) {
                 setTimeout(() => {
                     const scrollTo = document.getElementById(query);
-                    scrollTo.scrollIntoView({ behavior: 'smooth' });
+                    if (scrollTo) {
+                        scrollTo.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }, 1300);
             }
         };
