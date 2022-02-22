@@ -16,6 +16,11 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                     <link rel="icon" href="/favicon.ico" />
+                    <meta
+                        property="og:image"
+                        content="/images/RankFuse-OG-Img.jpg"
+                    />
+                    <meta property="og:image:type" content="image/jpg" />
                 </Head>
                 <body id="body">
                     <Main />

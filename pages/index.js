@@ -30,11 +30,6 @@ const Home = () => {
                     content={homepageSEO.description}
                 />
                 <meta property="og:url" content="https://rankfuse.com" />
-                <meta
-                    property="og:image"
-                    content="/images/RankFuse-OG-Img.jpg"
-                />
-                <meta property="og:image:type" content="image/jpg" />
             </Head>
 
             <AppHeader
