@@ -84,11 +84,7 @@ const SEODesktopLinks = () => {
             <Link href="/seo-services">
                 <a className="desktopNavLink">SEO</a>
             </Link>
-            <div
-                className="desktopNavDropdownContainer"
-                sx={{
-                    variant: 'navigation.desktopNavDropdownContainer',
-                }}>
+            <div className="desktopNavDropdownContainer">
                 {navLinks['SEO'].map((navLink) => {
                     return (
                         <NavItem
@@ -111,11 +107,7 @@ const ContentDesktopLinks = () => {
             <Link href="/seo-content">
                 <a className="desktopNavLink">Content</a>
             </Link>
-            <div
-                className="desktopNavDropdownContainer"
-                sx={{
-                    variant: 'navigation.desktopNavDropdownContainer',
-                }}>
+            <div className="desktopNavDropdownContainer">
                 {navLinks['Content'].map((navLink) => {
                     return (
                         <NavItem
@@ -138,11 +130,7 @@ const WebDevDesktopLinks = () => {
             <Link href="/web-design-and-development">
                 <a className="desktopNavLink">Design & Dev</a>
             </Link>
-            <div
-                className="desktopNavDropdownContainer"
-                sx={{
-                    variant: 'navigation.desktopNavDropdownContainer',
-                }}>
+            <div className="desktopNavDropdownContainer">
                 {navLinks['Web_Design_and_Dev'].map((navLink) => {
                     return (
                         <NavItem
@@ -165,11 +153,7 @@ const AdvertisingDesktopLinks = () => {
             <Link href="/programmatic-advertising">
                 <a className="desktopNavLink">Advertising</a>
             </Link>
-            <div
-                className="desktopNavDropdownContainer"
-                sx={{
-                    variant: 'navigation.desktopNavDropdownContainer',
-                }}>
+            <div className="desktopNavDropdownContainer">
                 {navLinks['Advertising'].map((navLink) => {
                     return (
                         <NavItem
@@ -192,11 +176,7 @@ const ResourceDesktopLinks = () => {
             <Link href="/web-design-and-development">
                 <a className="desktopNavLink">Resources</a>
             </Link>
-            <div
-                className="desktopNavDropdownContainer"
-                sx={{
-                    variant: 'navigation.desktopNavDropdownContainer',
-                }}>
+            <div className="desktopNavDropdownContainer">
                 {navLinks['Resources'].map((navLink) => {
                     return (
                         <NavItem
