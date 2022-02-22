@@ -10,16 +10,21 @@ import { client } from '../../lib/apollo';
 import { QUERY_RECENT_POSTS_BY_AUTHOR } from '../../lib/queries';
 import { formatPostsForBlogCard } from '../../lib/formatting';
 import BlogCard from '../../components/cards/BlogCard';
+import { jaminSEO } from '../../lib/seo';
 
 const JaminRoberts = ({ authorPosts }) => {
     return (
         <>
             <Head>
-                <title>Jamin Roberts: Web Developer | Rank Fuse</title>
+                <title>{jaminSEO.title}</title>
+                <meta name="description" content={jaminSEO.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={jaminSEO.title} />
                 <meta
-                    name="description"
-                    content="Get to know our web development expert Jamin Roberts"
+                    property="og:description"
+                    content={jaminSEO.description}
                 />
+                <meta property="og:url" content={jaminSEO.ogUrl} />
             </Head>
 
             <AppHeader
@@ -32,8 +37,7 @@ const JaminRoberts = ({ authorPosts }) => {
                         maxWidth: '1290px',
                         padding: '50px 0px',
                         mt: '-100px',
-                    }}
-                >
+                    }}>
                     <Grid columns={[1, 1, '1fr 2fr', '1fr 2fr']} gap={20}>
                         <div
                             sx={{
@@ -45,8 +49,7 @@ const JaminRoberts = ({ authorPosts }) => {
                                 },
                                 mb: '25px',
                                 px: '25px',
-                            }}
-                        >
+                            }}>
                             <Grid sx={{ justifyItems: 'center' }}>
                                 <MotionFadeGrow>
                                     <Image
@@ -64,8 +67,7 @@ const JaminRoberts = ({ authorPosts }) => {
                                         fontSize: '32px',
                                         fontWeight: '900',
                                         my: '15px',
-                                    }}
-                                >
+                                    }}>
                                     Jamin Roberts
                                 </h3>
                                 <h4
@@ -73,16 +75,17 @@ const JaminRoberts = ({ authorPosts }) => {
                                         color: 'text',
                                         textAlign: 'center',
                                         fontSize: '22px',
-                                    }}
-                                >
+                                    }}>
                                     Web Developer
                                 </h4>
                             </Grid>
                         </div>
                         <Grid
                             gap={15}
-                            sx={{ px: '25px', gridTemplateRows: 'min-content' }}
-                        >
+                            sx={{
+                                px: '25px',
+                                gridTemplateRows: 'min-content',
+                            }}>
                             <p>
                                 Jamin started programming in 2016, where he
                                 became enamored with JavaScript and front-end
@@ -127,13 +130,11 @@ const JaminRoberts = ({ authorPosts }) => {
                     sx={{
                         maxWidth: '1290px',
                         padding: '100px 30px 75px',
-                    }}
-                >
+                    }}>
                     <h2 sx={{ mb: '30px' }}>Posts Written By Jamin</h2>
                     <Grid
                         columns={[1, 2, 3, 3]}
-                        gap={['40px', '40px', '10px', '10px']}
-                    >
+                        gap={['40px', '40px', '10px', '10px']}>
                         {authorPosts.map((post) => (
                             <BlogCard key={post.uri} post={post}></BlogCard>
                         ))}
@@ -154,14 +155,12 @@ const JaminRobertsHeading = () => {
                 paddingBottom: ['100px', '75px', '50px', '50px'],
                 paddingLeft: ['0px', '6%', '0px', '0px'],
                 paddingRight: ['0px', '12%', '0px', '25px'],
-            }}
-        >
+            }}>
             <h1
                 sx={{
                     color: '#fff',
                     marginBottom: '20px',
-                }}
-            >
+                }}>
                 Jamin Roberts
             </h1>
         </div>

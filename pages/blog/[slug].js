@@ -19,6 +19,11 @@ const BlogPost = ({ post, relatedPosts }) => {
             <Head>
                 <title>{post.title} | Rank Fuse Digital Marketing</title>
                 <meta name="description" content={post.excerpt} />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={post.title} />
+                <meta property="og:description" content={post.excerpt} />
+                <meta property="og:image" content={post.featuredImg} />
+                <meta property="og:url" content={post.url} />
             </Head>
 
             <AppHeader
@@ -32,14 +37,12 @@ const BlogPost = ({ post, relatedPosts }) => {
                     marginTop: ['-270px', '-200px', '-425px', '-425px'],
                     mb: '75px',
                     zIndex: '500',
-                }}
-            >
+                }}>
                 <Container
                     sx={{
                         maxWidth: '960px',
                         px: '30px',
-                    }}
-                >
+                    }}>
                     <img
                         src={post.featuredImg}
                         alt={`Featured image for ${post.title}`}
@@ -52,8 +55,9 @@ const BlogPost = ({ post, relatedPosts }) => {
                         }}
                     />
                     <section
-                        dangerouslySetInnerHTML={{ __html: post.content }}
-                    ></section>
+                        dangerouslySetInnerHTML={{
+                            __html: post.content,
+                        }}></section>
                 </Container>
             </main>
             <section>
@@ -61,13 +65,11 @@ const BlogPost = ({ post, relatedPosts }) => {
                     sx={{
                         maxWidth: '1160px',
                         padding: '50px 30px 75px',
-                    }}
-                >
+                    }}>
                     <h2 sx={{ mb: '30px' }}>Related Posts</h2>
                     <Grid
                         columns={[1, 2, 3, 3]}
-                        gap={['40px', '40px', '10px', '10px']}
-                    >
+                        gap={['40px', '40px', '10px', '10px']}>
                         {relatedPosts.map((post) => (
                             <BlogCard key={post.uri} post={post}></BlogCard>
                         ))}
@@ -86,20 +88,17 @@ const BlogPostHeader = ({ post }) => {
             sx={{
                 paddingTop: ['175px', '200px', '250px', '100px'],
                 paddingBottom: ['200px', '175px', '350px', '250px'],
-            }}
-        >
+            }}>
             <Container
                 sx={{
                     maxWidth: '900px',
                     paddingRight: ['10px', '125px', '150px', '225px'],
-                }}
-            >
+                }}>
                 <h1
                     sx={{
                         color: '#fff',
                         fontSize: ['36px', '40px', '55px', '55px'],
-                    }}
-                >
+                    }}>
                     {post.title}
                 </h1>
                 <Grid
@@ -116,8 +115,7 @@ const BlogPostHeader = ({ post }) => {
                         fontSize: '16px',
                         color: '#fff',
                         maxWidth: '650px',
-                    }}
-                >
+                    }}>
                     <div sx={{ display: 'flex', alignItems: 'center' }}>
                         <img
                             src="/icons/icon-user.svg"
@@ -139,8 +137,7 @@ const BlogPostHeader = ({ post }) => {
                             marginTop: '5px',
                             display: 'flex',
                             alignItems: 'center',
-                        }}
-                    >
+                        }}>
                         <img
                             src="/icons/icon-tags.svg"
                             alt="category tags icon"
@@ -191,7 +188,10 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            post: formattedPost,
+            post: {
+                ...formattedPost,
+                url: `https://rankfuse.com/blog/${params.slug}`,
+            },
             relatedPosts: relatedPosts,
         },
     };

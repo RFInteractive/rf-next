@@ -20,7 +20,6 @@ class MyDocument extends Document {
                         property="og:image"
                         content="/images/RankFuse-OG-Img.jpg"
                     />
-                    <meta property="og:image:type" content="image/jpg" />
                 </Head>
                 <body id="body">
                     <Main />

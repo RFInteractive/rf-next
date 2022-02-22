@@ -31,7 +31,7 @@ const WebDesignAndDev = () => {
                     property="og:description"
                     content={webDesignDevSEO.description}
                 />
-                <meta property="og:url" content="https://rankfuse.com" />
+                <meta property="og:url" content={webDesignDevSEO.ogUrl} />
             </Head>
 
             <AppHeader

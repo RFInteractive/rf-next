@@ -10,19 +10,21 @@ import { client } from '../../lib/apollo';
 import { QUERY_RECENT_POSTS_BY_AUTHOR } from '../../lib/queries';
 import { formatPostsForBlogCard } from '../../lib/formatting';
 import BlogCard from '../../components/cards/BlogCard';
+import { chelseaSEO } from '../../lib/seo';
 
 const ChelseaRoller = ({ authorPosts }) => {
     return (
         <>
             <Head>
-                <title>
-                    Chelsea Roller: Account Manager, SEO & Content Marketing |
-                    Rank Fuse
-                </title>
+                <title>{chelseaSEO.title}</title>
+                <meta name="description" content={chelseaSEO.description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={chelseaSEO.title} />
                 <meta
-                    name="description"
-                    content="Get to know our Account Manager & Content Marketing expert Chelsea Roller"
+                    property="og:description"
+                    content={chelseaSEO.description}
                 />
+                <meta property="og:url" content={chelseaSEO.ogUrl} />
             </Head>
 
             <AppHeader
@@ -35,8 +37,7 @@ const ChelseaRoller = ({ authorPosts }) => {
                         maxWidth: '1290px',
                         padding: '50px 0px',
                         mt: '-100px',
-                    }}
-                >
+                    }}>
                     <Grid columns={[1, 1, '1fr 2fr', '1fr 2fr']} gap={20}>
                         <div
                             sx={{
@@ -48,12 +49,10 @@ const ChelseaRoller = ({ authorPosts }) => {
                                 },
                                 mb: '25px',
                                 px: '25px',
-                            }}
-                        >
+                            }}>
                             <Grid
                                 rows={'min-content'}
-                                sx={{ justifyItems: 'center' }}
-                            >
+                                sx={{ justifyItems: 'center' }}>
                                 <MotionFadeGrow>
                                     <Image
                                         src="/images/chelsea-roller-headshot.png"
@@ -70,8 +69,7 @@ const ChelseaRoller = ({ authorPosts }) => {
                                         fontSize: '32px',
                                         fontWeight: '900',
                                         my: '15px',
-                                    }}
-                                >
+                                    }}>
                                     Chelsea Roller
                                 </h3>
                                 <h4
@@ -79,16 +77,17 @@ const ChelseaRoller = ({ authorPosts }) => {
                                         color: 'text',
                                         textAlign: 'center',
                                         fontSize: '22px',
-                                    }}
-                                >
+                                    }}>
                                     Account Manager, SEO & Content Marketing
                                 </h4>
                             </Grid>
                         </div>
                         <Grid
                             gap={15}
-                            sx={{ px: '25px', gridTemplateRows: 'min-content' }}
-                        >
+                            sx={{
+                                px: '25px',
+                                gridTemplateRows: 'min-content',
+                            }}>
                             <p>
                                 Chelsea Roller is the SEO and Content Marketing
                                 Account Manager at Rank Fuse Digital Marketing.
@@ -135,13 +134,11 @@ const ChelseaRoller = ({ authorPosts }) => {
                     sx={{
                         maxWidth: '1290px',
                         padding: '100px 30px 75px',
-                    }}
-                >
+                    }}>
                     <h2 sx={{ mb: '30px' }}>Posts Written By Chelsea</h2>
                     <Grid
                         columns={[1, 2, 3, 3]}
-                        gap={['40px', '40px', '10px', '10px']}
-                    >
+                        gap={['40px', '40px', '10px', '10px']}>
                         {authorPosts.map((post) => (
                             <BlogCard key={post.uri} post={post}></BlogCard>
                         ))}
@@ -162,14 +159,12 @@ const ChelseaRollerHeading = () => {
                 paddingBottom: ['100px', '75px', '50px', '50px'],
                 paddingLeft: ['0px', '6%', '0px', '0px'],
                 paddingRight: ['0px', '12%', '0px', '25px'],
-            }}
-        >
+            }}>
             <h1
                 sx={{
                     color: '#fff',
                     marginBottom: '20px',
-                }}
-            >
+                }}>
                 Chelsea Roller
             </h1>
         </div>
