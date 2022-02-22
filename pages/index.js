@@ -15,7 +15,7 @@ import CTARow from '../components/sections/AppCTARow';
 
 import MotionFadeGrow from '../components/animations/MotionFadeGrow';
 import GeneralMultiStep from '../components/forms/GeneralMultiStep/GeneralMultiStep';
-import { ogImg, homepageSEO } from '../lib/seo';
+import { homepageSEO } from '../lib/seo';
 
 const Home = () => {
     return (
