@@ -17,10 +17,9 @@ const IconListCard = ({
                 borderRadius: '5px',
                 boxShadow: '3px 3px 10px rgba(0, 0, 0, 0.1)',
                 padding: '30px',
-            }}
-        >
+            }}>
             <AppBgIcon iconName={icon} color={iconColor} />
-            <Link href={link}>
+            <Link href={link} scroll={false}>
                 <a>
                     <h3
                         sx={{
@@ -34,8 +33,7 @@ const IconListCard = ({
                                 transition: 'all 0.2s ease-out',
                                 color: iconColor,
                             },
-                        }}
-                    >
+                        }}>
                         {heading}
                     </h3>
                 </a>
@@ -47,10 +45,9 @@ const IconListCard = ({
                     height: '3px',
                     bg: iconColor,
                     marginBottom: '20px',
-                }}
-            ></div>
+                }}></div>
             {children}
-            <Link href={link}>
+            <Link href={link} scroll={false}>
                 <a>
                     <p
                         sx={{
@@ -62,8 +59,7 @@ const IconListCard = ({
                                 transition: 'all 0.2s ease-out',
                                 color: iconColor,
                             },
-                        }}
-                    >
+                        }}>
                         Read More &#8594;
                     </p>
                 </a>
