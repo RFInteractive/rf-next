@@ -30,6 +30,10 @@ const ProgrammaticAdvertising = () => {
                     content={advertisingSEO.description}
                 />
                 <meta property="og:url" content={advertisingSEO.ogUrl} />
+                <meta
+                    property="og:image"
+                    content="/images/RankFuse-OG-Img.jpg"
+                />
             </Head>
 
             <AppHeader

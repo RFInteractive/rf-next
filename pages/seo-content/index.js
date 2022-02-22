@@ -29,6 +29,10 @@ const Content = () => {
                     content={contentSEO.description}
                 />
                 <meta property="og:url" content={contentSEO.ogUrl} />
+                <meta
+                    property="og:image"
+                    content="/images/RankFuse-OG-Img.jpg"
+                />
             </Head>
 
             <AppHeader

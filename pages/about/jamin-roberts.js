@@ -25,6 +25,10 @@ const JaminRoberts = ({ authorPosts }) => {
                     content={jaminSEO.description}
                 />
                 <meta property="og:url" content={jaminSEO.ogUrl} />
+                <meta
+                    property="og:image"
+                    content="/images/RankFuse-OG-Img.jpg"
+                />
             </Head>
 
             <AppHeader

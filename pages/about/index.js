@@ -23,6 +23,10 @@ const About = () => {
                     content={aboutSEO.description}
                 />
                 <meta property="og:url" content={aboutSEO.ogUrl} />
+                <meta
+                    property="og:image"
+                    content="/images/RankFuse-OG-Img.jpg"
+                />
             </Head>
 
             <AppHeader

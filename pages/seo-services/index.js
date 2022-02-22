@@ -30,6 +30,10 @@ const SEOServices = () => {
                     content={seoServicesSEO.description}
                 />
                 <meta property="og:url" content={seoServicesSEO.ogUrl} />
+                <meta
+                    property="og:image"
+                    content="/images/RankFuse-OG-Img.jpg"
+                />
             </Head>
 
             <AppHeader

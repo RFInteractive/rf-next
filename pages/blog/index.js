@@ -50,6 +50,10 @@ const BlogFeed = ({ posts }) => {
                 <meta property="og:title" content={blogSEO.title} />
                 <meta property="og:description" content={blogSEO.description} />
                 <meta property="og:url" content={blogSEO.ogUrl} />
+                <meta
+                    property="og:image"
+                    content="/images/RankFuse-OG-Img.jpg"
+                />
             </Head>
 
             <AppHeader

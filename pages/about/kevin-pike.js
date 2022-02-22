@@ -25,6 +25,10 @@ const KevinPike = ({ authorPosts }) => {
                     content={kevinSEO.description}
                 />
                 <meta property="og:url" content={kevinSEO.ogUrl} />
+                <meta
+                    property="og:image"
+                    content="/images/RankFuse-OG-Img.jpg"
+                />
             </Head>
 
             <AppHeader
