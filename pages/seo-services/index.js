@@ -7,6 +7,7 @@ import Image from 'next/image';
 import AppHeader from '../../components/sections/AppHeader';
 import aboutHeaderDevices from '../../public/images/about-header-devices.png';
 import CheckListItem from '../../components/CheckListItem';
+import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
 import SEOIntroStats from '../../components/sections/seo/SeoIntroStats';
 import SEOProcess from '../../components/sections/seo/SeoProcess';
 import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
@@ -91,9 +92,11 @@ const SEOServicesLeftColumn = () => {
                     Get more qualified leads
                 </p>
             </CheckListItem>
-            <Button variant="light" sx={{ marginTop: '20px' }}>
-                Let&apos;s Work Together
-            </Button>
+            <MotionFadeGrow delay={0.8}>
+                <Button variant="light" sx={{ marginTop: '20px' }}>
+                    Let&apos;s Work Together
+                </Button>
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -108,13 +111,15 @@ const SEOServicesRightColumn = () => {
                 pt: '50px',
                 paddingX: '25px',
             }}>
-            <Image
-                alt="Laptop with overlaying SEO metrics"
-                src={aboutHeaderDevices}
-                width={900}
-                height={740}
-                quality={100}
-            />
+            <MotionFadeGrow delay={0.3}>
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={aboutHeaderDevices}
+                    width={900}
+                    height={740}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };

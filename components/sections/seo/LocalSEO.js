@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import leaningLaptop from '../../../public/images/leaning-laptop.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const LocalSEO = () => {
     return (
@@ -28,15 +29,16 @@ const LocalSEOLeftColumnContent = () => {
                 pb: '30px',
                 my: ['100px', '50px', '100px', '100px'],
             }}
-            className="boxShadowLeft--rotated"
-        >
-            <Image
-                alt="Laptop with overlaying SEO metrics"
-                src={leaningLaptop}
-                width={587}
-                height={558}
-                quality={100}
-            />
+            className="boxShadowLeft--rotated">
+            <MotionFadeGrow threshold={0.8}>
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={leaningLaptop}
+                    width={587}
+                    height={558}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -46,8 +48,7 @@ const LocalSEORightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '60px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Local SEO</h3>
             <div
                 sx={{
@@ -56,8 +57,7 @@ const LocalSEORightColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p sx={{ paddingBottom: '20px' }}>
                 Local SEO is the practice of increasing your website’s
                 visibility when it comes to local search results. This approach
@@ -72,7 +72,9 @@ const LocalSEORightColumnContent = () => {
                 travels your your customers, it’s important to grow your
                 business thru local search keywords.
             </p>
-            <Button variant="primary">Let&apos;s Chat</Button>
+            <MotionFadeGrow delay={0.5} threshold={1}>
+                <Button variant="primary">Let&apos;s Chat</Button>
+            </MotionFadeGrow>
         </div>
     );
 };

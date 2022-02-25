@@ -105,15 +105,15 @@ const HeaderLeftColumnContent = () => {
 
 const HeaderRightColumnContent = () => {
     return (
-        <MotionFadeGrow delay={0.7}>
-            <div
-                sx={{
-                    display: 'grid',
-                    justifyItems: 'center',
-                    position: 'relative',
-                    paddingBottom: '30px',
-                }}
-                className="boxShadowRight">
+        <div
+            sx={{
+                display: 'grid',
+                justifyItems: 'center',
+                position: 'relative',
+                paddingBottom: '30px',
+            }}
+            className="boxShadowRight">
+            <MotionFadeGrow delay={0.5}>
                 <Image
                     alt="Laptop with overlaying SEO metrics"
                     src={headerDevices}
@@ -121,8 +121,8 @@ const HeaderRightColumnContent = () => {
                     height={399}
                     quality={100}
                 />
-            </div>
-        </MotionFadeGrow>
+            </MotionFadeGrow>
+        </div>
     );
 };
 

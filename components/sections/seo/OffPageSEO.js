@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import CheckListItem from '../../CheckListItem';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const OffPageSEO = () => {
     return (
@@ -20,8 +21,7 @@ const OffPageSEOLeftColumnContent = () => {
         <div
             sx={{
                 paddingRight: ['0px', '0px', '60px', '30px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Off-Page SEO</h3>
             <div
                 sx={{
@@ -30,8 +30,7 @@ const OffPageSEOLeftColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p>
                 Going beyond your website to enhance the perception of your
                 brand and search rankings across the web involves influencing
@@ -57,49 +56,49 @@ const OffPageSEORightColumnContent = () => {
                 display: 'grid',
                 justifyContent: ['center', 'center', 'start', 'start'],
                 paddingLeft: [null, null, '75px', '75px'],
-            }}
-        >
-            <div
-                sx={{
-                    backgroundColor: 'muted',
-                    borderRadius: '20px',
-                    paddingY: '30px',
-                    paddingX: '50px',
-                    maxWidth: '425px',
-                    boxShadow: '20px 30px 60px rgba(0, 0, 0, 0.12)',
-                }}
-            >
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Publication Outreach
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Influencer Outreach
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Public Relations
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Social Media
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Content Strategy
-                    </p>
-                </CheckListItem>
-                <CheckListItem bgColor="primary" checkmarkColor="#fff">
-                    <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
-                        Link Building
-                    </p>
-                </CheckListItem>
-            </div>
+            }}>
+            <MotionFadeGrow threshold={0.7}>
+                <div
+                    sx={{
+                        backgroundColor: 'muted',
+                        borderRadius: '20px',
+                        paddingY: '30px',
+                        paddingX: '50px',
+                        maxWidth: '425px',
+                        boxShadow: '20px 30px 60px rgba(0, 0, 0, 0.12)',
+                    }}>
+                    <CheckListItem bgColor="primary" checkmarkColor="#fff">
+                        <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
+                            Publication Outreach
+                        </p>
+                    </CheckListItem>
+                    <CheckListItem bgColor="primary" checkmarkColor="#fff">
+                        <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
+                            Influencer Outreach
+                        </p>
+                    </CheckListItem>
+                    <CheckListItem bgColor="primary" checkmarkColor="#fff">
+                        <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
+                            Public Relations
+                        </p>
+                    </CheckListItem>
+                    <CheckListItem bgColor="primary" checkmarkColor="#fff">
+                        <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
+                            Social Media
+                        </p>
+                    </CheckListItem>
+                    <CheckListItem bgColor="primary" checkmarkColor="#fff">
+                        <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
+                            Content Strategy
+                        </p>
+                    </CheckListItem>
+                    <CheckListItem bgColor="primary" checkmarkColor="#fff">
+                        <p sx={{ marginLeft: '10px', fontSize: '18px' }}>
+                            Link Building
+                        </p>
+                    </CheckListItem>
+                </div>
+            </MotionFadeGrow>
         </div>
     );
 };
