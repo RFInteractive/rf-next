@@ -7,6 +7,7 @@ import Image from 'next/image';
 import AppHeader from '../../components/sections/AppHeader';
 import headerDevices from '../../public/images/homepage-header-devices.png';
 import CheckListItem from '../../components/CheckListItem';
+import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
 import WebDevIntroStats from '../../components/sections/web-design-and-dev/WebDevIntroStats';
 import WebDevProcess from '../../components/sections/web-design-and-dev/WebDevProcess';
 import WebDesign from '../../components/sections/web-design-and-dev/WebDesign';
@@ -92,9 +93,11 @@ const WebDesignAndDevLeftColumn = () => {
                     Increase your conversions
                 </p>
             </CheckListItem>
-            <Button variant="light" sx={{ marginTop: '20px' }}>
-                Let&apos;s Work Together
-            </Button>
+            <MotionFadeGrow delay={0.8}>
+                <Button variant="light" sx={{ marginTop: '20px' }}>
+                    Let&apos;s Work Together
+                </Button>
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -110,13 +113,15 @@ const WebDesignAndDevRightColumn = () => {
                 paddingBottom: '75px',
             }}
             className="boxShadowRight">
-            <Image
-                alt="Laptop with overlaying SEO metrics"
-                src={headerDevices}
-                width={541}
-                height={399}
-                quality={100}
-            />
+            <MotionFadeGrow delay={0.3}>
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={headerDevices}
+                    width={541}
+                    height={399}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };

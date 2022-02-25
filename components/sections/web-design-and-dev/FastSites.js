@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import PhonesPerformance from '../../../public/images/3-phones-performance.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const FastSites = () => {
     return (
@@ -22,8 +23,7 @@ const FastSitesLeftColumnContent = () => {
         <div
             sx={{
                 paddingRight: ['0px', '0px', '80px', '40px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>
                 The Fastest Sites on Any Platform
             </h3>
@@ -34,8 +34,7 @@ const FastSitesLeftColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p>
                 Our team of dedicated writers has valuable experience developing
                 a variety of different types of content. Whether you need a
@@ -60,15 +59,16 @@ const FastSitesRightColumnContent = () => {
                 justifyItems: 'center',
                 position: 'relative',
                 my: ['100px', '50px', '100px', '100px'],
-            }}
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={PhonesPerformance}
-                width={652}
-                height={497}
-                quality={100}
-            />
+            }}>
+            <MotionFadeGrow threshold={0.7}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={PhonesPerformance}
+                    width={652}
+                    height={497}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
