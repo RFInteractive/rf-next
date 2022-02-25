@@ -15,7 +15,7 @@ const ServicesBenefitsRow = () => {
                 <Grid
                     columns={[1, 1, 3, 3]}
                     gap={['35px', '35px', '3%', '60px']}>
-                    <MotionFadeGrow delay={0.1}>
+                    <MotionFadeGrow delay={0}>
                         <IconListCard
                             heading="Get More Traffic"
                             icon="seo"
@@ -42,7 +42,7 @@ const ServicesBenefitsRow = () => {
                             </CheckListItem>
                         </IconListCard>
                     </MotionFadeGrow>
-                    <MotionFadeGrow delay={0.2}>
+                    <MotionFadeGrow delay={0.25}>
                         <IconListCard
                             heading="Connect With Users"
                             icon="chat"
@@ -69,7 +69,7 @@ const ServicesBenefitsRow = () => {
                             </CheckListItem>
                         </IconListCard>
                     </MotionFadeGrow>
-                    <MotionFadeGrow delay={0.3}>
+                    <MotionFadeGrow delay={0.5}>
                         <IconListCard
                             heading="Improve Your Site"
                             icon="computer"

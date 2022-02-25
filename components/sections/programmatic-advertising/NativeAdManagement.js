@@ -4,13 +4,13 @@ import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import NativeAdManagementImg from '../../../public/images/native-ad-management.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const NativeAdManagement = () => {
     return (
         <section
             id="nativeAdManagement"
-            sx={{ pb: ['50px', null, null, null] }}
-        >
+            sx={{ pb: ['50px', null, null, null] }}>
             <TwoColumnVector
                 vectorSide={'left'}
                 leftColumnContent={NativeAdManagementLeftColumnContent()}
@@ -30,15 +30,16 @@ const NativeAdManagementLeftColumnContent = () => {
                 position: 'relative',
                 my: ['100px', '50px', '100px', '100px'],
                 padding: ['0px', '0px', '75px', '75px'],
-            }}
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={NativeAdManagementImg}
-                width={576}
-                height={507}
-                quality={100}
-            />
+            }}>
+            <MotionFadeGrow threshold={0.7}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={NativeAdManagementImg}
+                    width={576}
+                    height={507}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -48,8 +49,7 @@ const NativeAdManagementRightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '60px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Native Ad Management</h3>
             <div
                 sx={{
@@ -58,8 +58,7 @@ const NativeAdManagementRightColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p sx={{ paddingBottom: '20px' }}>
                 Promoting your content through brand thought leadership on a
                 native ad network has multiple benefits including, increased
@@ -72,7 +71,9 @@ const NativeAdManagementRightColumnContent = () => {
                 for your article content and in turn generates highly relevant
                 leads.
             </p>
-            <Button variant="primary">Let&apos;s Chat</Button>
+            <MotionFadeGrow delay={0.6} threshold={1}>
+                <Button variant="primary">Let&apos;s Chat</Button>
+            </MotionFadeGrow>
         </div>
     );
 };

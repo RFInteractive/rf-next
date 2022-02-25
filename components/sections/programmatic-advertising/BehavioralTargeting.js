@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import iMacAd from '../../../public/images/iMac-search-ad.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const BehavioralTargeting = () => {
     return (
@@ -27,15 +28,16 @@ const BehavioralTargetingLeftColumnContent = () => {
                 position: 'relative',
                 my: ['70px', '50px', '100px', '100px'],
                 padding: ['25px', '35px', '50px', '50px'],
-            }}
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={iMacAd}
-                width={640}
-                height={532}
-                quality={100}
-            />
+            }}>
+            <MotionFadeGrow threshold={0.7}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={iMacAd}
+                    width={640}
+                    height={532}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -45,8 +47,7 @@ const BehavioralTargetingRightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '60px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Behavioral Targeting</h3>
             <div
                 sx={{
@@ -55,8 +56,7 @@ const BehavioralTargetingRightColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p sx={{ paddingBottom: '20px' }}>
                 You probably have specific customers or clientele that you want
                 to attract to your business. Behavioral targeting allows us to
@@ -69,7 +69,9 @@ const BehavioralTargetingRightColumnContent = () => {
                 platforms, we can expose your brand to users who have already
                 shown interest in similar products or services to yours.
             </p>
-            <Button variant="primary">Let&apos;s Chat</Button>
+            <MotionFadeGrow delay={0.6} threshold={1}>
+                <Button variant="primary">Let&apos;s Chat</Button>
+            </MotionFadeGrow>
         </div>
     );
 };

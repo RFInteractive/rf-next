@@ -96,9 +96,11 @@ const HeaderLeftColumnContent = () => {
                 We help businesses grow through high quality SEO, targeted
                 content, and engaging websites.
             </h4>
-            <Button variant="light" onClick={() => setShowForm(true)}>
-                Let&apos;s Work Together
-            </Button>
+            <MotionFadeGrow delay={0.8}>
+                <Button variant="light" onClick={() => setShowForm(true)}>
+                    Let&apos;s Work Together
+                </Button>
+            </MotionFadeGrow>
         </div>
     );
 };

@@ -68,7 +68,7 @@ const ContentStrategyRightColumnContent = () => {
                 organically improve your rankings in search engines using proven
                 research to write the answers to the questions real people ask.
             </p>
-            <MotionFadeGrow threshold={0.3}>
+            <MotionFadeGrow threshold={0.6} delay={0.6}>
                 <Button variant="primary">Let&apos;s Chat</Button>
             </MotionFadeGrow>
         </div>

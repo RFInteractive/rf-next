@@ -7,6 +7,7 @@ import Image from 'next/image';
 import AppHeader from '../../components/sections/AppHeader';
 import AdverisingLaptop from '../../public/images/advertising-laptop.png';
 import CheckListItem from '../../components/CheckListItem';
+import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
 import AdvertisingIntroStats from '../../components/sections/programmatic-advertising/AdvertisingIntroStats';
 import AdvertisingProcess from '../../components/sections/programmatic-advertising/AdvertisingProcess';
 import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
@@ -90,9 +91,11 @@ const ProgrammaticAdvertisingLeftColumn = () => {
                     Increase your brand’s ROI
                 </p>
             </CheckListItem>
-            <Button variant="light" sx={{ marginTop: '20px' }}>
-                Let&apos;s Work Together
-            </Button>
+            <MotionFadeGrow delay={0.8}>
+                <Button variant="light" sx={{ marginTop: '20px' }}>
+                    Let&apos;s Work Together
+                </Button>
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -107,13 +110,15 @@ const ProgrammaticAdvertisingRightColumn = () => {
                 paddingX: '25px',
                 paddingBottom: '75px',
             }}>
-            <Image
-                alt="Laptop with overlaying SEO metrics"
-                src={AdverisingLaptop}
-                width={611}
-                height={538}
-                quality={100}
-            />
+            <MotionFadeGrow delay={0.3}>
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={AdverisingLaptop}
+                    width={611}
+                    height={538}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };

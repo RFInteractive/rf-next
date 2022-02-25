@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import HeadlessWordPressImac from '../../../public/images/headless-wordpress-iMac.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const HeadlessWordPress = () => {
     return (
@@ -27,15 +28,16 @@ const HeadlessWordPressLeftColumnContent = () => {
                 position: 'relative',
                 my: ['100px', '50px', '100px', '100px'],
                 padding: ['0px', '0px', '75px', '75px'],
-            }}
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={HeadlessWordPressImac}
-                width={572}
-                height={511}
-                quality={100}
-            />
+            }}>
+            <MotionFadeGrow threshold={0.5}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={HeadlessWordPressImac}
+                    width={572}
+                    height={511}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -45,8 +47,7 @@ const HeadlessWordPressRightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '60px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Headless WordPress</h3>
             <div
                 sx={{
@@ -55,8 +56,7 @@ const HeadlessWordPressRightColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p sx={{ paddingBottom: '20px' }}>
                 WordPress is a great content management system used by thousands
                 of businesses around the world, but there are better ways to
@@ -68,7 +68,9 @@ const HeadlessWordPressRightColumnContent = () => {
                 smooth page animations? Fully immersive features and controls?
                 Contact us today to find out more!
             </p>
-            <Button variant="primary">Let&apos;s Chat</Button>
+            <MotionFadeGrow delay={0.6} threshold={1}>
+                <Button variant="primary">Let&apos;s Chat</Button>
+            </MotionFadeGrow>
         </div>
     );
 };

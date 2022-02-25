@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import ContextualDisplayAd from '../../../public/images/contextual-display-ad.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const ContextualDisplay = () => {
     return (
@@ -22,8 +23,7 @@ const ContextualDisplayLeftColumnContent = () => {
         <div
             sx={{
                 paddingRight: ['0px', '0px', '80px', '40px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Contextual Display</h3>
             <div
                 sx={{
@@ -32,8 +32,7 @@ const ContextualDisplayLeftColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p>
                 As a programmatic strategy, Contextual Display Advertising
                 allows brands to serve ads based on the context of the web page.
@@ -58,15 +57,16 @@ const ContextualDisplayRightColumnContent = () => {
                 justifyItems: 'center',
                 position: 'relative',
                 my: ['70px', '50px', '100px', '100px'],
-            }}
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={ContextualDisplayAd}
-                width={642}
-                height={492}
-                quality={100}
-            />
+            }}>
+            <MotionFadeGrow threshold={0.7}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={ContextualDisplayAd}
+                    width={642}
+                    height={492}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
