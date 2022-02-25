@@ -7,6 +7,7 @@ import Image from 'next/image';
 import AppHeader from '../../components/sections/AppHeader';
 import contentHeaderDevices from '../../public/images/content-header-devices.png';
 import CheckListItem from '../../components/CheckListItem';
+import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
 import ContentIntroStats from '../../components/sections/content/ContentIntroStats';
 import ContentProcess from '../../components/sections/content/ContentProcess';
 import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
@@ -89,9 +90,11 @@ const ContentLeftColumn = () => {
                     Target Audiences with optimized keywords
                 </p>
             </CheckListItem>
-            <Button variant="light" sx={{ marginTop: '20px' }}>
-                Let&apos;s Work Together
-            </Button>
+            <MotionFadeGrow delay={0.65}>
+                <Button variant="light" sx={{ marginTop: '20px' }}>
+                    Let&apos;s Work Together
+                </Button>
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -105,13 +108,15 @@ const ContentRightColumn = () => {
                 position: 'relative',
                 paddingX: '25px',
             }}>
-            <Image
-                alt="Laptop with overlaying SEO metrics"
-                src={contentHeaderDevices}
-                width={532}
-                height={477}
-                quality={100}
-            />
+            <MotionFadeGrow delay={0.3}>
+                <Image
+                    alt="Laptop with overlaying SEO metrics"
+                    src={contentHeaderDevices}
+                    width={532}
+                    height={477}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };

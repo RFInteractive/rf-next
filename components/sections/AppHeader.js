@@ -14,16 +14,14 @@ const AppHeader = ({
                 variant: 'layouts.twoColumnContainedGrid',
                 alignItems: 'center',
                 paddingBottom: '100px',
-            }}
-        >
+            }}>
             <BackgroundSVG type={type} />
             <div
                 sx={{
                     gridColumn: ['2/span 2', '2/span 2', '2/3', '2/3'],
                     gridRow: '1/2',
                     zIndex: '2',
-                }}
-            >
+                }}>
                 {leftColumnContent}
             </div>
             <div
@@ -32,8 +30,7 @@ const AppHeader = ({
                     gridRow: '1/2',
                     display: ['none', 'none', 'block', 'block', 'block'],
                     zIndex: '2',
-                }}
-            >
+                }}>
                 {rightColumnContent}
             </div>
 
@@ -43,13 +40,14 @@ const AppHeader = ({
                     gridRow: '1/2',
                     display: 'block',
                     zIndex: '2',
-                }}
-            >
+                }}>
                 {centerColumnContent}
             </div>
         </header>
     );
 };
+
+export default AppHeader;
 
 const BackgroundSVG = ({ type = 'large' }) => {
     const { theme } = useThemeUI();
@@ -71,8 +69,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     maxHeight: [null, null, '860px', '925px'],
                     justifySelf: 'start',
                     zIndex: '-1',
-                }}
-            >
+                }}>
                 <path
                     d="M0 0H1190L1023.06 607.094C1013.19 642.995 984.188 670.438 947.798 678.316L0 883.5V0Z"
                     fill="url(#paint0_linear)"
@@ -114,8 +111,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                         y1="0"
                         x2="967.339"
                         y2="942.196"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                        gradientUnits="userSpaceOnUse">
                         <stop offset=".2" sx={{ stopColor: gradientDark }} />
                         <stop offset=".9" sx={{ stopColor: gradientLight }} />
                     </linearGradient>
@@ -125,8 +121,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                         y1="-10"
                         x2="65.4396"
                         y2="65.932"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                        gradientUnits="userSpaceOnUse">
                         <stop
                             offset="0.001875"
                             sx={{ stopColor: gradientLight }}
@@ -142,8 +137,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                         y1="-20"
                         x2="130.782"
                         y2="130.9778"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                        gradientUnits="userSpaceOnUse">
                         <stop sx={{ stopColor: gradientLight }} />
                         <stop
                             offset="0.28417"
@@ -156,8 +150,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                         y1="-15"
                         x2="120.7813"
                         y2="120.4003"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                        gradientUnits="userSpaceOnUse">
                         <stop
                             offset="0.0011875"
                             sx={{ stopColor: gradientLight }}
@@ -173,8 +166,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                         y1="-10"
                         x2="140.3906"
                         y2="140.7001"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                        gradientUnits="userSpaceOnUse">
                         <stop
                             offset="0.0011875"
                             sx={{ stopColor: gradientLight }}
@@ -190,8 +182,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                         y1="-10"
                         x2="120.4396"
                         y2="120.932"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                        gradientUnits="userSpaceOnUse">
                         <stop
                             offset="0.001875"
                             sx={{ stopColor: gradientLight }}
@@ -217,8 +208,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                 zIndex: '1',
                 height: ['100%', '125%', '100%', '100%'],
                 maxHeight: '500px',
-            }}
-        >
+            }}>
             <path
                 d="M0 0H1228L1109.99 303.429C1096.45 338.25 1064.62 362.618 1027.47 366.609L0 477V0Z"
                 fill="url(#paint0_linear)"
@@ -746,8 +736,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     y1="50"
                     x2="442.962"
                     y2="799.455"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop sx={{ stopColor: gradientDark }} />
                     <stop offset=".80" sx={{ stopColor: gradientLight }} />
                 </linearGradient>
@@ -757,8 +746,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     y1="-10"
                     x2="65.4396"
                     y2="65.932"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.001875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.205417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -768,8 +756,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     y1="-20"
                     x2="130.782"
                     y2="130.9778"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop sx={{ stopColor: gradientLight }} />
                     <stop offset="0.285417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -779,8 +766,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     y1="-15"
                     x2="120.7813"
                     y2="120.4003"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.001875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.205417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -790,8 +776,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     y1="-10"
                     x2="140.3906"
                     y2="140.7001"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.001875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.105417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -801,8 +786,7 @@ const BackgroundSVG = ({ type = 'large' }) => {
                     y1="-10"
                     x2="120.4396"
                     y2="120.932"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.001875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.125417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -810,5 +794,3 @@ const BackgroundSVG = ({ type = 'large' }) => {
         </svg>
     );
 };
-
-export default AppHeader;

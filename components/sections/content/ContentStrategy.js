@@ -4,6 +4,7 @@ import { Button } from 'theme-ui';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import contentTimeline from '../../../public/images/content-timeline.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const ContentStrategy = () => {
     return (
@@ -26,15 +27,16 @@ const ContentStrategyLeftColumnContent = () => {
                 justifyItems: 'center',
                 position: 'relative',
                 my: ['100px', '50px', '100px', '100px'],
-            }}
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={contentTimeline}
-                width={591}
-                height={472}
-                quality={100}
-            />
+            }}>
+            <MotionFadeGrow threshold={0.5}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={contentTimeline}
+                    width={591}
+                    height={472}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -44,8 +46,7 @@ const ContentStrategyRightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '60px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Content Strategy</h3>
             <div
                 sx={{
@@ -54,8 +55,7 @@ const ContentStrategyRightColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p sx={{ paddingBottom: '20px' }}>
                 Our strategists will provide you with a detailed analysis of the
                 content on your website and a list of the keywords you rank for
@@ -68,7 +68,9 @@ const ContentStrategyRightColumnContent = () => {
                 organically improve your rankings in search engines using proven
                 research to write the answers to the questions real people ask.
             </p>
-            <Button variant="primary">Let&apos;s Chat</Button>
+            <MotionFadeGrow threshold={0.3}>
+                <Button variant="primary">Let&apos;s Chat</Button>
+            </MotionFadeGrow>
         </div>
     );
 };

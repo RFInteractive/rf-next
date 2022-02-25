@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import keywordResearchLeaningLaptop from '../../../public/images/keyword-research-leaning-laptop.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const ContentDevelopment = () => {
     return (
@@ -22,8 +23,7 @@ const ContentDevelopmentLeftColumnContent = () => {
         <div
             sx={{
                 paddingRight: ['0px', '0px', '60px', '30px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Content Development</h3>
             <div
                 sx={{
@@ -32,8 +32,7 @@ const ContentDevelopmentLeftColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p>
                 Our team of dedicated writers has valuable experience developing
                 a variety of different types of content. Whether you need a
@@ -59,15 +58,16 @@ const ContentDevelopmentRightColumnContent = () => {
                 position: 'relative',
                 my: ['100px', '50px', '100px', '100px'],
             }}
-            className="boxShadowRight--rotated"
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={keywordResearchLeaningLaptop}
-                width={554}
-                height={527}
-                quality={100}
-            />
+            className="boxShadowRight--rotated">
+            <MotionFadeGrow threshold={0.6}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={keywordResearchLeaningLaptop}
+                    width={554}
+                    height={527}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import { Button } from 'theme-ui';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import blogLaptop from '../../../public/images/blog-laptop.png';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const KeywordResearch = () => {
     return (
@@ -26,15 +27,16 @@ const KeywordResearchLeftColumnContent = () => {
                 justifyItems: 'center',
                 position: 'relative',
                 my: ['120px', '50px', '100px', '100px'],
-            }}
-        >
-            <Image
-                alt="Content strategy calendar"
-                src={blogLaptop}
-                width={695}
-                height={536}
-                quality={100}
-            />
+            }}>
+            <MotionFadeGrow threshold={0.65}>
+                <Image
+                    alt="Content strategy calendar"
+                    src={blogLaptop}
+                    width={695}
+                    height={536}
+                    quality={100}
+                />
+            </MotionFadeGrow>
         </div>
     );
 };
@@ -44,8 +46,7 @@ const KeywordResearchRightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '60px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>Keyword Research</h3>
             <div
                 sx={{
@@ -54,8 +55,7 @@ const KeywordResearchRightColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p sx={{ paddingBottom: '20px' }}>
                 At Rank Fuse, we utilize a variety of SEO tools that allow us to
                 see how you are currently ranking for the keywords you want to
@@ -67,7 +67,9 @@ const KeywordResearchRightColumnContent = () => {
                 inject them into the copy on your website, your paid ads, and
                 your off-page SEO efforts.
             </p>
-            <Button variant="primary">Let&apos;s Chat</Button>
+            <MotionFadeGrow threshold={0.5} delay={0.25}>
+                <Button variant="primary">Let&apos;s Chat</Button>
+            </MotionFadeGrow>
         </div>
     );
 };

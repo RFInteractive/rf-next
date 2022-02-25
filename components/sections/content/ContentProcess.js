@@ -3,6 +3,7 @@ import { Container, Grid, useThemeUI } from 'theme-ui';
 import { darken } from '@theme-ui/color';
 
 import ProcessCard from '../../cards/ProcessCard';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const ContentProcess = () => {
     return (
@@ -14,8 +15,7 @@ const ContentProcess = () => {
                 justifyItems: 'center',
                 position: 'relative',
                 paddingBottom: '30px',
-            }}
-        >
+            }}>
             <h2 sx={{ marginBottom: '10px' }}>Our Process</h2>
             <div
                 sx={{
@@ -24,28 +24,40 @@ const ContentProcess = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '75px',
-                }}
-            ></div>
+                }}></div>
             <BgSVG />
             <Container
-                sx={{ maxWidth: ['450px', '600px', '1290px'], px: '30px' }}
-            >
+                sx={{ maxWidth: ['450px', '600px', '1290px'], px: '30px' }}>
                 <Grid
                     columns={[1, 1, 3, 3]}
-                    gap={['50px', '50px', '3%', '60px']}
-                >
-                    <ProcessCard heading="Chat With Us" icon="chat" number="1">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt.
-                    </ProcessCard>
-                    <ProcessCard heading="Research" icon="research" number="2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt.
-                    </ProcessCard>
-                    <ProcessCard heading="Delivery" icon="delivery" number="3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt.
-                    </ProcessCard>
+                    gap={['50px', '50px', '3%', '60px']}>
+                    <MotionFadeGrow threshold={0.2} delay={0}>
+                        <ProcessCard
+                            heading="Chat With Us"
+                            icon="chat"
+                            number="1">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt.
+                        </ProcessCard>
+                    </MotionFadeGrow>
+                    <MotionFadeGrow threshold={0.2} delay={0.2}>
+                        <ProcessCard
+                            heading="Research"
+                            icon="research"
+                            number="2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt.
+                        </ProcessCard>
+                    </MotionFadeGrow>
+                    <MotionFadeGrow threshold={0.2} delay={0.4}>
+                        <ProcessCard
+                            heading="Delivery"
+                            icon="delivery"
+                            number="3">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt.
+                        </ProcessCard>
+                    </MotionFadeGrow>
                 </Grid>
             </Container>
         </section>
@@ -69,8 +81,7 @@ const BgSVG = () => {
                 zIndex: '-1',
                 width: '90%',
                 height: '120%',
-            }}
-        >
+            }}>
             <ellipse
                 rx="15.5148"
                 ry="15.2828"
@@ -108,8 +119,7 @@ const BgSVG = () => {
                     y1="-10"
                     x2="80.5621"
                     y2="81.026"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.0194792" sx={{ stopColor: bg }} />
                     <stop offset=".6" sx={{ stopColor: darken(bg, 0.3) }} />
                 </linearGradient>
@@ -119,8 +129,7 @@ const BgSVG = () => {
                     y1="-10"
                     x2="74.2223"
                     y2="75.3489"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.0194792" sx={{ stopColor: bg }} />
                     <stop offset="1" sx={{ stopColor: darken(bg, 0.3) }} />
                 </linearGradient>
@@ -130,8 +139,7 @@ const BgSVG = () => {
                     y1="-10"
                     x2="38.421"
                     y2="39.0042"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.0194792" sx={{ stopColor: bg }} />
                     <stop offset="1" sx={{ stopColor: darken(bg, 0.3) }} />
                 </linearGradient>
@@ -141,8 +149,7 @@ const BgSVG = () => {
                     y1="-10"
                     x2="29.2105"
                     y2="29.5021"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.0594792" sx={{ stopColor: bg }} />
                     <stop offset=".7" sx={{ stopColor: darken(bg, 0.3) }} />
                 </linearGradient>
@@ -152,8 +159,7 @@ const BgSVG = () => {
                     y1="-10"
                     x2="30.5621"
                     y2="31.026"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.0194792" sx={{ stopColor: bg }} />
                     <stop offset="1" sx={{ stopColor: darken(bg, 0.3) }} />
                 </linearGradient>

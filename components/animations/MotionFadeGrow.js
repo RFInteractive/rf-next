@@ -2,7 +2,7 @@ import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const MotionFadeGrow = ({
-    delay = 0.3,
+    delay = 0,
     duration = 0.6,
     threshold = 0,
     children,
