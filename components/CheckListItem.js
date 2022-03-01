@@ -19,15 +19,13 @@ const CheckListItem = ({
                     display: 'flex',
                     justifyItems: 'center',
                     alignItems: 'center',
-                }}
-            >
+                }}>
                 <svg
                     width="12"
                     height="9"
                     viewBox="0 0 12 9"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
+                    xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M1 4.5L4.5 8L10.3333 1"
                         sx={{ stroke: checkmarkColor }}

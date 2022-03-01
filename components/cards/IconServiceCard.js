@@ -32,12 +32,7 @@ const IconServiceCard = ({ icon, heading, link }) => {
     );
 };
 
-const getSVG = (
-    iconName = 'chat',
-    color,
-    maxWidth = '50px',
-    maxHeight = '50px'
-) => {
+const getSVG = (iconName = 'chat', maxWidth = '50px', maxHeight = '50px') => {
     if (iconName === 'content') {
         return (
             <svg

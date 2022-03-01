@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import AppBgIcon from '../BgIcon';
+import { useColorMode } from 'theme-ui';
 
 import Link from 'next/link';
 
@@ -10,6 +11,8 @@ const IconListCard = ({
     link = '/',
     iconColor = 'primary',
 }) => {
+    const [mode, changeMode] = useColorMode();
+
     return (
         <div
             sx={{
@@ -25,7 +28,7 @@ const IconListCard = ({
                         sx={{
                             marginTop: '15px',
                             marginBottom: '5px',
-                            color: iconColor,
+                            color: mode === 'deep' ? 'alwaysLight' : iconColor,
                             '&:hover': {
                                 transform: 'scale(1.06)',
                                 cursor: 'pointer',
@@ -51,7 +54,7 @@ const IconListCard = ({
                 <a>
                     <p
                         sx={{
-                            color: iconColor,
+                            color: mode === 'deep' ? 'alwaysLight' : iconColor,
                             '&:hover': {
                                 transform: 'scale(1.06)',
                                 cursor: 'pointer',
