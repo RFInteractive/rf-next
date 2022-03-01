@@ -25,7 +25,9 @@ const MyApp = ({ Component, pageProps, router }) => {
             const navTo = url.split('?')[0];
             const navFrom = nextRouter.asPath.split('?')[0];
             if (navTo !== navFrom) {
-                window.scroll({ top: 0, behavior: 'smooth' });
+                setTimeout(() => {
+                    window.scroll({ top: 0, behavior: 'smooth' });
+                }, 200);
             }
         };
 
