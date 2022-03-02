@@ -42,10 +42,10 @@ const FormSuccess = ({ name, color }) => {
                     width={200}
                     isPaused={pausedState}
                 />
-                <h4 sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                <h4 sx={{ color: color === 'dark' ? 'text' : '#fff' }}>
                     Success!
                 </h4>
-                <p sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                <p sx={{ color: color === 'dark' ? 'text' : '#fff' }}>
                     We&apos;ll be in touch, {name}!
                 </p>
             </Grid>

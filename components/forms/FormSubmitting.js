@@ -34,7 +34,7 @@ const FormSubmitting = ({ color }) => {
                     width={200}
                     speed={1.4}
                 />
-                <p sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                <p sx={{ color: color === 'dark' ? 'text' : '#fff' }}>
                     One moment, please...
                 </p>
             </Grid>

@@ -20,7 +20,7 @@ import FormSuccess from '../FormSuccess';
 import FormError from '../FormError';
 import axios from 'axios';
 
-const GeneralMultiStep = ({ formBgColor = 'light' }) => {
+const GeneralMultiStep = ({ formTextColor = 'dark' }) => {
     const {
         handleSubmit,
         watch,
@@ -83,14 +83,14 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
     return (
         <AnimatePresence exitBeforeEnter>
             {formStatus === 'submitting' ? (
-                <FormSubmitting color={formBgColor} key="formSubmitting" />
+                <FormSubmitting color={formTextColor} key="formSubmitting" />
             ) : null}
 
             {formStatus === 'success' ? (
                 <FormSuccess
                     key="formSuccess"
                     name={getValues('Name')}
-                    color={formBgColor}
+                    color={formTextColor}
                 />
             ) : null}
 
@@ -99,7 +99,7 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                     key="formSuccess"
                     setFormStatus={setFormStatus}
                     name={getValues('Name')}
-                    color={formBgColor}
+                    color={formTextColor}
                 />
             ) : null}
 
@@ -117,7 +117,7 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
                             onSubmit={handleSubmit(submitForm)}
                             sx={{
                                 variant:
-                                    formBgColor === 'light'
+                                    formTextColor === 'dark'
                                         ? null
                                         : 'wrappers.darkBgFormWrapper',
                             }}>

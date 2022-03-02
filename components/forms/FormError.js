@@ -18,7 +18,7 @@ const FormError = ({ name, color, setFormStatus }) => {
             }}
             exit={{ ...simpleFadeExit, transition: { duration: 0.4 } }}>
             <Grid sx={{ justifyItems: 'center', padding: '30px' }}>
-                <p sx={{ color: color === 'light' ? 'text' : '#fff' }}>
+                <p sx={{ color: color === 'dark' ? 'text' : '#fff' }}>
                     I&apos;m sorry {name}, but something seems to have gone
                     wrong...
                 </p>

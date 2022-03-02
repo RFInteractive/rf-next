@@ -65,7 +65,7 @@ const HeaderLeftColumnContent = () => {
                     paddingTop: ['150px', '125px', '0px', '0px'],
                     paddingBottom: ['150px', '150px', '0px', '0px'],
                 }}>
-                <GeneralMultiStep formBgColor="dark" />
+                <GeneralMultiStep formTextColor="light" />
             </div>
         );
     }
