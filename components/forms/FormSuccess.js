@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Grid, Button } from 'theme-ui';
+import { Grid } from 'theme-ui';
 import { motion } from 'framer-motion';
 import Lottie from 'react-lottie';
 import * as checkmarkAnimationData from '../../lib/lottie/checkmark.json';
@@ -11,7 +11,7 @@ import {
 } from '../../lib/animations';
 import { useEffect, useState } from 'react';
 
-const FormSuccess = ({ setFormStatus, name, color }) => {
+const FormSuccess = ({ name, color }) => {
     const [pausedState, setPausedState] = useState(true);
 
     const loadingLottieOptions = {
@@ -48,9 +48,6 @@ const FormSuccess = ({ setFormStatus, name, color }) => {
                 <p sx={{ color: color === 'light' ? 'text' : '#fff' }}>
                     We&apos;ll be in touch, {name}!
                 </p>
-                <Button type="button" onClick={() => setFormStatus('initial')}>
-                    Reset
-                </Button>
             </Grid>
         </motion.div>
     );
