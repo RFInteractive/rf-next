@@ -17,6 +17,8 @@ import FourthStep from './FourthStep';
 import FifthStep from './FifthStep';
 import FormSubmitting from '../FormSubmitting';
 import FormSuccess from '../FormSuccess';
+import FormError from '../FormError';
+import axios from 'axios';
 
 const GeneralMultiStep = ({ formBgColor = 'light' }) => {
     const {
@@ -54,10 +56,14 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
         e.preventDefault();
         await trigger();
         if (isValid && stepNumber === totalSteps) {
-            console.table(data);
             setFormStatus('submitting');
-            setTimeout(() => setFormStatus('success'), 5000);
-            return;
+            try {
+                await axios.post('/api/email', data);
+                setFormStatus('success');
+            } catch (error) {
+                setFormStatus('error');
+                console.error(error);
+            }
         }
 
         changeStep('next');
@@ -82,6 +88,14 @@ const GeneralMultiStep = ({ formBgColor = 'light' }) => {
 
             {formStatus === 'success' ? (
                 <FormSuccess
+                    key="formSuccess"
+                    name={getValues('Name')}
+                    color={formBgColor}
+                />
+            ) : null}
+
+            {formStatus === 'error' ? (
+                <FormError
                     key="formSuccess"
                     setFormStatus={setFormStatus}
                     name={getValues('Name')}
