@@ -120,7 +120,8 @@ const GeneralMultiStep = ({ formTextColor = 'dark' }) => {
                                     formTextColor === 'dark'
                                         ? null
                                         : 'wrappers.darkBgFormWrapper',
-                            }}>
+                            }}
+                            data-cy="GeneralMultiStepForm">
                             <AnimatePresence exitBeforeEnter>
                                 {stepNumber === 1 && (
                                     <Step key={1}>

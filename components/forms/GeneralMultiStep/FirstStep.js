@@ -73,7 +73,8 @@ const FirstStep = ({ register, getFieldState, stepControl, trigger }) => {
                                 sx={{ justifySelf: 'end' }}>
                                 <Button
                                     onClick={() => stepControl('next')}
-                                    type="button">
+                                    type="button"
+                                    data-cy="GeneralMultiStepFirstStepNextBtn">
                                     Next
                                 </Button>
                             </motion.div>
