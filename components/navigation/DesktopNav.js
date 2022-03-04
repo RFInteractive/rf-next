@@ -44,7 +44,8 @@ const DesktopNav = () => {
                     </Grid>
                     <Button
                         id="navCTABtn"
-                        onClick={() => setFormModalOpen(true)}>
+                        onClick={() => setFormModalOpen(true)}
+                        data-cy="navCTABtn">
                         Get Started
                     </Button>
                     <AnimatePresence exitBeforeEnter>

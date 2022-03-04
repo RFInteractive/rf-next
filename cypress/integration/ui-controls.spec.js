@@ -32,9 +32,18 @@ describe('Basic homepage behaviors', () => {
         cy.get('[data-cy=quickSettingsToggle]').click();
     });
 
-    it('should open and close MutliStepFormPortal when clicked', () => {
+    it('should open and close MutliStepFormPortal from fixed ui controls', () => {
         cy.get('[data-cy=quickSettingsToggle]').click();
         cy.get('[data-cy=formModalToggle]').click();
+        cy.get('[data-cy=GeneralMultiStepFormPortal]').should('be.visible');
+        cy.get('[data-cy=GeneralMultiStepFormPortal]')
+            .find('button[title="Close"]')
+            .click();
+        cy.get('[data-cy=GeneralMultiStepFormPortal]').should('not.be.visible');
+    });
+
+    it('should open and close MultiStepFormPortal when nav button is clicked', () => {
+        cy.get('[data-cy=navCTABtn]').click();
         cy.get('[data-cy=GeneralMultiStepFormPortal]').should('be.visible');
         cy.get('[data-cy=GeneralMultiStepFormPortal]')
             .find('button[title="Close"]')
