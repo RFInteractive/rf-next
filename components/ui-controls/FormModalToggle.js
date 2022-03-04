@@ -49,7 +49,8 @@ const FormModalToggle = () => {
                         transform: 'scale(1.06)',
                     },
                 }}
-                onClick={() => setFormModalOpen(true)}>
+                onClick={() => setFormModalOpen(true)}
+                data-cy="formModalToggle">
                 <svg
                     viewBox="0 0 29 27"
                     fill="none"

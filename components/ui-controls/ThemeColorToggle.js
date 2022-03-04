@@ -58,7 +58,8 @@ const ThemeColorToggle = () => {
                         transform: 'scale(1.06)',
                     },
                 }}
-                onClick={toggleColorMode}>
+                onClick={toggleColorMode}
+                data-cy="themeColorToggle">
                 {mode === 'deep' ? (
                     <svg
                         viewBox="0 0 50 50"

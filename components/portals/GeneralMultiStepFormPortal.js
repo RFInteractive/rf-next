@@ -88,7 +88,8 @@ const GeneralMultiStepFormPortal = ({ children, open, onClose }) => {
                                   display: 'flex',
                                   justifyContent: 'center',
                                   alignItems: 'center',
-                              }}>
+                              }}
+                              data-cy="GeneralMultiStepFormPortal">
                               <Close
                                   onClick={closePortal}
                                   size={60}

@@ -43,7 +43,8 @@ const QuickSettingsToggle = () => {
                         transform: 'scale(1.06)',
                     },
                 }}
-                onClick={changeToggleOpen}>
+                onClick={changeToggleOpen}
+                data-cy="quickSettingsToggle">
                 {!toggleOpen ? (
                     <svg
                         viewBox="0 0 33 33"
