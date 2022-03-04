@@ -23,7 +23,8 @@ const DesktopNav = () => {
                 margin: '10px 0px -115px',
                 zIndex: '100',
                 position: 'relative',
-            }}>
+            }}
+            data-cy="DesktopNav">
             <Container sx={{ maxWidth: '1400px' }}>
                 <Grid
                     gap={0}
