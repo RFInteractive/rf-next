@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
 import { Button } from 'theme-ui';
-import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
-import analyticsLaptop from '../../../public/images/analytics-laptop.png';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
+
+import Lottie from 'react-lottie';
+import * as analyticsReportingAnimationData from '../../../lib/lottie/analytics-reporting-lottie.json';
 
 const AnalyticsReportingRow = () => {
     return (
@@ -54,6 +55,15 @@ const AnalyticsReportingLeftColumnContent = () => {
 };
 
 const AnalyticsReportingRightColumnContent = () => {
+    const loadingLottieOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: analyticsReportingAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     return (
         <div
             sx={{
@@ -62,10 +72,7 @@ const AnalyticsReportingRightColumnContent = () => {
                 position: 'relative',
             }}>
             <MotionFadeGrow threshold={0.8}>
-                <Image
-                    src={analyticsLaptop}
-                    alt="laptop with overlaying analytics information"
-                />
+                <Lottie options={loadingLottieOptions} />
             </MotionFadeGrow>
         </div>
     );

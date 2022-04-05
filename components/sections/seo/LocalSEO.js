@@ -1,10 +1,11 @@
 /** @jsxImportSource theme-ui */
 import { Button } from 'theme-ui';
-import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
-import leaningLaptop from '../../../public/images/leaning-laptop.png';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
+
+import Lottie from 'react-lottie';
+import * as localSEOAnimationData from '../../../lib/lottie/local-seo-lottie.json';
 
 const LocalSEO = () => {
     return (
@@ -20,6 +21,15 @@ const LocalSEO = () => {
 };
 
 const LocalSEOLeftColumnContent = () => {
+    const loadingLottieOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: localSEOAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     return (
         <div
             sx={{
@@ -28,16 +38,9 @@ const LocalSEOLeftColumnContent = () => {
                 position: 'relative',
                 pb: '30px',
                 my: ['100px', '50px', '100px', '100px'],
-            }}
-            className="boxShadowLeft--rotated">
+            }}>
             <MotionFadeGrow threshold={0.8}>
-                <Image
-                    alt="Laptop with overlaying SEO metrics"
-                    src={leaningLaptop}
-                    width={587}
-                    height={558}
-                    quality={100}
-                />
+                <Lottie options={loadingLottieOptions} />
             </MotionFadeGrow>
         </div>
     );
@@ -48,6 +51,7 @@ const LocalSEORightColumnContent = () => {
         <div
             sx={{
                 paddingLeft: ['0px', '0px', '75px', '60px'],
+                marginTop: ['30px', '0px', '0px', '0px'],
             }}>
             <h3 sx={{ marginBottom: '10px' }}>Local SEO</h3>
             <div
