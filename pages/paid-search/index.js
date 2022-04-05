@@ -5,32 +5,34 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import AppHeader from '../../components/sections/AppHeader';
-import AdverisingLaptop from '../../public/images/advertising-laptop.png';
+import IMacPaidSearch from '../../public/images/iMac-paid-search.png';
 import CheckListItem from '../../components/CheckListItem';
-import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
-import AdvertisingIntroStats from '../../components/sections/programmatic-advertising/AdvertisingIntroStats';
-import AdvertisingProcess from '../../components/sections/programmatic-advertising/AdvertisingProcess';
-import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
-import BehavioralTargeting from '../../components/sections/programmatic-advertising/BehavioralTargeting';
-import ContextualDisplay from '../../components/sections/programmatic-advertising/ContextualDisplay';
-import NativeAdManagementImg from '../../components/sections/programmatic-advertising/NativeAdManagement';
-import Retargeting from '../../components/sections/programmatic-advertising/Retargeting';
-import CTARow from '../../components/sections/AppCTARow';
-import { advertisingSEO } from '../../lib/seo';
 
-const ProgrammaticAdvertising = () => {
+import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
+import PaidSearchIntroStats from '../../components/sections/paid-search/PaidSearchIntroStats';
+import PaidSearchProcess from '../../components/sections/paid-search/PaidSearchProcess';
+import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
+
+import ECommerceAds from '../../components/sections/paid-search/ECommerceAds';
+import YouTubeDisplay from '../../components/sections/paid-search/YouTubeDisplay';
+import GoogleMapsAdvertisement from '../../components/sections/paid-search/GoogleMaps';
+
+import CTARow from '../../components/sections/AppCTARow';
+import { paidSearchSEO } from '../../lib/seo';
+
+const PaidSearchAdvertising = () => {
     return (
         <div>
             <Head>
-                <title>{advertisingSEO.title}</title>
-                <meta name="description" content={advertisingSEO.description} />
+                <title>{paidSearchSEO.title}</title>
+                <meta name="description" content={paidSearchSEO.description} />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content={advertisingSEO.title} />
+                <meta property="og:title" content={paidSearchSEO.title} />
                 <meta
                     property="og:description"
-                    content={advertisingSEO.description}
+                    content={paidSearchSEO.description}
                 />
-                <meta property="og:url" content={advertisingSEO.ogUrl} />
+                <meta property="og:url" content={paidSearchSEO.ogUrl} />
                 <meta
                     property="og:image"
                     content="/images/RankFuse-OG-Img.jpg"
@@ -38,18 +40,17 @@ const ProgrammaticAdvertising = () => {
             </Head>
 
             <AppHeader
-                leftColumnContent={ProgrammaticAdvertisingLeftColumn()}
-                rightColumnContent={ProgrammaticAdvertisingRightColumn()}
+                leftColumnContent={PaidSearchAdvertisingLeftColumn()}
+                rightColumnContent={PaidSearchAdvertisingRightColumn()}
             />
 
             <main>
-                <AdvertisingIntroStats />
-                <AdvertisingProcess />
+                <PaidSearchIntroStats />
+                <PaidSearchProcess />
                 <TestimonialCarousel />
-                <BehavioralTargeting />
-                <ContextualDisplay />
-                <NativeAdManagementImg />
-                <Retargeting />
+                <ECommerceAds />
+                <YouTubeDisplay />
+                <GoogleMapsAdvertisement />
                 <CTARow
                     heading="Stand Out in the Crowd"
                     subheading="Take advantage of our free tools"></CTARow>
@@ -58,9 +59,9 @@ const ProgrammaticAdvertising = () => {
     );
 };
 
-export default ProgrammaticAdvertising;
+export default PaidSearchAdvertising;
 
-const ProgrammaticAdvertisingLeftColumn = () => {
+const PaidSearchAdvertisingLeftColumn = () => {
     return (
         <div
             sx={{
@@ -74,7 +75,7 @@ const ProgrammaticAdvertisingLeftColumn = () => {
                     color: '#fff',
                     marginBottom: '20px',
                 }}>
-                Expand Your Reach With Programmatic Advertising
+                We Deliver Ads That Deliver Results
             </h1>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
                 <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
@@ -100,7 +101,7 @@ const ProgrammaticAdvertisingLeftColumn = () => {
     );
 };
 
-const ProgrammaticAdvertisingRightColumn = () => {
+const PaidSearchAdvertisingRightColumn = () => {
     return (
         <div
             sx={{
@@ -108,14 +109,14 @@ const ProgrammaticAdvertisingRightColumn = () => {
                 justifyItems: 'center',
                 position: 'relative',
                 paddingX: '25px',
-                paddingBottom: '75px',
+                paddingBottom: '35px',
             }}>
             <MotionFadeGrow delay={0.3}>
                 <Image
                     alt="Laptop with overlaying SEO metrics"
-                    src={AdverisingLaptop}
-                    width={611}
-                    height={538}
+                    src={IMacPaidSearch}
+                    width={475}
+                    height={416}
                     quality={100}
                 />
             </MotionFadeGrow>
