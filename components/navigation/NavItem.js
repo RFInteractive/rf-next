@@ -28,6 +28,10 @@ const NavItem = ({
                         gap: '7px',
                         gridTemplateColumns: '1fr 4fr',
                         alignItems: 'center',
+                        '& .navItemIconBg': {
+                            fill: 'primary',
+                            stroke: 'primary',
+                        },
                         '&:hover': {
                             bg: lighten(primaryColor, 0.3),
                             '& .navItemIconBg': {
@@ -35,10 +39,6 @@ const NavItem = ({
                                 fill: 'alwaysLight',
                                 stroke: 'alwaysLight',
                             },
-                        },
-                        '& .navItemIconBg': {
-                            fill: 'primary',
-                            stroke: 'primary',
                         },
                     }}>
                     <div
