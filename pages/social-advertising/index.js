@@ -2,35 +2,43 @@
 /** @jsxImportSource theme-ui */
 import { Button } from 'theme-ui';
 import Head from 'next/head';
-import Image from 'next/image';
 
 import AppHeader from '../../components/sections/AppHeader';
-import AdverisingLaptop from '../../public/images/advertising-laptop.png';
+
 import CheckListItem from '../../components/CheckListItem';
 import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
-import AdvertisingIntroStats from '../../components/sections/programmatic-advertising/AdvertisingIntroStats';
-import AdvertisingProcess from '../../components/sections/programmatic-advertising/AdvertisingProcess';
+import SocialAdvertisingIntroStats from '../../components/sections/social-advertising/SocialAdvertisingIntroStats';
+import SocialAdvertisingProcess from '../../components/sections/social-advertising/SocialAdvertisingProcess';
 import TestimonialCarousel from '../../components/sections/AppTestimonialCarousel';
-import BehavioralTargeting from '../../components/sections/programmatic-advertising/BehavioralTargeting';
-import ContextualDisplay from '../../components/sections/programmatic-advertising/ContextualDisplay';
-import NativeAdManagementImg from '../../components/sections/programmatic-advertising/NativeAdManagement';
-import Retargeting from '../../components/sections/programmatic-advertising/Retargeting';
-import CTARow from '../../components/sections/AppCTARow';
-import { advertisingSEO } from '../../lib/seo';
 
-const ProgrammaticAdvertising = () => {
+import FacebookAdvertising from '../../components/sections/social-advertising/FacebookAdvertising';
+import LinkedInAdvertising from '../../components/sections/social-advertising/LinkedInAdvertising';
+import InstagramAdvertising from '../../components/sections/social-advertising/InstagramAdvertising';
+
+import CTARow from '../../components/sections/AppCTARow';
+import { socialAdvertisingSEO } from '../../lib/seo';
+import Lottie from 'react-lottie';
+import * as socialMediaAnimationData from '../../lib/lottie/social-media-lottie.json';
+
+const SocialAdvertising = () => {
     return (
         <div>
             <Head>
-                <title>{advertisingSEO.title}</title>
-                <meta name="description" content={advertisingSEO.description} />
+                <title>{socialAdvertisingSEO.title}</title>
+                <meta
+                    name="description"
+                    content={socialAdvertisingSEO.description}
+                />
                 <meta property="og:type" content="website" />
-                <meta property="og:title" content={advertisingSEO.title} />
+                <meta
+                    property="og:title"
+                    content={socialAdvertisingSEO.title}
+                />
                 <meta
                     property="og:description"
-                    content={advertisingSEO.description}
+                    content={socialAdvertisingSEO.description}
                 />
-                <meta property="og:url" content={advertisingSEO.ogUrl} />
+                <meta property="og:url" content={socialAdvertisingSEO.ogUrl} />
                 <meta
                     property="og:image"
                     content="/images/RankFuse-OG-Img.jpg"
@@ -38,18 +46,18 @@ const ProgrammaticAdvertising = () => {
             </Head>
 
             <AppHeader
-                leftColumnContent={ProgrammaticAdvertisingLeftColumn()}
-                rightColumnContent={ProgrammaticAdvertisingRightColumn()}
+                leftColumnContent={SocialAdvertisingLeftColumn()}
+                rightColumnContent={SocialAdvertisingRightColumn()}
             />
 
             <main>
-                <AdvertisingIntroStats />
-                <AdvertisingProcess />
+                <SocialAdvertisingIntroStats />
+                <SocialAdvertisingProcess />
                 <TestimonialCarousel />
-                <BehavioralTargeting />
-                <ContextualDisplay />
-                <NativeAdManagementImg />
-                <Retargeting />
+                <FacebookAdvertising />
+                <LinkedInAdvertising />
+                <InstagramAdvertising />
+
                 <CTARow
                     heading="Stand Out in the Crowd"
                     subheading="Take advantage of our free tools"></CTARow>
@@ -58,9 +66,9 @@ const ProgrammaticAdvertising = () => {
     );
 };
 
-export default ProgrammaticAdvertising;
+export default SocialAdvertising;
 
-const ProgrammaticAdvertisingLeftColumn = () => {
+const SocialAdvertisingLeftColumn = () => {
     return (
         <div
             sx={{
@@ -74,7 +82,7 @@ const ProgrammaticAdvertisingLeftColumn = () => {
                     color: '#fff',
                     marginBottom: '20px',
                 }}>
-                Expand Your Reach With Programmatic Advertising
+                Expand Your Reach With Social Advertising
             </h1>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
                 <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
@@ -100,7 +108,16 @@ const ProgrammaticAdvertisingLeftColumn = () => {
     );
 };
 
-const ProgrammaticAdvertisingRightColumn = () => {
+const SocialAdvertisingRightColumn = () => {
+    const loadingLottieOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: socialMediaAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     return (
         <div
             sx={{
@@ -111,13 +128,7 @@ const ProgrammaticAdvertisingRightColumn = () => {
                 paddingBottom: '75px',
             }}>
             <MotionFadeGrow delay={0.3}>
-                <Image
-                    alt="Laptop with overlaying SEO metrics"
-                    src={AdverisingLaptop}
-                    width={611}
-                    height={538}
-                    quality={100}
-                />
+                <Lottie options={loadingLottieOptions} />
             </MotionFadeGrow>
         </div>
     );
