@@ -12,6 +12,7 @@ describe('Basic homepage behaviors', () => {
             .click();
 
         cy.location('pathname').should('include', 'seo-services');
+        cy.wait(2000);
         cy.get('h1').should('include.text', 'Traffic You Deserve');
     });
 
