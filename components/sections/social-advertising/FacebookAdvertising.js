@@ -42,8 +42,8 @@ const FacebookAdvertisingLeftColumnContent = () => {
             <MotionFadeGrow threshold={0.7}>
                 <Lottie
                     options={loadingLottieOptions}
-                    height={600}
-                    width={450}
+                    height={400}
+                    width={400}
                 />
             </MotionFadeGrow>
         </div>
