@@ -72,11 +72,7 @@ const LinkedInAdvertisingRightColumnContent = () => {
                 my: ['70px', '50px', '100px', '100px'],
             }}>
             <MotionFadeGrow threshold={0.7}>
-                <Lottie
-                    options={loadingLottieOptions}
-                    height={400}
-                    width={400}
-                />
+                <Lottie options={loadingLottieOptions} width="110%" />
             </MotionFadeGrow>
         </div>
     );
