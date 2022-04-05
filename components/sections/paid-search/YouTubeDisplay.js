@@ -2,7 +2,7 @@
 import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
-import YouTubeDisplayLaptop from '../../../public/images/yt-display-laptop.png';
+import YouTubeDisplayLaptop from '../../../public/images/Yt-display-laptop.png';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 const YouTubeDisplay = () => {
