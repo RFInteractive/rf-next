@@ -2,6 +2,7 @@
 import { Container, Close, Grid } from 'theme-ui';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 import { navLinks } from '../../lib/navData';
@@ -47,47 +48,12 @@ const MobileMenuModal = ({ setOpen }) => {
                     sx={{
                         position: 'absolute',
                         right: '15px',
-                        top: '15px',
-                        '&:hover': {
-                            cursor: 'pointer',
-                        },
+                        top: '25px',
                     }}
                 />
-                <Container sx={{ width: '85%', maxWidth: '400px' }}>
-                    <Grid
-                        sx={{
-                            justifyItems: 'center',
-                            mb: '60px',
-                        }}
-                        gap={30}>
-                        <Link href="/">
-                            <a>
-                                <span
-                                    sx={{ fontSize: '30px' }}
-                                    onClick={closeModal}>
-                                    Home
-                                </span>
-                            </a>
-                        </Link>
-                        <Link href="/blog">
-                            <a>
-                                <span
-                                    sx={{ fontSize: '30px' }}
-                                    onClick={closeModal}>
-                                    Blog
-                                </span>
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                <span
-                                    sx={{ fontSize: '30px' }}
-                                    onClick={closeModal}>
-                                    Contact
-                                </span>
-                            </a>
-                        </Link>
-                    </Grid>
+                <ModalNavLogo />
+                <Container
+                    sx={{ width: '85%', maxWidth: '400px', marginTop: '40px' }}>
                     {Object.keys(navLinks).map((group) => {
                         return (
                             <div sx={{ mb: '25px' }} key={group}>
@@ -137,4 +103,24 @@ const MobileLinkGroup = ({ linkGroup, closeModal }) => {
             </div>
         );
     });
+};
+
+const ModalNavLogo = () => {
+    return (
+        <Link href="/">
+            <a
+                sx={{
+                    position: 'absolute',
+                    left: '15px',
+                    top: '15px',
+                }}>
+                <Image
+                    src="/images/RankFuse-logo-colored.svg"
+                    alt="Rank Fuse Digital Marketing Logo"
+                    width={200}
+                    height={90}
+                />
+            </a>
+        </Link>
+    );
 };
