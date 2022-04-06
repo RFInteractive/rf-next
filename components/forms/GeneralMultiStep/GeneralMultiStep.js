@@ -58,7 +58,7 @@ const GeneralMultiStep = ({ formTextColor = 'dark' }) => {
         if (isValid && stepNumber === totalSteps) {
             setFormStatus('submitting');
             try {
-                await axios.post('/api/email', data);
+                await axios.post('/api/multi-step', data);
                 setFormStatus('success');
             } catch (error) {
                 setFormStatus('error');
