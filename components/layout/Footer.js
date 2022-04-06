@@ -276,7 +276,7 @@ const FooterCopyright = () => {
                     textAlign: 'center',
                     fontSize: '16px',
                 }}>
-                © 2015 - 2021 All rights reserved{' '}
+                © 2015 - {new Date().getFullYear()} All rights reserved
             </p>
         </div>
     );
