@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 import Head from 'next/head';
 import Image from 'next/image';
-import { Button } from 'theme-ui';
+import { Button, Container, Grid } from 'theme-ui';
 import { useState } from 'react';
 
 import AppHeader from '../components/sections/AppHeader';
@@ -17,7 +17,12 @@ import MotionFadeGrow from '../components/animations/MotionFadeGrow';
 import GeneralMultiStep from '../components/forms/GeneralMultiStep/GeneralMultiStep';
 import { homepageSEO } from '../lib/seo';
 
-const Home = () => {
+import { formatPostsForBlogCard } from '../lib/formatting';
+import { client } from '../lib/apollo';
+import { QUERY_RECENT_POSTS } from '../lib/queries';
+import BlogCard from '../components/cards/BlogCard';
+
+const Home = ({ posts }) => {
     return (
         <>
             <Head>
@@ -47,6 +52,22 @@ const Home = () => {
                 <WhyUsRow />
                 <AboutUsRow />
                 <TestimonialCarousel />
+                <Container
+                    sx={{
+                        maxWidth: ['450px', '900px', '1290px'],
+                        padding: '50px 20px 100px',
+                    }}>
+                    <h2 sx={{ textAlign: 'center', marginBottom: '40px' }}>
+                        Recent Posts
+                    </h2>
+                    <Grid
+                        columns={[1, 2, 3, 3]}
+                        gap={['40px', '40px', '40px', '60px']}>
+                        {posts.map((post) => (
+                            <BlogCard key={post.uri} post={post}></BlogCard>
+                        ))}
+                    </Grid>
+                </Container>
                 <CTARow
                     heading="Stand Out in the Crowd"
                     subheading="Take advantage of our free tools"></CTARow>
@@ -129,3 +150,20 @@ const HeaderRightColumnContent = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+    const result = await client.query({
+        query: QUERY_RECENT_POSTS,
+        variables: {
+            numPosts: 3,
+        },
+    });
+
+    const posts = formatPostsForBlogCard(result.data.posts.nodes);
+
+    return {
+        props: {
+            posts,
+        },
+    };
+};
