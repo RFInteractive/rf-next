@@ -17,8 +17,7 @@ const Footer = () => {
                 display: 'grid',
                 justifyItems: 'center',
                 background: `linear-gradient(-30deg, ${gradientLight}, ${gradientDark})`,
-            }}
-        >
+            }}>
             <Link href="/">
                 <a sx={{ cursor: 'pointer' }}>
                     <Image
@@ -48,23 +47,21 @@ const FooterPhone = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 marginY: '20px',
-            }}
-        >
+            }}>
             <a
-                href="tel:913.270.6770"
+                href="tel:913.703.7265"
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
                     color: '#fff',
-                }}
-            >
+                }}>
                 <Image
                     width={26}
                     height={25}
                     src="/icons/icon-phone.svg"
                     alt="phone icon"
                 />
-                <span sx={{ marginLeft: '15px' }}>(913) 270-6670</span>
+                <span sx={{ marginLeft: '15px' }}>(913) 703-7265</span>
             </a>
         </div>
     );
@@ -78,16 +75,14 @@ const FooterEmail = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 marginBottom: '20px',
-            }}
-        >
+            }}>
             <a
                 href="mailto:support@rankfuse.com"
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
                     color: '#fff',
-                }}
-            >
+                }}>
                 <Image
                     width={26}
                     height={25}
@@ -109,14 +104,12 @@ const FooterSocials = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginY: '20px',
-            }}
-        >
+            }}>
             <a
                 href="https://www.facebook.com/rankfuse/"
                 target="_blank"
                 sx={{ marginX: '15px' }}
-                rel="noreferrer"
-            >
+                rel="noreferrer">
                 <Image
                     src="/icons/icon-facebook.svg"
                     width={24}
@@ -129,8 +122,7 @@ const FooterSocials = () => {
                 href="https://www.instagram.com/rankfuse/?hl=en"
                 target="_blank"
                 sx={{ marginX: '15px' }}
-                rel="noreferrer"
-            >
+                rel="noreferrer">
                 <Image
                     src="/icons/icon-instagram.svg"
                     width={37}
@@ -143,8 +135,7 @@ const FooterSocials = () => {
                 href="https://twitter.com/rankfuse/"
                 target="_blank"
                 sx={{ marginX: '15px' }}
-                rel="noreferrer"
-            >
+                rel="noreferrer">
                 <Image
                     src="/icons/icon-twitter.svg"
                     width={35}
@@ -164,17 +155,20 @@ const FooterMenu = () => {
                 display: 'flex',
                 flexDirection: ['column', 'row', 'row', 'row'],
                 alignItems: 'center',
-            }}
-        >
+            }}>
             <Link href="/about">
-                <a
-                    sx={{
-                        color: '#fff',
-                        '&:hover': { cursor: 'pointer' },
-                        marginY: '10px',
-                    }}
-                >
-                    About
+                <a>
+                    <span
+                        sx={{
+                            color: '#fff',
+                            '&:hover': {
+                                cursor: 'pointer',
+                                color: 'primaryDark',
+                            },
+                            marginY: '10px',
+                        }}>
+                        About
+                    </span>
                 </a>
             </Link>
             <span
@@ -182,19 +176,22 @@ const FooterMenu = () => {
                     marginX: '15px',
                     color: '#fff',
                     display: ['none', 'initial'],
-                }}
-            >
+                }}>
                 |
             </span>
-            <Link href="/contact">
-                <a
-                    sx={{
-                        color: '#fff',
-                        '&:hover': { cursor: 'pointer' },
-                        marginY: '10px',
-                    }}
-                >
-                    Contact
+            <Link href="/contact-us">
+                <a>
+                    <span
+                        sx={{
+                            color: '#fff',
+                            '&:hover': {
+                                cursor: 'pointer',
+                                color: 'primaryDark',
+                            },
+                            marginY: '10px',
+                        }}>
+                        Contact
+                    </span>
                 </a>
             </Link>
             <span
@@ -202,19 +199,22 @@ const FooterMenu = () => {
                     marginX: '15px',
                     color: '#fff',
                     display: ['none', 'initial'],
-                }}
-            >
+                }}>
                 |
             </span>
             <Link href="/seo-services">
-                <a
-                    sx={{
-                        color: '#fff',
-                        '&:hover': { cursor: 'pointer' },
-                        marginY: '10px',
-                    }}
-                >
-                    SEO
+                <a>
+                    <span
+                        sx={{
+                            color: '#fff',
+                            '&:hover': {
+                                cursor: 'pointer',
+                                color: 'primaryDark',
+                            },
+                            marginY: '10px',
+                        }}>
+                        SEO
+                    </span>
                 </a>
             </Link>
             <span
@@ -222,19 +222,22 @@ const FooterMenu = () => {
                     marginX: '15px',
                     color: '#fff',
                     display: ['none', 'initial'],
-                }}
-            >
+                }}>
                 |
             </span>
             <Link href="/seo-content">
-                <a
-                    sx={{
-                        color: '#fff',
-                        '&:hover': { cursor: 'pointer' },
-                        marginY: '10px',
-                    }}
-                >
-                    Content
+                <a>
+                    <span
+                        sx={{
+                            color: '#fff',
+                            '&:hover': {
+                                cursor: 'pointer',
+                                color: 'primaryDark',
+                            },
+                            marginY: '10px',
+                        }}>
+                        Content
+                    </span>
                 </a>
             </Link>
             <span
@@ -242,19 +245,22 @@ const FooterMenu = () => {
                     marginX: '15px',
                     color: '#fff',
                     display: ['none', 'initial'],
-                }}
-            >
+                }}>
                 |
             </span>
             <Link href="/web-design-and-development">
-                <a
-                    sx={{
-                        color: '#fff',
-                        '&:hover': { cursor: 'pointer' },
-                        marginY: '10px',
-                    }}
-                >
-                    Web Dev
+                <a>
+                    <span
+                        sx={{
+                            color: '#fff',
+                            '&:hover': {
+                                cursor: 'pointer',
+                                color: 'primaryDark',
+                            },
+                            marginY: '10px',
+                        }}>
+                        Web Dev
+                    </span>
                 </a>
             </Link>
         </div>
@@ -269,8 +275,7 @@ const FooterCopyright = () => {
                     color: '#fff',
                     textAlign: 'center',
                     fontSize: '16px',
-                }}
-            >
+                }}>
                 © 2015 - 2021 All rights reserved{' '}
             </p>
         </div>
