@@ -36,16 +36,14 @@ const FastSitesLeftColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p>
-                Our team of dedicated writers has valuable experience developing
-                a variety of different types of content. Whether you need a
-                blog, a page, an infographic, or an e-book, we have the
-                experience needed to create relevant content that will engage
-                your audience and keep search engines happy.
+                Our expert web developers understand that a well-optimized
+                website is crucial for performance and long-term success. We
+                focus on keeping page load speeds low by checking that images
+                are properly sized and reducing bulk in the code.
             </p>
             <p sx={{ margin: '20px 0px 35px' }}>
-                After hundreds of website audits an thousands of reports we
-                understand that quality is a moving target and the bar seems to
-                be raised higher and higher every day.
+                If you want one of the fastest websites on the internet, talk to
+                us about converting to a headless setup!
             </p>
         </div>
     );

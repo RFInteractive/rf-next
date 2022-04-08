@@ -58,14 +58,16 @@ const WebDesignRightColumnContent = () => {
                 }}></div>
             <p sx={{ paddingBottom: '20px' }}>
                 Creating a website that achieves your online marketing goals is
-                hard! This is where we see many DIY projects fall flat and
-                leaving business owners wondering why their website is not
-                performing.
+                hard! This is where we see many DIY projects fall flat, leaving
+                business owners wondering why their website is not performing.
+                When you need a modern website that loads quickly, is easy to
+                navigate, and sets you apart from your competitors, call Rank
+                Fuse.
             </p>
             <p sx={{ paddingBottom: '30px' }}>
                 As a digital marketing agency, we see the web a little
-                differently than most and this lens helps us see website design
-                and development a little differently as well.
+                differently than most, and this lens helps us see website design
+                and development a little differently, as well.
             </p>
             <MotionFadeGrow delay={0.6} threshold={1}>
                 <Button variant="primary">Let&apos;s Chat</Button>

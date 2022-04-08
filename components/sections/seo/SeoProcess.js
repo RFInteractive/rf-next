@@ -66,7 +66,7 @@ const SEOProcess = () => {
                             webpage or blog content, and much more.
                         </ProcessCard>
                     </MotionFadeGrow>
-                    <MotionFadeGrow delay={0.4} threshold={0.6}>
+                    <MotionFadeGrow delay={0.6} threshold={0.6}>
                         <ProcessCard
                             heading="Deliver"
                             icon="delivery"

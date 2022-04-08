@@ -11,19 +11,16 @@ const WebDevIntroStats = () => {
             sx={{
                 marginTop: ['25px', '125px', '75px', '150px'],
                 marginBottom: ['125px', '100px', '150px', '150px'],
-            }}
-        >
+            }}>
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid
                     columns={[1, 1, 2, 2]}
                     gap={'70px'}
-                    sx={{ alignItems: 'center' }}
-                >
+                    sx={{ alignItems: 'center' }}>
                     <div
                         sx={{
                             paddingRight: ['0px', '0px', '60px', '30px'],
-                        }}
-                    >
+                        }}>
                         <h2 sx={{ marginBottom: '10px' }}>
                             We Stand by Our Sites
                         </h2>
@@ -34,8 +31,7 @@ const WebDevIntroStats = () => {
                                 height: '3px',
                                 bg: 'accent',
                                 marginBottom: '30px',
-                            }}
-                        ></div>
+                            }}></div>
                         <p sx={{ my: '15px' }}>
                             Our core focus is centered around effective SEM and
                             SEO campaigns for local and national companies
@@ -44,8 +40,8 @@ const WebDevIntroStats = () => {
                         </p>
                         <p sx={{ mb: '40px' }}>
                             We have a proven record of boosting website
-                            performance, sales, and rankings. More importantly
-                            we take pride on delivering strategy that earns the
+                            performance, sales, and rankings. More importantly,
+                            we take pride in delivering strategy that earns the
                             types of clicks that deliver positive ROI.
                         </p>
                         <Button variant="primary">Let&apos;s Chat</Button>
@@ -54,8 +50,7 @@ const WebDevIntroStats = () => {
                         sx={{
                             px: ['80px', '10%', '3%', '80px'],
                             position: 'relative',
-                        }}
-                    >
+                        }}>
                         <Grid columns={[1, 2, 2, 2]} gap={'40px'}>
                             <DottedSquareSVG
                                 positionStyles={{
@@ -65,20 +60,16 @@ const WebDevIntroStats = () => {
                             />
                             <StatCard
                                 statistic="90%"
-                                subheading="Avg. Traffic Increase"
-                            ></StatCard>
+                                subheading="Avg. Traffic Increase"></StatCard>
                             <StatCard
                                 statistic="500+"
-                                subheading="Blog Posts Written"
-                            ></StatCard>
+                                subheading="Blog Posts Written"></StatCard>
                             <StatCard
                                 statistic="< 2sec"
-                                subheading="Avg. Site Load Time"
-                            ></StatCard>
+                                subheading="Avg. Site Load Time"></StatCard>
                             <StatCard
                                 statistic="99.9%"
-                                subheading="Website Uptime"
-                            ></StatCard>
+                                subheading="Website Uptime"></StatCard>
                         </Grid>
                     </div>
                 </Grid>

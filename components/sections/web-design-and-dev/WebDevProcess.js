@@ -27,35 +27,57 @@ const WebDevProcess = () => {
                 }}></div>
             <BgSVG />
             <Container
-                sx={{ maxWidth: ['450px', '600px', '1290px'], px: '30px' }}>
+                sx={{ maxWidth: ['450px', '750px', '1000px'], px: '20px' }}>
                 <Grid
-                    columns={[1, 1, 3, 3]}
-                    gap={['50px', '50px', '3%', '60px']}>
+                    columns={[1, 2, 2, 2]}
+                    gap={['50px', '50px', '40px', '40px']}>
                     <MotionFadeGrow delay={0} threshold={0.6}>
                         <ProcessCard
                             heading="Chat With Us"
                             icon="chat"
                             number="1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            During our initial meetings, our web development
+                            team will work with you to determine exactly what
+                            you are looking for in a new website. In this
+                            conversation, we will discuss your goals for the
+                            website, introduce design and development ideas, and
+                            come up with high-level concepts.
                         </ProcessCard>
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.2} threshold={0.6}>
                         <ProcessCard
-                            heading="Research"
+                            heading="Initial Drafting"
                             icon="research"
                             number="2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            Our team works closely with yours to work up a
+                            detailed sitemap and basic wireframe renderings. We
+                            walk through these drafts with your team to get
+                            additional ideas and make changes before we start
+                            working through the website build.
                         </ProcessCard>
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.4} threshold={0.6}>
                         <ProcessCard
-                            heading="Delivery"
-                            icon="delivery"
+                            heading="Design & Build"
+                            icon="execute"
                             number="3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            After we have gone over the initial drafting phase,
+                            we focus on building out a comprehensive website and
+                            implementing the design elements that you have
+                            identified as key components. We build all of this
+                            in a staging environment until it is deemed approved
+                            by your team.
+                        </ProcessCard>
+                    </MotionFadeGrow>
+                    <MotionFadeGrow delay={0.6} threshold={0.6}>
+                        <ProcessCard
+                            heading="Launch & Maintenance"
+                            icon="delivery"
+                            number="4">
+                            When the website is approved and ready to launch,
+                            our team will help get it across the finish line.
+                            After launch, we move into a maintenance plan that
+                            helps keep your website optimized and up to date.
                         </ProcessCard>
                     </MotionFadeGrow>
                 </Grid>
