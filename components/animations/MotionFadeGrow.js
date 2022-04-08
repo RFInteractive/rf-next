@@ -1,3 +1,4 @@
+/** @jsxImportSource theme-ui */
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
@@ -27,7 +28,7 @@ const MotionFadeGrow = ({
     }
 
     return (
-        <div ref={ref}>
+        <div ref={ref} sx={{ display: 'grid' }}>
             <AnimatePresence>
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
