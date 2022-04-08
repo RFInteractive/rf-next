@@ -27,35 +27,58 @@ const ContentProcess = () => {
                 }}></div>
             <BgSVG />
             <Container
-                sx={{ maxWidth: ['450px', '600px', '1290px'], px: '30px' }}>
+                sx={{ maxWidth: ['450px', '750px', '1000px'], px: '20px' }}>
                 <Grid
-                    columns={[1, 1, 3, 3]}
-                    gap={['50px', '50px', '3%', '60px']}>
-                    <MotionFadeGrow threshold={0.2} delay={0}>
+                    columns={[1, 2, 2, 2]}
+                    gap={['50px', '50px', '40px', '40px']}>
+                    <MotionFadeGrow delay={0} threshold={0.6}>
                         <ProcessCard
                             heading="Chat With Us"
                             icon="chat"
                             number="1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            During our initial meetings, our team will work hard
+                            to learn your business’s needs, brand voice, and
+                            goals. Meeting with the key players on both teams,
+                            we can focus on determining the right plan for your
+                            company.
                         </ProcessCard>
                     </MotionFadeGrow>
-                    <MotionFadeGrow threshold={0.2} delay={0.2}>
+                    <MotionFadeGrow delay={0.2} threshold={0.6}>
                         <ProcessCard
                             heading="Research"
                             icon="research"
                             number="2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            We start with keyword and content research. This
+                            helps us better determine what you are currently
+                            ranking for, where you need improvement, and what
+                            kind of content you really need. Our team will
+                            identify target keywords and develop a custom
+                            content plan for your website.
                         </ProcessCard>
                     </MotionFadeGrow>
-                    <MotionFadeGrow threshold={0.2} delay={0.4}>
+                    <MotionFadeGrow delay={0.4} threshold={0.6}>
                         <ProcessCard
-                            heading="Delivery"
-                            icon="delivery"
+                            heading="Execute"
+                            icon="execute"
                             number="3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            After we solidify our strategy, we start writing the
+                            content that will eventually end up on your website.
+                            This content goes through a full development
+                            process, including multiple rounds of in-house
+                            edits.
+                        </ProcessCard>
+                    </MotionFadeGrow>
+                    <MotionFadeGrow delay={0.4} threshold={0.6}>
+                        <ProcessCard
+                            heading="Deliver"
+                            icon="delivery"
+                            number="4">
+                            Once we have finished writing, we send over the
+                            content for your review. At this time, you can
+                            provide additional feedback and edits to our writing
+                            team. When all edits have been made, we will publish
+                            the content on your website and take care of a few
+                            SEO basics while we’re at it.
                         </ProcessCard>
                     </MotionFadeGrow>
                 </Grid>

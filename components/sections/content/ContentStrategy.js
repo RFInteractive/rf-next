@@ -57,16 +57,17 @@ const ContentStrategyRightColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p sx={{ paddingBottom: '20px' }}>
-                Our strategists will provide you with a detailed analysis of the
-                content on your website and a list of the keywords you rank for
-                and the ones that you want to begin to target. We also offer
-                writing services that ensure all of your content is written with
-                SEO in mind.
+                Our content strategists provide you with a detailed analysis of
+                the content on your website, a list of the keywords you rank
+                for, and a list of the keywords you will want to target next. We
+                also offer expert SEO writing services to ensure your keyword
+                focus is never lost.
             </p>
             <p sx={{ paddingBottom: '30px' }}>
                 The goal of every content marketing strategy we produce is to
                 organically improve your rankings in search engines using proven
-                research to write the answers to the questions real people ask.
+                research to write the answers to the questions real people are
+                asking.
             </p>
             <MotionFadeGrow threshold={0.6} delay={0.6}>
                 <Button variant="primary">Let&apos;s Chat</Button>

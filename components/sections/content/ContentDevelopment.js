@@ -34,16 +34,17 @@ const ContentDevelopmentLeftColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p>
-                Our team of dedicated writers has valuable experience developing
-                a variety of different types of content. Whether you need a
-                blog, a page, an infographic, or an e-book, we have the
-                experience needed to create relevant content that will engage
-                your audience and keep search engines happy.
+                Well-researched, well-written content is pivotal. Our team of
+                dedicated writers has valuable experience developing various
+                different types of content. Whether you need a blog, page,
+                infographic, or e-book, we have the experience needed to create
+                relevant content that engages your audience and keeps search
+                engines happy.
             </p>
             <p sx={{ margin: '20px 0px 35px' }}>
-                After hundreds of website audits an thousands of reports we
-                understand that quality is a moving target and the bar seems to
-                be raised higher and higher every day.
+                After developing hundreds of pieces of content in our seven
+                years of business, we know just what each piece will take to get
+                from concept to published.
             </p>
         </div>
     );

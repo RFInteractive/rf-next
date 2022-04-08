@@ -10,6 +10,8 @@ const ProcessCard = ({ heading, icon, number, children }) => {
                 boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
                 display: 'grid',
                 justifyItems: 'center',
+                alignContent: 'start',
+                height: '100%',
             }}>
             <div
                 sx={{

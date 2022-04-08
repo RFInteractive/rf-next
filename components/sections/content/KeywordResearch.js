@@ -59,13 +59,14 @@ const KeywordResearchRightColumnContent = () => {
             <p sx={{ paddingBottom: '20px' }}>
                 At Rank Fuse, we utilize a variety of SEO tools that allow us to
                 see how you are currently ranking for the keywords you want to
-                target as well as new opportunities. We combine keyword research
-                with competitor analysis to help you outrank your competitors.
+                target, as well as new opportunities. We combine keyword
+                research with competitor analysis to help you outrank your
+                competitors in major search engines.
             </p>
             <p sx={{ paddingBottom: '30px' }}>
                 Once we have identified the keywords we need to target, we can
                 inject them into the copy on your website, your paid ads, and
-                your off-page SEO efforts.
+                your off-page SEO efforts, creating a holistic approach to SEO.
             </p>
             <MotionFadeGrow threshold={0.5} delay={0.25}>
                 <Button variant="primary">Let&apos;s Chat</Button>
