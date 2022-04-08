@@ -63,22 +63,22 @@ const LocalSEORightColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p sx={{ paddingBottom: '20px' }}>
-                Local SEO is the practice of increasing your website’s
-                visibility when it comes to local search results. This approach
-                involves a variety of Local directories, schema markup, review
-                tools as well as incorporating fundamental SEO best practices
-                such as keyword-rich content and domain authority.
+                Local search results are fundamental for local brick-and-mortar
+                businesses. When it comes to local search results, our team
+                knows how to increase your visibility and draw more people to
+                your website. Our approach involves a variety of local
+                directories, schema markup, review tools, and fundamental SEO
+                best practices, such as keyword-rich content and domain
+                authority.
             </p>
             <p sx={{ paddingBottom: '30px' }}>
-                Focusing on all of these algorithm factors for local search will
-                help your company among local competitors. Whether you own a
-                local brick-and-mortar business or a local service provider that
-                travels your your customers, it’s important to grow your
-                business thru local search keywords.
+                As we focus on all of these algorithm factors to improve your
+                local search, you will start to stand out among your
+                competitors. Whether you own a local brick-and-mortar business
+                or are a local service provider that travels to your customers,
+                it’s important to grow your business through local search
+                keywords.
             </p>
-            <MotionFadeGrow delay={0.5} threshold={1}>
-                <Button variant="primary">Let&apos;s Chat</Button>
-            </MotionFadeGrow>
         </div>
     );
 };

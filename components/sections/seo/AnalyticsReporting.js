@@ -37,18 +37,18 @@ const AnalyticsReportingLeftColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p>
-                Rank Fuse opened in Overland Park, Kansas, in 2015. Since then,
-                our agency as been grown to help many businesses expand their
-                sales and customer base.
+                Tracking progress is an essential part of any successful SEO
+                strategy. Every month, we build a report that allows you (and
+                us!) to see how things are going. Your report will cover traffic
+                numbers, organic rankings, and so much more!
             </p>
             <p sx={{ margin: '20px 0px 35px' }}>
-                Whether you are looking for organic search ranking help, paid
-                search, programmatic, email marketing, content, web development,
-                or a combination of these things, our team is well-equipped to
-                deliver the highest-quality.
+                Using these reports, our team can learn what is and isn’t
+                working for your brand, and this allows us to quickly make
+                changes that will benefit your SEO strategy.
             </p>
             <MotionFadeGrow delay={0.5} threshold={1}>
-                <Button variant="primary">More About Us</Button>
+                <Button variant="primary">Chat with Us</Button>
             </MotionFadeGrow>
         </div>
     );

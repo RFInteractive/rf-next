@@ -27,17 +27,19 @@ const SEOProcess = () => {
                 }}></div>
             <BgSVG />
             <Container
-                sx={{ maxWidth: ['450px', '600px', '1290px'], px: '30px' }}>
+                sx={{ maxWidth: ['450px', '750px', '1290px'], px: '20px' }}>
                 <Grid
-                    columns={[1, 1, 3, 3]}
-                    gap={['50px', '50px', '3%', '60px']}>
+                    columns={[1, 2, 4, 4]}
+                    gap={['50px', '50px', '2%', '40px']}>
                     <MotionFadeGrow delay={0} threshold={0.6}>
                         <ProcessCard
                             heading="Chat With Us"
                             icon="chat"
                             number="1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            Our goal at this stage is to uncover exactly what
+                            your business needs. We will set up a meeting with
+                            the key players on both your team and ours to kick
+                            things off on the right foot.
                         </ProcessCard>
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.2} threshold={0.6}>
@@ -45,17 +47,35 @@ const SEOProcess = () => {
                             heading="Research"
                             icon="research"
                             number="2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            We will analyze your website to determine exactly
+                            what your business needs from us and how we can best
+                            serve you. In this stage, we will also start
+                            examining your competitors to see how they are
+                            approaching SEO.
                         </ProcessCard>
                     </MotionFadeGrow>
                     <MotionFadeGrow delay={0.4} threshold={0.6}>
                         <ProcessCard
-                            heading="Delivery"
-                            icon="delivery"
+                            heading="Execute"
+                            icon="execute"
                             number="3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            After we solidify our strategy, we start executing
+                            on our plan. Depending on your business’s custom
+                            needs, we can prepare several things for you,
+                            including technical SEO audits, keyword research,
+                            webpage or blog content, and much more.
+                        </ProcessCard>
+                    </MotionFadeGrow>
+                    <MotionFadeGrow delay={0.4} threshold={0.6}>
+                        <ProcessCard
+                            heading="Deliver"
+                            icon="delivery"
+                            number="4">
+                            Once the work is completed, we will send it over and
+                            set up a meeting to provide any necessary additional
+                            details. We also set up monthly reports to track our
+                            progress and evaluate any changes we may need to
+                            make to our strategy.
                         </ProcessCard>
                     </MotionFadeGrow>
                 </Grid>

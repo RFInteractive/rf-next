@@ -84,12 +84,12 @@ const SEOServicesLeftColumn = () => {
             </CheckListItem>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
                 <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
-                    Monthly insights & reports
+                    Get monthly insights & reports
                 </p>
             </CheckListItem>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
                 <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
-                    Get more qualified leads
+                    Receive more qualified leads
                 </p>
             </CheckListItem>
             <MotionFadeGrow delay={0.8}>

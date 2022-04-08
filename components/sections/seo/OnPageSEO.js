@@ -101,16 +101,16 @@ const OnPageSEORightColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p sx={{ marginBottom: '20px' }}>
-                90% of the time when most people refer to SEO it’s on-page SEO.
-                The technical optimization of a website involved a series of
-                best practices to optimize HTML elements like tile tags, meta
-                descriptions, schema markup, site speed, mobile layout, and much
-                more.
+                When most people reference SEO, they mean on-page SEO. This is
+                the technical optimization of a website which includes a range
+                of practices to ensure the HTML elements like title tags, meta
+                descriptions, schema markup, site speed, mobile layout, and more
+                are all at their very best.
             </p>
             <p sx={{ marginBottom: '20px' }}>
-                If your looking for an SEO company that can support your
+                If you are looking for an SEO company that can support your
                 WordPress, Joomla, Drupal, or one of the many popular shopping
-                cart platforms, we have the experience you are looking for.
+                cart platforms, we have the experience that you are looking for.
             </p>
             <MotionFadeGrow delay={0.6} threshold={1}>
                 <Button variant="primary">Let&apos;s Chat</Button>

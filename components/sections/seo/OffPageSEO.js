@@ -32,15 +32,15 @@ const OffPageSEOLeftColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p>
-                Going beyond your website to enhance the perception of your
-                brand and search rankings across the web involves influencing
-                search engine algorithm factors beyond your immediate site code
-                and content.
+                Ranking well in search goes beyond your own website. Enhance
+                your brand’s perception and search rankings by working with
+                other websites to boost domain authority and get your content
+                seen by more people.
             </p>
             <p sx={{ margin: '20px 0px 35px' }}>
-                We are dedicated to the process and work with many clients
-                directly to improve domain authority and expand their digital
-                footprint for long-term SEO wins.
+                We are highly dedicated to the process and work with many
+                clients to improve domain authority and expand their digital
+                footprint, leading to long-term SEO wins.
             </p>
         </div>
     );
