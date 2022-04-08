@@ -1,5 +1,3 @@
-import React from 'react';
-import * as fs from 'fs';
 import { client } from '../lib/apollo';
 import { QUERY_ALL_POST_SLUGS } from '../lib/queries';
 
@@ -11,22 +9,19 @@ export const getServerSideProps = async ({ res }) => {
     const BASE_URL = 'https://rankfuse.com';
 
     // get all files in the /pages directory
-    const staticPaths = fs
-        .readdirSync('pages')
-        .filter((staticPage) => {
-            return ![
-                'api',
-                '_app.js',
-                '_document.js',
-                '404.js',
-                'sitemap.xml.js',
-                'app-theme.js',
-                'index.js',
-            ].includes(staticPage);
-        })
-        .map((staticPagePath) => {
-            return `${BASE_URL}/${staticPagePath}`;
-        });
+    const staticPaths = [
+        'about',
+        'blog',
+        'contact-us',
+        'paid-search',
+        'programmatic-advertising',
+        'seo-content',
+        'seo-services',
+        'social-advertising',
+        'web-design-and-development',
+    ].map((staticPagePath) => {
+        return `${BASE_URL}/${staticPagePath}`;
+    });
 
     // add homepage to the beginning
     staticPaths.unshift(`${BASE_URL}/`);
