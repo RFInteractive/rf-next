@@ -114,8 +114,8 @@ const HeaderLeftColumnContent = () => {
                     marginBottom: '40px',
                     fontSize: '24px',
                 }}>
-                We help businesses grow through high quality SEO, targeted
-                content, and engaging websites.
+                We help businesses grow through high-quality SEO, targeted
+                content, digital advertising, and engaging websites.
             </h4>
             <MotionFadeGrow delay={0.8}>
                 <Button variant="light" onClick={() => setShowForm(true)}>

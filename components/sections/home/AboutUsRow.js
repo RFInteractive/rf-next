@@ -22,8 +22,7 @@ const AboutUsLeftColumnContent = () => {
         <div
             sx={{
                 paddingRight: ['0px', '0px', '60px', '30px'],
-            }}
-        >
+            }}>
             <h3 sx={{ marginBottom: '10px' }}>About Us</h3>
             <div
                 sx={{
@@ -32,18 +31,17 @@ const AboutUsLeftColumnContent = () => {
                     height: '3px',
                     bg: 'accent',
                     marginBottom: '30px',
-                }}
-            ></div>
+                }}></div>
             <p>
                 Rank Fuse opened in Overland Park, Kansas, in 2015. Since then,
-                our agency as been grown to help many businesses expand their
-                sales and customer base.
+                our agency has continued to grow, allowing us to help many
+                businesses expand their sales and customer base.
             </p>
             <p sx={{ margin: '20px 0px 35px' }}>
                 Whether you are looking for organic search ranking help, paid
                 search, programmatic, email marketing, content, web development,
-                or a combination of these things, our team is well-equipped to
-                deliver the highest-quality.
+                or a combination of these services, our team is well-equipped to
+                deliver the highest-quality campaigns and service.
             </p>
             <Button variant="primary">More About Us</Button>
         </div>
@@ -60,8 +58,7 @@ const AboutUsRightColumnContent = () => {
                 pb: '30px',
                 my: ['50px', '50px', '100px', '100px'],
             }}
-            className="boxShadowRight"
-        >
+            className="boxShadowRight">
             <img
                 src="/images/teamPicture.jpg"
                 alt="Rank Fuse team"

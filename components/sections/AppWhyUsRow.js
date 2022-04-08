@@ -60,8 +60,8 @@ const WhyUsRightColumnContent = () => {
                     marginBottom: '30px',
                 }}></div>
             <p>
-                In the rapidly evolving world of online marketing we pride
-                ourselves on the ability to be agile and continue to test for
+                In the rapidly evolving world of online marketing, we pride
+                ourselves on our capability to be agile and continue to test for
                 growth and knowledge. We prove our value every day, which is why
                 so many of our clients have been with us for years.
             </p>

@@ -29,15 +29,17 @@ const WhatWeDoRow = () => {
                                 marginBottom: '30px',
                             }}></div>
                         <p sx={{ my: '15px' }}>
-                            Our core focus is centered around effective SEM and
-                            SEO campaigns for local and national companies
-                            looking to boost revenues from online marketing and
-                            advertising.{' '}
+                            Our core focus is effective SEM and SEO campaigns
+                            for local and national companies looking to boost
+                            revenues from online marketing and advertising. As a
+                            full-service digital marketing agency, we have the
+                            ability to help in all facets of the online
+                            marketing experience.
                         </p>
                         <p sx={{ mb: '40px' }}>
                             We have a proven record of boosting website
-                            performance, sales, and rankings. More importantly
-                            we take pride on delivering strategy that earns the
+                            performance, sales, and rankings. More importantly,
+                            we take pride in delivering strategy that earns the
                             types of clicks that deliver positive ROI.
                         </p>
                         <MotionFadeGrow threshold={0.8} delay={0.25}>
