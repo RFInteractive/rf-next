@@ -11,21 +11,18 @@ const AdvertisingIntroStats = () => {
             sx={{
                 marginTop: ['25px', '125px', '75px', '150px'],
                 marginBottom: ['125px', '100px', '150px', '150px'],
-            }}
-        >
+            }}>
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid
                     columns={[1, 1, 2, 2]}
                     gap={'70px'}
-                    sx={{ alignItems: 'center' }}
-                >
+                    sx={{ alignItems: 'center' }}>
                     <div
                         sx={{
                             paddingRight: ['0px', '0px', '60px', '30px'],
-                        }}
-                    >
+                        }}>
                         <h2 sx={{ marginBottom: '10px' }}>
-                            Tailored Campaigns <br></br> & Target with Intent
+                            Tailored Campaigns
                         </h2>
                         <div
                             sx={{
@@ -34,19 +31,20 @@ const AdvertisingIntroStats = () => {
                                 height: '3px',
                                 bg: 'accent',
                                 marginBottom: '30px',
-                            }}
-                        ></div>
+                            }}></div>
                         <p sx={{ my: '15px' }}>
-                            Who are you trying to reach, and what geo are you
-                            trying to target? Our access to programmatic ad
-                            networks allows us to target people based on online
-                            and off-line behaviors, geographic region, shopping
-                            behaviors, and more.
+                            Advertising in the digital world can mean many
+                            things. There are a lot of different advertising
+                            options for businesses to choose from, and working
+                            with a team of experts is the best way to ensure
+                            that your ad dollars are being used in the most
+                            efficient way possible.
                         </p>
                         <p sx={{ mb: '40px' }}>
-                            Not every business is the same, so your programmatic
-                            ad strategy shouldn’t be approached in a
-                            cookie-cutter manner.
+                            At Rank Fuse, we believe that every company should
+                            have a custom advertising strategy. Talk to our
+                            digital advertising experts today to see what we can
+                            do for you!
                         </p>
                         <Button variant="primary">Let&apos;s Chat</Button>
                     </div>
@@ -54,8 +52,7 @@ const AdvertisingIntroStats = () => {
                         sx={{
                             px: ['80px', '10%', '3%', '80px'],
                             position: 'relative',
-                        }}
-                    >
+                        }}>
                         <Grid columns={[1, 2, 2, 2]} gap={'40px'}>
                             <DottedSquareSVG
                                 positionStyles={{
@@ -65,20 +62,16 @@ const AdvertisingIntroStats = () => {
                             />
                             <StatCard
                                 statistic="90%"
-                                subheading="Avg. Traffic Increase"
-                            ></StatCard>
+                                subheading="Avg. Traffic Increase"></StatCard>
                             <StatCard
                                 statistic="500+"
-                                subheading="Blog Posts Written"
-                            ></StatCard>
+                                subheading="Blog Posts Written"></StatCard>
                             <StatCard
                                 statistic="< 2sec"
-                                subheading="Avg. Site Load Time"
-                            ></StatCard>
+                                subheading="Avg. Site Load Time"></StatCard>
                             <StatCard
                                 statistic="99.9%"
-                                subheading="Website Uptime"
-                            ></StatCard>
+                                subheading="Website Uptime"></StatCard>
                         </Grid>
                     </div>
                 </Grid>

@@ -27,37 +27,57 @@ const AdvertisingProcess = () => {
                 }}></div>
             <BgSVG />
             <Container
-                sx={{ maxWidth: ['450px', '600px', '1290px'], px: '30px' }}>
+                sx={{ maxWidth: ['450px', '750px', '1000px'], px: '20px' }}>
                 <Grid
-                    columns={[1, 1, 3, 3]}
-                    gap={['50px', '50px', '3%', '60px']}>
+                    columns={[1, 2, 2, 2]}
+                    gap={['50px', '50px', '40px', '40px']}>
                     <MotionFadeGrow delay={0} threshold={0.6}>
                         <ProcessCard
                             heading="Chat With Us"
                             icon="chat"
                             number="1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            During our initial meetings, our team will ask
+                            detailed questions to discover everything we can
+                            about your business and how to run successful ads
+                            that are targeting the right keywords. We will
+                            discuss budget, creative, goals, and more.
                         </ProcessCard>
                     </MotionFadeGrow>
-
                     <MotionFadeGrow delay={0.2} threshold={0.6}>
                         <ProcessCard
-                            heading="Research"
+                            heading="Builds"
                             icon="research"
                             number="2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            We start to build out campaigns and ads that are
+                            optimized to your business’s goals. These campaigns
+                            are designed to target specific demographics,
+                            locations, keywords, and more. Depending on the
+                            platforms you wish to use, we can even build
+                            creative assets to be used in the ads.
                         </ProcessCard>
                     </MotionFadeGrow>
-
                     <MotionFadeGrow delay={0.4} threshold={0.6}>
                         <ProcessCard
-                            heading="Delivery"
+                            heading="Launch"
                             icon="delivery"
                             number="3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt.
+                            Once the campaigns have been approved by your team,
+                            we make sure that everything is properly uploaded
+                            and ready to go. Our goal is to go live on the date
+                            that you request and keep the campaigns updated as
+                            needed.
+                        </ProcessCard>
+                    </MotionFadeGrow>
+                    <MotionFadeGrow delay={0.6} threshold={0.6}>
+                        <ProcessCard
+                            heading="Tracking & Reporting"
+                            icon="execute"
+                            number="4">
+                            We monitor our ad accounts daily, allowing us to
+                            track spend and keep the ads on pace for the
+                            duration of the campaigns. Each month, we will
+                            provide a detailed report that shows campaign
+                            performance and important data metrics.
                         </ProcessCard>
                     </MotionFadeGrow>
                 </Grid>

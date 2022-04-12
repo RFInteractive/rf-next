@@ -74,7 +74,7 @@ const ProgrammaticAdvertisingLeftColumn = () => {
                     color: '#fff',
                     marginBottom: '20px',
                 }}>
-                Expand Your Reach With Programmatic Advertising
+                Expand Your Reach With Advertising
             </h1>
             <CheckListItem bgColor="#fff" checkmarkColor="primary">
                 <p sx={{ color: '#fff', fontSize: '24px', marginLeft: '10px' }}>
