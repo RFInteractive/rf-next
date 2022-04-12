@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-import { Container, Grid, Button } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import StatCard from '../../cards/StatCard';
 import MultiStepPortalButton from '../../portals/MultiStepPortalButton';

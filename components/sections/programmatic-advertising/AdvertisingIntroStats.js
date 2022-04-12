@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { Container, Grid, Button } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import StatCard from '../../cards/StatCard';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 import DottedSquareSVG from '../../svgs/DottedSquareSVG';
 
 const AdvertisingIntroStats = () => {
@@ -40,13 +41,16 @@ const AdvertisingIntroStats = () => {
                             that your ad dollars are being used in the most
                             efficient way possible.
                         </p>
-                        <p sx={{ mb: '40px' }}>
+                        <p sx={{ mb: '10px' }}>
                             At Rank Fuse, we believe that every company should
                             have a custom advertising strategy. Talk to our
                             digital advertising experts today to see what we can
                             do for you!
                         </p>
-                        <Button variant="primary">Let&apos;s Chat</Button>
+                        <MultiStepPortalButton
+                            buttonText="Let's Chat"
+                            variant="primary"
+                        />
                     </div>
                     <div
                         sx={{

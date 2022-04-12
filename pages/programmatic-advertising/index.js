@@ -17,6 +17,7 @@ import NativeAdManagementImg from '../../components/sections/programmatic-advert
 import Retargeting from '../../components/sections/programmatic-advertising/Retargeting';
 import CTARow from '../../components/sections/AppCTARow';
 import { advertisingSEO } from '../../lib/seo';
+import MultiStepPortalButton from '../../components/portals/MultiStepPortalButton';
 
 const ProgrammaticAdvertising = () => {
     return (
@@ -92,9 +93,10 @@ const ProgrammaticAdvertisingLeftColumn = () => {
                 </p>
             </CheckListItem>
             <MotionFadeGrow delay={0.8}>
-                <Button variant="light" sx={{ marginTop: '20px' }}>
-                    Let&apos;s Work Together
-                </Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Work Together"
+                    variant="buttons.light"
+                />
             </MotionFadeGrow>
         </div>
     );

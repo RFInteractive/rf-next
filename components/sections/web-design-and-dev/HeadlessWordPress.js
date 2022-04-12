@@ -1,5 +1,4 @@
 /** @jsxImportSource theme-ui */
-import { Button } from 'theme-ui';
 import Image from 'next/image';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';

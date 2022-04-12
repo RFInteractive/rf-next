@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
-import { Button } from 'theme-ui';
-
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
