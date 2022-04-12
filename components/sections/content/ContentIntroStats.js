@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid, Button } from 'theme-ui';
 import StatCard from '../../cards/StatCard';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 import DottedSquareSVG from '../../svgs/DottedSquareSVG';
 
 const ContentIntroStats = () => {
@@ -38,14 +39,17 @@ const ContentIntroStats = () => {
                             professional team of writers who specialize in
                             SEO-focused content.
                         </p>
-                        <p sx={{ mb: '40px' }}>
+                        <p sx={{ mb: '10px' }}>
                             Using our keyword research and content planning
                             methods, your content is in the best hands. Our
                             writers will take the time to craft each piece of
                             content based on your brand’s voice and specific
                             needs without sacrificing SEO value.
                         </p>
-                        <Button variant="primary">Let&apos;s Chat</Button>
+                        <MultiStepPortalButton
+                            buttonText="Let's Chat"
+                            variant="primary"
+                        />
                     </div>
                     <div
                         sx={{

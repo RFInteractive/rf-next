@@ -5,6 +5,7 @@ import { Button } from 'theme-ui';
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import blogLaptop from '../../../public/images/blog-laptop.png';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const KeywordResearch = () => {
     return (
@@ -63,13 +64,16 @@ const KeywordResearchRightColumnContent = () => {
                 research with competitor analysis to help you outrank your
                 competitors in major search engines.
             </p>
-            <p sx={{ paddingBottom: '30px' }}>
+            <p sx={{ paddingBottom: '10px' }}>
                 Once we have identified the keywords we need to target, we can
                 inject them into the copy on your website, your paid ads, and
                 your off-page SEO efforts, creating a holistic approach to SEO.
             </p>
             <MotionFadeGrow threshold={0.5} delay={0.25}>
-                <Button variant="primary">Let&apos;s Chat</Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Chat"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );

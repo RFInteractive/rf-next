@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
-import { Button } from 'theme-ui';
 import Head from 'next/head';
 import Image from 'next/image';
 
 import AppHeader from '../../components/sections/AppHeader';
+import MultiStepPortalButton from '../../components/portals/MultiStepPortalButton';
 import contentHeaderDevices from '../../public/images/content-header-devices.png';
 import CheckListItem from '../../components/CheckListItem';
 import MotionFadeGrow from '../../components/animations/MotionFadeGrow';
@@ -91,9 +91,10 @@ const ContentLeftColumn = () => {
                 </p>
             </CheckListItem>
             <MotionFadeGrow delay={0.65}>
-                <Button variant="light" sx={{ marginTop: '20px' }}>
-                    Let&apos;s Work Together
-                </Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Work Together"
+                    variant="light"
+                />
             </MotionFadeGrow>
         </div>
     );

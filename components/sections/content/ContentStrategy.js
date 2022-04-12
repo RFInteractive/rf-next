@@ -5,6 +5,7 @@ import { Button } from 'theme-ui';
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import contentTimeline from '../../../public/images/content-timeline.png';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const ContentStrategy = () => {
     return (
@@ -63,14 +64,17 @@ const ContentStrategyRightColumnContent = () => {
                 also offer expert SEO writing services to ensure your keyword
                 focus is never lost.
             </p>
-            <p sx={{ paddingBottom: '30px' }}>
+            <p sx={{ paddingBottom: '10px' }}>
                 The goal of every content marketing strategy we produce is to
                 organically improve your rankings in search engines using proven
                 research to write the answers to the questions real people are
                 asking.
             </p>
             <MotionFadeGrow threshold={0.6} delay={0.6}>
-                <Button variant="primary">Let&apos;s Chat</Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Chat"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );
