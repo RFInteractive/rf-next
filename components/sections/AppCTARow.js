@@ -3,6 +3,7 @@
 import { Container, Grid, useThemeUI } from 'theme-ui';
 
 import Link from 'next/link';
+import MultiStepPortalButton from '../portals/MultiStepPortalButton';
 
 const CTARow = ({
     heading,
@@ -25,16 +26,14 @@ const CTARow = ({
                     borderRadius: '30px',
                     marginTop: ['25px', null, '125px', '125px'],
                     marginBottom: '75px',
-                }}
-            >
+                }}>
                 <Grid columns={[1, 1, 2, 2]} sx={{ position: 'relative' }}>
                     <div
                         sx={{
                             gridColumn: ['1/-1', '1/-1', '1/2', '1/2'],
                             gridRow: ['2/3', '2/3', '1/-1', '1/-1'],
                             marginTop: ['-50px', '-50px', '0px', '0px'],
-                        }}
-                    >
+                        }}>
                         <h2
                             sx={{
                                 color: '#fff',
@@ -42,26 +41,23 @@ const CTARow = ({
                                 fontSize: '50px',
                                 zIndex: '5',
                                 position: 'relative',
-                            }}
-                        >
+                            }}>
                             {heading}
                         </h2>
                         <p sx={{ fontSize: '26px', color: '#fff', mb: '30px' }}>
                             {subheading}
                         </p>
-                        <Link href={link}>
-                            <a sx={{ variant: 'buttons.light' }}>
-                                {buttonText}
-                            </a>
-                        </Link>
+                        <MultiStepPortalButton
+                            buttonText="Start Now"
+                            variant="buttons.light"
+                        />
                     </div>
                     <div
                         sx={{
                             position: 'relative',
                             gridColumn: ['1/-1', '1/-1', '2/-1', '2/-1'],
                             gridRow: ['1/2', '1/2', '1/-1', '1/-1'],
-                        }}
-                    >
+                        }}>
                         <img
                             src="/images/phone-array.png"
                             alt="a cell phone mockup"
@@ -102,8 +98,7 @@ const CTABgSVG = () => {
                 transform: 'translate(-50%, -60%)',
                 zIndex: '0',
             }}
-            xmlns="http://www.w3.org/2000/svg"
-        >
+            xmlns="http://www.w3.org/2000/svg">
             <ellipse
                 rx="14.7437"
                 ry="14.5233"
@@ -141,8 +136,7 @@ const CTABgSVG = () => {
                     y1="-10"
                     x2="23.0433"
                     y2="23.4841"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.051875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.885417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -152,8 +146,7 @@ const CTABgSVG = () => {
                     y1="-20"
                     x2="98.5337"
                     y2="99.6044"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.01875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.585417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -163,8 +156,7 @@ const CTABgSVG = () => {
                     y1="-15"
                     x2="120.5116"
                     y2="120.0658"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.01875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.305417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -174,8 +166,7 @@ const CTABgSVG = () => {
                     y1="-10"
                     x2="140.2558"
                     y2="140.5329"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.01875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.125417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
@@ -185,8 +176,7 @@ const CTABgSVG = () => {
                     y1="-10"
                     x2="120.0433"
                     y2="120.4841"
-                    gradientUnits="userSpaceOnUse"
-                >
+                    gradientUnits="userSpaceOnUse">
                     <stop offset="0.01875" sx={{ stopColor: gradientLight }} />
                     <stop offset="0.155417" sx={{ stopColor: gradientDark }} />
                 </linearGradient>
