@@ -1,8 +1,9 @@
 /** @jsxImportSource theme-ui */
-import { Container, Grid, Button } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import StatCard from '../../cards/StatCard';
 import DottedSquareSVG from '../../svgs/DottedSquareSVG';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const SEOIntroStats = () => {
     return (
@@ -12,7 +13,7 @@ const SEOIntroStats = () => {
                 marginTop: ['25px', '125px', '75px', '150px'],
                 marginBottom: ['125px', '100px', '150px', '150px'],
             }}>
-            <Container sx={{ maxWidth: '1290px', px: '20px' }}>
+            <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid
                     columns={[1, 1, 2, 2]}
                     gap={'70px'}
@@ -39,13 +40,16 @@ const SEOIntroStats = () => {
                             experts to help you expand your online presence and
                             bring more leads to your business.
                         </p>
-                        <p sx={{ mb: '40px' }}>
+                        <p sx={{ mb: '10px' }}>
                             Our experts have a proven record of boosting website
                             performance using technical on-page, off-page, and
                             local SEO techniques. Learn more about each of our
                             SEO services below!
                         </p>
-                        <Button variant="primary">Let&apos;s Chat</Button>
+                        <MultiStepPortalButton
+                            buttonText="Let's Chat"
+                            variant="primary"
+                        />
                     </div>
                     <div
                         sx={{

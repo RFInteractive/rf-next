@@ -17,6 +17,7 @@ import LocalSEO from '../../components/sections/seo/LocalSEO';
 import AnalyticsReportingRow from '../../components/sections/seo/AnalyticsReporting';
 import CTARow from '../../components/sections/AppCTARow';
 import { seoServicesSEO } from '../../lib/seo';
+import MultiStepPortalButton from '../../components/portals/MultiStepPortalButton';
 
 const SEOServices = () => {
     return (
@@ -93,9 +94,10 @@ const SEOServicesLeftColumn = () => {
                 </p>
             </CheckListItem>
             <MotionFadeGrow delay={0.8}>
-                <Button variant="light" sx={{ marginTop: '20px' }}>
-                    Let&apos;s Work Together
-                </Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Work Together"
+                    variant="buttons.light"
+                />
             </MotionFadeGrow>
         </div>
     );

@@ -7,6 +7,7 @@ import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 import Lottie from 'react-lottie';
 import * as analyticsReportingAnimationData from '../../../lib/lottie/analytics-reporting-lottie.json';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const AnalyticsReportingRow = () => {
     return (
@@ -42,13 +43,16 @@ const AnalyticsReportingLeftColumnContent = () => {
                 us!) to see how things are going. Your report will cover traffic
                 numbers, organic rankings, and so much more!
             </p>
-            <p sx={{ margin: '20px 0px 35px' }}>
+            <p sx={{ marginTop: '20px', marginBottom: '10px' }}>
                 Using these reports, our team can learn what is and isn’t
                 working for your brand, and this allows us to quickly make
                 changes that will benefit your SEO strategy.
             </p>
             <MotionFadeGrow delay={0.5} threshold={1}>
-                <Button variant="primary">Chat with Us</Button>
+                <MultiStepPortalButton
+                    buttonText="Work With Us"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );

@@ -27,10 +27,10 @@ const SEOProcess = () => {
                 }}></div>
             <BgSVG />
             <Container
-                sx={{ maxWidth: ['450px', '750px', '1290px'], px: '20px' }}>
+                sx={{ maxWidth: ['450px', '750px', '1000px'], px: '20px' }}>
                 <Grid
-                    columns={[1, 2, 4, 4]}
-                    gap={['50px', '50px', '2%', '40px']}>
+                    columns={[1, 2, 2, 2]}
+                    gap={['50px', '50px', '40px', '40px']}>
                     <MotionFadeGrow delay={0} threshold={0.6}>
                         <ProcessCard
                             heading="Chat With Us"

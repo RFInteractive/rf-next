@@ -12,7 +12,10 @@ const MultiStepPortalButton = ({ buttonText, variant }) => {
 
     return (
         <>
-            <Button variant={variant} onClick={() => setFormModalOpen(true)}>
+            <Button
+                variant={variant}
+                onClick={() => setFormModalOpen(true)}
+                sx={{ mt: '20px' }}>
                 {buttonText}
             </Button>
             <AnimatePresence exitBeforeEnter>

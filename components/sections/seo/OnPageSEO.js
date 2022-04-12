@@ -1,9 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { Button } from 'theme-ui';
-
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import CheckListItem from '../../CheckListItem';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const OnPageSEO = () => {
     return (
@@ -113,7 +112,10 @@ const OnPageSEORightColumnContent = () => {
                 cart platforms, we have the experience that you are looking for.
             </p>
             <MotionFadeGrow delay={0.6} threshold={1}>
-                <Button variant="primary">Let&apos;s Chat</Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Chat"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );
