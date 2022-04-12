@@ -276,7 +276,14 @@ const FooterCopyright = () => {
                     textAlign: 'center',
                     fontSize: '16px',
                 }}>
-                © 2015 - {new Date().getFullYear()} All rights reserved
+                © 2015 - {new Date().getFullYear()} All rights reserved |{' '}
+                <Link href="/privacy-policy">
+                    <a>
+                        <span sx={{ color: 'alwaysLight' }}>
+                            Privacy Policy
+                        </span>
+                    </a>
+                </Link>
             </p>
         </div>
     );
