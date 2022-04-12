@@ -4,6 +4,7 @@ import IconServiceCard from '../cards/IconServiceCard';
 import DottedSquareSVG from '../svgs/DottedSquareSVG';
 
 import MotionFadeGrow from '../animations/MotionFadeGrow';
+import MultiStepPortalButton from '../portals/MultiStepPortalButton';
 
 const WhatWeDoRow = () => {
     return (
@@ -15,10 +16,7 @@ const WhatWeDoRow = () => {
             }}>
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid columns={[1, 1, 2, 2]} gap={'70px'}>
-                    <div
-                        sx={{
-                            paddingRight: ['0px', '0px', '60px', '30px'],
-                        }}>
+                    <div>
                         <h2 sx={{ marginBottom: '10px' }}>What We Do</h2>
                         <div
                             sx={{
@@ -36,19 +34,22 @@ const WhatWeDoRow = () => {
                             ability to help in all facets of the online
                             marketing experience.
                         </p>
-                        <p sx={{ mb: '40px' }}>
+                        <p sx={{ mb: '10px' }}>
                             We have a proven record of boosting website
                             performance, sales, and rankings. More importantly,
                             we take pride in delivering strategy that earns the
                             types of clicks that deliver positive ROI.
                         </p>
                         <MotionFadeGrow threshold={0.8} delay={0.25}>
-                            <Button variant="primary">Let&apos;s Chat</Button>
+                            <MultiStepPortalButton
+                                buttonText="Let's Worth Together"
+                                variant="primary"
+                            />
                         </MotionFadeGrow>
                     </div>
                     <div
                         sx={{
-                            px: ['80px', '10%', '3%', '80px'],
+                            px: ['45px', '10%', '3%', '80px'],
                             position: 'relative',
                         }}>
                         <Grid columns={[1, 2, 2, 2]} gap={'40px'}>
