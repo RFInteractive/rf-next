@@ -5,6 +5,7 @@ import Image from 'next/image';
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import GoogleMapsPhones from '../../../public/images/google-maps-phones.png';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const GoogleMapsAdvertisement = () => {
     return (
@@ -65,14 +66,17 @@ const GoogleMapsAdvertisementRightColumnContent = () => {
                 website traffic, more social shares, comments, referral links,
                 and overall awareness of your brand.
             </p>
-            <p sx={{ paddingBottom: '30px' }}>
+            <p sx={{ paddingBottom: '10px' }}>
                 By exposing your target audience to content that seamlessly
                 blends with the page, native ads lead to higher engagement rates
                 for your article content and in turn generates highly relevant
                 leads.
             </p>
             <MotionFadeGrow delay={0.6} threshold={1}>
-                <Button variant="primary">Let&apos;s Chat</Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Chat"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );

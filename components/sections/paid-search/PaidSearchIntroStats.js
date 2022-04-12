@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { Container, Grid, Button } from 'theme-ui';
+import { Container, Grid } from 'theme-ui';
 
 import StatCard from '../../cards/StatCard';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 import DottedSquareSVG from '../../svgs/DottedSquareSVG';
 
 const PaidSearchIntroStats = () => {
@@ -39,12 +40,16 @@ const PaidSearchIntroStats = () => {
                             and off-line behaviors, geographic region, shopping
                             behaviors, and more.
                         </p>
-                        <p sx={{ mb: '40px' }}>
+                        <p sx={{ mb: '10px' }}>
                             Not every business is the same, so your programmatic
                             ad strategy shouldn’t be approached in a
                             cookie-cutter manner.
                         </p>
-                        <Button variant="primary">Let&apos;s Chat</Button>
+
+                        <MultiStepPortalButton
+                            buttonText="Let's Chat"
+                            variant="primary"
+                        />
                     </div>
                     <div
                         sx={{
