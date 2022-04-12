@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /** @jsxImportSource theme-ui */
 import { Button } from 'theme-ui';
+import Link from 'next/link';
 
 import TwoColumnVector from '../../layout/TwoColumnVector';
 
@@ -43,7 +44,11 @@ const AboutUsLeftColumnContent = () => {
                 or a combination of these services, our team is well-equipped to
                 deliver the highest-quality campaigns and service.
             </p>
-            <Button variant="primary">More About Us</Button>
+            <Link href="/about" scroll={false}>
+                <a>
+                    <Button variant="primary">More About Us</Button>
+                </a>
+            </Link>
         </div>
     );
 };

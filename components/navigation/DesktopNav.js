@@ -175,9 +175,9 @@ const AdvertisingDesktopLinks = () => {
 const ResourceDesktopLinks = () => {
     return (
         <div className="desktopNavLinkContainer">
-            <Link href="/web-design-and-development">
-                <a className="desktopNavLink">Resources</a>
-            </Link>
+            <a className="desktopNavLink" href="#">
+                Resources
+            </a>
             <div className="desktopNavDropdownContainer">
                 {navLinks['Resources'].map((navLink) => {
                     return (
