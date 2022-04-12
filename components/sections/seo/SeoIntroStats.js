@@ -12,7 +12,7 @@ const SEOIntroStats = () => {
                 marginTop: ['25px', '125px', '75px', '150px'],
                 marginBottom: ['125px', '100px', '150px', '150px'],
             }}>
-            <Container sx={{ maxWidth: '1290px', px: '30px' }}>
+            <Container sx={{ maxWidth: '1290px', px: '20px' }}>
                 <Grid
                     columns={[1, 1, 2, 2]}
                     gap={'70px'}
