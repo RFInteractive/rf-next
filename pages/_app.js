@@ -17,6 +17,8 @@ import {
 import { ApolloProvider } from '@apollo/client';
 import { client } from '../lib/apollo';
 
+import TagManager from 'react-gtm-module';
+
 const MyApp = ({ Component, pageProps, router }) => {
     const nextRouter = useRouter();
 
@@ -54,6 +56,10 @@ const MyApp = ({ Component, pageProps, router }) => {
             );
         };
     }, [nextRouter]);
+
+    useEffect(() => {
+        TagManager.initialize({ gtmId: 'GTM-M8R9H7G' });
+    }, []);
 
     return (
         <ApolloProvider client={client}>
