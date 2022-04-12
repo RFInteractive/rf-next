@@ -20,6 +20,7 @@ export const getServerSideProps = async ({ res }) => {
         'social-advertising',
         'web-design-and-development',
         'privacy-policy',
+        'cookie-policy',
     ].map((staticPagePath) => {
         return `${BASE_URL}/${staticPagePath}`;
     });

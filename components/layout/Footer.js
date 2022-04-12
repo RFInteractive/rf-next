@@ -283,6 +283,12 @@ const FooterCopyright = () => {
                             Privacy Policy
                         </span>
                     </a>
+                </Link>{' '}
+                |{' '}
+                <Link href="/cookie-policy">
+                    <a>
+                        <span sx={{ color: 'alwaysLight' }}>Cookie Policy</span>
+                    </a>
                 </Link>
             </p>
         </div>
