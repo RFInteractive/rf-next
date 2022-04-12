@@ -1,11 +1,10 @@
 /** @jsxImportSource theme-ui */
-import { Button } from 'theme-ui';
-
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 import Lottie from 'react-lottie';
 import * as instagramAnimationData from '../../../lib/lottie/instagram-lottie.json';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const InstagramAdvertising = () => {
     return (
@@ -69,14 +68,17 @@ const InstagramAdvertisingRightColumnContent = () => {
                 website traffic, more social shares, comments, referral links,
                 and overall awareness of your brand.
             </p>
-            <p sx={{ paddingBottom: '30px' }}>
+            <p sx={{ paddingBottom: '10px' }}>
                 By exposing your target audience to content that seamlessly
                 blends with the page, native ads lead to higher engagement rates
                 for your article content and in turn generates highly relevant
                 leads.
             </p>
             <MotionFadeGrow delay={0.6} threshold={1}>
-                <Button variant="primary">Let&apos;s Chat</Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Chat"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );

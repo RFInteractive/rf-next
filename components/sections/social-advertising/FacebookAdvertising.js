@@ -1,11 +1,10 @@
 /** @jsxImportSource theme-ui */
-import { Button } from 'theme-ui';
-
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
 import Lottie from 'react-lottie';
 import * as facebookAnimationData from '../../../lib/lottie/facebook-lottie.json';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const FacebookAdvertising = () => {
     return (
@@ -67,14 +66,17 @@ const FacebookAdvertisingRightColumnContent = () => {
                 seamlessly stitch together the personas you want to reach with
                 digital ads.
             </p>
-            <p sx={{ paddingBottom: '30px' }}>
+            <p sx={{ paddingBottom: '10px' }}>
                 Whether your organization is B2B or B2C, behavioral targeting
                 lets your brand create custom campaigns. Through our ad
                 platforms, we can expose your brand to users who have already
                 shown interest in similar products or services to yours.
             </p>
             <MotionFadeGrow delay={0.6} threshold={1}>
-                <Button variant="primary">Let&apos;s Chat</Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Chat"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );
