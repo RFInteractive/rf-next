@@ -2,6 +2,7 @@
 import { Container, Grid, Button } from 'theme-ui';
 
 import StatCard from '../../cards/StatCard';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 import DottedSquareSVG from '../../svgs/DottedSquareSVG';
 
 const WebDevIntroStats = () => {
@@ -38,13 +39,16 @@ const WebDevIntroStats = () => {
                             looking to boost revenues from online marketing and
                             advertising.
                         </p>
-                        <p sx={{ mb: '40px' }}>
+                        <p sx={{ mb: '10px' }}>
                             We have a proven record of boosting website
                             performance, sales, and rankings. More importantly,
                             we take pride in delivering strategy that earns the
                             types of clicks that deliver positive ROI.
                         </p>
-                        <Button variant="primary">Let&apos;s Chat</Button>
+                        <MultiStepPortalButton
+                            buttonText="Let's Chat"
+                            variant="primary"
+                        />
                     </div>
                     <div
                         sx={{

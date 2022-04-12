@@ -5,6 +5,7 @@ import Image from 'next/image';
 import TwoColumnVector from '../../layout/TwoColumnVector';
 import modernDesignLaptop from '../../../public/images/modern-design-laptop.png';
 import MotionFadeGrow from '../../animations/MotionFadeGrow';
+import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
 
 const WebDesign = () => {
     return (
@@ -64,13 +65,16 @@ const WebDesignRightColumnContent = () => {
                 navigate, and sets you apart from your competitors, call Rank
                 Fuse.
             </p>
-            <p sx={{ paddingBottom: '30px' }}>
+            <p sx={{ paddingBottom: '10px' }}>
                 As a digital marketing agency, we see the web a little
                 differently than most, and this lens helps us see website design
                 and development a little differently, as well.
             </p>
             <MotionFadeGrow delay={0.6} threshold={1}>
-                <Button variant="primary">Let&apos;s Chat</Button>
+                <MultiStepPortalButton
+                    buttonText="Let's Chat"
+                    variant="primary"
+                />
             </MotionFadeGrow>
         </div>
     );
