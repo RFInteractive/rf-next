@@ -64,9 +64,13 @@ const GeneralMultiStepFormPortal = ({ children, open, onClose }) => {
         }, 500);
     };
 
+    const stopPropagation = (e) => {
+        e.stopPropagation();
+    };
+
     return open
         ? createPortal(
-              <motion.div animate={bgModalControls}>
+              <motion.div animate={bgModalControls} onClick={closePortal}>
                   <motion.div animate={formCardControls}>
                       <Container
                           sx={{
@@ -89,7 +93,8 @@ const GeneralMultiStepFormPortal = ({ children, open, onClose }) => {
                                   justifyContent: 'center',
                                   alignItems: 'center',
                               }}
-                              data-cy="GeneralMultiStepFormPortal">
+                              data-cy="GeneralMultiStepFormPortal"
+                              onClick={stopPropagation}>
                               <Close
                                   onClick={closePortal}
                                   size={60}
