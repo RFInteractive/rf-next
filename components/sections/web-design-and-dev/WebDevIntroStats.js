@@ -1,26 +1,40 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid } from 'theme-ui';
 
-import StatCard from '../../cards/StatCard';
-import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
-import DottedSquareSVG from '../../svgs/DottedSquareSVG';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
+
+import Lottie from 'react-lottie';
+import * as webDevIntroAnimationData from '../../../lib/lottie/website-build-lottie.json';
 
 const WebDevIntroStats = () => {
+    const loadingLottieOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: webDevIntroAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     return (
         <section
             id="webDevIntroStats"
             sx={{
-                marginTop: ['25px', '125px', '75px', '150px'],
-                marginBottom: ['125px', '100px', '150px', '150px'],
+                marginBottom: ['125px', '100px', '125px', '125px'],
             }}>
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid
                     columns={[1, 1, 2, 2]}
-                    gap={'70px'}
+                    gap={'50px'}
                     sx={{ alignItems: 'center' }}>
+                    <div sx={{ transform: 'rotateY(180deg)' }}>
+                        <MotionFadeGrow threshold={0.7}>
+                            <Lottie options={loadingLottieOptions} />
+                        </MotionFadeGrow>
+                    </div>
                     <div
                         sx={{
-                            paddingRight: ['0px', '0px', '60px', '30px'],
+                            paddingLeft: ['0px', '0px', '50px', '30px'],
                         }}>
                         <h2 sx={{ marginBottom: '10px' }}>
                             We Stand by Our Sites
@@ -45,36 +59,6 @@ const WebDevIntroStats = () => {
                             we take pride in delivering strategy that earns the
                             types of clicks that deliver positive ROI.
                         </p>
-                        <MultiStepPortalButton
-                            buttonText="Let's Chat"
-                            variant="primary"
-                        />
-                    </div>
-                    <div
-                        sx={{
-                            px: ['80px', '10%', '3%', '80px'],
-                            position: 'relative',
-                        }}>
-                        <Grid columns={[1, 2, 2, 2]} gap={'40px'}>
-                            <DottedSquareSVG
-                                positionStyles={{
-                                    top: '-30px',
-                                    right: '-25px',
-                                }}
-                            />
-                            <StatCard
-                                statistic="90%"
-                                subheading="Avg. Traffic Increase"></StatCard>
-                            <StatCard
-                                statistic="500+"
-                                subheading="Blog Posts Written"></StatCard>
-                            <StatCard
-                                statistic="< 2sec"
-                                subheading="Avg. Site Load Time"></StatCard>
-                            <StatCard
-                                statistic="99.9%"
-                                subheading="Website Uptime"></StatCard>
-                        </Grid>
                     </div>
                 </Grid>
             </Container>
