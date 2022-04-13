@@ -1,26 +1,39 @@
 /** @jsxImportSource theme-ui */
 import { Container, Grid } from 'theme-ui';
+import MotionFadeGrow from '../../animations/MotionFadeGrow';
 
-import StatCard from '../../cards/StatCard';
-import MultiStepPortalButton from '../../portals/MultiStepPortalButton';
-import DottedSquareSVG from '../../svgs/DottedSquareSVG';
+import Lottie from 'react-lottie';
+import * as socialIntroAnimationData from '../../../lib/lottie/undulating-dash-lottie.json';
 
 const SocialAdvertisingIntroStats = () => {
+    const loadingLottieOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: socialIntroAnimationData,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+
     return (
         <section
             id="socialAdvertisingIntro"
             sx={{
-                marginTop: ['25px', '125px', '75px', '150px'],
-                marginBottom: ['125px', '100px', '150px', '150px'],
+                marginBottom: ['125px', '100px', '125px', '125px'],
             }}>
             <Container sx={{ maxWidth: '1290px', px: '30px' }}>
                 <Grid
                     columns={[1, 1, 2, 2]}
                     gap={'70px'}
                     sx={{ alignItems: 'center' }}>
+                    <div>
+                        <MotionFadeGrow threshold={0.7}>
+                            <Lottie options={loadingLottieOptions} />
+                        </MotionFadeGrow>
+                    </div>
                     <div
                         sx={{
-                            paddingRight: ['0px', '0px', '60px', '30px'],
+                            paddingLeft: ['0px', '0px', '50px', '30px'],
                         }}>
                         <h2 sx={{ marginBottom: '10px' }}>
                             Tailored Campaigns <br></br> & Target with Intent
@@ -45,36 +58,6 @@ const SocialAdvertisingIntroStats = () => {
                             ad strategy shouldn’t be approached in a
                             cookie-cutter manner.
                         </p>
-                        <MultiStepPortalButton
-                            buttonText="Let's Chat"
-                            variant="primary"
-                        />
-                    </div>
-                    <div
-                        sx={{
-                            px: ['80px', '10%', '3%', '80px'],
-                            position: 'relative',
-                        }}>
-                        <Grid columns={[1, 2, 2, 2]} gap={'40px'}>
-                            <DottedSquareSVG
-                                positionStyles={{
-                                    top: '-30px',
-                                    right: '-25px',
-                                }}
-                            />
-                            <StatCard
-                                statistic="90%"
-                                subheading="Avg. Traffic Increase"></StatCard>
-                            <StatCard
-                                statistic="500+"
-                                subheading="Blog Posts Written"></StatCard>
-                            <StatCard
-                                statistic="< 2sec"
-                                subheading="Avg. Site Load Time"></StatCard>
-                            <StatCard
-                                statistic="99.9%"
-                                subheading="Website Uptime"></StatCard>
-                        </Grid>
                     </div>
                 </Grid>
             </Container>
