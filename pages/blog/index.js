@@ -12,33 +12,38 @@ import { formatPostsForBlogCard } from '../../lib/formatting';
 import { blogSEO } from '../../lib/seo';
 
 const BlogFeed = ({ posts }) => {
-    const [blogPosts, setBlogPosts] = useState(posts);
-    const [page, setPage] = useState(1);
-    const [loadingState, setLoadingState] = useState('More Posts');
-    const [hasMore, setHasMore] = useState(true);
+    const [state, setState] = useState({
+        blogPosts: posts,
+        page: 1,
+        loadingState: 'More Posts',
+        hasMore: true,
+    });
 
     const loadMorePosts = async () => {
-        if (!hasMore) {
+        if (!state.hasMore) {
             return;
         }
 
-        setLoadingState('Loading');
+        setState({ ...state, loadingState: 'Loading' });
 
-        const newPosts = await getPosts(page + 1);
+        const newPosts = await getPosts(state.page + 1);
         const formattedNewPosts = formatPostsForBlogCard(
             newPosts.data.posts.nodes
         );
-
-        setBlogPosts((previousPosts) => {
-            if (formattedNewPosts.length === previousPosts.length) {
-                setHasMore(false);
-                return previousPosts;
+        setState((prevState) => {
+            if (formattedNewPosts.length === prevState.blogPosts.length) {
+                return {
+                    ...prevState,
+                    hasMore: false,
+                };
             }
-            return formattedNewPosts;
+            return {
+                ...prevState,
+                blogPosts: formattedNewPosts,
+                page: prevState.page + 1,
+                loadingState: 'More Posts',
+            };
         });
-
-        setPage((currentPage) => currentPage + 1);
-        setLoadingState('More Posts');
     };
 
     return (
@@ -70,19 +75,19 @@ const BlogFeed = ({ posts }) => {
                     <Grid
                         columns={[1, 2, 3, 3]}
                         gap={['40px', '40px', '40px', '60px']}>
-                        {blogPosts.map((post) => (
+                        {state.blogPosts.map((post) => (
                             <BlogCard key={post.uri} post={post}></BlogCard>
                         ))}
                     </Grid>
                 </Container>
                 <Flex sx={{ justifyContent: 'center', mb: '50px' }}>
-                    {hasMore ? (
+                    {state.hasMore ? (
                         <Button
                             variant="primary"
                             onClick={loadMorePosts}
                             sx={{ display: 'flex', alignItems: 'center' }}>
-                            {loadingState}
-                            {showLoader(loadingState)}
+                            {state.loadingState}
+                            {showLoader(state.loadingState)}
                         </Button>
                     ) : (
                         <Button>All Posts Loaded!</Button>
